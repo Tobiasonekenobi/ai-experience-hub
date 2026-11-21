@@ -2,15 +2,19 @@
 
 *Tryk. Oplev. Udforsk.* – en mobilvenlig platform med 15 oplevelser i fem universer.
 
-## Status (fase 2-prototype)
+## Status (fase 3)
 
-| Del | Status |
+Alle 15 oplevelser er interaktive demoer:
+
+| Univers | Oplevelser |
 |---|---|
-| Forside, Udforsk, Gemte, søgning, filtre, favoritter, senest besøgte | ✅ Virker |
-| 01 Mission Control | ✅ Interaktiv demo |
-| 02 Future Simulator | ✅ Interaktiv demo |
-| 07 Knowledge Galaxy | ✅ Interaktiv demo |
-| De øvrige 12 oplevelser | 🟡 Preview med koncept og planlagte funktioner – bygges i fase 3 |
+| Data & Fremtid | Mission Control, Future Simulator, World Data Explorer |
+| Visuel Magi | Comic World, Visual Notes Studio, 3D Exploded Lab |
+| Viden & Læring | Knowledge Galaxy, Time Machine, SkillTree Academy |
+| Spil & Opdagelser | Detective Mode, Escape AI, Decision Lab |
+| Kreativitet & Teknologi | Design Playground, AI Brain Explorer (ægte træning i browseren), Storyboard Cinema |
+
+Konstruerede tal (fx World Data) er tydeligt mærket som demotal. Historier, personer og firmaer er opdigtede.
 
 Al data er indbygget demodata. Ingen login, backend eller betalt AI-API.
 

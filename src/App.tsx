@@ -4,6 +4,7 @@ import { Card, StatusBadge } from './components/Card';
 import { Cover } from './components/Cover';
 import { load, pushRecent, useFavorites } from './lib/store';
 import Preview from './experiences/Preview';
+import { Boundary } from './components/Boundary';
 
 const GalaxyScene = lazy(() => import('./components/GalaxyScene').then((m) => ({ default: m.GalaxyScene })));
 
@@ -11,6 +12,18 @@ const DEMOS: Partial<Record<string, ReturnType<typeof lazy>>> = {
   'mission-control': lazy(() => import('./experiences/MissionControl')),
   'future-simulator': lazy(() => import('./experiences/FutureSimulator')),
   'knowledge-galaxy': lazy(() => import('./experiences/KnowledgeGalaxy')),
+  'time-machine': lazy(() => import('./experiences/TimeMachine')),
+  skilltree: lazy(() => import('./experiences/SkillTree')),
+  'ai-brain': lazy(() => import('./experiences/AIBrain')),
+  'decision-lab': lazy(() => import('./experiences/DecisionLab')),
+  detective: lazy(() => import('./experiences/Detective')),
+  'escape-ai': lazy(() => import('./experiences/EscapeAI')),
+  'world-data': lazy(() => import('./experiences/WorldData')),
+  'comic-world': lazy(() => import('./experiences/ComicWorld')),
+  'visual-notes': lazy(() => import('./experiences/VisualNotes')),
+  'exploded-lab': lazy(() => import('./experiences/ExplodedLab')),
+  'design-playground': lazy(() => import('./experiences/DesignPlayground')),
+  storyboard: lazy(() => import('./experiences/Storyboard')),
 };
 
 type Route = { page: 'opdag' } | { page: 'udforsk'; uni?: UniverseId } | { page: 'gemte' } | { page: 'x'; id: string };
@@ -86,7 +99,7 @@ function Home({ fav }: { fav: Fav }) {
       <section className="hero">
         <div className="hero-bg" aria-hidden="true">
           <img className="hero-img" src={`${import.meta.env.BASE_URL}img/hero.webp`} alt="" />
-          <Suspense fallback={null}><GalaxyScene /></Suspense>
+          <Boundary fallback={null}><Suspense fallback={null}><GalaxyScene /></Suspense></Boundary>
         </div>
         <div className="hero-copy">
           <span className="eyebrow">Tryk. Oplev. Udforsk.</span>
@@ -134,7 +147,7 @@ function Home({ fav }: { fav: Fav }) {
         <h2 className="h-sec">Alle 15 oplevelser</h2>
         <Grid items={EXPERIENCES} fav={fav} />
       </section>
-      <footer className="foot">AI Experience Hub · V0.2 prototype · 3 af 15 oplevelser er interaktive, resten er previews.</footer>
+      <footer className="foot">AI Experience Hub · V0.3 · alle 15 oplevelser er interaktive.</footer>
     </>
   );
 }
@@ -226,7 +239,7 @@ function ExperiencePage({ id, fav }: { id: string; fav: Fav }) {
           <StatusBadge status={exp.status} />
         </div>
       </div>
-      {Demo ? <Suspense fallback={<div className="loading">Indlæser oplevelse…</div>}><Demo /></Suspense> : <Preview exp={exp} />}
+      {Demo ? <Boundary key={id}><Suspense fallback={<div className="loading">Indlæser oplevelse…</div>}><Demo /></Suspense></Boundary> : <Preview exp={exp} />}
     </section>
   );
 }
