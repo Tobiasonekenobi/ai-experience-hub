@@ -5,7 +5,8 @@ import { Cover } from './components/Cover';
 import { load, pushRecent, useFavorites } from './lib/store';
 import Preview from './experiences/Preview';
 import { Boundary } from './components/Boundary';
-import { BuildPage, UseCase } from './components/Build';
+import { BuildPage } from './components/Build';
+import { LearnHub, LearnLinks } from './components/LearnHub';
 
 const GalaxyScene = lazy(() => import('./components/GalaxyScene').then((m) => ({ default: m.GalaxyScene })));
 
@@ -27,10 +28,11 @@ const DEMOS: Partial<Record<string, ReturnType<typeof lazy>>> = {
   storyboard: lazy(() => import('./experiences/Storyboard')),
 };
 
-type Route = { page: 'byg' } | { page: 'opdag' } | { page: 'udforsk'; uni?: UniverseId } | { page: 'gemte' } | { page: 'x'; id: string };
+type Route = { page: 'laer'; track?: UniverseId; module?: string } | { page: 'byg' } | { page: 'opdag' } | { page: 'udforsk'; uni?: UniverseId } | { page: 'gemte' } | { page: 'x'; id: string };
 
 function parse(hash: string): Route {
-  const [, a, b] = hash.replace(/^#/, '').split('/');
+  const [, a, b, c] = hash.replace(/^#/, '').split('/');
+  if (a === 'laer') return { page: 'laer', track: (UNIVERSES.some((u) => u.id === b) ? b : undefined) as UniverseId | undefined, module: c };
   if (a === 'udforsk') return { page: 'udforsk', uni: (UNIVERSES.some((u) => u.id === b) ? b : undefined) as UniverseId | undefined };
   if (a === 'gemte') return { page: 'gemte' };
   if (a === 'byg') return { page: 'byg' };
@@ -52,7 +54,7 @@ const NAV = [
   { page: 'opdag', href: '#/', label: 'Opdag', icon: '✦' },
   { page: 'udforsk', href: '#/udforsk', label: 'Udforsk', icon: '◎' },
   { page: 'gemte', href: '#/gemte', label: 'Gemte', icon: '♥' },
-  { page: 'byg', href: '#/byg', label: 'Få bygget', icon: '✚' },
+  { page: 'laer', href: '#/laer', label: 'Lær AI', icon: '✚' },
 ] as const;
 
 export default function App() {
@@ -75,6 +77,7 @@ export default function App() {
         {route.page === 'udforsk' && <Explore fav={fav} uni={route.uni} />}
         {route.page === 'gemte' && <Saved fav={fav} />}
         {route.page === 'byg' && <BuildPage />}
+        {route.page === 'laer' && <LearnHub track={route.track} module={route.module} />}
         {route.page === 'x' && <ExperiencePage id={route.id} fav={fav} />}
       </main>
 
@@ -109,7 +112,7 @@ function Home({ fav }: { fav: Fav }) {
           <span className="eyebrow">Tryk. Oplev. Udforsk.</span>
           <h1>En verden af oplevelser venter</h1>
           <p>15 oplevelser i fem universer – fra kontrolcentre og fremtidsscenarier til galakser af viden.</p>
-          <div className="btn-row"><a href="#/udforsk" className="btn lg">Udforsk oplevelser</a><a href="#/byg" className="btn ghost lg">Få bygget din egen</a></div>
+          <div className="btn-row"><a href="#/udforsk" className="btn lg">Udforsk oplevelser</a><a href="#/laer" className="btn ghost lg">Lær AI</a></div>
         </div>
       </section>
 
@@ -244,7 +247,7 @@ function ExperiencePage({ id, fav }: { id: string; fav: Fav }) {
         </div>
       </div>
       {Demo ? <Boundary key={id}><Suspense fallback={<div className="loading">Indlæser oplevelse…</div>}><Demo /></Suspense></Boundary> : <Preview exp={exp} />}
-      <UseCase id={id} />
+      <LearnLinks expId={id} />
     </section>
   );
 }
