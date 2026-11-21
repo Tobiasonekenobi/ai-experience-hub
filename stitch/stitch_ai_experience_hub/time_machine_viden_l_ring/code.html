@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary":"#370095","on-primary":"#512400","primary-container":"#f28a3c","secondary-container":"#502cb0","surface-container-lowest":"#010e21","on-secondary-fixed":"#20005f","on-primary-fixed-variant":"#723600","on-error":"#690005","primary-fixed-dim":"#ffb787","surface-tint":"#ffb787","outline":"#a38c7f","primary":"#ffb787","secondary-fixed-dim":"#cdbdff","secondary-fixed":"#e8deff","inverse-primary":"#964900","secondary":"#cdbdff","on-background":"#d5e3fd","outline-variant":"#554338","on-primary-fixed":"#311300","surface-dim":"#051426","on-primary-container":"#602c00","background":"#051426","surface-container":"#122033","on-secondary-fixed-variant":"#4e29ad","on-tertiary-fixed-variant":"#004f56","on-tertiary":"#00363b","inverse-on-surface":"#233145","surface-container-high":"#1d2b3e","surface":"#051426","on-tertiary-container":"#004247","surface-container-highest":"#283549","tertiary-container":"#03b6c5","inverse-surface":"#d5e3fd","surface-variant":"#283549","error-container":"#93000a","tertiary-fixed":"#8af2ff","on-error-container":"#ffdad6","on-surface":"#d5e3fd","on-surface-variant":"#dcc1b2","primary-fixed":"#ffdcc7","tertiary-fixed-dim":"#4cd8e7","error":"#ffb4ab","surface-bright":"#2c3a4e","on-tertiary-fixed":"#001f23","tertiary":"#4cd8e7","surface-container-low":"#0e1c2f","on-secondary-container":"#c0acff"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-sm":"0.5rem","gutter-mobile":"1rem","margin":"3rem","space-lg":"1.5rem","gutter":"1.5rem","space-2xl":"4rem","space-xs":"0.25rem","space-md":"1rem","space-xl":"2.5rem","margin-mobile":"1.25rem"},fontFamily:{"headline-sm":["Space Grotesk"],"body-lg":["Manrope"],"headline-lg-mobile":["Space Grotesk"],"label-caps":["Space Grotesk"],"headline-md":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"label-code":["JetBrains Mono"],"body-sm":["Manrope"],"display-hero":["Space Grotesk"],"body-md":["Manrope"]},fontSize:{"headline-sm":["20px",{lineHeight:"28px",letterSpacing:"0em",fontWeight:"500"}],"body-lg":["18px",{lineHeight:"28px",letterSpacing:"-0.005em",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-caps":["11px",{lineHeight:"16px",letterSpacing:"0.12em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"label-code":["12px",{lineHeight:"16px",letterSpacing:"0.06em",fontWeight:"500"}],"body-sm":["13px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"700"}],"body-md":["15px",{lineHeight:"24px",letterSpacing:"0em",fontWeight:"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between py-space-lg px-space-md shadow-[0_12px_40px_-10px_rgba(1,14,33,0.85)]"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-md px-space-xs"><img alt="Cinematic historical technological artifact, Antikythera mechanism mixed with glowing brass gears, ancient sundial astrolabe transforming into modern glowing silicon microchip circuits, dark navy cinematic sci-fi background, warm amber and gold light highlights, cyan electric currents, 8k render, photorealistic moody atmosphere" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC6c1JSOgwFtCV9iLG4qBw2n1ZRp0Mz2LTuwmiPxpxf3Eh1OL_Zb1EWRr6-kpJXlWqMkczFVUQM72bqGChmhTHTv65hNhasB1i1tVPPQAm2RtA5ZV9UhHxZyZdQEotmSJh35omm9UZ3sKQYlfNyNIYDSJDd2_4pyH1aLu-ZPFzKpQ61Xy6dPjbk5xb5pBSi-lZ9Z3VVdVBcJ3F7qHeC7682ywlPvAW3lep6hFo5u8"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface font-bold uppercase tracking-tight">AI HUB OPS</span><span class="font-label-caps text-label-caps text-tertiary">KONTROLPANEL</span></div></div><div class="flex flex-col gap-space-xs"><span class="font-label-caps text-label-caps text-on-surface-variant px-space-sm mb-1">KONSOL &amp; TELEMETRI</span><nav class="flex flex-col gap-1" data-active-classes="bg-surface-container-high text-tertiary font-headline-sm"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="mission-control-live" href="#"><span class="material-symbols-outlined mr-space-sm text-[20px]">radar</span>Mission Live Hub</a><a aria-current="page" class="flex items-center px-space-md py-space-sm rounded-lg transition-all bg-surface-container-high text-tertiary font-headline-sm" data-path="time-machine-konsol" href="#"><span class="material-symbols-outlined mr-space-sm text-[20px]">timelapse</span>08 // Tidsmaskine</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="udforsk-katalog" href="#"><span class="material-symbols-outlined mr-space-sm text-[20px]">grid_view</span>Hele Kataloget</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="mine-gemte" href="#"><span class="material-symbols-outlined mr-space-sm text-[20px]">bookmarks</span>Mine Gemte Sessions</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="system-telemetri" href="#"><span class="material-symbols-outlined mr-space-sm text-[20px]">query_stats</span>Arkiv &amp; Telemetri</a></nav></div></div><div class="flex flex-col gap-space-sm bg-surface-container-low p-space-md rounded-xl"><div class="flex items-center justify-between"><span class="font-label-code text-label-code text-tertiary">SIMULATION STATUS</span><span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Univers 03 Kvantestrøm: 99.4% stabil</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-dim/85 backdrop-blur-2xl z-40 flex items-center justify-between px-gutter shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="flex items-center gap-space-md"><span class="font-label-code text-label-code text-tertiary bg-surface-container px-2 py-1 rounded">UNIVERS 03 // MISSION CONTROL</span></div><div class="flex items-center gap-space-md"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-background w-full"><div class="flex flex-col w-full">
+<!-- Sub-Header & Dynamic Breadcrumb Navigation -->
+<section class="w-full px-gutter pt-space-md pb-space-lg flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs font-label-code text-label-code">
+<span class="text-tertiary">UNIVERS 03 // VIDEN &amp; LÆRING</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant">08 // TIME MACHINE</span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          KRONOLOGISK HISTORIE-MOTOR v2.0
+        </span>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface text-body-sm font-body-sm transition-all shadow-sm" id="reset-timeline-btn">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+          Nulstil Tidsrejse
+        </button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface text-body-sm font-body-sm transition-all shadow-sm" id="bookmark-era-btn">
+<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
+          Gem Epoke (Bogmærke)
+        </button>
+<button class="flex items-center gap-1.5 px-space-lg py-2 rounded-lg bg-primary-container text-on-primary font-headline-sm text-body-sm font-bold shadow-[0_0_24px_rgba(242,138,60,0.35)] hover:shadow-[0_0_32px_rgba(242,138,60,0.55)] transition-all">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+          Start Guidet Tur (5 Minutter)
+        </button>
+</div>
+</div>
+<!-- Title & Narrative Lead -->
+<div class="flex flex-col gap-space-xs max-w-5xl">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">Evolutionsmotor // Telemetri Matrix</span>
+<span class="h-px w-12 bg-primary/40"></span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+        08 // TIME MACHINE — REJSEN GENNEM VORES REVOLUTIONER
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-4xl">
+        Udforsk teknologiens og beregningens evolution fra antikkens analoge gear til moderne kunstig intelligens. Træk i tidslinjen, undersøg historiske artefakter og sammenlign epokers gennembrud i realtid.
+      </p>
+</div>
+</section>
+<!-- Interactive Timeline Scrubber & Filters -->
+<section class="w-full px-gutter mb-space-xl">
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-[0_12px_40px_-10px_rgba(1,14,33,0.85)] flex flex-col gap-space-lg relative overflow-hidden">
+<!-- Ambient Glow Behind Scrubber -->
+<div class="absolute -top-24 left-1/3 w-96 h-48 bg-tertiary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 right-1/4 w-96 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Scrubber Metainfo Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-md z-10">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[22px]">history_edu</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Kronologisk Kontinuum</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-code text-label-code text-tertiary">
+            150 f.Kr. → 2025+ e.Kr.
+          </span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container font-label-code text-label-code text-primary">
+<span class="material-symbols-outlined text-[16px] text-primary">timeline</span>
+<span>Aktiv Periode: 150 f.Kr. vs. 2025 e.Kr. (Evolutionær Kvantisering)</span>
+</div>
+</div>
+<!-- Timeline Nodes & Progress Rail -->
+<div class="relative py-4 z-10">
+<!-- Background Track -->
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden relative">
+<div class="h-full bg-gradient-to-r from-primary via-tertiary to-primary-container w-full transition-all duration-300" id="timeline-progress-fill"></div>
+</div>
+<!-- 5 Eras Nodes -->
+<div class="grid grid-cols-5 gap-2 pt-space-md">
+<!-- Era 1 -->
+<button class="timeline-era-btn flex flex-col items-start text-left group transition-all" data-era="1">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-primary/20 group-hover:scale-125 transition-transform"></span>
+<span class="font-label-code text-label-code text-primary font-bold">-150 f.Kr.</span>
+</div>
+<span class="font-headline-sm text-body-sm text-on-surface font-semibold group-hover:text-primary">Oldtiden</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant line-clamp-1">Antikythera &amp; Kugleramme</span>
+</button>
+<!-- Era 2 -->
+<button class="timeline-era-btn flex flex-col items-start text-left group transition-all" data-era="2">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-3.5 h-3.5 rounded-full bg-surface-bright group-hover:bg-primary transition-all"></span>
+<span class="font-label-code text-label-code text-on-surface-variant">1642 e.Kr.</span>
+</div>
+<span class="font-headline-sm text-body-sm text-on-surface-variant font-semibold group-hover:text-on-surface">Renæssance</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant/70 line-clamp-1">Pascaline &amp; Bogtryk</span>
+</button>
+<!-- Era 3 -->
+<button class="timeline-era-btn flex flex-col items-start text-left group transition-all" data-era="3">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-3.5 h-3.5 rounded-full bg-surface-bright group-hover:bg-tertiary transition-all"></span>
+<span class="font-label-code text-label-code text-on-surface-variant">1837 e.Kr.</span>
+</div>
+<span class="font-headline-sm text-body-sm text-on-surface-variant font-semibold group-hover:text-on-surface">Industriel Revolution</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant/70 line-clamp-1">Analytical Engine &amp; Væv</span>
+</button>
+<!-- Era 4 -->
+<button class="timeline-era-btn flex flex-col items-start text-left group transition-all" data-era="4">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-3.5 h-3.5 rounded-full bg-surface-bright group-hover:bg-tertiary transition-all"></span>
+<span class="font-label-code text-label-code text-on-surface-variant">1945–1971</span>
+</div>
+<span class="font-headline-sm text-body-sm text-on-surface-variant font-semibold group-hover:text-on-surface">Computerens Fødsel</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant/70 line-clamp-1">ENIAC &amp; Intel 4004</span>
+</button>
+<!-- Era 5 (Active) -->
+<button class="timeline-era-btn flex flex-col items-start text-left group transition-all" data-era="5">
+<div class="flex items-center gap-2 mb-1">
+<span class="w-4 h-4 rounded-full bg-tertiary ring-4 ring-tertiary/40 animate-pulse"></span>
+<span class="font-label-code text-label-code text-tertiary font-bold">1997–2025+</span>
+</div>
+<span class="font-headline-sm text-body-sm text-tertiary font-bold">Neurale Tidsalder</span>
+<span class="font-body-sm text-[12px] text-on-surface line-clamp-1">Transformatormodeller &amp; AGI</span>
+</button>
+</div>
+</div>
+<!-- Scrubber Sliders / Filters -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs z-10">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant mr-1">FILTRER KRONOLOGI:</span>
+<button class="filter-pill px-3 py-1 rounded-full bg-tertiary text-on-tertiary font-label-code text-label-code font-bold transition-all shadow-[0_0_12px_rgba(76,216,231,0.4)]">
+            Alle Opfindelser
+          </button>
+<button class="filter-pill px-3 py-1 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-all">
+            Mekanik &amp; Maskiner
+          </button>
+<button class="filter-pill px-3 py-1 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-all">
+            Matematik &amp; Beregning
+          </button>
+<button class="filter-pill px-3 py-1 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-all">
+            Kommunikation &amp; Netværk
+          </button>
+<button class="filter-pill px-3 py-1 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-all">
+            Algoritmer &amp; AI
+          </button>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-code text-label-code">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary"></span>
+<span>5 Epoker Synkroniseret</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Hero Section: Artifact Matrix & Epoch Breakdown -->
+<section class="w-full px-gutter mb-space-xl grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Panel: Artifact Inspection -->
+<div class="xl:col-span-7 flex flex-col rounded-xl bg-surface-container-low shadow-[0_12px_40px_-10px_rgba(1,14,33,0.85)] overflow-hidden">
+<!-- Artifact Header -->
+<div class="px-space-lg py-space-md bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-code text-label-code text-primary font-bold tracking-wider">
+            HISTORISK ARTEFAKT-INSPEKTION // ANCIENT TO MODERN MATRIX
+          </span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">ID: #TM-01 // ANCIENT_MODERN</span>
+</div>
+<!-- Viewport Display Container -->
+<div class="relative w-full aspect-[16/10] bg-surface-container-lowest overflow-hidden flex items-center justify-center">
+<!-- Rendered Image -->
+<img alt="Cinematic Antikythera mechanism mixed with glowing circuits" class="w-full h-full object-cover select-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC6c1JSOgwFtCV9iLG4qBw2n1ZRp0Mz2LTuwmiPxpxf3Eh1OL_Zb1EWRr6-kpJXlWqMkczFVUQM72bqGChmhTHTv65hNhasB1i1tVPPQAm2RtA5ZV9UhHxZyZdQEotmSJh35omm9UZ3sKQYlfNyNIYDSJDd2_4pyH1aLu-ZPFzKpQ61Xy6dPjbk5xb5pBSi-lZ9Z3VVdVBcJ3F7qHeC7682ywlPvAW3lep6hFo5u8"/>
+<!-- Cinematic Optical Vignette -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-surface-container-lowest/40 pointer-events-none"></div>
+<!-- Crosshair & Technical Overlays -->
+<div class="absolute top-4 left-4 font-label-code text-label-code text-tertiary/80 bg-surface-container-lowest/80 px-2 py-1 rounded backdrop-blur">
+          RADIAL SAMMENFLETNING: 64.28° N
+        </div>
+<div class="absolute top-4 right-4 font-label-code text-label-code text-primary/80 bg-surface-container-lowest/80 px-2 py-1 rounded backdrop-blur">
+          KVANTE-FRAKTAL: AKTIV
+        </div>
+<!-- Interactive Hotspot 1 (Mechanical Gears - Ancient) -->
+<div class="group absolute top-[48%] left-[28%] -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative flex items-center justify-center cursor-pointer">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-primary opacity-60"></span>
+<span class="relative inline-flex rounded-full h-5 w-5 bg-primary text-on-primary items-center justify-center shadow-[0_0_16px_rgba(255,183,135,0.9)]">
+<span class="font-label-code text-[10px] font-bold">01</span>
+</span>
+</div>
+<!-- Tooltip Popup -->
+<div class="absolute left-8 -top-3 hidden group-hover:flex flex-col w-64 p-3 rounded-lg bg-surface-container-highest/95 backdrop-blur-md shadow-2xl z-30 pointer-events-none">
+<span class="font-label-code text-[10px] text-primary font-bold">ARTEFAKT KOMPONENT 01</span>
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Epicyklisk Geartog</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-1 leading-snug">
+              Oldgræsk astronomisk computer med differentialdrev, beregnet til at forudsige månefaser og solformørkelser.
+            </span>
+</div>
+</div>
+<!-- Hotspot 2 (Neural Microchips - Modern) -->
+<div class="group absolute top-[44%] right-[22%] -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative flex items-center justify-center cursor-pointer">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-tertiary opacity-60"></span>
+<span class="relative inline-flex rounded-full h-5 w-5 bg-tertiary text-on-tertiary items-center justify-center shadow-[0_0_16px_rgba(76,216,231,0.9)]">
+<span class="font-label-code text-[10px] font-bold">02</span>
+</span>
+</div>
+<!-- Tooltip Popup -->
+<div class="absolute right-8 -top-3 hidden group-hover:flex flex-col w-64 p-3 rounded-lg bg-surface-container-highest/95 backdrop-blur-md shadow-2xl z-30 pointer-events-none">
+<span class="font-label-code text-[10px] text-tertiary font-bold">ARTEFAKT KOMPONENT 02</span>
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Mikroprocessor &amp; Tensor Cores</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-1 leading-snug">
+              Sub-nanometer siliciumbaner udstyret med milliarder af transistorer til parallel matrixmultiplikation og neurale netværk.
+            </span>
+</div>
+</div>
+<!-- Hotspot 3 (Astrolabe Inscription Ring) -->
+<div class="group absolute bottom-[24%] left-[44%] -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="relative flex items-center justify-center cursor-pointer">
+<span class="animate-ping absolute inline-flex h-6 w-6 rounded-full bg-primary-container opacity-50"></span>
+<span class="relative inline-flex rounded-full h-4 w-4 bg-primary-container text-on-primary items-center justify-center">
+<span class="font-label-code text-[9px] font-bold">03</span>
+</span>
+</div>
+<!-- Tooltip Popup -->
+<div class="absolute left-6 -top-3 hidden group-hover:flex flex-col w-64 p-3 rounded-lg bg-surface-container-highest/95 backdrop-blur-md shadow-2xl z-30 pointer-events-none">
+<span class="font-label-code text-[10px] text-primary-container font-bold">ARTEFAKT KOMPONENT 03</span>
+<span class="font-headline-sm text-body-sm font-semibold text-on-surface">Messing-Astrolabium &amp; Kalender</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-1 leading-snug">
+              Zodiakskalaer indgraveret i bronze, forfaderen til koordinatberegning og himmelnavigation.
+            </span>
+</div>
+</div>
+</div>
+<!-- Caption & Archaeo-Dossier Quote -->
+<div class="p-space-md flex flex-col gap-2 bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface font-semibold">
+            Artefakt #TM-01: Fra Antikythera-mekanismens 37 bronzetandhjul til neurale silicium-kredsløb
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-code text-label-code text-tertiary">
+            Arkæometrisk Scan
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic">
+          “Mennesket har altid stræbt efter at udlicitere tænkningen til materien.”
+          <span class="not-italic text-outline font-label-code text-[11px] block mt-0.5">— Arkæo-teknologisk dossier, Univers 03</span>
+</p>
+</div>
+</div>
+<!-- Right Panel: Epoch Detail & Historical Insight -->
+<div class="xl:col-span-5 flex flex-col justify-between p-space-lg rounded-xl bg-surface-container-low shadow-[0_12px_40px_-10px_rgba(1,14,33,0.85)] gap-space-lg">
+<div class="flex flex-col gap-space-md">
+<!-- Badge & Epoch Title -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2.5 py-1 rounded bg-tertiary/15 text-tertiary font-label-code text-label-code font-bold">
+              AKTIV EPOKE // REVOLUTION 05
+            </span>
+<span class="font-label-code text-label-code text-on-surface-variant">Fase 5 af 5</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold mt-1">
+            Den Neurale Tidsalder (2012–2025+)
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Skiftet fra regelbaserede algoritmer til selvlærende neurale repræsentationer og generative grundmodeller. Beregning er ikke længere blot mekaniske formler, men adaptiv semantisk ræsonnering.
+          </p>
+</div>
+<!-- Breakthrough Metrics Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-tertiary">KRAFT (FLOPS)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">10²² FLOPs</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">vs. 0.001 Ops/sek i 150 f.Kr.</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-primary">HUKOMMELSE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Terabytes</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">i lommeformat (NVMe)</span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-secondary">RÆKKEVIDDE</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">5.4 Mia.</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">opkoblede sind i realtid</span>
+</div>
+</div>
+<!-- Ada Lovelace Quote Block -->
+<div class="p-space-md rounded-lg bg-surface-container-high relative overflow-hidden flex flex-col gap-1">
+<div class="absolute right-2 -bottom-2 text-surface-container-highest/40 pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">format_quote</span>
+</div>
+<div class="flex items-center gap-2 text-primary font-label-code text-label-code font-semibold">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+            Ada Lovelace (1843)
+          </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic relative z-10 leading-relaxed">
+            “Analytical Engine væver algebraiske mønstre, præcis som Jacquard-væven væver blomster og blade.”
+          </p>
+</div>
+</div>
+<!-- Epoch Micro-telemetry Graph & CTA -->
+<div class="flex flex-col gap-space-sm pt-space-sm">
+<div class="flex items-center justify-between text-body-sm">
+<span class="font-label-code text-label-code text-on-surface-variant">Konvergens-grad: Biologi × Silicium</span>
+<span class="font-label-code text-label-code text-tertiary font-bold">89.7%</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full w-[89.7%]"></div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<button class="flex items-center gap-1.5 text-primary hover:text-primary-container font-label-code text-label-code font-bold transition-colors">
+<span class="material-symbols-outlined text-[18px]">library_books</span>
+            Åbn Fuld Epoke-Dossier (PDF)
+          </button>
+<button class="flex items-center gap-1 px-space-md py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-tertiary font-label-code text-label-code font-bold transition-all">
+<span class="material-symbols-outlined text-[16px]">compare_arrows</span>
+            Fokusér i Matrix
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Middle Section: Side-by-Side Comparison Matrix -->
+<section class="w-full px-gutter mb-space-xl">
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-[0_12px_40px_-10px_rgba(1,14,33,0.85)] flex flex-col gap-space-lg">
+<!-- Section Title & Comparison Selector -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-tertiary tracking-wider uppercase">ANALYTISK DUALITET</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            FØR OG EFTER: EPOKE-SAMMENLIGNING (Side-om-side Matrix)
+          </h3>
+</div>
+<!-- Era Comparison Switcher Dropdown -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-on-surface-variant">Sammenlign mod:</span>
+<div class="relative">
+<select class="appearance-none bg-surface-container-high text-on-surface font-label-code text-label-code py-2 pl-3 pr-8 rounded-lg cursor-pointer focus:outline-none">
+<option>Oldtiden (-150 f.Kr. Antikythera)</option>
+<option>Middelalder &amp; Islamisk Guldalder (820 e.Kr.)</option>
+<option>Oplysningstiden (1642 Pascaline)</option>
+<option>1950'erne (Turing &amp; ENIAC)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2.5 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Comparative Dual Column Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Column A: Ancient -->
+<div class="p-space-lg rounded-xl bg-surface-container flex flex-col gap-space-md relative overflow-hidden shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Oldtidens Beregner</span>
+</div>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container-high text-primary">
+              Antikythera, 150 f.Kr.
+            </span>
+</div>
+<!-- Feature 1: Materiale -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">MATERIALE &amp; SUBSTRAT</span>
+<p class="font-body-md text-body-md text-on-surface">
+              Håndstøbt bronze og præcisionsfortandinger, bevaret i træindkapslet æske med græske inskriptioner.
+            </p>
+</div>
+<!-- Feature 2: Input / Output -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">INPUT &amp; OUTPUT</span>
+<p class="font-body-md text-body-md text-on-surface">
+              Manuelt håndsving som tids-input; planetariske visere og zodiak-kalenderskiver som visualisering.
+            </p>
+</div>
+<!-- Feature 3: Skalerbarhed -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">PROGRAMMERBARHED &amp; LOGIK</span>
+<p class="font-body-md text-body-md text-on-surface">
+              Én unik mekanisk konstruktion (ubøjelig fastforankret logik, udelukkende dedikeret til himmellegemer).
+            </p>
+</div>
+<!-- SVG Visual Micro Chart: Mechanical Determinism -->
+<div class="mt-2 pt-space-sm flex items-center justify-between text-body-sm text-on-surface-variant">
+<span class="font-label-code text-label-code">Determinisme: 100%</span>
+<svg class="w-32 h-6 text-primary" fill="none" viewbox="0 0 120 20">
+<path d="M0 10 H30 L40 3 L50 17 L60 10 H120" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Column B: Modern AI Supercomputer -->
+<div class="p-space-lg rounded-xl bg-surface-container-high flex flex-col gap-space-md relative overflow-hidden shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">Nutidens AI-Supercomputer</span>
+</div>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container-highest text-tertiary">
+              Tensor Cluster, 2025
+            </span>
+</div>
+<!-- Feature 1: Materiale -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-tertiary">MATERIALE &amp; SUBSTRAT</span>
+<p class="font-body-md text-body-md text-on-surface">
+              Sub-3nm siliciumwafer, fotoniske samlinger og superledende kobberbaner kølet med flydende væske.
+            </p>
+</div>
+<!-- Feature 2: Input / Output -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-tertiary">INPUT &amp; OUTPUT</span>
+<p class="font-body-md text-body-md text-on-surface">
+              Naturligt menneskesprog, milliarder af billeder og sensordata ind; multimodal syntese og ræsonnering ud.
+            </p>
+</div>
+<!-- Feature 3: Skalerbarhed -->
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-tertiary">PROGRAMMERBARHED &amp; LOGIK</span>
+<p class="font-body-md text-body-md text-on-surface">
+              Massive distribuerede neurale netværk med milliarder af vægte; kontinuerlig læring og fleksibel generalisering.
+            </p>
+</div>
+<!-- SVG Visual Micro Chart: Neural Probability Flow -->
+<div class="mt-2 pt-space-sm flex items-center justify-between text-body-sm text-on-surface-variant">
+<span class="font-label-code text-label-code">Probabilistisk Fleksibilitet: 99.8%</span>
+<svg class="w-32 h-6 text-tertiary" fill="none" viewbox="0 0 120 20">
+<path d="M0 10 Q30 0 60 10 T120 10" stroke="currentColor" stroke-width="2"></path>
+<circle cx="60" cy="10" fill="currentColor" r="3"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Didactic Module: Interactive Timeline Quiz -->
+<section class="w-full px-gutter mb-space-xl">
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-[0_12px_40px_-10px_rgba(1,14,33,0.85)] flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary uppercase">DIDAKTISK HISTORIE-UDFORDRING</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+              Tidshoppet: Kan du placere disse 3 milepæle i korrekt rækkefølge?
+            </h4>
+</div>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container font-label-code text-label-code text-primary-fixed">
+<span class="material-symbols-outlined text-[16px]">military_tech</span>
+<span>Præmie: +150 Lærings-XP</span>
+</div>
+</div>
+<!-- Cards to Order -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md" id="quiz-cards-container">
+<!-- Card 1 -->
+<div class="quiz-item p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-md hover:bg-surface-container-high transition-all" data-order="2">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-code text-label-code text-on-surface-variant">BOGLIG MILEPÆL</span>
+<span class="quiz-badge font-label-code text-label-code text-tertiary font-bold">Position ?</span>
+</div>
+<h5 class="font-headline-sm text-body-lg font-semibold text-on-surface mt-2">
+              Alan Turing: “Computing Machinery and Intelligence”
+            </h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Det legendariske akademiske oplæg, der introducerede 'Imitation Game' (Turing-testen) og formulerede tanken om maskinintelligens.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-code text-label-code text-outline">1950 e.Kr.</span>
+<div class="flex gap-1.5">
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="1">1</button>
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="2">2</button>
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="3">3</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="quiz-item p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-md hover:bg-surface-container-high transition-all" data-order="1">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-code text-label-code text-on-surface-variant">MATEMATISK FUNDAMENT</span>
+<span class="quiz-badge font-label-code text-label-code text-tertiary font-bold">Position ?</span>
+</div>
+<h5 class="font-headline-sm text-body-lg font-semibold text-on-surface mt-2">
+              Al-Khwarizmis algebraiske afhandlinger
+            </h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Introduktionen af systematiske løsninger til ligninger i Bagdad. Hans navn blev ophavet til selve begrebet “Algoritme”.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-code text-label-code text-outline">ca. 820 e.Kr.</span>
+<div class="flex gap-1.5">
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="1">1</button>
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="2">2</button>
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="3">3</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="quiz-item p-space-md rounded-xl bg-surface-container flex flex-col justify-between gap-space-md hover:bg-surface-container-high transition-all" data-order="3">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-code text-label-code text-on-surface-variant">ELEKTRONISK GENNEMBRUD</span>
+<span class="quiz-badge font-label-code text-label-code text-tertiary font-bold">Position ?</span>
+</div>
+<h5 class="font-headline-sm text-body-lg font-semibold text-on-surface mt-2">
+              Transistorens opfindelse i Bell Labs
+            </h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Bardeen, Brattain og Shockley erstatter de skrøbelige radiorør med punktkontakt-halvledere, der kickstarter mikrosilicium-æraen.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-code text-label-code text-outline">1947 e.Kr.</span>
+<div class="flex gap-1.5">
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="1">1</button>
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="2">2</button>
+<button class="order-btn px-2.5 py-1 rounded bg-surface-container-highest text-on-surface hover:bg-primary hover:text-on-primary text-label-code font-label-code font-bold transition-all" data-pos="3">3</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Verification & Dynamic Feedback Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-2">
+<div class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2" id="quiz-feedback">
+<span class="material-symbols-outlined text-[20px] text-tertiary">info</span>
+          Tildel position 1, 2 og 3 til begivenhederne for at validere tidsforløbet.
+        </div>
+<button class="px-space-lg py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-headline-sm text-body-sm font-bold transition-all flex items-center gap-2" id="verify-quiz-btn">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+          Bekræft Kronologi
+        </button>
+</div>
+</div>
+</section>
+<!-- Platform Note & Architectural Footer Bar -->
+<footer class="w-full px-gutter pb-space-2xl">
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-wrap items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Faktuelt kurateret historisk tidslinje. Ingen opdigtede begivenheder — baseret på videnskabshistoriske kilder.
+        </span>
+</div>
+<div class="flex items-center gap-space-md font-label-code text-label-code text-on-surface-variant">
+<span class="px-2 py-1 rounded bg-surface-container">React • TypeScript • Three.js • LocalStorage</span>
+<button class="text-tertiary hover:underline flex items-center gap-1" id="reset-session-data">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+          Nulstil demodata
+        </button>
+</div>
+</div>
+</footer>
+</div>
+<script>
+  // Simple interactive logic for filters, quiz ordering and feedback
+  document.addEventListener('DOMContentLoaded', () => {
+    // Filter pill toggles
+    const filterPills = document.querySelectorAll('.filter-pill');
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => {
+          p.classList.remove('bg-tertiary', 'text-on-tertiary', 'font-bold', 'shadow-[0_0_12px_rgba(76,216,231,0.4)]');
+          p.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        pill.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        pill.classList.add('bg-tertiary', 'text-on-tertiary', 'font-bold', 'shadow-[0_0_12px_rgba(76,216,231,0.4)]');
+      });
+    });
+
+    // Quiz order assignments
+    const quizItems = document.querySelectorAll('.quiz-item');
+    quizItems.forEach(item => {
+      const orderBtns = item.querySelectorAll('.order-btn');
+      const badge = item.querySelector('.quiz-badge');
+      orderBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          orderBtns.forEach(b => {
+            b.classList.remove('bg-primary', 'text-on-primary');
+            b.classList.add('bg-surface-container-highest', 'text-on-surface');
+          });
+          btn.classList.add('bg-primary', 'text-on-primary');
+          btn.classList.remove('bg-surface-container-highest', 'text-on-surface');
+          const pos = btn.getAttribute('data-pos');
+          badge.textContent = 'Valgt: #' + pos;
+          item.setAttribute('data-chosen', pos);
+        });
+      });
+    });
+
+    // Verify quiz button
+    const verifyBtn = document.getElementById('verify-quiz-btn');
+    const feedback = document.getElementById('quiz-feedback');
+    if (verifyBtn && feedback) {
+      verifyBtn.addEventListener('click', () => {
+        let correct = true;
+        let allChosen = true;
+        quizItems.forEach(item => {
+          const chosen = item.getAttribute('data-chosen');
+          if (!chosen) allChosen = false;
+        });
+
+        if (!allChosen) {
+          feedback.innerHTML = '<span class="material-symbols-outlined text-[20px] text-primary">warning</span> Vælg venligst en position (1, 2 eller 3) for hver begivenhed.';
+          return;
+        }
+
+        // Expected chronological order:
+        // 1. Al-Khwarizmi (820 e.Kr) -> Pos 1
+        // 2. Bell Labs Transistor (1947 e.Kr) -> Pos 2
+        // 3. Turing Paper (1950 e.Kr) -> Pos 3
+        const card1Chosen = document.querySelector('.quiz-item[data-order="1"]')?.getAttribute('data-chosen');
+        const card2Chosen = document.querySelector('.quiz-item[data-order="3"]')?.getAttribute('data-chosen');
+        const card3Chosen = document.querySelector('.quiz-item[data-order="2"]')?.getAttribute('data-chosen');
+
+        if (card1Chosen === '1' && card2Chosen === '2' && card3Chosen === '3') {
+          feedback.innerHTML = '<span class="material-symbols-outlined text-[20px] text-tertiary">check_circle</span> <span class="text-tertiary font-bold">Korrekt kronologi!</span> 820 e.Kr. &rarr; 1947 e.Kr. &rarr; 1950 e.Kr. Du har optjent +150 XP.';
+          verifyBtn.classList.add('bg-tertiary', 'text-on-tertiary');
+          verifyBtn.textContent = 'Gennemført (+150 XP)';
+        } else {
+          feedback.innerHTML = '<span class="material-symbols-outlined text-[20px] text-error">cancel</span> <span class="text-error font-medium">Ikke helt korrekt.</span> Husk: Al-Khwarizmi var middelalder, transistoren kom i 1947 før Turings artikel i 1950.';
+        }
+      });
+    }
+
+    // Bookmark notification feedback
+    const bookmarkBtn = document.getElementById('bookmark-era-btn');
+    if (bookmarkBtn) {
+      bookmarkBtn.addEventListener('click', () => {
+        bookmarkBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary">bookmark_added</span> Epoke gemt i session!';
+        setTimeout(() => {
+          bookmarkBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">bookmark_add</span> Gem Epoke (Bogmærke)';
+        }, 3000);
+      });
+    }
+  });
+</script></main></div></body></html>

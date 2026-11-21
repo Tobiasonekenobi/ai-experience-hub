@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AI EXPERIENCE HUB</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-secondary-fixed-variant":"#4e29ad","on-primary-container":"#602c00","on-tertiary":"#00363b","primary-container":"#f28a3c","on-tertiary-fixed-variant":"#004f56","primary":"#ffb787","surface-container-lowest":"#010e21","inverse-surface":"#d5e3fd","on-error-container":"#ffdad6","tertiary-container":"#03b6c5","on-primary-fixed":"#311300","surface-container-low":"#0e1c2f","background":"#051426","tertiary":"#4cd8e7","surface-container-high":"#1d2b3e","on-secondary":"#370095","error":"#ffb4ab","on-background":"#d5e3fd","tertiary-fixed":"#8af2ff","surface-bright":"#2c3a4e","on-tertiary-fixed":"#001f23","on-error":"#690005","primary-fixed-dim":"#ffb787","secondary":"#cdbdff","inverse-primary":"#964900","outline-variant":"#554338","outline":"#a38c7f","tertiary-fixed-dim":"#4cd8e7","secondary-fixed-dim":"#cdbdff","on-surface-variant":"#dcc1b2","on-primary-fixed-variant":"#723600","surface-dim":"#051426","on-primary":"#512400","secondary-fixed":"#e8deff","on-secondary-fixed":"#20005f","surface-variant":"#283549","error-container":"#93000a","surface-container":"#122033","surface-tint":"#ffb787","secondary-container":"#502cb0","surface-container-highest":"#283549","surface":"#051426","on-tertiary-container":"#004247","on-surface":"#d5e3fd","primary-fixed":"#ffdcc7","on-secondary-container":"#c0acff","inverse-on-surface":"#233145"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2.5rem","space-md":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","space-lg":"1.5rem","gutter":"1.5rem","margin":"3rem","space-2xl":"4rem"},"fontFamily":{"display-hero":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"label-code":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"body-sm":["Manrope"],"label-caps":["Space Grotesk"],"body-lg":["Manrope"],"body-md":["Manrope"]},"fontSize":{"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.12em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_12px_40px_-10px_rgba(1,14,33,0.9)]"><div class="h-28 w-full px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><img alt="AI Experience Hub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDkdF3rDL37fiANICNL3jSw_sU2J1_NfgXwxGFu6QPF8p5-3gJSvH3BHgO5jHW4bFF_a4HDqztelZY1KLK3DI41lhFPD8qps18mw8mwOZfdf1TfjUKFFMJILcPEdq3KDfPPqDzK64KnW15ymJBKnQq9sBSWzlPOnpTY3wL6Udwtk9wj_JFQaedcQzpCkZFm_BfalXF5JycBYOvSPEuWRkzzXNZIgyMImfiJNl9V0dA"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">AI Experience Hub</span><span class="font-label-code text-label-code text-tertiary tracking-widest uppercase">Tryk. Oplev. Udforsk.</span></div></div><div class="flex-1 max-w-xl mx-auto hidden lg:flex items-center"><div class="relative w-full flex items-center bg-surface-container-low/90 rounded-xl px-space-md py-space-xs ring-1 ring-white/10 focus-within:ring-tertiary transition-all"><span class="material-symbols-outlined text-tertiary mr-space-sm shrink-0">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" placeholder="Søg blandt 15 interaktive oplevelser..." type="text"/><span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer shrink-0 ml-space-xs text-lg">tune</span></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,138,60,0.3)]"><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="opdag" href="#">Opdag</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="universer" href="#">Universer</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="udforsk-katalog" href="#">Udforsk (Katalog)</a><a class="relative px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-path="mine-gemte" href="#"><span>Mine Gemte</span><span class="font-label-code text-label-code px-1.5 py-0.2 bg-primary-container text-on-primary-container rounded-full font-bold">3</span></a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="mission-control-live" href="#">Mission Control Live</a></nav><div class="flex items-center gap-space-sm pl-space-md"><div class="flex flex-col items-end hidden sm:flex"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary">Online Demo</span></div><span class="font-label-code text-label-code text-on-surface-variant">Dansk Hub v2.4</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-tertiary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWr0o0jNcunx_R8-mV8TEfa4am-26dV9JetTvgcrbwe898nL04XXZlVMbhaKzKU4Lv7XVFUzH_ZT5F4yKNRDXYAAh11uBXRAuX67vo_Cx8qU0hmywo65p5J6DozZUnkzWBBcWDhY6FHTlZEQUKpBacLGBsnp7KW_1e3v2z7Ckb-kfJSgV79SwzQMNboqnEVs9uQhF_puinK9QuMWGdGTXNIqxd_D-lGMhyy1gctdw"/></div></div></div><div class="flex items-center gap-space-sm overflow-x-auto pb-0.5 pt-1"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant/70 shrink-0 mr-space-xs">Fokus:</span><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary ring-1 ring-tertiary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="data-fremtid" href="#">Data &amp; Fremtid</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary ring-1 ring-secondary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="visuel-magi" href="#">Visuel Magi</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary ring-1 ring-primary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="viden-laering" href="#">Viden &amp; Læring</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary-fixed ring-1 ring-tertiary-fixed/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="spil-opdagelser" href="#">Spil &amp; Opdagelser</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary-fixed-dim ring-1 ring-primary-fixed-dim/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="kreativitet-teknologi" href="#">Kreativitet &amp; Teknologi</a></div></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Command Ribbon & Header -->
+<section class="w-full px-margin py-space-md bg-surface-container-lowest">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="px-space-sm py-0.5 rounded-full bg-primary-container/20 text-primary font-label-code text-label-code uppercase tracking-wider">
+            Univers 05 // Kreativitet &amp; Teknologi
+          </span>
+<span class="text-on-surface-variant font-label-code text-label-code">•</span>
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest">
+            15 // Storyboard Cinema
+          </span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-surface-container-high text-tertiary-fixed font-label-code text-label-code shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+            STUDIO MOTOR v2.4 // KLIPPERUM AKTIV
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">
+          15 // STORYBOARD CINEMA — Virtuelt Klipperum
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-4xl">
+          Instruktørpult for sci-fi-filmen “Signal From Tomorrow”. Udforsk dynamiske kameravinkler, linsevalg, kompositionsgitter og tidslinjeredigering i realtid.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm shrink-0 flex-wrap">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-code text-label-code transition-all flex items-center gap-1.5 shadow-sm" id="btn-reset">
+<span class="material-symbols-outlined text-base text-on-surface-variant">refresh</span>
+          Nulstil Sekvens
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high hover:bg-surface-bright text-tertiary font-label-code text-label-code transition-all flex items-center gap-1.5 shadow-sm" id="btn-export">
+<span class="material-symbols-outlined text-base">ios_share</span>
+          Eksportér Shotlist (PDF/JSON)
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-gradient-to-r from-primary-container to-primary text-on-primary font-headline-sm text-headline-sm transition-all flex items-center gap-2 shadow-lg shadow-primary-container/20 hover:scale-[1.02]" id="btn-play-preview">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+          Afspil Sekvens (Simuleret Preview)
+        </button>
+</div>
+</div>
+</section>
+<!-- Main Viewport Studio Frame -->
+<section class="w-full px-margin py-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- HERO MONITOR (COL 1-8) -->
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-sm font-label-code text-label-code text-on-surface-variant">
+<span class="text-primary font-bold uppercase tracking-wider">Monitor 01: Master Output</span>
+<span>//</span>
+<span class="text-tertiary">4K DCI (4096 × 1714)</span>
+<span>//</span>
+<span class="text-on-surface">ProRes 4444 XQ</span>
+</div>
+<div class="flex items-center gap-2 font-label-code text-label-code text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="text-error font-bold">REC</span>
+<span>CALIBRATED D65</span>
+</div>
+</div>
+<!-- Cinema Screen Box (2.39:1 CinemaScope feel) -->
+<div class="relative w-full aspect-[21/9] bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl flex flex-col justify-between p-space-md select-none group">
+<!-- Background Stage Image -->
+<img alt="Master Screen Output" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 scale-100 group-hover:scale-[1.01] transition-transform" id="master-stage-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe2fmBcWjhaK6Jj_HmJjYNW_Whpzix__nzYLLUdefZ6qfwiL4GsIKlfMAaBI0fvSmsra5OT5SipG9yiFm7s00m8qKNW3jIiTl79pDD1HuXwdD2YDDUWYWngNZPm5z6jopWOzI-pVCnbb1GEh8mHcjrHCv-khZnUYAedL_javxfIGrmPHFe_op9YJH37EoKcE_vqE2EoW2p0s4hoHBwAi-0kC6O5-Fp2JySSNNp_SQ"/>
+<!-- Dynamic LUT / Atmosphere Gradient Layer -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-surface-container-lowest/60 mix-blend-multiply pointer-events-none transition-all duration-300" id="lut-overlay"></div>
+<!-- Composition Grids (Toggled by JS) -->
+<div class="absolute inset-0 grid grid-cols-3 grid-rows-3 pointer-events-none transition-opacity duration-300" id="grid-thirds">
+<div class="shadow-[inset_-1px_0_0_rgba(76,216,231,0.25)]"></div>
+<div class="shadow-[inset_-1px_0_0_rgba(76,216,231,0.25)]"></div>
+<div></div>
+<div class="shadow-[inset_0_-1px_0_rgba(76,216,231,0.25),inset_-1px_0_0_rgba(76,216,231,0.25)]"></div>
+<div class="shadow-[inset_0_-1px_0_rgba(76,216,231,0.25),inset_-1px_0_0_rgba(76,216,231,0.25)]"></div>
+<div class="shadow-[inset_0_-1px_0_rgba(76,216,231,0.25)]"></div>
+<div class="shadow-[inset_-1px_0_0_rgba(76,216,231,0.25)]"></div>
+<div class="shadow-[inset_-1px_0_0_rgba(76,216,231,0.25)]"></div>
+<div></div>
+</div>
+<!-- Title Safe Guides (90%) -->
+<div class="absolute inset-[5%] rounded-lg pointer-events-none shadow-[inset_0_0_0_1px_rgba(255,183,135,0.2)]" id="grid-safe"></div>
+<!-- HUD Header Overlay -->
+<div class="relative z-10 flex items-center justify-between text-on-surface font-label-code text-label-code drop-shadow-md">
+<div class="flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur-md px- space-sm py-1 rounded-md px-2">
+<span class="text-error font-bold tracking-wider flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span> REC
+              </span>
+<span class="text-on-surface-variant font-bold">24.000 FPS</span>
+<span class="text-tertiary-fixed font-bold tracking-widest" id="hud-timecode">TC 00:04:12:18</span>
+<span class="text-primary font-bold">SC 02 / SHOT 04B</span>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-lowest/80 backdrop-blur-md px-2 py-1 rounded-md">
+<span class="text-primary" id="hud-lens">35mm Anamorphic T1.5</span>
+<span class="text-on-surface-variant">//</span>
+<span class="text-on-surface">2.39:1 CinemaScope</span>
+<span class="text-tertiary font-bold">ISO 800</span>
+<span class="text-on-surface-variant">180.0° SHUTTER</span>
+</div>
+</div>
+<!-- HUD Center Target Reticle -->
+<div class="relative z-10 self-center flex items-center justify-center opacity-40 pointer-events-none">
+<span class="material-symbols-outlined text-4xl text-tertiary">filter_center_focus</span>
+</div>
+<!-- HUD Bottom Area: Dialogue & Audio Spectrogram -->
+<div class="relative z-10 flex flex-col gap-space-xs">
+<!-- Dramatic Subtitle -->
+<div class="self-center text-center max-w-2xl bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-1.5 rounded-lg shadow-xl">
+<p class="font-body-md text-body-md text-primary font-medium tracking-wide" id="hud-dialogue">
+                Kaptajn Elena: “Signalet modtaget fra Sektor 9... det er ikke en transmission fra jorden. Det stammer inde fra kernen.”
+              </p>
+</div>
+<!-- Monitor Footer with Waveform -->
+<div class="flex items-center justify-between bg-surface-container-lowest/85 backdrop-blur-md px-3 py-1.5 rounded-md font-label-code text-label-code">
+<div class="flex items-center gap-space-md">
+<span class="text-tertiary uppercase">Lydspor: 5.1 Surround [Mix Bus A]</span>
+<span class="text-on-surface-variant">-14 LUFS Dialog Norm</span>
+</div>
+<!-- Inline Audio Spectrogram SVG -->
+<div class="flex items-center gap-1 w-44 h-5">
+<svg class="w-full h-full text-tertiary" fill="currentColor" viewbox="0 0 160 20">
+<rect height="4" rx="1.5" width="3" x="0" y="8"></rect>
+<rect height="10" rx="1.5" width="3" x="6" y="5"></rect>
+<rect height="14" rx="1.5" width="3" x="12" y="3"></rect>
+<rect height="6" rx="1.5" width="3" x="18" y="7"></rect>
+<rect height="16" rx="1.5" width="3" x="24" y="2"></rect>
+<rect height="12" rx="1.5" width="3" x="30" y="4"></rect>
+<rect height="3" rx="1.5" width="3" x="36" y="9"></rect>
+<rect height="14" rx="1.5" width="3" x="42" y="3"></rect>
+<rect class="text-primary" height="18" rx="1.5" width="3" x="48" y="1"></rect>
+<rect height="10" rx="1.5" width="3" x="54" y="5"></rect>
+<rect height="6" rx="1.5" width="3" x="60" y="7"></rect>
+<rect height="14" rx="1.5" width="3" x="66" y="3"></rect>
+<rect height="16" rx="1.5" width="3" x="72" y="2"></rect>
+<rect height="8" rx="1.5" width="3" x="78" y="6"></rect>
+<rect height="12" rx="1.5" width="3" x="84" y="4"></rect>
+<rect height="16" rx="1.5" width="3" x="90" y="2"></rect>
+<rect height="10" rx="1.5" width="3" x="96" y="5"></rect>
+<rect height="4" rx="1.5" width="3" x="102" y="8"></rect>
+<rect height="14" rx="1.5" width="3" x="108" y="3"></rect>
+<rect class="text-primary" height="18" rx="1.5" width="3" x="114" y="1"></rect>
+<rect height="8" rx="1.5" width="3" x="120" y="6"></rect>
+<rect height="14" rx="1.5" width="3" x="126" y="3"></rect>
+<rect height="4" rx="1.5" width="3" x="132" y="8"></rect>
+<rect height="12" rx="1.5" width="3" x="138" y="4"></rect>
+<rect height="6" rx="1.5" width="3" x="144" y="7"></rect>
+<rect height="2" rx="1.5" width="3" x="150" y="9"></rect>
+</svg>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-on-surface-variant">COLOR:</span>
+<span class="text-primary-container font-bold" id="hud-lut-name">NEON NOIR TEAL/ORANGE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CAMERA & LENS CONTROLS (COL 9-12) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-tertiary tracking-widest">
+              Kameravinkler &amp; Objektivvalg
+            </span>
+<span class="material-symbols-outlined text-tertiary text-lg">videocam</span>
+</div>
+<!-- Angle Selector Cards -->
+<div class="flex flex-col gap-space-xs" id="angle-container">
+<!-- Angle 1 -->
+<button class="angle-btn w-full text-left p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex items-center gap-space-sm" data-angle="1" data-dialogue="Relæstation 'Aethelgard': Det fjerne signal fanges på langdistancemodtagerne." data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCsoaUXbrc8f2iuAYLm_Ci-Q_qAf_rEKIwJv2jvrjY5_bCspLBkSFrhx3E3cSt9EnCSjfsFYI2ZSAJLn_sehNQdpvGKl-7R_ZIRo2diKeB1G87IYcoHfJl8-iVoNOXpl5AQ7XeTdWiojlkhMrb6drTx0zyubZWJwiVaDo4F9oBw9ahRYxARNWdw7yLvKLkhYT0pZv3KdQHxeeZrWI9kfStBr1sa6CN2lYGh5BsfP1M" data-title="Wide Establishing Shot">
+<img alt="Angle 1" class="w-16 h-10 object-cover rounded-md shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsoaUXbrc8f2iuAYLm_Ci-Q_qAf_rEKIwJv2jvrjY5_bCspLBkSFrhx3E3cSt9EnCSjfsFYI2ZSAJLn_sehNQdpvGKl-7R_ZIRo2diKeB1G87IYcoHfJl8-iVoNOXpl5AQ7XeTdWiojlkhMrb6drTx0zyubZWJwiVaDo4F9oBw9ahRYxARNWdw7yLvKLkhYT0pZv3KdQHxeeZrWI9kfStBr1sa6CN2lYGh5BsfP1M"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Vinkel 1: Wide Establishing</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">Relæ-antennen og stjernetågen</span>
+</div>
+</button>
+<!-- Angle 2 (ACTIVE) -->
+<button class="angle-btn w-full text-left p-space-sm rounded-lg bg-surface-container-high text-primary font-bold shadow-md flex items-center gap-space-sm" data-angle="2" data-dialogue="Kaptajn Elena: 'Signalet modtaget fra Sektor 9... det er ikke en transmission fra jorden. Det stammer inde fra kernen.'" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDe2fmBcWjhaK6Jj_HmJjYNW_Whpzix__nzYLLUdefZ6qfwiL4GsIKlfMAaBI0fvSmsra5OT5SipG9yiFm7s00m8qKNW3jIiTl79pDD1HuXwdD2YDDUWYWngNZPm5z6jopWOzI-pVCnbb1GEh8mHcjrHCv-khZnUYAedL_javxfIGrmPHFe_op9YJH37EoKcE_vqE2EoW2p0s4hoHBwAi-0kC6O5-Fp2JySSNNp_SQ" data-title="Medium POV Command Deck">
+<img alt="Angle 2" class="w-16 h-10 object-cover rounded-md shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe2fmBcWjhaK6Jj_HmJjYNW_Whpzix__nzYLLUdefZ6qfwiL4GsIKlfMAaBI0fvSmsra5OT5SipG9yiFm7s00m8qKNW3jIiTl79pDD1HuXwdD2YDDUWYWngNZPm5z6jopWOzI-pVCnbb1GEh8mHcjrHCv-khZnUYAedL_javxfIGrmPHFe_op9YJH37EoKcE_vqE2EoW2p0s4hoHBwAi-0kC6O5-Fp2JySSNNp_SQ"/>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-primary truncate">Vinkel 2: Medium POV Deck</span>
+<span class="font-label-code text-label-code px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container">AKTIV</span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">Halvtotal med kommandøren</span>
+</div>
+</button>
+<!-- Angle 3 -->
+<button class="angle-btn w-full text-left p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex items-center gap-space-sm" data-angle="3" data-dialogue="Astronaut Jens: 'Artefaktet reagerer på vores nærhed. Gyldne frekvenser reflekteres i visiret.'" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAL6Wst6XyGkgt9ARlKEhIBRzdiqE0n84ggWMHE20_HyMyfvX-BY4sJt2RxIzkW3-JgDtw1BpLz-pw9YJQKBAUUAOenpZG-2dlpZMjS8JkpSGBf5BFRi3ZPDJdV4d9Zi2pDwFxLoJhN5a6YLtE55Ied10nEdy26u7g73s8A3I8N9w4j4snNMGjcHP2EH626NT0Cn2RFAJAyKdIDez2DqYWA3PdxKoJdf34ispZeOjw" data-title="Tight Close-Up / Visir">
+<img alt="Angle 3" class="w-16 h-10 object-cover rounded-md shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL6Wst6XyGkgt9ARlKEhIBRzdiqE0n84ggWMHE20_HyMyfvX-BY4sJt2RxIzkW3-JgDtw1BpLz-pw9YJQKBAUUAOenpZG-2dlpZMjS8JkpSGBf5BFRi3ZPDJdV4d9Zi2pDwFxLoJhN5a6YLtE55Ied10nEdy26u7g73s8A3I8N9w4j4snNMGjcHP2EH626NT0Cn2RFAJAyKdIDez2DqYWA3PdxKoJdf34ispZeOjw"/>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Vinkel 3: Tight Close-Up</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">Hjelmrefleksion mod monolit</span>
+</div>
+</button>
+<!-- Angle 4 -->
+<button class="angle-btn w-full text-left p-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high transition-all flex items-center gap-space-sm" data-angle="4" data-dialogue="Elena (OTS): 'Klargør kvantekernen. Vi følger koordinaterne med det samme.'" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDe2fmBcWjhaK6Jj_HmJjYNW_Whpzix__nzYLLUdefZ6qfwiL4GsIKlfMAaBI0fvSmsra5OT5SipG9yiFm7s00m8qKNW3jIiTl79pDD1HuXwdD2YDDUWYWngNZPm5z6jopWOzI-pVCnbb1GEh8mHcjrHCv-khZnUYAedL_javxfIGrmPHFe_op9YJH37EoKcE_vqE2EoW2p0s4hoHBwAi-0kC6O5-Fp2JySSNNp_SQ" data-title="Over-The-Shoulder HUD">
+<div class="w-16 h-10 bg-surface-container-highest rounded-md flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-xl">view_in_ar</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Vinkel 4: Over-The-Shoulder</span>
+<span class="font-label-code text-label-code text-on-surface-variant truncate">Taktisk HUD &amp; Kvantekort</span>
+</div>
+</button>
+</div>
+<!-- Linse & Dof Controls -->
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">
+              Linsebrændvidde (Focal Length)
+            </span>
+<div class="grid grid-cols-4 gap-1">
+<button class="lens-btn py-1 text-center rounded bg-surface-container font-label-code text-label-code text-on-surface-variant hover:text-on-surface" data-lens="24mm Ultra-Wide T2.0">24mm</button>
+<button class="lens-btn py-1 text-center rounded bg-primary-container text-on-primary-container font-bold font-label-code text-label-code shadow-sm" data-lens="35mm Anamorphic T1.5">35mm</button>
+<button class="lens-btn py-1 text-center rounded bg-surface-container font-label-code text-label-code text-on-surface-variant hover:text-on-surface" data-lens="50mm Spherical T1.2">50mm</button>
+<button class="lens-btn py-1 text-center rounded bg-surface-container font-label-code text-label-code text-on-surface-variant hover:text-on-surface" data-lens="85mm Portrait T1.4">85mm</button>
+</div>
+<!-- Aperture Slider Simulation -->
+<div class="flex flex-col gap-1 pt-space-xs">
+<div class="flex justify-between font-label-code text-label-code">
+<span class="text-on-surface-variant">Blænde &amp; Dybdeskarphed (DoF):</span>
+<span class="text-primary font-bold" id="dof-indicator">f/1.5 [Blød Bokeh]</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-surface-container-highest rounded-lg cursor-pointer" id="slider-dof" max="8.0" min="1.4" step="0.2" type="range" value="1.5"/>
+</div>
+<!-- Overlays Toggle Switches -->
+<div class="pt-space-xs flex flex-col gap-2">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">
+                Kompositionsgitter &amp; Sikkerhedszone
+              </span>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface">Tredjedelsregel (Rule of Thirds)</span>
+<button class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-code text-label-code font-bold" id="toggle-thirds">TIL</button>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface">Title Safe Zone (90%)</span>
+<button class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-code text-label-code font-bold" id="toggle-safe">TIL</button>
+</div>
+</div>
+<!-- Color Grading LUT Selector -->
+<div class="pt-space-xs flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">
+                Color Grading LUT
+              </span>
+<select class="w-full bg-surface-container text-on-surface font-label-code text-label-code rounded-lg p-2 focus:outline-none focus:ring-1 focus:ring-tertiary" id="lut-selector">
+<option selected="" value="teal-orange">Neon Noir Teal/Orange (Aktiv)</option>
+<option value="solaris-gold">Solaris Gold (Varm Amber glød)</option>
+<option value="deep-space">Deep Space Monolith (Kold monokrom)</option>
+<option value="raw-log">Arri Raw LogC (Flad gradingsprofil)</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- STORYBOARD TIMELINE & SEQUENCE -->
+<section class="w-full px-margin py-space-md">
+<div class="bg-surface-container-low rounded-xl p-space-md shadow-xl flex flex-col gap-space-md">
+<!-- Timeline Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">view_timeline</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">
+            Storyboard Tidslinje // Scenerækkefølge
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-code text-label-code">
+            Total Længde: 00:00:12:00
+          </span>
+</div>
+<!-- Playback Transport Bar -->
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-sm py-1 rounded-lg">
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="ctrl-first-frame" title="Første Frame">
+<span class="material-symbols-outlined text-lg">first_page</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="ctrl-prev-shot" title="Forrige Shot">
+<span class="material-symbols-outlined text-lg">skip_previous</span>
+</button>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-bold flex items-center gap-1 text-sm shadow-md" id="ctrl-play" title="Afspil/Pause">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span class="font-label-code text-label-code">AFSPIL</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="ctrl-next-shot" title="Næste Shot">
+<span class="material-symbols-outlined text-lg">skip_next</span>
+</button>
+<button class="p-1 rounded text-tertiary hover:bg-surface-container transition-colors" id="ctrl-loop" title="Sløjfe Afspilning">
+<span class="material-symbols-outlined text-lg">repeat</span>
+</button>
+<div class="h-4 w-px bg-surface-container-high mx-1"></div>
+<span class="font-label-code text-label-code text-on-surface-variant">PLAYHEAD:</span>
+<span class="font-label-code text-label-code text-tertiary-fixed font-bold" id="timeline-timecode">00:04:12</span>
+</div>
+</div>
+<!-- Interactive Scrubber Bar -->
+<div class="relative w-full h-8 bg-surface-container-lowest rounded-lg flex items-center px-2 cursor-pointer select-none">
+<div class="absolute inset-y-0 left-0 bg-primary/20 rounded-l-lg transition-all duration-150" style="width: 35%;"></div>
+<!-- Time Markers -->
+<div class="w-full flex justify-between font-label-code text-label-code text-on-surface-variant/40 pointer-events-none">
+<span>00:00:00</span>
+<span>00:00:03</span>
+<span>00:00:06</span>
+<span>00:00:09</span>
+<span>00:00:12</span>
+</div>
+<!-- Playhead Indicator Needle -->
+<div class="absolute top-0 bottom-0 w-0.5 bg-primary shadow-[0_0_8px_#ffb787] flex flex-col items-center" style="left: 35%;">
+<div class="w-3 h-2 bg-primary rounded-b-sm -mt-0.5"></div>
+</div>
+</div>
+<!-- Storyboard Card Sequence (4 Shots) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter" id="shot-cards-grid">
+<!-- Shot 01 -->
+<div class="shot-card bg-surface-container rounded-xl p-space-sm shadow-md hover:bg-surface-container-high transition-all flex flex-col gap-space-xs relative group cursor-pointer" data-shot="1">
+<div class="relative aspect-video rounded-lg overflow-hidden">
+<img alt="Shot 01" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsoaUXbrc8f2iuAYLm_Ci-Q_qAf_rEKIwJv2jvrjY5_bCspLBkSFrhx3E3cSt9EnCSjfsFYI2ZSAJLn_sehNQdpvGKl-7R_ZIRo2diKeB1G87IYcoHfJl8-iVoNOXpl5AQ7XeTdWiojlkhMrb6drTx0zyubZWJwiVaDo4F9oBw9ahRYxARNWdw7yLvKLkhYT0pZv3KdQHxeeZrWI9kfStBr1sa6CN2lYGh5BsfP1M"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm font-label-code text-label-code text-on-surface">
+              SHOT 01
+            </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm font-label-code text-label-code text-tertiary">
+              00:00 - 00:02 (2.0s)
+            </span>
+</div>
+<div class="flex flex-col gap-0.5 pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">01 // Relæ-antennen</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Lytter til det kosmiske kald i det dybe rum. Etablerende totalbillede med anamorfisk flare.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-code text-label-code">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">open_in_full</span> Pan Højre
+            </span>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1 hover:text-primary" title="Byt om til højre">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="p-1 hover:text-primary" title="Duplikér Shot">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Shot 02 (ACTIVE WITH GLOWING RIM) -->
+<div class="shot-card bg-surface-container-high rounded-xl p-space-sm shadow-xl shadow-primary-container/20 flex flex-col gap-space-xs relative group cursor-pointer ring-2 ring-primary" data-shot="2">
+<div class="relative aspect-video rounded-lg overflow-hidden">
+<img alt="Shot 02" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe2fmBcWjhaK6Jj_HmJjYNW_Whpzix__nzYLLUdefZ6qfwiL4GsIKlfMAaBI0fvSmsra5OT5SipG9yiFm7s00m8qKNW3jIiTl79pDD1HuXwdD2YDDUWYWngNZPm5z6jopWOzI-pVCnbb1GEh8mHcjrHCv-khZnUYAedL_javxfIGrmPHFe_op9YJH37EoKcE_vqE2EoW2p0s4hoHBwAi-0kC6O5-Fp2JySSNNp_SQ"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-code text-label-code font-bold">
+              SHOT 02 // AKTIV
+            </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm font-label-code text-label-code text-primary">
+              00:02 - 00:05 (3.0s)
+            </span>
+</div>
+<div class="flex flex-col gap-0.5 pt-1">
+<span class="font-headline-sm text-headline-sm text-primary">02 // Kommandodækket</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Anomali registreres. Kaptajn Elena analyserer holografiske partikelstrømme i realtid.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-code text-label-code">
+<span class="text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">zoom_in</span> Dolly In (Langsom)
+            </span>
+<div class="flex items-center gap-1">
+<button class="p-1 hover:text-primary" title="Byt om">
+<span class="material-symbols-outlined text-sm">swap_horiz</span>
+</button>
+<button class="p-1 hover:text-primary" title="Duplikér Shot">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Shot 03 -->
+<div class="shot-card bg-surface-container rounded-xl p-space-sm shadow-md hover:bg-surface-container-high transition-all flex flex-col gap-space-xs relative group cursor-pointer" data-shot="3">
+<div class="relative aspect-video rounded-lg overflow-hidden">
+<img alt="Shot 03" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL6Wst6XyGkgt9ARlKEhIBRzdiqE0n84ggWMHE20_HyMyfvX-BY4sJt2RxIzkW3-JgDtw1BpLz-pw9YJQKBAUUAOenpZG-2dlpZMjS8JkpSGBf5BFRi3ZPDJdV4d9Zi2pDwFxLoJhN5a6YLtE55Ied10nEdy26u7g73s8A3I8N9w4j4snNMGjcHP2EH626NT0Cn2RFAJAyKdIDez2DqYWA3PdxKoJdf34ispZeOjw"/>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm font-label-code text-label-code text-on-surface">
+              SHOT 03
+            </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm font-label-code text-label-code text-tertiary">
+              00:05 - 00:08 (3.0s)
+            </span>
+</div>
+<div class="flex flex-col gap-0.5 pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">03 // Monolit i Slusen</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Artefakt oplyser rummet. Hjelmvisiret reflekterer den pulserende gyldne geometri.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-code text-label-code">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">crop_free</span> Static Lock
+            </span>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1 hover:text-primary" title="Byt om">
+<span class="material-symbols-outlined text-sm">swap_horiz</span>
+</button>
+<button class="p-1 hover:text-primary" title="Duplikér Shot">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Shot 04 -->
+<div class="shot-card bg-surface-container rounded-xl p-space-sm shadow-md hover:bg-surface-container-high transition-all flex flex-col gap-space-xs relative group cursor-pointer" data-shot="4">
+<div class="relative aspect-video rounded-lg overflow-hidden bg-surface-container-lowest flex items-center justify-center">
+<!-- Stylized Graphic for Hyperdrive jump -->
+<svg class="w-20 h-20 text-tertiary opacity-70 animate-pulse" fill="none" stroke="currentColor" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="40" stroke-dasharray="4 4" stroke-width="1.5"></circle>
+<circle cx="50" cy="50" r="24" stroke-width="2"></circle>
+<path d="M50 10 L50 90 M10 50 L90 50" stroke-width="1"></path>
+<circle cx="50" cy="50" fill="currentColor" r="6"></circle>
+</svg>
+<span class="absolute top-2 left-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm font-label-code text-label-code text-on-surface">
+              SHOT 04
+            </span>
+<span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-surface-container-lowest/80 backdrop-blur-sm font-label-code text-label-code text-tertiary">
+              00:08 - 00:12 (4.0s)
+            </span>
+</div>
+<div class="flex flex-col gap-0.5 pt-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">04 // Hyperdrive Spring</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Rum-tid foldes om fartøjet idet koordinaterne låses. Klimaks af sekvensen.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-code text-label-code">
+<span class="text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">sync</span> Orbit 360°
+            </span>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="p-1 hover:text-primary" title="Byt om">
+<span class="material-symbols-outlined text-sm">swap_horiz</span>
+</button>
+<button class="p-1 hover:text-primary" title="Duplikér Shot">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- DIRECTORS NOTES & EDITORIAL LOGIC -->
+<section class="w-full px-margin pb-space-2xl pt-space-sm">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Dramaturgy & Lighting -->
+<div class="md:col-span-7 bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">
+            Dramaturgisk Intention &amp; Lysdesign
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          I <strong class="text-on-surface">“Signal From Tomorrow”</strong> anvendes en skarp kromastisk kontrast: Det ydre kosmos fremstår i kolde, turkise og dybblå nuancer (<span class="text-tertiary">#4CD8E7</span>), som symboliserer den uendelige, teknologiske distance. Når monolitten aktiveres i scene 03, gennembrydes mørket af en varm, pulserende ravfarvet glød (<span class="text-primary">#FFB787</span>), der spejles direkte i astronautens visir for at indikere en organisk, bevidst intelligens.
+        </p>
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-tertiary">Fokuspunkt</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Elena's Blikretning</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Tredjedelslinje Venstre</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-primary">Kamerarytme</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Metronomisk 24 FPS</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Langsom Dolly / Spænding</span>
+</div>
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-secondary">Lydatmosfære</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold">Sub-bass 32Hz Drone</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Moduleret Kvantestøj</span>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Rendering & Engine Status -->
+<div class="md:col-span-5 bg-surface-container-low rounded-xl p-space-md shadow-lg flex flex-col gap-space-sm justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-tertiary text-xl">neurology</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">
+              AI Rendering &amp; Klipperumsstatus
+            </span>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest/80 text-on-surface-variant font-label-code text-label-code flex flex-col gap-1">
+<div class="flex items-center justify-between text-tertiary font-bold">
+<span>SIMULATION ENGINE // LIVE</span>
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-1">
+              Bemærk: Dette klipperum kører som en interaktiv instruktør-simulation. Billeder gengives fra fastlagte neuralt genererede storyboard-stillbilleder med realtids-LUT-transformering og interaktiv komposition.
+            </p>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 pt-space-xs font-label-code text-label-code text-on-surface-variant">
+<div class="flex justify-between">
+<span>Buffer Hukommelse:</span>
+<span class="text-tertiary">3.8 GB / 16.0 GB (VRAM)</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-1/4 rounded-full"></div>
+</div>
+<div class="flex justify-between pt-1 text-on-surface-variant/70">
+<span>Synkroniseret med 2025 AI Hub Core</span>
+<span class="text-primary font-semibold">KLAR TIL EKSPORT</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive JavaScript Logic -->
+<script>
+    (function initCinemaStudio() {
+      const stageImg = document.getElementById('master-stage-img');
+      const hudDialogue = document.getElementById('hud-dialogue');
+      const hudLens = document.getElementById('hud-lens');
+      const dofIndicator = document.getElementById('dof-indicator');
+      const sliderDof = document.getElementById('slider-dof');
+      const lutSelector = document.getElementById('lut-selector');
+      const lutOverlay = document.getElementById('lut-overlay');
+      const hudLutName = document.getElementById('hud-lut-name');
+      const gridThirds = document.getElementById('grid-thirds');
+      const gridSafe = document.getElementById('grid-safe');
+      const toggleThirds = document.getElementById('toggle-thirds');
+      const toggleSafe = document.getElementById('toggle-safe');
+      const btnPlayPreview = document.getElementById('btn-play-preview');
+      const ctrlPlay = document.getElementById('ctrl-play');
+      const hudTimecode = document.getElementById('hud-timecode');
+      const timelineTimecode = document.getElementById('timeline-timecode');
+
+      // 1. Angle Buttons
+      const angleButtons = document.querySelectorAll('.angle-btn');
+      angleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          angleButtons.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'text-primary', 'font-bold', 'shadow-md');
+            b.classList.add('bg-surface-container', 'text-on-surface');
+            const badge = b.querySelector('.bg-primary-container');
+            if (badge) badge.remove();
+          });
+          btn.classList.remove('bg-surface-container', 'text-on-surface');
+          btn.classList.add('bg-surface-container-high', 'text-primary', 'font-bold', 'shadow-md');
+          
+          const newImg = btn.getAttribute('data-image');
+          const newDialogue = btn.getAttribute('data-dialogue');
+          
+          if (newImg && stageImg) {
+            stageImg.style.opacity = '0.3';
+            setTimeout(() => {
+              stageImg.src = newImg;
+              stageImg.style.opacity = '1';
+            }, 150);
+          }
+          if (newDialogue && hudDialogue) {
+            hudDialogue.textContent = newDialogue;
+          }
+        });
+      });
+
+      // 2. Lens Buttons
+      const lensButtons = document.querySelectorAll('.lens-btn');
+      lensButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          lensButtons.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-sm');
+            b.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+          btn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold', 'shadow-sm');
+          const lensName = btn.getAttribute('data-lens');
+          if (hudLens) hudLens.textContent = lensName;
+        });
+      });
+
+      // 3. DoF Slider
+      if (sliderDof && dofIndicator) {
+        sliderDof.addEventListener('input', (e) => {
+          const val = parseFloat(e.target.value).toFixed(1);
+          let label = val < 2.0 ? 'Blød Bokeh' : val < 4.0 ? 'Medium DoF' : 'Dyb Fokus';
+          dofIndicator.textContent = 'f/' + val + ' [' + label + ']';
+        });
+      }
+
+      // 4. Overlays Toggle
+      let thirdsActive = true;
+      if (toggleThirds && gridThirds) {
+        toggleThirds.addEventListener('click', () => {
+          thirdsActive = !thirdsActive;
+          gridThirds.style.display = thirdsActive ? 'grid' : 'none';
+          toggleThirds.textContent = thirdsActive ? 'TIL' : 'FRA';
+          toggleThirds.classList.toggle('bg-tertiary-container', thirdsActive);
+          toggleThirds.classList.toggle('text-on-tertiary-container', thirdsActive);
+          toggleThirds.classList.toggle('bg-surface-container', !thirdsActive);
+          toggleThirds.classList.toggle('text-on-surface-variant', !thirdsActive);
+        });
+      }
+
+      let safeActive = true;
+      if (toggleSafe && gridSafe) {
+        toggleSafe.addEventListener('click', () => {
+          safeActive = !safeActive;
+          gridSafe.style.display = safeActive ? 'block' : 'none';
+          toggleSafe.textContent = safeActive ? 'TIL' : 'FRA';
+          toggleSafe.classList.toggle('bg-tertiary-container', safeActive);
+          toggleSafe.classList.toggle('text-on-tertiary-container', safeActive);
+          toggleSafe.classList.toggle('bg-surface-container', !safeActive);
+          toggleSafe.classList.toggle('text-on-surface-variant', !safeActive);
+        });
+      }
+
+      // 5. LUT Selector
+      if (lutSelector && lutOverlay && hudLutName) {
+        lutSelector.addEventListener('change', (e) => {
+          const val = e.target.value;
+          if (val === 'solaris-gold') {
+            lutOverlay.className = "absolute inset-0 bg-primary/20 mix-blend-color pointer-events-none transition-all duration-300";
+            hudLutName.textContent = "SOLARIS GOLD";
+          } else if (val === 'deep-space') {
+            lutOverlay.className = "absolute inset-0 bg-surface-container-lowest/70 mix-blend-saturation pointer-events-none transition-all duration-300";
+            hudLutName.textContent = "DEEP SPACE MONOLITH";
+          } else if (val === 'raw-log') {
+            lutOverlay.className = "absolute inset-0 bg-on-surface/15 mix-blend-screen pointer-events-none transition-all duration-300";
+            hudLutName.textContent = "ARRI RAW LOGC";
+          } else {
+            lutOverlay.className = "absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-surface-container-lowest/60 mix-blend-multiply pointer-events-none transition-all duration-300";
+            hudLutName.textContent = "NEON NOIR TEAL/ORANGE";
+          }
+        });
+      }
+
+      // 6. Play Sequence Simulation
+      let isPlaying = false;
+      let playInterval = null;
+      let currentShotIndex = 1;
+      const shotCards = document.querySelectorAll('.shot-card');
+
+      function startPlayback() {
+        isPlaying = true;
+        if (btnPlayPreview) btnPlayPreview.innerHTML = "<span class='material-symbols-outlined text-xl'>pause</span> PAUSE PREVIEW";
+        if (ctrlPlay) ctrlPlay.innerHTML = "<span class='material-symbols-outlined text-base'>pause</span> <span class='font-label-code text-label-code'>PAUSE</span>";
+
+        playInterval = setInterval(() => {
+          currentShotIndex++;
+          if (currentShotIndex > 4) currentShotIndex = 1;
+          
+          shotCards.forEach(c => {
+            const shotNum = parseInt(c.getAttribute('data-shot'));
+            if (shotNum === currentShotIndex) {
+              c.classList.add('ring-2', 'ring-primary', 'shadow-xl', 'bg-surface-container-high');
+              c.classList.remove('bg-surface-container');
+              const img = c.querySelector('img');
+              if (img && stageImg) stageImg.src = img.src;
+            } else {
+              c.classList.remove('ring-2', 'ring-primary', 'shadow-xl', 'bg-surface-container-high');
+              c.classList.add('bg-surface-container');
+            }
+          });
+
+          // Update Timecode
+          const sec = (currentShotIndex * 3).toString().padStart(2, '0');
+          if (hudTimecode) hudTimecode.textContent = 'TC 00:00:' + sec + ':12';
+          if (timelineTimecode) timelineTimecode.textContent = '00:00:' + sec;
+        }, 2200);
+      }
+
+      function stopPlayback() {
+        isPlaying = false;
+        clearInterval(playInterval);
+        if (btnPlayPreview) btnPlayPreview.innerHTML = "<span class='material-symbols-outlined text-xl' style=\"font-variation-settings: 'FILL' 1;\">play_arrow</span> Afspil Sekvens (Simuleret Preview)";
+        if (ctrlPlay) ctrlPlay.innerHTML = "<span class='material-symbols-outlined text-base' style=\"font-variation-settings: 'FILL' 1;\">play_arrow</span> <span class='font-label-code text-label-code'>AFSPIL</span>";
+      }
+
+      if (btnPlayPreview) {
+        btnPlayPreview.addEventListener('click', () => {
+          if (isPlaying) stopPlayback(); else startPlayback();
+        });
+      }
+      if (ctrlPlay) {
+        ctrlPlay.addEventListener('click', () => {
+          if (isPlaying) stopPlayback(); else startPlayback();
+        });
+      }
+
+      // 7. Shot Card manual click
+      shotCards.forEach(card => {
+        card.addEventListener('click', () => {
+          if (isPlaying) stopPlayback();
+          currentShotIndex = parseInt(card.getAttribute('data-shot'));
+          shotCards.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'shadow-xl', 'bg-surface-container-high'));
+          card.classList.add('ring-2', 'ring-primary', 'shadow-xl', 'bg-surface-container-high');
+          const cardImg = card.querySelector('img');
+          if (cardImg && stageImg) stageImg.src = cardImg.src;
+        });
+      });
+
+      // 8. Export button feedback
+      const btnExport = document.getElementById('btn-export');
+      if (btnExport) {
+        btnExport.addEventListener('click', () => {
+          const original = btnExport.innerHTML;
+          btnExport.innerHTML = "<span class='material-symbols-outlined text-base animate-spin'>sync</span> Genererer Shotlist PDF...";
+          setTimeout(() => {
+            btnExport.innerHTML = "<span class='material-symbols-outlined text-base text-primary'>check_circle</span> Shotlist Gemt!";
+            setTimeout(() => { btnExport.innerHTML = original; }, 2000);
+          }, 1200);
+        });
+      }
+
+      // 9. Reset button
+      const btnReset = document.getElementById('btn-reset');
+      if (btnReset) {
+        btnReset.addEventListener('click', () => {
+          if (isPlaying) stopPlayback();
+          currentShotIndex = 2;
+          shotCards.forEach(c => c.classList.remove('ring-2', 'ring-primary', 'shadow-xl', 'bg-surface-container-high'));
+          if (shotCards[1]) shotCards[1].classList.add('ring-2', 'ring-primary', 'shadow-xl', 'bg-surface-container-high');
+          if (stageImg) stageImg.src = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDe2fmBcWjhaK6Jj_HmJjYNW_Whpzix__nzYLLUdefZ6qfwiL4GsIKlfMAaBI0fvSmsra5OT5SipG9yiFm7s00m8qKNW3jIiTl79pDD1HuXwdD2YDDUWYWngNZPm5z6jopWOzI-pVCnbb1GEh8mHcjrHCv-khZnUYAedL_javxfIGrmPHFe_op9YJH37EoKcE_vqE2EoW2p0s4hoHBwAi-0kC6O5-Fp2JySSNNp_SQ';
+          if (sliderDof) {
+            sliderDof.value = '1.5';
+            dofIndicator.textContent = 'f/1.5 [Blød Bokeh]';
+          }
+          if (lutSelector) {
+            lutSelector.value = 'teal-orange';
+            lutOverlay.className = "absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-surface-container-lowest/60 mix-blend-multiply pointer-events-none transition-all duration-300";
+            hudLutName.textContent = "NEON NOIR TEAL/ORANGE";
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-xl"><div class="w-full px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface">AI Experience Hub</span><span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-tertiary">DA-DK</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">En dansk interaktiv opdagelsesplatform for neural intelligens og generative systemer. Skabt til sansning, læring og kreativ udforskning.</p><span class="font-headline-md text-headline-md text-primary tracking-wide">Tryk. Oplev. Udforsk.</span></div><div class="md:col-span-5 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-tertiary">De 5 Universer</span><div class="grid grid-cols-2 gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors" data-path="data-fremtid" href="#">01. Data &amp; Fremtid</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="visuel-magi" href="#">02. Visuel Magi</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="viden-laering" href="#">03. Viden &amp; Læring</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary-fixed transition-colors" data-path="spil-opdagelser" href="#">04. Spil &amp; Opdagelser</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-path="kreativitet-teknologi" href="#">05. Kreativitet &amp; Teknologi</a></div></div><div class="md:col-span-3 flex flex-col gap-space-sm md:items-end"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Arkitektur &amp; Stack</span><div class="inline-flex items-center px-space-sm py-1.5 rounded-lg bg-surface-container-low font-label-code text-label-code text-on-surface-variant"><span class="text-tertiary mr-1.5">⚡</span> React · TypeScript · Three.js · LocalStorage</div><button class="mt-space-sm inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-code text-label-code hover:bg-error-container hover:text-on-error transition-all" type="button"><span class="material-symbols-outlined text-sm">restart_alt</span> Nulstil Demodata</button></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-code text-label-code text-on-surface-variant/60"><div>© 2025 AI EXPERIENCE HUB · Alle rettigheder forbeholdes</div><div class="flex items-center gap-space-md"><span>København / Aarhus Hub</span><span>Digital Udforskning</span></div></div></div></footer></body></html>

@@ -1,0 +1,1274 @@
+<!DOCTYPE html><html class="dark" lang="da"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="web_standard" name="shell-type">
+<title>AI Experience Hub — Opdag Forside</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-dim": "#051426",
+            "background": "#051426",
+            "surface-lowest": "#010e21",
+            "surface-container": "#0e1c2f",
+            "surface-container-high": "#16273d",
+            "surface-container-highest": "#1f334d",
+            "primary": "#ffb787",
+            "primary-container": "#f28a3c",
+            "tertiary": "#38bdf8",
+            "tertiary-fixed": "#4cd8e7",
+            "secondary": "#cdbdff",
+            "secondary-container": "#502cb0",
+            "on-surface": "#d5e3fd",
+            "on-surface-variant": "#94a3b8"
+          },
+          fontFamily: {
+            "display-hero": ["Space Grotesk", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "label-code": ["JetBrains Mono", "monospace"],
+            "label-caps": ["Space Grotesk", "sans-serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "body-sm": ["Manrope", "sans-serif"]
+          },
+          animation: {
+            'twinkle': 'twinkle 4s ease-in-out infinite alternate',
+            'float-slow': 'float 8s ease-in-out infinite alternate',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite'
+          },
+          keyframes: {
+            twinkle: {
+              '0%': { opacity: '0.2', transform: 'scale(0.8)' },
+              '100%': { opacity: '0.9', transform: 'scale(1.2)' }
+            },
+            float: {
+              '0%': { transform: 'translateY(0px)' },
+              '100%': { transform: 'translateY(-14px)' }
+            },
+            pulseGlow: {
+              '0%, 100%': { filter: 'drop-shadow(0 0 15px rgba(242,138,60,0.4))' },
+              '50%': { filter: 'drop-shadow(0 0 28px rgba(242,138,60,0.85))' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #051426;
+        color: #d5e3fd;
+      }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .cosmic-nebula {
+      background: radial-gradient(circle at 55% 42%, rgba(245, 158, 11, 0.28) 0%, rgba(147, 51, 234, 0.22) 28%, rgba(14, 116, 144, 0.15) 50%, rgba(5, 20, 38, 0) 80%);
+    }
+    .card-glass {
+      background: linear-gradient(145deg, rgba(20, 35, 56, 0.72) 0%, rgba(9, 21, 38, 0.88) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+    }
+    .card-glass:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.15);
+    }
+    .favorite-active {
+      color: #f43f5e !important;
+      font-variation-settings: 'FILL' 1 !important;
+    }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white relative overflow-x-hidden">
+<!-- TOP NAVIGATION HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#051426]/85 backdrop-blur-2xl border-b border-white/5">
+<div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 shrink-0" href="#">
+<div class="px-3.5 py-1.5 rounded-full border border-cyan-400/40 bg-surface-container/80 shadow-[0_0_15px_rgba(56,189,248,0.25)] flex items-center gap-2">
+<span class="text-amber-400 font-black text-sm">✦</span>
+<span class="font-headline-sm text-sm uppercase tracking-wider text-white font-bold">Experience Hub</span>
+</div>
+</a>
+<!-- Center Nav Links -->
+<nav class="hidden md:flex items-center gap-2 bg-[#0a182c]/80 border border-white/10 rounded-full px-2 py-1 shadow-inner">
+<a class="px-5 py-1.5 rounded-full bg-[#1e2f47] text-white font-medium text-sm shadow-[0_0_12px_rgba(56,189,248,0.2)]" href="#opdag">Opdag</a>
+<a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm" href="#universer">Universer</a>
+<a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm" href="#katalog">Udforsk</a>
+<a class="px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/25 transition-all text-xs font-semibold flex items-center gap-1.5 shadow-[0_0_12px_rgba(56,189,248,0.25)]" href="#" onclick="triggerExperienceModal('02. Future Simulator'); return false;"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span><span>02 // Future Simulator</span></a><a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm flex items-center gap-1.5" href="#gemte" onclick="toggleOnlyFavorites()">
+<span>Gemte</span>
+<span class="font-label-code text-xs px-2 py-0.2 bg-orange-500/20 text-orange-400 rounded-full font-bold border border-orange-500/30" id="nav-fav-badge">2</span>
+</a>
+</nav>
+<!-- Right Search Pill -->
+<div class="flex items-center gap-3">
+<div class="relative flex items-center bg-[#0d1d33] border border-white/10 rounded-full px-4 py-1.5 text-sm w-44 sm:w-60 focus-within:border-cyan-400 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-lg mr-2">search</span>
+<input class="w-full bg-transparent text-slate-100 placeholder:text-slate-400 text-xs focus:outline-none" id="top-search" oninput="handleSearch(this.value)" placeholder="Søg oplevelser..." type="text">
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN WRAPPER -->
+<main class="w-full pt-20">
+<!-- 1. HERO SEKTION (Filmisk kosmisk dybde & galakse-æstetik som i image.png) -->
+<section class="relative min-h-[640px] md:min-h-[720px] flex items-center justify-center overflow-hidden px-4 md:px-8 py-16" id="opdag">
+<!-- Deep Cosmic Background Layers -->
+<div class="absolute inset-0 z-0 bg-[#030c18] overflow-hidden pointer-events-none">
+<!-- Swirling galactic nebula background -->
+<div class="absolute inset-0 cosmic-nebula opacity-90 scale-110"></div>
+<div class="absolute -top-32 left-1/3 w-[650px] h-[650px] bg-amber-500/15 rounded-full blur-[140px]"></div>
+<div class="absolute top-20 right-10 w-[550px] h-[550px] bg-purple-600/20 rounded-full blur-[160px]"></div>
+<div class="absolute -bottom-20 left-10 w-[500px] h-[500px] bg-cyan-500/15 rounded-full blur-[140px]"></div>
+<!-- Ambient Planets & Floating Space Elements -->
+<div class="absolute -left-12 top-1/4 w-44 h-44 rounded-full bg-gradient-to-tr from-cyan-950 via-slate-900 to-cyan-700/60 opacity-60 blur-[1px] border border-cyan-400/20 shadow-[0_0_50px_rgba(56,189,248,0.2)] animate-float-slow"></div>
+<div class="absolute -right-20 top-1/3 w-64 h-64 rounded-full bg-gradient-to-br from-purple-950 via-slate-900 to-indigo-700/50 opacity-50 blur-[2px] border border-purple-400/20 shadow-[0_0_60px_rgba(168,85,247,0.2)]"></div>
+<!-- Twinkling Micro Stars and Dust Grid -->
+<div class="absolute top-24 left-[15%] w-1.5 h-1.5 rounded-full bg-amber-300 animate-twinkle shadow-[0_0_8px_#fcd34d]"></div>
+<div class="absolute top-44 right-[25%] w-2 h-2 rounded-full bg-cyan-300 animate-twinkle shadow-[0_0_10px_#67e8f9]" style="animation-delay: 1.5s;"></div>
+<div class="absolute bottom-36 left-[30%] w-1.5 h-1.5 rounded-full bg-purple-300 animate-twinkle shadow-[0_0_8px_#d8b4fe]" style="animation-delay: 2.2s;"></div>
+<div class="absolute top-1/2 right-[12%] w-1 h-1 rounded-full bg-white animate-twinkle shadow-[0_0_6px_#ffffff]" style="animation-delay: 3s;"></div>
+<div class="absolute bottom-20 right-[40%] w-2 h-2 rounded-full bg-amber-200 animate-twinkle shadow-[0_0_9px_#fde68a]" style="animation-delay: 0.8s;"></div>
+</div>
+<!-- Hero Cinematic Content -->
+<div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center mt-6">
+<!-- Tracking Label Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container/70 border border-amber-500/30 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(242,138,60,0.2)]">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+<span class="font-label-code text-xs uppercase tracking-widest text-amber-300 font-bold">Tryk. Oplev. Udforsk.</span>
+</div>
+<!-- Headline -->
+<h1 class="font-display-hero text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white uppercase leading-[1.08] mb-6 drop-shadow-2xl">
+          En verden af <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-200">oplevelser</span> venter
+        </h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-base sm:text-xl text-slate-300 max-w-2xl leading-relaxed mb-10">
+          15 oplevelser i fem universer – fra kontrolcentre og fremtidsscenarier til galakser af viden.
+        </p>
+<!-- CTAs -->
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="px-8 py-3.5 rounded-full bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 text-slate-950 font-bold text-base uppercase tracking-wider shadow-[0_0_30px_rgba(245,158,11,0.5)] hover:shadow-[0_0_45px_rgba(245,158,11,0.8)] hover:scale-105 transition-all duration-300 flex items-center gap-2" href="#katalog">
+<span>Udforsk oplevelser</span>
+<span class="material-symbols-outlined text-lg">arrow_downward</span>
+</a>
+<a class="px-7 py-3.5 rounded-full bg-[#122238]/90 hover:bg-[#1a3150] border border-cyan-400/40 text-cyan-200 font-semibold text-sm transition-all duration-300 backdrop-blur-md flex items-center gap-2 shadow-[0_0_20px_rgba(56,189,248,0.2)]" href="#ugens-spotlight">
+<span class="text-amber-400 text-sm">✦</span>
+<span>Ugens Spotlight: Knowledge Galaxy</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 2. UGENS OPLEVELSE KORT & NØGLETAL (som i image.png / IMAGE_4 & IMAGE_8) -->
+<section class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-8 -mt-6" id="ugens-spotlight">
+<!-- Big Feature Container Card -->
+<div class="relative w-full rounded-3xl bg-[#09172a] border border-cyan-400/30 overflow-hidden shadow-[0_20px_60px_rgba(1,14,33,0.9)] backdrop-blur-xl group"><div class="absolute -right-20 -top-20 w-96 h-96 bg-amber-500/20 rounded-full blur-[100px] pointer-events-none"></div><div class="absolute -left-20 -bottom-20 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px] pointer-events-none"></div><div class="p-4 sm:p-6 border-b border-white/10 bg-[#061222]/80 flex flex-wrap items-center justify-between gap-4 relative z-20"><div class="flex items-center gap-3"><div class="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-label-code text-xs font-semibold shadow-[0_0_12px_rgba(56,189,248,0.25)]"><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span><span>⚡ LIVE TELEMETRI CLUSTER ACTIVE</span></div><span class="hidden lg:inline-flex items-center gap-1 font-label-code text-[11px] text-slate-400"><span class="material-symbols-outlined text-xs text-amber-400">radar</span> LATENCY: 1.2ms · HORISONT: 2025–2100</span></div><div class="flex items-center gap-2 overflow-x-auto" id="hero-preview-tabs"><button class="hero-tab-btn px-4 py-1.5 rounded-full text-xs font-label-code font-bold bg-cyan-500 text-slate-950 shadow-[0_0_15px_rgba(56,189,248,0.5)] transition-all" onclick="switchHeroTab('future')" type="button" id="tab-btn-future">02 // Future Simulator</button><button class="hero-tab-btn px-4 py-1.5 rounded-full text-xs font-label-code font-semibold bg-[#122238] hover:bg-white/10 text-slate-300 hover:text-white transition-all" onclick="switchHeroTab('galaxy')" type="button" id="tab-btn-galaxy">07 // Knowledge Galaxy</button><button class="hero-tab-btn px-4 py-1.5 rounded-full text-xs font-label-code font-semibold bg-[#122238] hover:bg-white/10 text-slate-300 hover:text-white transition-all" onclick="switchHeroTab('comic')" type="button" id="tab-btn-comic">04 // Comic World</button></div></div><div class="relative min-h-[440px] lg:min-h-[460px]" id="hero-tab-content-future"><div class="grid grid-cols-1 lg:grid-cols-12 items-center"><div class="lg:col-span-7 relative h-80 sm:h-96 lg:h-[460px] overflow-hidden bg-slate-950"><img alt="Future Simulation Control Center" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out opacity-90" src="https://lh3.googleusercontent.com/aida/ALJJyrAMx_-Eow-6Gk8rdnNFPeh7bQcYGefDmuYg1fEobi2HUUfybT9Nz8o3BVmBRfFgkuqHwW_a8QP8Wa1PWUnZFMEOgSGwLV_1-FMo5w43Jedoc6yel-LlayBSIBMhoqN0CBeghjZz7JiDYMrxPdLoGumt9Z13aN2RV3p3Cv78X4vasnDNSd9xNZKqATqmmrLV0K2-O7mPQjVmK8DqlKbhi5V9pPWMFT3EgVx88EBZ6ALl"><div class="absolute inset-0 bg-gradient-to-t from-[#09172a] via-[#09172a]/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#09172a]/40 lg:to-[#09172a]"></div><div class="absolute top-4 left-4 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-cyan-400/30 flex flex-col gap-1 shadow-lg max-w-xs pointer-events-none"><div class="flex items-center justify-between text-[11px] font-label-code text-cyan-300 font-bold"><span>AI AUTOMATION RATE</span><span>78.4%</span></div><div class="w-44 h-1.5 bg-slate-800 rounded-full overflow-hidden"><div class="w-[78%] h-full bg-gradient-to-r from-cyan-400 to-amber-400"></div></div><div class="flex items-center justify-between text-[10px] font-label-code text-slate-400 mt-1"><span>BRANCH ID: #NX-2088</span><span class="text-emerald-400">STABIL SYNTESE</span></div></div><div class="absolute bottom-4 left-4 hidden sm:flex items-center gap-3 p-2.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-white/10 pointer-events-none"><div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div><div class="font-label-code text-[11px] text-slate-300">KLIMA TIPPING POINTS: <span class="text-amber-300 font-bold">-1.4°C SCENARIE</span></div></div></div><div class="lg:col-span-5 p-6 sm:p-10 flex flex-col items-start justify-center relative z-10"><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-label-code uppercase tracking-wider font-bold mb-3"><span>✦</span><span>Fremtidssimulation Live</span></div><h2 class="font-headline-lg text-3xl sm:text-4xl text-white font-bold tracking-tight mb-3 leading-tight">Skab fremtiden i realtid.</h2><p class="font-body-md text-slate-300 text-sm sm:text-base leading-relaxed mb-6">Skru på automatisering, energi og klima. Se Danmarks og verdens scenarier fra 2025 til 2100 forgrene sig interaktivt.</p><div class="w-full p-4 rounded-2xl bg-surface-container/70 border border-white/10 mb-6 flex items-center justify-between gap-4 font-label-code text-xs"><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Aktive Parametre</span><span class="text-cyan-300 font-bold text-sm">4 Variabler</span></div><div class="h-8 w-px bg-white/10"></div><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Tidshorisont</span><span class="text-white font-bold text-sm">75 År</span></div><div class="h-8 w-px bg-white/10"></div><div class="flex flex-col"><span class="text-slate-400 text-[11px]">AI Forudsigelser</span><span class="text-emerald-400 font-bold text-sm">99.2%</span></div></div><div class="flex flex-wrap items-center gap-3"><button class="px-7 py-3 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 hover:shadow-[0_0_30px_rgba(245,158,11,0.7)] text-slate-950 font-bold text-sm transition-all flex items-center gap-2 hover:scale-105" onclick="triggerExperienceModal('02. Future Simulator')" type="button"><span>▶</span><span>Prøv Simulering Live →</span></button><button class="px-5 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-xs transition-all" onclick="filterCatalog('Data &amp; Fremtid')" type="button">Flere Data-oplevelser</button></div></div></div></div><div class="relative min-h-[440px] lg:min-h-[460px] hidden" id="hero-tab-content-galaxy"><div class="grid grid-cols-1 lg:grid-cols-12 items-center"><div class="lg:col-span-7 relative h-80 sm:h-96 lg:h-[460px] overflow-hidden bg-slate-950"><img alt="Knowledge Galaxy Planets" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABVFsnzZoU1FRD5MYDsmcC9ohOoEEsw3wgs7U8uLB-wSbupSvZMP4GaiQnr6b7hPBzBvz1C6EhqsTHHfVIKuhERH5YhGmMhllldH-4Cmu6f3Hunfqdj2Y04KIokYahR2gdK4RKmVx_lcpCYNhhjeVCiHXJ0XC9Ou0mtr-LVgUOdaxtmoCs1qrQfEYs9rJ-mZOfxdpMv6QnluUkMm2hbfVlTWo85M3SqEuT7RUumedUqH5l_zy79cG-"><div class="absolute inset-0 bg-gradient-to-t from-[#09172a] via-[#09172a]/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#09172a]/40 lg:to-[#09172a]"></div><div class="absolute top-4 left-4 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-amber-400/30 flex items-center gap-3 shadow-lg pointer-events-none"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span><span class="font-label-code text-xs text-amber-300 font-bold">5 PLANETER · ORBIT TELEMETRY AKTIV</span></div></div><div class="lg:col-span-5 p-6 sm:p-10 flex flex-col items-start justify-center relative z-10"><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-label-code uppercase tracking-wider font-bold mb-3"><span>✦</span><span>Ugens Hovedoplevelse</span></div><h2 class="font-headline-lg text-3xl sm:text-4xl text-white font-bold tracking-tight mb-3 leading-tight">Et helt univers venter.</h2><p class="font-body-md text-slate-300 text-sm sm:text-base leading-relaxed mb-6">Besøg fem planeter, lær noget nyt, bestå interaktive quizzer og saml XP i Knowledge Galaxy.</p><div class="w-full p-4 rounded-2xl bg-surface-container/70 border border-white/10 mb-6 flex items-center justify-between gap-4 font-label-code text-xs"><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Planeter</span><span class="text-amber-300 font-bold text-sm">5 Kloder</span></div><div class="h-8 w-px bg-white/10"></div><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Opgaver</span><span class="text-white font-bold text-sm">25 Quizzer</span></div><div class="h-8 w-px bg-white/10"></div><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Belønning</span><span class="text-cyan-400 font-bold text-sm">+500 XP</span></div></div><div class="flex flex-wrap items-center gap-3"><button class="px-7 py-3 rounded-full bg-white hover:bg-slate-100 text-slate-950 font-bold text-sm shadow-[0_0_25px_rgba(255,255,255,0.4)] hover:shadow-[0_0_35px_rgba(255,255,255,0.7)] hover:scale-105 transition-all duration-300 flex items-center gap-2" onclick="triggerExperienceModal('07. Knowledge Galaxy')" type="button"><span>▶</span><span>Udforsk Galaksen →</span></button><button class="px-5 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-xs transition-all" onclick="filterCatalog('Viden &amp; Læring')" type="button">Viden &amp; Læring</button></div></div></div></div><div class="relative min-h-[440px] lg:min-h-[460px] hidden" id="hero-tab-content-comic"><div class="grid grid-cols-1 lg:grid-cols-12 items-center"><div class="lg:col-span-7 relative h-80 sm:h-96 lg:h-[460px] overflow-hidden bg-slate-950"><img alt="Comic World Cyberpunk" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3WmVVwgX8MVeTT4bAJJPPnaxIXX9OcgJuYA6FLB0T8Fhz5dZ2E2zE63XnX2YrGSEyPtf6cELB72oFhNQdBQVcy3vi0hH9k8SWWqm3KdbIPKiiTVzZEeW5qu9sAEyIOnJ9JC-7nkvcLxJ_-TNxD9kAg3WJSfmWuRKpKcOZX_uDe8uPMKQUuKjGUP6rCU4f_H7vYy4C62blJVjNK4qAzhdcM1g0P0WABXU3Sx-onRY"><div class="absolute inset-0 bg-gradient-to-t from-[#09172a] via-[#09172a]/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-[#09172a]/40 lg:to-[#09172a]"></div><div class="absolute top-4 left-4 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-purple-400/30 flex items-center gap-3 shadow-lg pointer-events-none"><span class="w-2.5 h-2.5 rounded-full bg-purple-400 animate-pulse"></span><span class="font-label-code text-xs text-purple-300 font-bold">CYBERPUNK NARRATIV · KAPITEL 01</span></div></div><div class="lg:col-span-5 p-6 sm:p-10 flex flex-col items-start justify-center relative z-10"><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 text-xs font-label-code uppercase tracking-wider font-bold mb-3"><span>✦</span><span>Interaktiv Tegneserie</span></div><h2 class="font-headline-lg text-3xl sm:text-4xl text-white font-bold tracking-tight mb-3 leading-tight">Dine valg former historien.</h2><p class="font-body-md text-slate-300 text-sm sm:text-base leading-relaxed mb-6">Oplev tre originale grafiske fortællinger med dynamisk lyd, lys og forgrenede slutninger.</p><div class="w-full p-4 rounded-2xl bg-surface-container/70 border border-white/10 mb-6 flex items-center justify-between gap-4 font-label-code text-xs"><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Genrer</span><span class="text-purple-300 font-bold text-sm">Sci-Fi &amp; Noir</span></div><div class="h-8 w-px bg-white/10"></div><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Slutninger</span><span class="text-white font-bold text-sm">9 Veje</span></div><div class="h-8 w-px bg-white/10"></div><div class="flex flex-col"><span class="text-slate-400 text-[11px]">Læsetid</span><span class="text-cyan-400 font-bold text-sm">~12 min</span></div></div><div class="flex flex-wrap items-center gap-3"><button class="px-7 py-3 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 hover:shadow-[0_0_30px_rgba(168,85,247,0.6)] text-white font-bold text-sm transition-all flex items-center gap-2 hover:scale-105" onclick="triggerExperienceModal('04. Comic World')" type="button"><span>▶</span><span>Læs &amp; Vælg Næste Scene →</span></button><button class="px-5 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-white font-medium text-xs transition-all" onclick="filterCatalog('Visuel Magi')" type="button">Visuel Magi</button></div></div></div></div></div>
+<!-- 3 Metrics Key Numbers Strips -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+<!-- Metric 1 -->
+<div class="p-6 rounded-2xl bg-[#091629]/90 border border-white/5 backdrop-blur-md shadow-lg flex flex-col justify-center">
+<span class="font-headline-lg text-4xl sm:text-5xl font-bold text-white tracking-tight">15</span>
+<span class="font-body-sm text-sm text-slate-400 mt-1">Oplevelser</span>
+</div>
+<!-- Metric 2 -->
+<div class="p-6 rounded-2xl bg-[#091629]/90 border border-white/5 backdrop-blur-md shadow-lg flex flex-col justify-center">
+<span class="font-headline-lg text-4xl sm:text-5xl font-bold text-white tracking-tight">5</span>
+<span class="font-body-sm text-sm text-slate-400 mt-1">Universer</span>
+</div>
+<!-- Metric 3 -->
+<div class="p-6 rounded-2xl bg-[#091629]/90 border border-white/5 backdrop-blur-md shadow-lg flex flex-col justify-center">
+<span class="font-headline-lg text-4xl sm:text-5xl font-bold text-white tracking-tight">3</span>
+<span class="font-body-sm text-sm text-slate-400 mt-1">Interaktive demoer</span>
+</div>
+</div>
+</section>
+<!-- 3. POPULÆRE LIGE NU SEKTION (som i image.png / IMAGE_3) -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-2xl sm:text-3xl text-white font-bold">Populære lige nu</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Popular 1: Mission Control -->
+<article class="card-glass rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 group">
+<div>
+<div class="relative h-56 w-full overflow-hidden">
+<!-- Orbit Sci-Fi Control Room Imagery -->
+<img alt="Mission Control" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvUh9drTruudL6X_FQ1n3h75MYl_Zl74MX0g68z-HRE-92rG5QIv74um-l8KHkmgb-eEQYTt2sF7UnzA2Bv0Eq8Ie78JL-LudgR9lt8taSJsf_QEATOtDBPbn3kn_8xe77eZNsySQ6XewohZm0AOEt8fp1XG0yDwhpq6ZZOkibZUdDN8kxSntwu48dB2DyqS1EOvHJdN-ed0Zu2u21-kyAQnczQ9oMqQlgI0V2U4g">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<!-- Demo Badge -->
+<span class="absolute bottom-3 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md text-emerald-400 font-label-code text-xs font-semibold border border-emerald-500/30">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Demo</span>
+</span>
+<!-- Favorite Button -->
+<button class="absolute top-3 right-3 w-9 h-9 rounded-full bg-slate-900/70 hover:bg-slate-900 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="01" onclick="toggleFavorite('01')" type="button">
+<span class="material-symbols-outlined text-lg fav-icon-01 favorite-active">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<span class="font-label-code text-xs uppercase tracking-wider text-cyan-400 font-bold block mb-1">Data &amp; Fremtid</span>
+<h3 class="font-headline-sm text-xl text-white font-bold mb-2">Mission Control</h3>
+<p class="font-body-sm text-slate-300 text-sm leading-relaxed">
+                Styr tre teknologiprojekter fra et futuristisk kontrolcenter.
+              </p>
+</div>
+</div>
+<div class="p-6 pt-0">
+<button class="w-full py-2.5 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-sm transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('01. Mission Control')" type="button">
+<span>Oplev nu</span>
+<span class="text-xs">→</span>
+</button>
+</div>
+</article>
+<!-- Popular 2: Future Simulator -->
+<article class="card-glass rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 group border-cyan-400/40 shadow-[0_0_25px_rgba(56,189,248,0.2)]"><div class="relative"><div class="relative h-56 w-full overflow-hidden"><img alt="Future Simulator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDE81d9mT6r-OqYGknVa-kBEmMcD0lAWdzzQfeGLndFEEIIuJbZDQ1FLM7IXOlATbGJhitcaWu-16Ih1H7CCCDgxorEE1klh-DBqqb0HlgMYh-9XGnccg5P20PIgR_thSsPxXUrbVpzFkAbPbZ0nw9yCLNdWDzVtq6IAF2MjzNsyJVTI0ghqDN4VE38F_uXBBWeI3hic7HU4x1SxCFfU3LL4L55nB3v8m64zrgyN6k"><div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div><div class="absolute bottom-3 left-4 flex items-center gap-2"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md text-emerald-400 font-label-code text-xs font-semibold border border-emerald-500/30"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span>Demo</span></span><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/20 backdrop-blur-md text-amber-300 font-label-code text-[11px] font-bold border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.3)]"><span>✦</span><span>Aktiv Oplevelse</span></span></div><button class="absolute top-3 right-3 w-9 h-9 rounded-full bg-slate-900/70 hover:bg-slate-900 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="02" onclick="toggleFavorite('02')" type="button"><span class="material-symbols-outlined text-lg fav-icon-02">favorite</span></button></div><div class="p-6"><span class="font-label-code text-xs uppercase tracking-wider text-cyan-400 font-bold block mb-1">Data &amp; Fremtid</span><h3 class="font-headline-sm text-xl text-white font-bold mb-2 flex items-center gap-2"><span>Future Simulator</span><span class="text-xs font-label-code px-2 py-0.5 rounded-full bg-cyan-400/20 text-cyan-300 border border-cyan-400/30">Live</span></h3><p class="font-body-sm text-slate-300 text-sm leading-relaxed">Skru på fire parametre og se fremtidsscenarier ændre sig live i realtid.</p></div></div><div class="p-6 pt-0"><button class="w-full py-2.5 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 text-slate-950 font-bold text-sm shadow-[0_0_20px_rgba(242,138,60,0.4)] hover:shadow-[0_0_30px_rgba(245,158,11,0.7)] hover:scale-[1.02] transition-all flex items-center justify-center gap-1.5" onclick="triggerExperienceModal('02. Future Simulator')" type="button"><span class="text-xs">▶</span><span>Start Simulering</span><span class="text-xs">→</span></button></div></article>
+<!-- Popular 3: Knowledge Galaxy -->
+<article class="card-glass rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 group">
+<div>
+<div class="relative h-56 w-full overflow-hidden">
+<img alt="Knowledge Galaxy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQeU2hDH-ZrO1HwRwjpx0xOgbl0nGcbhXVYa-ffvodQANjYm-U0Eb-xqx2IgPwboeyWCXbQGdbFxFBqVUwfirRI6H3bq9o2_mhmngmYyTWH4XbXqfXIGhVF1LIYYd0kHV0aZ191c1xRqqnLm1kb2wGyofYkQW7As0rcN3QnU6GmOc2y0eUpyq2sTIh6j7ywDac7pkQ_xpn-gQ1hO3miv6hrJ53mw5m7pCJXg32grf7dr7NwC2GtBG0">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-3 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/85 backdrop-blur-md text-emerald-400 font-label-code text-xs font-semibold border border-emerald-500/30">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Demo</span>
+</span>
+<button class="absolute top-3 right-3 w-9 h-9 rounded-full bg-slate-900/70 hover:bg-slate-900 border border-white/10 backdrop-blur-md flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="07" onclick="toggleFavorite('07')" type="button">
+<span class="material-symbols-outlined text-lg fav-icon-07 favorite-active">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<span class="font-label-code text-xs uppercase tracking-wider text-amber-400 font-bold block mb-1">Viden &amp; Læring</span>
+<h3 class="font-headline-sm text-xl text-white font-bold mb-2">Knowledge Galaxy</h3>
+<p class="font-body-sm text-slate-300 text-sm leading-relaxed">
+                Fem planeter fulde af viden, quizzer og XP.
+              </p>
+</div>
+</div>
+<div class="p-6 pt-0">
+<button class="w-full py-2.5 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-sm transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('07. Knowledge Galaxy')" type="button">
+<span>Oplev nu</span>
+<span class="text-xs">→</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- 4. FEM UNIVERSER KATEGORI-KORT (som i image.png / IMAGE_3) -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-10" id="universer">
+<div class="mb-6">
+<h2 class="font-headline-md text-2xl sm:text-3xl text-white font-bold">Fem universer</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- Universe 1: Data & Fremtid (Cyan) -->
+<div class="cursor-pointer p-5 rounded-2xl bg-[#091729] border border-cyan-500/30 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(56,189,248,0.25)] transition-all flex flex-col justify-between group" onclick="filterCatalog('Data &amp; Fremtid')"><div><div class="flex items-center justify-between mb-2"><h3 class="font-headline-sm text-lg font-bold text-cyan-400">Data &amp; Fremtid</h3><span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span></div><p class="font-body-sm text-xs text-slate-300 leading-relaxed mb-3">Styr projekter, simulér fremtidsscenarier og udforsk verden i tal.</p><div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-[11px] font-label-code font-semibold hover:bg-cyan-500/25 transition-all" onclick="event.stopPropagation(); triggerExperienceModal('02. Future Simulator');"><span class="text-amber-400 text-xs">✦</span><span>Inkl. Future Simulator</span></div></div><div class="mt-4 flex items-center justify-between text-xs text-slate-300 group-hover:text-cyan-300 font-medium"><span>3 oplevelser</span><span class="text-sm group-hover:translate-x-1 transition-transform">→</span></div></div>
+<!-- Universe 2: Visuel Magi (Lilla/Indigo) -->
+<div class="cursor-pointer p-5 rounded-2xl bg-[#0d162d] border border-purple-500/30 hover:border-purple-400 hover:shadow-[0_0_25px_rgba(168,85,247,0.25)] transition-all flex flex-col justify-between group" onclick="filterCatalog('Visuel Magi')">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-purple-400 mb-2">Visuel Magi</h3>
+<p class="font-body-sm text-xs text-slate-300 leading-relaxed">
+              Tegneserier, visuelle noter og produkter set indefra.
+            </p>
+</div>
+<div class="mt-6 flex items-center justify-between text-xs text-slate-300 group-hover:text-purple-300 font-medium">
+<span>3 oplevelser</span>
+<span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+<!-- Universe 3: Viden & Læring (Guld/Amber) -->
+<div class="cursor-pointer p-5 rounded-2xl bg-[#171a25] border border-amber-500/30 hover:border-amber-400 hover:shadow-[0_0_25px_rgba(245,158,11,0.25)] transition-all flex flex-col justify-between group" onclick="filterCatalog('Viden &amp; Læring')">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-amber-400 mb-2">Viden &amp; Læring</h3>
+<p class="font-body-sm text-xs text-slate-300 leading-relaxed">
+              Rejs gennem viden, tid og færdigheder.
+            </p>
+</div>
+<div class="mt-6 flex items-center justify-between text-xs text-slate-300 group-hover:text-amber-300 font-medium">
+<span>3 oplevelser</span>
+<span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+<!-- Universe 4: Spil & Opdagelser (Varm orange/koral) -->
+<div class="cursor-pointer p-5 rounded-2xl bg-[#1a1725] border border-orange-500/30 hover:border-orange-400 hover:shadow-[0_0_25px_rgba(249,115,22,0.25)] transition-all flex flex-col justify-between group" onclick="filterCatalog('Spil &amp; Opdagelser')">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-orange-400 mb-2">Spil &amp; Opdagelser</h3>
+<p class="font-body-sm text-xs text-slate-300 leading-relaxed">
+              Løs gåder, opklar sager og træf svære valg.
+            </p>
+</div>
+<div class="mt-6 flex items-center justify-between text-xs text-slate-300 group-hover:text-orange-300 font-medium">
+<span>3 oplevelser</span>
+<span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+<!-- Universe 5: Kreativitet & Teknologi (Smaragdgrøn) -->
+<div class="cursor-pointer p-5 rounded-2xl bg-[#091b26] border border-emerald-500/30 hover:border-emerald-400 hover:shadow-[0_0_25px_rgba(16,185,129,0.25)] transition-all flex flex-col justify-between group" onclick="filterCatalog('Kreativitet &amp; Teknologi')">
+<div>
+<h3 class="font-headline-sm text-lg font-bold text-emerald-400 mb-2">Kreativitet &amp; Teknologi</h3>
+<p class="font-body-sm text-xs text-slate-300 leading-relaxed">
+              Design, neurale netværk og film i ét studie.
+            </p>
+</div>
+<div class="mt-6 flex items-center justify-between text-xs text-slate-300 group-hover:text-emerald-300 font-medium">
+<span>3 oplevelser</span>
+<span class="text-sm group-hover:translate-x-1 transition-transform">→</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. KATALOG MED ALLE 15 OPLEVELSER (som i image.png / IMAGE_2) -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-14" id="katalog">
+<!-- Section Header & Filter Tabs -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<h2 class="font-headline-md text-2xl sm:text-3xl text-white font-bold">Alle 15 oplevelser</h2>
+</div>
+<!-- Filter Pill Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1" id="filter-tabs">
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-slate-950 shadow-md" data-category="alle" onclick="filterCatalog('alle')" type="button">
+            Alle (15)
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white" data-category="Data &amp; Fremtid" onclick="filterCatalog('Data &amp; Fremtid')" type="button">
+            Data &amp; Fremtid
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white" data-category="Visuel Magi" onclick="filterCatalog('Visuel Magi')" type="button">
+            Visuel Magi
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white" data-category="Viden &amp; Læring" onclick="filterCatalog('Viden &amp; Læring')" type="button">
+            Viden &amp; Læring
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white" data-category="Spil &amp; Opdagelser" onclick="filterCatalog('Spil &amp; Opdagelser')" type="button">
+            Spil &amp; Opdagelser
+          </button>
+<button class="filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white" data-category="Kreativitet &amp; Teknologi" onclick="filterCatalog('Kreativitet &amp; Teknologi')" type="button">
+            Kreativitet &amp; Tech
+          </button>
+</div>
+</div>
+<!-- 4-COLUMN ELEGANT GRID MED ALLE 15 OPLEVELSER -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="catalog-grid">
+<!-- CARD 01: Mission Control -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="01" data-title="Mission Control" data-universe="Data &amp; Fremtid">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Mission Control" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNxdMZZioYZF1OfH62oQZyEKtgVO4XPQ92zT0MYMYR-1-jcnLFinQ8D4xF48cTFLDI5-ODC-kbix8nO9O02WQPNSFVurpyisXKkPQfL9MPr8TkQz2lBsS9Bw0jq5AsXcIlXr8Pgdptd6eyW2xGCwih-Qc_LrdT1qIE8EYX8lKFPQBBDrfQ36XrNBkFkjSr__SNQh9VUSJYc2mWIEXw-khRfHJug1yPGFNTbSd1vA">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 font-label-code text-[11px] font-semibold flex items-center gap-1 border border-emerald-500/30">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Demo
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="01" onclick="toggleFavorite('01')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-01 favorite-active">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-cyan-400 font-bold block mb-1">Data &amp; Fremtid</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Mission Control</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Styr tre teknologiprojekter fra et futuristisk kontrolcenter.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('01. Mission Control')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 02: Future Simulator -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all border-cyan-400/40 shadow-[0_0_15px_rgba(56,189,248,0.2)]" data-id="02" data-title="Future Simulator" data-universe="Data &amp; Fremtid"><div><div class="relative h-44 w-full overflow-hidden"><img alt="Future Simulator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlT9Dj1nJrIYenU9lDRVEixyb8rfrWYIRQ8ko8od9bhghsQAJAlA_2qinxgGR_oQPUFCtpzLhPf4STg3JOq7emg4Vyvvoux3br8ZhWzqGYwKpLp6QYGabyAOuMw656k7jiscFn9VVuLgGMpkz4u2BkK6YhA9yQ6x5wGd0g5heGzxF1z3IwySoNWvDSflvpIgRPYlpG7S9rkpE_PfwfgisA79ESmGULXXVzhgkKlnc"><div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div><div class="absolute bottom-2.5 left-3 flex items-center gap-1.5"><span class="px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 font-label-code text-[11px] font-semibold flex items-center gap-1 border border-emerald-500/30"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Demo</span><span class="px-2 py-0.5 rounded-full bg-amber-500/20 backdrop-blur-md text-amber-300 font-label-code text-[10px] font-bold border border-amber-500/30">Aktiv</span></div><button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="02" onclick="toggleFavorite('02')" type="button"><span class="material-symbols-outlined text-base fav-icon-02">favorite</span></button></div><div class="p-4"><span class="font-label-code text-[11px] uppercase tracking-wider text-cyan-400 font-bold block mb-1">Data &amp; Fremtid</span><h3 class="font-headline-sm text-base text-white font-bold mb-1">Future Simulator</h3><p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">Skru på fire parametre og se fremtidsscenarier ændre sig live.</p></div></div><div class="p-4 pt-0"><button class="w-full py-2 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 text-slate-950 font-bold text-xs shadow-[0_0_15px_rgba(242,138,60,0.35)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] hover:scale-[1.02] transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('02. Future Simulator')" type="button"><span>Start Simulering</span><span>→</span></button></div></article>
+<!-- CARD 03: World Data Explorer -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="03" data-title="World Data Explorer" data-universe="Data &amp; Fremtid">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="World Data Explorer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCaxDmgCptc2rHCLP7i39GdmLO-x7vDSdLEJQLv9IEJsJ6uqA9r3HuLHuFwpEj2yW3Xzrz_oWSFvktT2w_hfeb3pMcZlzkbGI95OkJ5-10vbfJub4zN3vLTt6Hd1-rXKPX2Nj2P2JlS9oKRZVDVcTtmuKE6WdrdLTxt_Hwm7169Y8CIhDzRPUQklzVjncdm0WTwi16fGL0kHH-AclvmytqGX5s1ziXEU0SZveXeCw">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="03" onclick="toggleFavorite('03')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-03">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-cyan-400 font-bold block mb-1">Data &amp; Fremtid</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">World Data Explorer</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Et lysende verdenskort med datalag om befolkning, energi og teknologi.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('03. World Data Explorer')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 04: Comic World -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="04" data-title="Comic World" data-universe="Visuel Magi">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Comic World" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3WmVVwgX8MVeTT4bAJJPPnaxIXX9OcgJuYA6FLB0T8Fhz5dZ2E2zE63XnX2YrGSEyPtf6cELB72oFhNQdBQVcy3vi0hH9k8SWWqm3KdbIPKiiTVzZEeW5qu9sAEyIOnJ9JC-7nkvcLxJ_-TNxD9kAg3WJSfmWuRKpKcOZX_uDe8uPMKQUuKjGUP6rCU4f_H7vYy4C62blJVjNK4qAzhdcM1g0P0WABXU3Sx-onRY">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="04" onclick="toggleFavorite('04')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-04">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-purple-400 font-bold block mb-1">Visuel Magi</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Comic World</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Tre originale tegneserier, hvor dine valg ændrer næste scene.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('04. Comic World')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 05: Visual Notes Studio -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="05" data-title="Visual Notes Studio" data-universe="Visuel Magi">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Visual Notes Studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZDqKGUk22rLXv5-VdgiMIoFgJFjt1ud4xiayHoi3FNXMgzoCb3La4BZQqsrb3Jdm730ZX8XxRy2AOT-NKkcMIrdqEa0MJV_wrNgHTUw7Z-yUtMtmx_J_EK4jHIS2BKWT_i98V4cCvYTjZzBuFE5migd3e_c_U6F8IiihzrsTR8jeJvm8wbCR-rCwIJacn92WckRRvZIsrSw_jkXIUyfqNKpgyFj9HIrcm1y0_mrU">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="05" onclick="toggleFavorite('05')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-05">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-purple-400 font-bold block mb-1">Visuel Magi</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Visual Notes Studio</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Sketchnotes og mindmaps om AI, hjernen, vaner og teknologi.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('05. Visual Notes Studio')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 06: 3D Exploded Lab -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="06" data-title="3D Exploded Lab" data-universe="Visuel Magi">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="3D Exploded Lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0It3VzOLCJ1h8ece0UIESwxNEelUmky1EGfiXnf7fFhqu-Ao12YrfuO36NjSaQlgn9LGAItr5DaQwkypyD9w75qn03wqUzPleRFUUgkvLKBijB5PN3S-28XkObdgmShjZbM0itx3zIIARUgRuI7dp0L40BHsOPfvYSM2uxrLKjUt1nX13mwQrMZ5L5yZyaFxtcCi_R6tSfpRqsiUMMe3n1LvkTDZgkm2m9hqniWI">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="06" onclick="toggleFavorite('06')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-06">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-purple-400 font-bold block mb-1">Visuel Magi</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">3D Exploded Lab</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Skil en gaming-pc, et kamera eller en motor ad – lag for lag.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('06. 3D Exploded Lab')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 07: Knowledge Galaxy -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="07" data-title="Knowledge Galaxy" data-universe="Viden &amp; Læring">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Knowledge Galaxy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQeU2hDH-ZrO1HwRwjpx0xOgbl0nGcbhXVYa-ffvodQANjYm-U0Eb-xqx2IgPwboeyWCXbQGdbFxFBqVUwfirRI6H3bq9o2_mhmngmYyTWH4XbXqfXIGhVF1LIYYd0kHV0aZ191c1xRqqnLm1kb2wGyofYkQW7As0rcN3QnU6GmOc2y0eUpyq2sTIh6j7ywDac7pkQ_xpn-gQ1hO3miv6hrJ53mw5m7pCJXg32grf7dr7NwC2GtBG0">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 font-label-code text-[11px] font-semibold flex items-center gap-1 border border-emerald-500/30">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Demo
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="07" onclick="toggleFavorite('07')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-07 favorite-active">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-amber-400 font-bold block mb-1">Viden &amp; Læring</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Knowledge Galaxy</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Fem planeter fulde af viden, quizzer og XP.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('07. Knowledge Galaxy')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 08: Time Machine -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="08" data-title="Time Machine" data-universe="Viden &amp; Læring">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Time Machine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdwVoUlmoEbBPla4OqvOE-q9KXN-8CYB00vQJgTr7WKOf7qfLpG0L9JAcR3nRPANMdc9VWk5JsMXWVlvq7HpfcL1S1A7Znea_qbWJMMPRsYl0oLubHXxwmaXCy6GMRdyB6aPPEVUKzGgADReRRFHYUMKOmYtPe4sbqtWH_P3ywU-D8Y358lsvQ039pM85tGviVR0R1MiVc5xzkdtR61Txv3bR-NwuA5t8pEtxqbPo">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="08" onclick="toggleFavorite('08')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-08">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-amber-400 font-bold block mb-1">Viden &amp; Læring</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Time Machine</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Træk dig gennem historien fra oldtiden til internettet.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('08. Time Machine')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 09: Skilltree Academy -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="09" data-title="Skilltree Academy" data-universe="Viden &amp; Læring">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Skilltree Academy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVbprT_ezNGak40WCsCMA-AC9AEvzjzQhy8_X8wfw2vQZB0ZgjHUiL-vEu_DNUModrZy5qtV0HindV7uqRV2lXGF-r03cYMTaGRV0WT7lO9pTzWfuh1wGuAivqcEolwKbvA_KPi3E1S36GmKAU4i2mizvFaEFAvU33iK_zIv-5C54tlzjKwWIij_Pbj8hqfGRcQOc-tts8D1sG-O0JZUD3i2Gpt15OcYGfSl85-Q">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="09" onclick="toggleFavorite('09')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-09">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-amber-400 font-bold block mb-1">Viden &amp; Læring</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Skilltree Academy</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                RPG-inspireret færdighedstræ med praktiske udfordringer og XP.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('09. Skilltree Academy')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 10: Detective Mode -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="10" data-title="Detective Mode" data-universe="Spil &amp; Opdagelser">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Detective Mode" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf96pcCI2ivry9CRPb4GirpqbaXj1F9a25qY7kE5DtJT-RFFs-Xk39-NMw6Aa6mI86-J0cQNNvRO2_3WM-S7oqwCS0uqTZ8bdFNI4l1EVMOYBWnreaOjehPS4QD8udJi9idNQBbvW45isT_L7lVXU5dyX9NOSNkRkGQsqfSZlCHNd4N-y-K2QXnvH8HHJZh7ShggyXHXl_nPfO0OkUHNM9u2nZGxpVMFdn3UMCCdo">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="10" onclick="toggleFavorite('10')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-10">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-orange-400 font-bold block mb-1">Spil &amp; Opdagelser</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Detective Mode</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Opklar sagen 'The Vanishing Prototype' med interaktivt bevisbræt.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('10. Detective Mode')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 11: Escape AI -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="11" data-title="Escape AI" data-universe="Spil &amp; Opdagelser">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Escape AI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAonPskp7RdKIGpgV2I7K5HXhNLeGClC2dz2I4gnkr4HnG-uwa9EPRrOe87u9YohnZro7ff1Fke3DniO8EDoLn2SXejsSoWM-p9FKBJrmqWM4Ko5o3kN788yqWmnKj-WDxqqnT2PqnrRguoF2aLQMgmctxF8mLi61X45B2j4JFmhHiOJxGGbFpIJHucjJAPKpNDpa-QJ0iDprE1XRyxtCeDVXwL4xSpJp-meymt0z4">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 font-label-code text-[11px] font-semibold flex items-center gap-1 border border-emerald-500/30">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Demo
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="11" onclick="toggleFavorite('11')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-11">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-orange-400 font-bold block mb-1">Spil &amp; Opdagelser</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Escape AI</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Laboratorium 07: Logisk escape room med tre koder og smarte hints.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('11. Escape AI')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 12: Decision Lab -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="12" data-title="Decision Lab" data-universe="Spil &amp; Opdagelser">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Decision Lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy1NH9edg2SKd7Mqp8e3ciO4kqmGREWfWxEPpxkjomS4GGtjETCy9nFrgiGAuLjX0-xh3BgjD-CCakDBLZdBgj27qXtYgLGrcvwCw6l_2JVZkd_B8R9fE3JYl8VRoRvOWDtF1sgnkny2yQLMvO97e-oiqo6iW8_wYH_x206b6hgLDAEiVwKbmAEuxONL6CUgVTC_2FWGAEaR3Hl3GPk31vMQuK0qLO6Ac7OgYWNMo">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="12" onclick="toggleFavorite('12')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-12">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-orange-400 font-bold block mb-1">Spil &amp; Opdagelser</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Decision Lab</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Strategisk ledelsessimulation igennem kritiske etiske dilemmaer.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('12. Decision Lab')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 13: Design Playground -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="13" data-title="Design Playground" data-universe="Kreativitet &amp; Teknologi">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Design Playground" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKTQFcCMNcnze53OSuHSpaJrNibnzA-vBpg5Qdvah6-w6Y2FA3UvO2cVFGH-Box9ZM64zQD3KDV6O-OkSU45XmhHhKuSWyEGDh0dFaCh5kVMF3zDKUt366AWzV1vEyKZLGPvdPVY2xrmDiC94Tn_rUBWOhSDV-JjgA6q2IV2YFDbOfOMM_uX74wvVmMosQKxoAvwp6Ops4HCNNrMbd1hAyCug48bvx6HKTS6DGVjQ">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="13" onclick="toggleFavorite('13')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-13">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-emerald-400 font-bold block mb-1">Kreativitet &amp; Tech</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Design Playground</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Live designstudie med farvepaletter, typografi og layout-tokens.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('13. Design Playground')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 14: AI Brain Explorer -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="14" data-title="AI Brain Explorer" data-universe="Kreativitet &amp; Teknologi">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="AI Brain Explorer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW8k1Wm_mOYiUBnOh3zbQbiFjrbrmlJ_RtBn8I1JMn_RGjnLtHpjf6EULTjzVzAic1C3Ois028zrftY1PBuisZroO-o37p-STkAa1YVmkX-HqTfJpqgZVI9lgw81x4QB_EUol_qe4NPsEpF_YeDu8kZWjAE56BZ-TCc7X4tI6Rv59d6EW3GlOI7PtWELeA8usF9spsuJhJ94XmOr5ASTsQyicg2RSkiPl84G7evMA">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 font-label-code text-[11px] font-semibold flex items-center gap-1 border border-emerald-500/30">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>Demo
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="14" onclick="toggleFavorite('14')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-14">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-emerald-400 font-bold block mb-1">Kreativitet &amp; Tech</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">AI Brain Explorer</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Interaktiv visualisering af neurale vægte og 2D-klassifikation.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('14. AI Brain Explorer')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+<!-- CARD 15: Storyboard Cinema -->
+<article class="experience-card card-glass rounded-2xl overflow-hidden flex flex-col justify-between group transition-all" data-id="15" data-title="Storyboard Cinema" data-universe="Kreativitet &amp; Teknologi">
+<div>
+<div class="relative h-44 w-full overflow-hidden">
+<img alt="Storyboard Cinema" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRyejobRnvGzMUowKJd9AqODnkgXDlPAhvhcCSxGBRHDrntSxJ3wyTtHmM8VudWBSqacphBFTT77OufvzF6HoDCJEBsRTR-hvtZUNXT0EeZkhQIKotnWaSdH0cd81WsAtOeizSpAOwRXFS1sHgKGsr7XzpkG-wMJVRzLBqocP0E5JBvjmIbGSJs5jKDiHgo4uqRdzp3sTfrRJCLdOcBLIXeusdDNXWeBO-a0dEFtc">
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e1c2f] via-transparent to-transparent"></div>
+<span class="absolute bottom-2.5 left-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 backdrop-blur-md text-slate-300 font-label-code text-[11px] font-semibold border border-white/10">
+                Preview
+              </span>
+<button class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-slate-950/70 border border-white/10 flex items-center justify-center text-slate-300 hover:text-white transition-all" data-btn-fav="15" onclick="toggleFavorite('15')" type="button">
+<span class="material-symbols-outlined text-base fav-icon-15">favorite</span>
+</button>
+</div>
+<div class="p-4">
+<span class="font-label-code text-[11px] uppercase tracking-wider text-emerald-400 font-bold block mb-1">Kreativitet &amp; Tech</span>
+<h3 class="font-headline-sm text-base text-white font-bold mb-1">Storyboard Cinema</h3>
+<p class="font-body-sm text-slate-300 text-xs line-clamp-2 leading-relaxed">
+                Instruktørpult for sci-fi-filmen med interaktive kameravinkler.
+              </p>
+</div>
+</div>
+<div class="p-4 pt-0">
+<button class="w-full py-2 rounded-full border border-white/15 bg-white/5 hover:bg-white/15 text-white font-medium text-xs transition-all flex items-center justify-center gap-1" onclick="triggerExperienceModal('15. Storyboard Cinema')" type="button">
+<span>Oplev nu</span>
+<span>→</span>
+</button>
+</div>
+</article>
+</div>
+<!-- No Results State -->
+<div class="hidden py-16 text-center flex-col items-center justify-center rounded-3xl bg-[#091729] border border-white/5 mt-6" id="no-results-msg">
+<span class="material-symbols-outlined text-slate-400 text-5xl mb-3">search_off</span>
+<h4 class="font-headline-sm text-lg text-white font-bold">Ingen oplevelser matchede din søgning</h4>
+<p class="font-body-sm text-slate-400 text-xs mt-1">Prøv at nulstille dit filter eller søg efter et andet nøgleord.</p>
+<button class="mt-4 px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-medium text-xs transition-all" onclick="resetFilters()" type="button">
+          Nulstil filtre
+        </button>
+</div>
+</section>
+<!-- LIVE DEMO SIMULATOR MODAL (Triggered by 'Oplev nu' buttons) -->
+<div class="fixed inset-0 z-50 hidden bg-[#051426]/95 backdrop-blur-2xl flex flex-col overflow-hidden text-on-surface" id="experience-modal">
+  <!-- Top High-Tech Command Bar -->
+  <header class="h-16 px-4 md:px-8 bg-[#09172a]/90 border-b border-cyan-400/30 flex items-center justify-between gap-4 shrink-0 z-20 backdrop-blur-md">
+    <div class="flex items-center gap-3 overflow-x-auto">
+      <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-label-code text-xs font-semibold shadow-[0_0_12px_rgba(56,189,248,0.25)] shrink-0">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span id="modal-live-status">REALTIME SIMULATION KØRER</span>
+      </div>
+      <div class="h-4 w-px bg-white/10 hidden sm:block"></div>
+      <div class="flex items-center gap-2 text-xs font-label-code text-slate-300 shrink-0">
+        <span class="text-slate-500">SANDBOX //</span>
+        <span class="text-white font-bold tracking-wide uppercase" id="modal-title">02. Future Simulator</span>
+      </div>
+      <div class="hidden lg:flex items-center gap-2 text-[11px] font-label-code text-slate-400 ml-4">
+        <span class="px-2 py-0.5 rounded bg-slate-900 border border-white/10 text-cyan-300">Latency: 0.8ms</span>
+        <span class="px-2 py-0.5 rounded bg-slate-900 border border-white/10 text-amber-300">Monte Carlo: 10k it.</span>
+        <span class="px-2 py-0.5 rounded bg-slate-900 border border-white/10 text-emerald-400">Horisont: 2025–2100</span>
+      </div>
+    </div>
+    <!-- Right Quick Controls & Close -->
+    <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+      <div class="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-slate-900/80 border border-white/10" id="modal-experience-tabs">
+        <button type="button" onclick="selectModalView('02. Future Simulator')" id="modal-tab-future" class="px-3 py-1 rounded-full text-xs font-label-code font-bold bg-cyan-500 text-slate-950 transition-all">02 Future</button>
+        <button type="button" onclick="selectModalView('07. Knowledge Galaxy')" id="modal-tab-galaxy" class="px-3 py-1 rounded-full text-xs font-label-code text-slate-300 hover:text-white transition-all">07 Galaxy</button>
+        <button type="button" onclick="selectModalView('04. Comic World')" id="modal-tab-comic" class="px-3 py-1 rounded-full text-xs font-label-code text-slate-300 hover:text-white transition-all">04 Comic</button>
+      </div>
+      <button type="button" onclick="resetModalParameters()" class="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/15 text-slate-300 hover:text-white text-xs font-label-code transition-all">
+        <span class="material-symbols-outlined text-sm">restart_alt</span>
+        <span>Nulstil</span>
+      </button>
+      <button type="button" onclick="closeExperienceModal()" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900 hover:bg-slate-800 border border-cyan-400/40 text-cyan-300 hover:text-white font-label-code text-xs font-bold transition-all shadow-[0_0_12px_rgba(56,189,248,0.25)]">
+        <span class="material-symbols-outlined text-base">close</span>
+        <span>Luk [ESC]</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Fullscreen Modal View Container -->
+  <div class="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8 relative bg-gradient-to-b from-[#051426] via-[#09172a] to-[#030d1a]">
+    <div class="max-w-7xl mx-auto h-full flex flex-col justify-between">
+
+      <!-- VIEW 1: 02 FUTURE SIMULATOR (Cockpit) -->
+      <div id="modal-view-future" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <!-- Left Holographic Telemetry & Branching Tree -->
+        <div class="lg:col-span-7 flex flex-col gap-4">
+          <div class="p-6 rounded-3xl bg-[#091729]/90 border border-cyan-400/30 backdrop-blur-xl relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+            <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="font-label-code text-xs font-bold uppercase text-amber-300 tracking-wider">Scenarie Syntese: 2025 → 2100</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-label-code text-slate-400">
+                <span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Model: GPT-O-Next</span>
+              </div>
+            </div>
+
+            <!-- Branching Path Visualization -->
+            <div class="relative h-64 sm:h-80 w-full rounded-2xl bg-slate-950/80 border border-white/10 overflow-hidden p-4 flex flex-col justify-between">
+              <div class="flex items-center justify-between text-xs font-label-code text-slate-400 z-10">
+                <span>2025 · Nu</span>
+                <span>2050 · Net Zero</span>
+                <span>2075 · AGI Hubs</span>
+                <span>2100 · Stabil Syntese</span>
+              </div>
+              <!-- SVG Holographic Curves -->
+              <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-80" preserveAspectRatio="none" viewBox="0 0 500 200">
+                <path d="M 0 160 C 150 160, 250 80, 500 50" fill="none" stroke="#38bdf8" stroke-dasharray="4 2" stroke-width="2.5"></path>
+                <path d="M 0 160 C 180 160, 260 140, 500 130" fill="none" stroke="#f59e0b" stroke-width="2"></path>
+                <path d="M 0 160 C 120 160, 240 180, 500 180" fill="none" stroke="#a855f7" stroke-dasharray="2 4" stroke-width="1.5"></path>
+              </svg>
+              <div class="relative z-10 grid grid-cols-3 gap-2 mt-auto pt-4">
+                <div class="p-2.5 rounded-xl bg-[#09172a]/90 border border-cyan-400/40">
+                  <span class="text-[10px] font-label-code text-cyan-400 font-bold block">SPOR ALPHA</span>
+                  <span class="text-xs text-white font-semibold">Teknologisk Singularitet</span>
+                  <span class="text-[11px] font-label-code text-emerald-400 block mt-1">+84% vækst</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#09172a]/90 border border-amber-500/40">
+                  <span class="text-[10px] font-label-code text-amber-400 font-bold block">SPOR BETA</span>
+                  <span class="text-xs text-white font-semibold">Cirkulær Balance</span>
+                  <span class="text-[11px] font-label-code text-amber-300 block mt-1">-1.4°C scenarie</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#09172a]/90 border border-purple-400/40">
+                  <span class="text-[10px] font-label-code text-purple-400 font-bold block">SPOR GAMMA</span>
+                  <span class="text-xs text-white font-semibold">Fragmenteret AI</span>
+                  <span class="text-[11px] font-label-code text-slate-400 block mt-1">Regional regulering</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Telemetry Metrics Bar Below Graph -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+              <div class="p-3 rounded-xl bg-[#0d1d33] border border-white/5">
+                <span class="text-slate-400 text-[11px] block">Energi Overskud</span>
+                <span class="text-cyan-300 font-bold text-base font-label-code" id="val-energy">+310 TWh</span>
+              </div>
+              <div class="p-3 rounded-xl bg-[#0d1d33] border border-white/5">
+                <span class="text-slate-400 text-[11px] block">Arbejdsstyrke Omskoling</span>
+                <span class="text-amber-300 font-bold text-base font-label-code" id="val-workforce">42%</span>
+              </div>
+              <div class="p-3 rounded-xl bg-[#0d1d33] border border-white/5">
+                <span class="text-slate-400 text-[11px] block">Biosfære Score</span>
+                <span class="text-emerald-400 font-bold text-base font-label-code" id="val-biosphere">74 / 100</span>
+              </div>
+              <div class="p-3 rounded-xl bg-[#0d1d33] border border-white/5">
+                <span class="text-slate-400 text-[11px] block">Gini-koefficient</span>
+                <span class="text-purple-300 font-bold text-base font-label-code" id="val-gini">0.28</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Parametric Control Panel -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          <div class="p-6 rounded-3xl bg-[#091729]/90 border border-white/10 backdrop-blur-xl shadow-xl">
+            <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-3">
+              <h3 class="font-headline-sm text-lg text-white font-bold flex items-center gap-2">
+                <span class="material-symbols-outlined text-amber-400 text-xl">tune</span>
+                <span>Parametriske Skydeknapper</span>
+              </h3>
+              <span class="font-label-code text-xs text-slate-400">4 Variabler</span>
+            </div>
+
+            <!-- Sliders -->
+            <div class="flex flex-col gap-4">
+              <div>
+                <div class="flex justify-between text-xs font-label-code mb-1.5">
+                  <span class="text-slate-300">AI Automationsgrad</span>
+                  <span class="text-cyan-300 font-bold" id="label-param-auto">78%</span>
+                </div>
+                <input type="range" min="10" max="100" value="78" class="w-full accent-cyan-400 cursor-pointer" id="slider-auto" oninput="updateSimulationMetrics()">
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-label-code mb-1.5">
+                  <span class="text-slate-300">CO2 Reduktionsinvestering</span>
+                  <span class="text-emerald-400 font-bold" id="label-param-co2">85%</span>
+                </div>
+                <input type="range" min="10" max="100" value="85" class="w-full accent-emerald-400 cursor-pointer" id="slider-co2" oninput="updateSimulationMetrics()">
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-label-code mb-1.5">
+                  <span class="text-slate-300">Globalt Forskningssamarbejde</span>
+                  <span class="text-amber-400 font-bold" id="label-param-collab">64%</span>
+                </div>
+                <input type="range" min="10" max="100" value="64" class="w-full accent-amber-400 cursor-pointer" id="slider-collab" oninput="updateSimulationMetrics()">
+              </div>
+              <div>
+                <div class="flex justify-between text-xs font-label-code mb-1.5">
+                  <span class="text-slate-300">Universel Borgerløn / Sikkerhedsnet</span>
+                  <span class="text-purple-300 font-bold" id="label-param-ubi">70%</span>
+                </div>
+                <input type="range" min="0" max="100" value="70" class="w-full accent-purple-400 cursor-pointer" id="slider-ubi" oninput="updateSimulationMetrics()">
+              </div>
+            </div>
+
+            <!-- Monte Carlo Simulation Trigger -->
+            <div class="mt-6 pt-4 border-t border-white/10 flex flex-col gap-3">
+              <button type="button" onclick="runMonteCarlo()" id="btn-monte-carlo" class="w-full py-3 rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 text-slate-950 font-bold text-sm shadow-[0_0_25px_rgba(245,158,11,0.5)] hover:shadow-[0_0_35px_rgba(245,158,11,0.8)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-base">calculate</span>
+                <span>Kør Monte Carlo Beregning</span>
+              </button>
+              <div class="p-3 rounded-xl bg-slate-950/70 border border-white/5 font-label-code text-[11px] text-slate-400 text-center" id="sim-status-log">
+                System parat. Konfidensinterval: 95% inden for ±1.8% fejlmargin.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: 07 KNOWLEDGE GALAXY -->
+      <div id="modal-view-galaxy" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-7 h-80 sm:h-96 rounded-3xl overflow-hidden bg-slate-950 relative border border-amber-400/30">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuABVFsnzZoU1FRD5MYDsmcC9ohOoEEsw3wgs7U8uLB-wSbupSvZMP4GaiQnr6b7hPBzBvz1C6EhqsTHHfVIKuhERH5YhGmMhllldH-4Cmu6f3Hunfqdj2Y04KIokYahR2gdK4RKmVx_lcpCYNhhjeVCiHXJ0XC9Ou0mtr-LVgUOdaxtmoCs1qrQfEYs9rJ-mZOfxdpMv6QnluUkMm2hbfVlTWo85M3SqEuT7RUumedUqH5l_zy79cG-" alt="Knowledge Galaxy" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#09172a] via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-amber-400/30 font-label-code text-xs text-amber-300 font-bold">
+            ✦ 5 INTERAKTIVE PLANETER AKTIVERET
+          </div>
+        </div>
+        <div class="lg:col-span-5 p-6 rounded-3xl bg-[#091729]/90 border border-white/10 flex flex-col items-start gap-4">
+          <div class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-label-code text-xs font-bold">Univers 03 // Viden &amp; Læring</div>
+          <h3 class="font-headline-md text-2xl text-white font-bold">Knowledge Galaxy Mission Desk</h3>
+          <p class="font-body-md text-slate-300 text-sm leading-relaxed">Gennemfør 25 spørgsmål fordelt på 5 solsystemer for at låse op for Quantum Mastery mærket.</p>
+          <div class="w-full p-4 rounded-xl bg-[#0d1d33] border border-white/5 font-label-code text-xs flex justify-between">
+            <div><span>Planeter</span><span class="block text-amber-300 font-bold text-sm">5 Kloder</span></div>
+            <div><span>Quizzer</span><span class="block text-white font-bold text-sm">25 Moduler</span></div>
+            <div><span>Samlet XP</span><span class="block text-cyan-300 font-bold text-sm">+500 XP</span></div>
+          </div>
+          <button type="button" onclick="alert('Starter Knowledge Galaxy ekspedition...');" class="w-full py-3 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-bold text-sm hover:scale-105 transition-all shadow-[0_0_20px_rgba(245,158,11,0.5)]">
+            Begynd Rumrejse →
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW 3: 04 COMIC WORLD -->
+      <div id="modal-view-comic" class="hidden grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+        <div class="lg:col-span-7 h-80 sm:h-96 rounded-3xl overflow-hidden bg-slate-950 relative border border-purple-400/30">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3WmVVwgX8MVeTT4bAJJPPnaxIXX9OcgJuYA6FLB0T8Fhz5dZ2E2zE63XnX2YrGSEyPtf6cELB72oFhNQdBQVcy3vi0hH9k8SWWqm3KdbIPKiiTVzZEeW5qu9sAEyIOnJ9JC-7nkvcLxJ_-TNxD9kAg3WJSfmWuRKpKcOZX_uDe8uPMKQUuKjGUP6rCU4f_H7vYy4C62blJVjNK4qAzhdcM1g0P0WABXU3Sx-onRY" alt="Comic World" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#09172a] via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-purple-400/30 font-label-code text-xs text-purple-300 font-bold">
+            ✦ CYBERPUNK NARRATIV · INTERAKTIVE VALG
+          </div>
+        </div>
+        <div class="lg:col-span-5 p-6 rounded-3xl bg-[#091729]/90 border border-white/10 flex flex-col items-start gap-4">
+          <div class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 font-label-code text-xs font-bold">Univers 02 // Visuel Magi</div>
+          <h3 class="font-headline-md text-2xl text-white font-bold">Comic World Story Engine</h3>
+          <p class="font-body-md text-slate-300 text-sm leading-relaxed">Vælg karakterens næste handling og se hele tegneserien transformere tone, stemning og slutresultat.</p>
+          <div class="w-full p-4 rounded-xl bg-[#0d1d33] border border-white/5 font-label-code text-xs flex justify-between">
+            <div><span>Kapitler</span><span class="block text-purple-300 font-bold text-sm">3 Handlinger</span></div>
+            <div><span>Forgreninger</span><span class="block text-white font-bold text-sm">9 Slutninger</span></div>
+            <div><span>Estimeret tid</span><span class="block text-cyan-300 font-bold text-sm">12 min</span></div>
+          </div>
+          <button type="button" onclick="alert('Åbner interaktivt tegneseriepanel...');" class="w-full py-3 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-bold text-sm hover:scale-105 transition-all shadow-[0_0_20px_rgba(168,85,247,0.6)]">
+            Læs &amp; Vælg Første Scene →
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div><script>
+function selectModalView(name) {
+  const title = document.getElementById('modal-title');
+  const status = document.getElementById('modal-live-status');
+  if (title) title.textContent = name;
+
+  const viewFuture = document.getElementById('modal-view-future');
+  const viewGalaxy = document.getElementById('modal-view-galaxy');
+  const viewComic = document.getElementById('modal-view-comic');
+  const tabFuture = document.getElementById('modal-tab-future');
+  const tabGalaxy = document.getElementById('modal-tab-galaxy');
+  const tabComic = document.getElementById('modal-tab-comic');
+
+  if (viewFuture) viewFuture.classList.add('hidden');
+  if (viewGalaxy) viewGalaxy.classList.add('hidden');
+  if (viewComic) viewComic.classList.add('hidden');
+
+  const activeTabClass = 'px-3 py-1 rounded-full text-xs font-label-code font-bold bg-cyan-500 text-slate-950 transition-all';
+  const inactiveTabClass = 'px-3 py-1 rounded-full text-xs font-label-code text-slate-300 hover:text-white transition-all';
+
+  if (tabFuture) tabFuture.className = inactiveTabClass;
+  if (tabGalaxy) tabGalaxy.className = inactiveTabClass;
+  if (tabComic) tabComic.className = inactiveTabClass;
+
+  if (name.includes('Knowledge Galaxy') || name.includes('Galaxy')) {
+    if (viewGalaxy) viewGalaxy.classList.remove('hidden');
+    if (tabGalaxy) tabGalaxy.className = activeTabClass;
+    if (status) status.textContent = 'GALAXY TELEMETRY STREAM KLAR';
+  } else if (name.includes('Comic')) {
+    if (viewComic) viewComic.classList.remove('hidden');
+    if (tabComic) tabComic.className = activeTabClass;
+    if (status) status.textContent = 'SCENE RENDER ENGINE ACTIVE';
+  } else {
+    if (viewFuture) viewFuture.classList.remove('hidden');
+    if (tabFuture) tabFuture.className = activeTabClass;
+    if (status) status.textContent = 'REALTIME SIMULATION KØRER';
+  }
+}
+
+function updateSimulationMetrics() {
+  const auto = parseInt(document.getElementById('slider-auto')?.value || '78');
+  const co2 = parseInt(document.getElementById('slider-co2')?.value || '85');
+  const collab = parseInt(document.getElementById('slider-collab')?.value || '64');
+  const ubi = parseInt(document.getElementById('slider-ubi')?.value || '70');
+
+  const labelAuto = document.getElementById('label-param-auto');
+  const labelCo2 = document.getElementById('label-param-co2');
+  const labelCollab = document.getElementById('label-param-collab');
+  const labelUbi = document.getElementById('label-param-ubi');
+
+  if (labelAuto) labelAuto.textContent = auto + '%';
+  if (labelCo2) labelCo2.textContent = co2 + '%';
+  if (labelCollab) labelCollab.textContent = collab + '%';
+  if (labelUbi) labelUbi.textContent = ubi + '%';
+
+  const energy = Math.round(180 + (auto * 1.5) + (collab * 0.8));
+  const workforce = Math.round((auto * 0.55));
+  const biosphere = Math.min(100, Math.round((co2 * 0.7) + (collab * 0.3)));
+  const gini = (0.42 - (ubi * 0.002)).toFixed(2);
+
+  const elEnergy = document.getElementById('val-energy');
+  const elWorkforce = document.getElementById('val-workforce');
+  const elBiosphere = document.getElementById('val-biosphere');
+  const elGini = document.getElementById('val-gini');
+
+  if (elEnergy) elEnergy.textContent = '+' + energy + ' TWh';
+  if (elWorkforce) elWorkforce.textContent = workforce + '%';
+  if (elBiosphere) elBiosphere.textContent = biosphere + ' / 100';
+  if (elGini) elGini.textContent = gini;
+}
+
+function resetModalParameters() {
+  const sAuto = document.getElementById('slider-auto');
+  const sCo2 = document.getElementById('slider-co2');
+  const sCollab = document.getElementById('slider-collab');
+  const sUbi = document.getElementById('slider-ubi');
+  if (sAuto) sAuto.value = 78;
+  if (sCo2) sCo2.value = 85;
+  if (sCollab) sCollab.value = 64;
+  if (sUbi) sUbi.value = 70;
+  updateSimulationMetrics();
+  const log = document.getElementById('sim-status-log');
+  if (log) log.textContent = 'Parametre nulstillet til grundlæggende syntesemodel.';
+}
+
+function runMonteCarlo() {
+  const log = document.getElementById('sim-status-log');
+  const btn = document.getElementById('btn-monte-carlo');
+  if (btn) btn.classList.add('opacity-75');
+  if (log) log.innerHTML = '<span class="text-cyan-400 animate-pulse">Kører 10.000 Monte Carlo iterationer...</span>';
+  setTimeout(() => {
+    if (btn) btn.classList.remove('opacity-75');
+    if (log) log.innerHTML = '<span class="text-emerald-400 font-bold">✓ 10.000 iterationer fuldført: 94.2% sandsynlighed for stabil klimasyntese i 2100.</span>';
+  }, 400);
+}
+
+// Override triggerExperienceModal to seamlessly open full modal and select appropriate sub-view
+window.triggerExperienceModal = function(title) {
+  const modal = document.getElementById('experience-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    selectModalView(title || '02. Future Simulator');
+  }
+};
+</script>
+</main>
+<!-- FOOTER -->
+<footer class="w-full bg-[#030d1a] border-t border-white/5 py-12">
+<div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<span class="text-amber-400 font-black text-sm">✦</span>
+<span class="font-headline-sm text-sm uppercase tracking-wider text-white font-bold">AI Experience Hub</span>
+<span class="text-slate-500 text-xs">| Tryk. Oplev. Udforsk.</span>
+</div>
+<div class="text-xs text-slate-500 font-label-code">
+        © 2025 AI EXPERIENCE HUB · 15 Interaktive Oplevelser
+      </div>
+</div>
+</footer>
+<!-- SCRIPT FOR DYNAMIC FILTERING, FAVORITES & SEARCH -->
+<script>
+    let currentFilter = 'alle';
+    let searchQuery = '';
+    let showOnlyFavorites = false;
+
+    function getFavorites() {
+      try {
+        const saved = localStorage.getItem('ai_hub_favs');
+        return saved ? JSON.parse(saved) : ['01', '07'];
+      } catch(e) {
+        return ['01', '07'];
+      }
+    }
+
+    function saveFavorites(favs) {
+      try {
+        localStorage.setItem('ai_hub_favs', JSON.stringify(favs));
+      } catch(e) {}
+      updateFavoritesUI();
+    }
+
+    function toggleFavorite(id) {
+      let favs = getFavorites();
+      if (favs.includes(id)) {
+        favs = favs.filter(item => item !== id);
+      } else {
+        favs.push(id);
+      }
+      saveFavorites(favs);
+      renderCards();
+    }
+
+    function updateFavoritesUI() {
+      const favs = getFavorites();
+      const badge = document.getElementById('nav-fav-badge');
+      if (badge) badge.textContent = favs.length;
+
+      document.querySelectorAll('.fav-icon-01, .fav-icon-02, .fav-icon-03, .fav-icon-04, .fav-icon-05, .fav-icon-06, .fav-icon-07, .fav-icon-08, .fav-icon-09, .fav-icon-10, .fav-icon-11, .fav-icon-12, .fav-icon-13, .fav-icon-14, .fav-icon-15').forEach(icon => {
+        const match = icon.className.match(/fav-icon-(\d+)/);
+        if (match && match[1]) {
+          const id = match[1];
+          if (favs.includes(id)) {
+            icon.classList.add('favorite-active');
+          } else {
+            icon.classList.remove('favorite-active');
+          }
+        }
+      });
+    }
+
+    function filterCatalog(category) {
+      currentFilter = category;
+      showOnlyFavorites = false;
+
+      document.querySelectorAll('#filter-tabs .filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = "filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-slate-950 shadow-md";
+        } else {
+          btn.className = "filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white";
+        }
+      });
+
+      renderCards();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.toLowerCase().trim();
+      renderCards();
+    }
+
+    function toggleOnlyFavorites() {
+      showOnlyFavorites = !showOnlyFavorites;
+      renderCards();
+    }
+
+    function resetFilters() {
+      currentFilter = 'alle';
+      searchQuery = '';
+      showOnlyFavorites = false;
+      const searchInput = document.getElementById('top-search');
+      if (searchInput) searchInput.value = '';
+      filterCatalog('alle');
+    }
+
+    function renderCards() {
+      const cards = document.querySelectorAll('.experience-card');
+      const favs = getFavorites();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const universe = card.getAttribute('data-universe') || '';
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const id = card.getAttribute('data-id') || '';
+
+        const matchCat = (currentFilter === 'alle' || universe === currentFilter);
+        const matchSearch = (searchQuery === '' || title.includes(searchQuery) || universe.toLowerCase().includes(searchQuery));
+        const matchFav = (!showOnlyFavorites || favs.includes(id));
+
+        if (matchCat && matchSearch && matchFav) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noRes = document.getElementById('no-results-msg');
+      if (noRes) {
+        if (visible === 0) {
+          noRes.classList.remove('hidden');
+          noRes.classList.add('flex');
+        } else {
+          noRes.classList.add('hidden');
+          noRes.classList.remove('flex');
+        }
+      }
+    }
+
+    function triggerExperienceModal(title) {
+      const modal = document.getElementById('experience-modal');
+      const modalTitle = document.getElementById('modal-title');
+      if (modal && modalTitle) {
+        modalTitle.textContent = title;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeExperienceModal() {
+      const modal = document.getElementById('experience-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeExperienceModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateFavoritesUI();
+      renderCards();
+    });
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      updateFavoritesUI();
+      renderCards();
+    }
+  </script>
+
+
+<script>
+function switchHeroTab(tabKey) {
+  const tabs = ['future', 'galaxy', 'comic'];
+  tabs.forEach(t => {
+    const content = document.getElementById('hero-tab-content-' + t);
+    const btn = document.getElementById('tab-btn-' + t);
+    if (t === tabKey) {
+      if (content) content.classList.remove('hidden');
+      if (btn) {
+        btn.className = 'hero-tab-btn px-4 py-1.5 rounded-full text-xs font-label-code font-bold bg-cyan-500 text-slate-950 shadow-[0_0_15px_rgba(56,189,248,0.5)] transition-all';
+      }
+    } else {
+      if (content) content.classList.add('hidden');
+      if (btn) {
+        btn.className = 'hero-tab-btn px-4 py-1.5 rounded-full text-xs font-label-code font-semibold bg-[#122238] hover:bg-white/10 text-slate-300 hover:text-white transition-all';
+      }
+    }
+  });
+}
+</script>
+
+</body></html>

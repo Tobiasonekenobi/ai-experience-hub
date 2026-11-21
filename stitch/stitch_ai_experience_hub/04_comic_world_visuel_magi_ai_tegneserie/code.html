@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AI EXPERIENCE HUB</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-secondary-fixed-variant":"#4e29ad","on-primary-container":"#602c00","on-tertiary":"#00363b","primary-container":"#f28a3c","on-tertiary-fixed-variant":"#004f56","primary":"#ffb787","surface-container-lowest":"#010e21","inverse-surface":"#d5e3fd","on-error-container":"#ffdad6","tertiary-container":"#03b6c5","on-primary-fixed":"#311300","surface-container-low":"#0e1c2f","background":"#051426","tertiary":"#4cd8e7","surface-container-high":"#1d2b3e","on-secondary":"#370095","error":"#ffb4ab","on-background":"#d5e3fd","tertiary-fixed":"#8af2ff","surface-bright":"#2c3a4e","on-tertiary-fixed":"#001f23","on-error":"#690005","primary-fixed-dim":"#ffb787","secondary":"#cdbdff","inverse-primary":"#964900","outline-variant":"#554338","outline":"#a38c7f","tertiary-fixed-dim":"#4cd8e7","secondary-fixed-dim":"#cdbdff","on-surface-variant":"#dcc1b2","on-primary-fixed-variant":"#723600","surface-dim":"#051426","on-primary":"#512400","secondary-fixed":"#e8deff","on-secondary-fixed":"#20005f","surface-variant":"#283549","error-container":"#93000a","surface-container":"#122033","surface-tint":"#ffb787","secondary-container":"#502cb0","surface-container-highest":"#283549","surface":"#051426","on-tertiary-container":"#004247","on-surface":"#d5e3fd","primary-fixed":"#ffdcc7","on-secondary-container":"#c0acff","inverse-on-surface":"#233145"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2.5rem","space-md":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","space-lg":"1.5rem","gutter":"1.5rem","margin":"3rem","space-2xl":"4rem"},"fontFamily":{"display-hero":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"headline-md":["Space Grotesk"],"label-code":["JetBrains Mono"],"headline-sm":["Space Grotesk"],"body-sm":["Manrope"],"label-caps":["Space Grotesk"],"body-lg":["Manrope"],"body-md":["Manrope"]},"fontSize":{"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.06em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"0em","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"400"}],"label-caps":["11px",{"lineHeight":"16px","letterSpacing":"0.12em","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","letterSpacing":"-0.005em","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_12px_40px_-10px_rgba(1,14,33,0.9)]"><div class="h-28 w-full px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><img alt="AI Experience Hub Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDkdF3rDL37fiANICNL3jSw_sU2J1_NfgXwxGFu6QPF8p5-3gJSvH3BHgO5jHW4bFF_a4HDqztelZY1KLK3DI41lhFPD8qps18mw8mwOZfdf1TfjUKFFMJILcPEdq3KDfPPqDzK64KnW15ymJBKnQq9sBSWzlPOnpTY3wL6Udwtk9wj_JFQaedcQzpCkZFm_BfalXF5JycBYOvSPEuWRkzzXNZIgyMImfiJNl9V0dA"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">AI Experience Hub</span><span class="font-label-code text-label-code text-tertiary tracking-widest uppercase">Tryk. Oplev. Udforsk.</span></div></div><div class="flex-1 max-w-xl mx-auto hidden lg:flex items-center"><div class="relative w-full flex items-center bg-surface-container-low/90 rounded-xl px-space-md py-space-xs ring-1 ring-white/10 focus-within:ring-tertiary transition-all"><span class="material-symbols-outlined text-tertiary mr-space-sm shrink-0">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" placeholder="Søg blandt 15 interaktive oplevelser..." type="text"/><span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer shrink-0 ml-space-xs text-lg">tune</span></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,138,60,0.3)]"><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="opdag" href="#">Opdag</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="universer" href="#">Universer</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="udforsk-katalog" href="#">Udforsk (Katalog)</a><a class="relative px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-path="mine-gemte" href="#"><span>Mine Gemte</span><span class="font-label-code text-label-code px-1.5 py-0.2 bg-primary-container text-on-primary-container rounded-full font-bold">3</span></a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="mission-control-live" href="#">Mission Control Live</a></nav><div class="flex items-center gap-space-sm pl-space-md"><div class="flex flex-col items-end hidden sm:flex"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary">Online Demo</span></div><span class="font-label-code text-label-code text-on-surface-variant">Dansk Hub v2.4</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-tertiary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWr0o0jNcunx_R8-mV8TEfa4am-26dV9JetTvgcrbwe898nL04XXZlVMbhaKzKU4Lv7XVFUzH_ZT5F4yKNRDXYAAh11uBXRAuX67vo_Cx8qU0hmywo65p5J6DozZUnkzWBBcWDhY6FHTlZEQUKpBacLGBsnp7KW_1e3v2z7Ckb-kfJSgV79SwzQMNboqnEVs9uQhF_puinK9QuMWGdGTXNIqxd_D-lGMhyy1gctdw"/></div></div></div><div class="flex items-center gap-space-sm overflow-x-auto pb-0.5 pt-1"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant/70 shrink-0 mr-space-xs">Fokus:</span><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary ring-1 ring-tertiary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="data-fremtid" href="#">Data &amp; Fremtid</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary ring-1 ring-secondary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="visuel-magi" href="#">Visuel Magi</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary ring-1 ring-primary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="viden-laering" href="#">Viden &amp; Læring</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary-fixed ring-1 ring-tertiary-fixed/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="spil-opdagelser" href="#">Spil &amp; Opdagelser</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary-fixed-dim ring-1 ring-primary-fixed-dim/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="kreativitet-teknologi" href="#">Kreativitet &amp; Teknologi</a></div></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Sub-Header & Breadcrumb Bar -->
+<div class="w-full px-margin pt-space-md pb-space-lg flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span class="hover:text-on-surface transition-colors cursor-pointer">UNIVERSER</span>
+<span>/</span>
+<span class="text-secondary font-bold">UNIVERS 02 // VISUEL MAGI</span>
+<span>/</span>
+<span class="text-primary font-bold">04 // COMIC WORLD</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high text-tertiary font-label-code text-label-code">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          GENERATIV HISTORIEFORTÆLLING // PANEL ENGINE V4.2
+        </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high text-primary font-label-code text-label-code">
+<span class="material-symbols-outlined text-xs">bolt</span>
+          STATUS: REAL-TIME NARRATIV RENDERING // AKTIV SAGA: NEO-KØBENHAVN 2089
+        </span>
+</div>
+</div>
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+<div class="max-w-4xl">
+<h1 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight">
+          04 // Comic World — Forgrenet AI-Tegneserie &amp; Sekvenskunst
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs max-w-3xl">
+          Dine valg former plottet, dialogen og den visuelle stil i realtid. Hvert panel genereres dynamisk via diffusion og multimodale sprogmodeller med konsistente karakterer og dramatisk pacing.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-code text-label-code transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-sm">restart_alt</span>
+          Nulstil Tidslinje
+        </button>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-code text-label-code transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-sm">download</span>
+          Download Tegneserie (PDF/CBZ)
+        </button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-sm uppercase font-bold tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-primary-container/20" id="trigger-next-panel" type="button">
+<span class="material-symbols-outlined text-base">bolt</span>
+          Generér Næste Scene (Valg A)
+        </button>
+</div>
+</div>
+</div>
+<!-- Telemetry Bar (4 Cards Grid) -->
+<div class="w-full px-margin pb-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-tertiary mb-space-xs">
+<span class="font-label-code text-label-code uppercase tracking-wider">01 // Aktiv Saga &amp; Karakter</span>
+<span class="material-symbols-outlined text-sm">person_pin</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface truncate">Neo-Kbh: Skygger over Nørrebro</div>
+<div class="flex items-center gap-2 mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Protagonist: Agent Kian &amp; Drone Echo-7
+        </div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary mb-space-xs">
+<span class="font-label-code text-label-code uppercase tracking-wider">02 // Forgrenings-Niveau</span>
+<span class="material-symbols-outlined text-sm">alt_route</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface truncate">Akt 2: Dilemma ved Slusen</div>
+<div class="flex items-center gap-2 mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          64 mulige slutninger (Gren: Alpha-7)
+        </div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-primary mb-space-xs">
+<span class="font-label-code text-label-code uppercase tracking-wider">03 // Visuel Konsistens (LoRA)</span>
+<span class="material-symbols-outlined text-sm">fingerprint</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface flex items-baseline gap-2">
+<span>98.4%</span>
+<span class="font-label-code text-label-code text-tertiary">Seed: #84920412</span>
+</div>
+<div class="flex items-center gap-2 mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          Nul hallucinationer detekteret
+        </div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between text-tertiary-fixed mb-space-xs">
+<span class="font-label-code text-label-code uppercase tracking-wider">04 // Genereringshastighed</span>
+<span class="material-symbols-outlined text-sm">speed</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface flex items-baseline gap-2">
+<span>1.8 sek / Panel</span>
+<span class="font-label-code text-label-code text-secondary">4K opskaleret</span>
+</div>
+<div class="flex items-center gap-2 mt-space-xs font-body-sm text-body-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+          Vektoriserede talebobler (SVG)
+        </div>
+</div>
+</div>
+</div>
+<!-- Main Canvas & Control Deck -->
+<div class="w-full px-margin pb-space-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Comic Viewer & Interactive Narrative (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Viewer Container -->
+<div class="w-full bg-surface-container-low rounded-xl overflow-hidden shadow-xl">
+<!-- Viewer Action Toolbar -->
+<div class="w-full px-space-md py-space-sm bg-surface-container-high/90 flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-code text-label-code text-on-surface uppercase tracking-wider font-semibold">
+                PANELVIEWER // SEKVENS 04 AF 12: MØDET PÅ TAGET AF INDUSTRIBYGNINGEN
+              </span>
+</div>
+<!-- Interactive Toolbar Icons -->
+<div class="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Forstør" type="button">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Formindsk" type="button">
+<span class="material-symbols-outlined text-sm">zoom_out</span>
+</button>
+<button class="px-2 py-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-tertiary transition-colors font-label-code text-label-code flex items-center gap-1" id="noir-toggle" title="Noir Tilstand" type="button">
+<span class="material-symbols-outlined text-xs">contrast</span> Noir
+              </button>
+<button class="px-2 py-1 rounded bg-surface-container-high text-primary font-label-code text-label-code flex items-center gap-1" id="sfx-toggle" title="SFX Lydeffekter" type="button">
+<span class="material-symbols-outlined text-xs">graphic_eq</span> SFX: Til
+              </button>
+<button class="p-1.5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Fuldskærm" type="button">
+<span class="material-symbols-outlined text-sm">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Comic Spread Image Canvas -->
+<div class="relative w-full bg-surface-container-lowest p-space-sm overflow-hidden group">
+<!-- Halftone / Comic Dot Ambient Screen Pattern -->
+<div class="absolute inset-0 pointer-events-none opacity-5 bg-[radial-gradient(#d5e3fd_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Comic Spread Image Canvas -->
+<div class="relative rounded-lg overflow-hidden shadow-2xl transition-all duration-500" id="comic-canvas-frame">
+<img alt="Neo-København Tegneserieopsætning med Agent Kian og dronen Echo-7 i neonoplyste dystopiske stræder" class="w-full h-auto object-cover block select-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh_lyNot_u2YuZiv390tiLTYp0o_ebzYcUU8bMtrBDlzb12b-30kXMN_yqLsQoNnVilhIeuxM8IIq53hjStFMuMzdghzfeR4UxZg6DI2U8vlXN9pf-t0lgwdSdd12-dVVa-ACTcg8XBla1KEt08uvPHdx2EH9vKje6mHFoEt3SOaps4teLwL3SOAQcHAY20UOHOBI0OJLCJZZEBqLhCYTcIj2YOCv5162QVZoY7fE"/>
+<!-- Interactive Floating Hotspots on Panels -->
+<div class="absolute top-[12%] left-[16%] -translate-x-1/2 -translate-y-1/2 group/spot cursor-pointer">
+<span class="flex h-6 w-6 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-tertiary/90 text-on-tertiary items-center justify-center font-label-code text-xs font-bold">1</span>
+</span>
+<div class="absolute left-8 top-0 hidden group-hover/spot:flex flex-col w-56 p-2 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md shadow-xl text-on-surface z-20 pointer-events-none">
+<span class="font-label-caps text-label-caps text-tertiary">PANEL 01 // OVERBLIK</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Regnvåd skyline over Neo-København. Droneovervågning registreret i sektor 4.</span>
+</div>
+</div>
+<div class="absolute top-[18%] right-[22%] -translate-x-1/2 -translate-y-1/2 group/spot cursor-pointer">
+<span class="flex h-6 w-6 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-primary/90 text-on-primary items-center justify-center font-label-code text-xs font-bold">2</span>
+</span>
+<div class="absolute right-8 top-0 hidden group-hover/spot:flex flex-col w-56 p-2 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md shadow-xl text-on-surface z-20 pointer-events-none">
+<span class="font-label-caps text-label-caps text-primary">PANEL 02 // SENSOR FEED</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Echo-7 foretager scanning af gadeniveau. Patruljebiler med sirener passerer.</span>
+</div>
+</div>
+<div class="absolute bottom-[24%] right-[32%] -translate-x-1/2 -translate-y-1/2 group/spot cursor-pointer">
+<span class="flex h-6 w-6 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-secondary/90 text-on-secondary items-center justify-center font-label-code text-xs font-bold">3</span>
+</span>
+<div class="absolute right-8 bottom-0 hidden group-hover/spot:flex flex-col w-56 p-2 rounded-lg bg-surface-container-lowest/95 backdrop-blur-md shadow-xl text-on-surface z-20 pointer-events-none">
+<span class="font-label-caps text-label-caps text-secondary">PANEL 05 // INFILTRATION</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Låst slusedør til serverrum. Replik: 'Find dem.' Trussel vurderes nær.</span>
+</div>
+</div>
+<!-- Animated Action SFX Overlay Indicator -->
+<div class="absolute bottom-6 left-6 pointer-events-none flex items-center gap-2 bg-surface-container-lowest/90 px-3 py-1.5 rounded-lg shadow-lg" id="comic-sfx-layer">
+<span class="font-headline-sm text-headline-sm text-primary tracking-wider italic font-bold">» KLIK-BZZT «</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Audio-syntese synkroniseret</span>
+</div>
+</div>
+</div>
+<!-- Bottom Status of Canvas -->
+<div class="p-space-md bg-surface-container-high/60 flex flex-wrap items-center justify-between gap-space-sm font-label-code text-label-code text-on-surface-variant">
+<div class="flex items-center gap-3">
+<span class="text-tertiary">LATENT RENDERING: RESOLUTION 3840×2160</span>
+<span>•</span>
+<span>COLOR PROFILE: CYBER-DIVERGENT OLEO</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-xs text-primary">auto_awesome</span>
+<span>Prompt Seed låst til konsistens</span>
+</div>
+</div>
+</div>
+<!-- Narrative Branch Choice Selector (Decision Cards) -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">call_split</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">
+                Hvad skal Kian gøre nu? Vælg næste handling:
+              </span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant">FORGRENING AKT 02 // NODE 14B</span>
+</div>
+<!-- Choice Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-sm" id="branch-choice-container">
+<!-- Choice A (Active) -->
+<div class="choice-card cursor-pointer p-space-md rounded-xl bg-surface-container-highest shadow-md transition-all relative flex flex-col justify-between ring-2 ring-primary-container" data-choice="A">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-code text-label-code font-bold">VALG A (AKTIV)</span>
+<span class="material-symbols-outlined text-primary text-base">check_circle</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold pt-1">
+                  Send Echo-7 ind gennem ventilationsskakten for at scanne uden at alarmere vagterne.
+                </p>
+</div>
+<div class="mt-space-md pt-space-xs flex flex-wrap gap-1 font-label-code text-label-code text-tertiary">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low">Høj stealth</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low">Lav risiko</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low text-primary">-15% batteri</span>
+</div>
+</div>
+<!-- Choice B -->
+<div class="choice-card cursor-pointer p-space-md rounded-xl bg-surface-container shadow-md hover:bg-surface-container-high transition-all relative flex flex-col justify-between opacity-80 hover:opacity-100" data-choice="B">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-label-code font-bold">VALG B</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base">radio_button_unchecked</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold pt-1">
+                  Spark døren ind med støddæmpet cyber-protese og overrumpl modstanderne direkte.
+                </p>
+</div>
+<div class="mt-space-md pt-space-xs flex flex-wrap gap-1 font-label-code text-label-code text-on-surface-variant">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low text-error">Høj action</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low">Larm tiltrækker droner</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low text-primary">+25 Adrenalin</span>
+</div>
+</div>
+<!-- Choice C -->
+<div class="choice-card cursor-pointer p-space-md rounded-xl bg-surface-container shadow-md hover:bg-surface-container-high transition-all relative flex flex-col justify-between opacity-80 hover:opacity-100" data-choice="C">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-code text-label-code font-bold">VALG C</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base">radio_button_unchecked</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface font-semibold pt-1">
+                  Hack terminalen udefra og overskriv overvågningskameraernes optagelser med loop.
+                </p>
+</div>
+<div class="mt-space-md pt-space-xs flex flex-wrap gap-1 font-label-code text-label-code text-on-surface-variant">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low text-secondary">Taktisk fordel</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low">Tager 45 sek</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-low text-tertiary">Logfiler gemt</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Studio Control Deck (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Main Configuration Card -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-xl flex flex-col gap-space-md">
+<!-- Tab Navigation -->
+<div class="flex items-center justify-between bg-surface-container p-1 rounded-lg">
+<button class="flex-1 py-1.5 px-2 rounded-md bg-surface-container-high text-primary font-label-code text-label-code font-bold transition-all text-center" type="button">
+              Narrativ &amp; Valg
+            </button>
+<button class="flex-1 py-1.5 px-2 rounded-md hover:bg-surface-container-high text-on-surface-variant font-label-code text-label-code transition-all text-center" type="button">
+              Visuel Stil
+            </button>
+<button class="flex-1 py-1.5 px-2 rounded-md hover:bg-surface-container-high text-on-surface-variant font-label-code text-label-code transition-all text-center" type="button">
+              Karakter-DNA
+            </button>
+</div>
+<!-- Section: Dialog & Speech Bubble Finetuning -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps uppercase text-tertiary tracking-wider" for="dialog-prompt-input">
+                PROMPT // DIALOG &amp; REPLIK FOR KIAN
+              </label>
+<span class="font-label-code text-label-code text-on-surface-variant">Multimodal LLM</span>
+</div>
+<div class="relative w-full">
+<textarea class="w-full bg-surface-container-lowest text-on-surface p-space-sm rounded-lg font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-tertiary resize-none shadow-inner leading-relaxed" id="dialog-prompt-input" rows="3">"Echo, hold øje med tagkanten. Vi er ikke alene herude... Scan for infrarøde signaturer bag slusedøren."</textarea>
+</div>
+<!-- Tone Presets -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="font-label-code text-label-code text-on-surface-variant mr-1">Tone:</span>
+<button class="tone-btn px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-code text-label-code font-bold" type="button">Kynisk Noir</button>
+<button class="tone-btn px-2 py-0.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-code text-label-code" type="button">Heroisk Sci-Fi</button>
+<button class="tone-btn px-2 py-0.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-code text-label-code" type="button">Mørk Cyberpunk</button>
+<button class="tone-btn px-2 py-0.5 rounded-full bg-surface-container-high hover:bg-surface-bright text-on-surface-variant font-label-code text-label-code" type="button">Filosofisk</button>
+</div>
+</div>
+<!-- Section: Visual Art Style Matrix -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-wider">
+                VISUEL STILART-MATRIX (DIFFUSION)
+              </span>
+<span class="font-label-code text-label-code text-on-surface-variant">SDXL + ControlNet</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<!-- Style 1: Active -->
+<div class="p-2.5 rounded-lg bg-surface-container-high cursor-pointer shadow flex flex-col gap-1 ring-1 ring-secondary">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-secondary uppercase">Cyberpunk Novel</span>
+<span class="material-symbols-outlined text-xs text-secondary">check</span>
+</div>
+<span class="font-body-sm text-xs text-on-surface-variant line-clamp-1">Moebius streg, neon accenter &amp; halftone raster</span>
+</div>
+<!-- Style 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer shadow flex flex-col gap-1 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-on-surface uppercase">Franco-Belgisk</span>
+</div>
+<span class="font-body-sm text-xs text-on-surface-variant line-clamp-1">Klassisk Ligne Claire &amp; klare konturer</span>
+</div>
+<!-- Style 3 -->
+<div class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer shadow flex flex-col gap-1 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-on-surface uppercase">Manga Screentone</span>
+</div>
+<span class="font-body-sm text-xs text-on-surface-variant line-clamp-1">Sort/hvid blæk &amp; dynamiske fartlinjer</span>
+</div>
+<!-- Style 4 -->
+<div class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer shadow flex flex-col gap-1 transition-colors">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-on-surface uppercase">90'er Dark Age</span>
+</div>
+<span class="font-body-sm text-xs text-on-surface-variant line-clamp-1">Spawn/Miller æstetik med tunge skygger</span>
+</div>
+</div>
+</div>
+<!-- Section: Character Consistency Monitor (LoRA Embeddings) -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-wider">
+                KARAKTER KONSISTENS MONITOR (LoRA)
+              </span>
+<span class="font-label-code text-label-code text-tertiary">LÅST TIL SAGA</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex flex-col gap-2">
+<div>
+<div class="flex justify-between font-label-code text-label-code text-on-surface-variant mb-1">
+<span class="text-on-surface font-semibold">Agent Kian: Ansigtsgeometri</span>
+<span class="text-tertiary font-bold">99.2%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 99.2%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-code text-label-code text-on-surface-variant mb-1">
+<span class="text-on-surface font-semibold">Cyber-øje glød &amp; Implantation</span>
+<span class="text-primary font-bold">100%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-code text-label-code text-on-surface-variant mb-1">
+<span class="text-on-surface font-semibold">Drone Echo-7: Orange Sensor-linse</span>
+<span class="text-secondary font-bold">97.8%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 97.8%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button for Generation -->
+<div class="pt-space-xs flex flex-col gap-2">
+<button class="w-full py-3 px-space-md rounded-lg bg-primary-container hover:brightness-110 active:scale-98 text-on-primary-container font-headline-sm text-sm uppercase font-bold tracking-wider transition-all shadow-xl shadow-primary-container/20 flex items-center justify-center gap-2" id="render-action-btn" type="button">
+<span class="material-symbols-outlined text-lg">auto_fix_high</span>
+<span>Opret Næste Panel &amp; Opdatér Fortælling</span>
+</button>
+<div class="flex items-center justify-center gap-2 font-label-code text-label-code text-on-surface-variant/70">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              Beregner layout, gutters og dialogplacering automatisk
+            </div>
+</div>
+</div>
+<!-- Mini Pacing Card / Graph -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-md flex flex-col gap-2">
+<div class="flex items-center justify-between text-tertiary">
+<span class="font-label-caps text-label-caps uppercase">Dramaturgisk Spændingskurve</span>
+<span class="font-label-code text-label-code text-on-surface">Akt 2 (Klimaks nærmer sig)</span>
+</div>
+<!-- Inline SVG Dramaturgy Sparkline -->
+<div class="w-full h-16 pt-1">
+<svg class="w-full h-full text-primary" fill="none" viewbox="0 0 300 60" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 45 C 40 45, 60 30, 90 35 C 120 40, 150 15, 180 20 C 210 25, 230 8, 260 12 C 280 15, 290 5, 300 2" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<circle class="animate-pulse" cx="180" cy="20" fill="#f28a3c" r="4.5"></circle>
+<!-- Shaded gradient under curve -->
+<path d="M0 45 C 40 45, 60 30, 90 35 C 120 40, 150 15, 180 20 C 210 25, 230 8, 260 12 C 280 15, 290 5, 300 2 L 300 60 L 0 60 Z" fill="currentColor" fill-opacity="0.1"></path>
+</svg>
+</div>
+<div class="flex justify-between font-label-code text-label-code text-on-surface-variant pt-1">
+<span>Intro (Taget)</span>
+<span class="text-primary font-bold">NUVÆRENDE: DØREN BRYDES</span>
+<span>Slutopgør</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Didactic Theory & Architecture Section (3 Cards) -->
+<div class="w-full bg-surface-container-lowest py-space-2xl">
+<div class="w-full px-margin flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase text-tertiary">TEORETISK OG DIDAKTISK FUNDAMENT</span>
+<span class="w-8 h-px bg-tertiary/40"></span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">
+          Bag Kulissen: Hvordan Skabes AI-Tegneserier?
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          At skabe en troværdig tegneserie kræver langt mere end isolerede prompts. Det fordrer arkitektonisk kontrol over karakteridentitet, narrativ fremdrift og Scott McClouds principper for sekventiel kunst.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Insight Card 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-xl">face</span>
+</div>
+<div class="font-label-caps text-label-caps uppercase text-primary tracking-wider">TEKNOLOGI // LORA &amp; IP-ADAPTER</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+              Karakterkonsistens i Generativ Billedkunst
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Standard diffusion-modeller lider under "identitets-drift", hvor ansigtstræk og påklædning ændrer sig for hvert nyt billede. I Comic World anvendes finjusterede <strong>LoRA-modeller</strong> (Low-Rank Adaptation) og <strong>IP-Adaptere</strong>, der fastlåser Agent Kians knoglebygning, hans glødende cybernetiske implantat og trenchcoatens slidmønster på tværs af alle kameravinkler og belysningsforhold.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 font-label-code text-label-code text-tertiary">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Seed-låsning &amp; Cross-Attention Styring</span>
+</div>
+</div>
+<!-- Insight Card 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-xl">auto_stories</span>
+</div>
+<div class="font-label-caps text-label-caps uppercase text-secondary tracking-wider">TEORI // SCOTT MCCLOUD</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+              Sekventiel Kunst &amp; 'The Gutter'
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              I tegneserieteori er <em>the gutter</em> (mellemrummet mellem panelerne) der, hvor den sande magi opstår. Menneskets bevidsthed forbinder to adskilte billeder til én sammenhængende bevægelse — et fænomen kendt som <strong>closure</strong>. Comic World beregner panel-afstand og timing, så hjernen selv bygger broen mellem Kians tøven på taget og hans spring ned i den mørke gyde.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 font-label-code text-label-code text-secondary">
+<span class="material-symbols-outlined text-sm">psychology</span>
+<span>Kognitiv Closure i Sekvenser</span>
+</div>
+</div>
+<!-- Insight Card 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-low shadow-lg flex flex-col justify-between group hover:bg-surface-container transition-all">
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-xl">movie_filter</span>
+</div>
+<div class="font-label-caps text-label-caps uppercase text-tertiary tracking-wider">NARRATIV // MULTIMODAL PACING</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+              Dynamisk Multimodal Pacing
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              En multimodal sprogmodel fungerer som instruktør: Den analyserer brugerens valg og genererer automatisk layout-instrukser til billedmotoren. Den skifter rytmisk mellem etablerende totaler (fugleperspektiv over Neo-København), klaustrofobiske nærbilleder af cyber-døren og dramatiske 'Dutch angles' for at forstærke følelsen af overhængende fare og tempo.
+            </p>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center gap-2 font-label-code text-label-code text-tertiary">
+<span class="material-symbols-outlined text-sm">tune</span>
+<span>Adaptiv Komposition &amp; Taleboble-flow</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Script for Interactive Choices & Micro-interactions -->
+<script>
+    (function initComicWorldInteractions() {
+      // Branch Selection Handling
+      const choiceCards = document.querySelectorAll('.choice-card');
+      const actionTriggerBtn = document.getElementById('trigger-next-panel');
+      const renderActionBtn = document.getElementById('render-action-btn');
+      const dialogPromptInput = document.getElementById('dialog-prompt-input');
+
+      const narrativeChoices = {
+        'A': {
+          title: "Valg A",
+          promptText: '"Echo, hold øje med tagkanten. Vi er ikke alene herude... Flyv lydløst ind gennem ventilationsskakten."',
+          btnText: "⚡ Generér Næste Scene (Valg A: Stealth Infiltration)"
+        },
+        'B': {
+          title: "Valg B",
+          promptText: '"Gør klar til stød, Echo! Slusedøren giver efter nu! Fremad før de når terminalerne!"',
+          btnText: "⚡ Generér Næste Scene (Valg B: Brute Force Action)"
+        },
+        'C': {
+          title: "Valg C",
+          promptText: '"Sæt en datastream op til hovedporten. Overskriv deres video-feed med en tom 3-minutters loop nu."',
+          btnText: "⚡ Generér Næste Scene (Valg C: Cybernetisk Hack)"
+        }
+      };
+
+      choiceCards.forEach(card => {
+        card.addEventListener('click', function() {
+          const choiceKey = this.getAttribute('data-choice');
+          
+          // Reset styling
+          choiceCards.forEach(c => {
+            c.classList.remove('bg-surface-container-highest', 'ring-2', 'ring-primary-container', 'opacity-100');
+            c.classList.add('bg-surface-container', 'opacity-80');
+            const icon = c.querySelector('.material-symbols-outlined');
+            if (icon) {
+              icon.textContent = 'radio_button_unchecked';
+              icon.classList.remove('text-primary');
+              icon.classList.add('text-on-surface-variant');
+            }
+          });
+
+          // Activate chosen
+          this.classList.remove('bg-surface-container', 'opacity-80');
+          this.classList.add('bg-surface-container-highest', 'ring-2', 'ring-primary-container', 'opacity-100');
+          const chosenIcon = this.querySelector('.material-symbols-outlined');
+          if (chosenIcon) {
+            chosenIcon.textContent = 'check_circle';
+            chosenIcon.classList.remove('text-on-surface-variant');
+            chosenIcon.classList.add('text-primary');
+          }
+
+          // Update inputs
+          if (narrativeChoices[choiceKey]) {
+            if (dialogPromptInput) dialogPromptInput.value = narrativeChoices[choiceKey].promptText;
+            if (actionTriggerBtn) actionTriggerBtn.innerHTML = `<span class="material-symbols-outlined text-base">bolt</span> ${narrativeChoices[choiceKey].btnText}`;
+          }
+        });
+      });
+
+      // Tone Selection
+      const toneBtns = document.querySelectorAll('.tone-btn');
+      toneBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          toneBtns.forEach(b => {
+            b.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-bold');
+            b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+          });
+          this.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+          this.classList.add('bg-primary-container', 'text-on-primary-container', 'font-bold');
+        });
+      });
+
+      // Noir Filter Toggle
+      const noirBtn = document.getElementById('noir-toggle');
+      const comicCanvas = document.getElementById('comic-canvas-frame');
+      let isNoir = false;
+      if (noirBtn && comicCanvas) {
+        noirBtn.addEventListener('click', function() {
+          isNoir = !isNoir;
+          if (isNoir) {
+            comicCanvas.style.filter = 'grayscale(100%) contrast(140%)';
+            noirBtn.classList.add('bg-surface-container-highest', 'text-primary');
+          } else {
+            comicCanvas.style.filter = 'none';
+            noirBtn.classList.remove('bg-surface-container-highest', 'text-primary');
+          }
+        });
+      }
+
+      // SFX Audio Toggle
+      const sfxBtn = document.getElementById('sfx-toggle');
+      const sfxLayer = document.getElementById('comic-sfx-layer');
+      let sfxActive = true;
+      if (sfxBtn && sfxLayer) {
+        sfxBtn.addEventListener('click', function() {
+          sfxActive = !sfxActive;
+          if (sfxActive) {
+            sfxLayer.style.display = 'flex';
+            sfxBtn.innerHTML = '<span class="material-symbols-outlined text-xs">graphic_eq</span> SFX: Til';
+            sfxBtn.classList.add('text-primary');
+          } else {
+            sfxLayer.style.display = 'none';
+            sfxBtn.innerHTML = '<span class="material-symbols-outlined text-xs">volume_off</span> SFX: Fra';
+            sfxBtn.classList.remove('text-primary');
+          }
+        });
+      }
+
+      // Action Render Simulator
+      function simulateRender() {
+        if (!renderActionBtn) return;
+        const originalText = renderActionBtn.innerHTML;
+        renderActionBtn.disabled = true;
+        renderActionBtn.innerHTML = `<span class="material-symbols-outlined text-lg animate-spin">refresh</span> Syntetiserer Næste Panel...`;
+        
+        setTimeout(() => {
+          renderActionBtn.disabled = false;
+          renderActionBtn.innerHTML = `<span class="material-symbols-outlined text-lg">done</span> Panel 05 Genereret & Tilføjet!`;
+          setTimeout(() => {
+            renderActionBtn.innerHTML = originalText;
+          }, 2400);
+        }, 1800);
+      }
+
+      if (renderActionBtn) renderActionBtn.addEventListener('click', simulateRender);
+      if (actionTriggerBtn) actionTriggerBtn.addEventListener('click', simulateRender);
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-xl"><div class="w-full px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface">AI Experience Hub</span><span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-tertiary">DA-DK</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">En dansk interaktiv opdagelsesplatform for neural intelligens og generative systemer. Skabt til sansning, læring og kreativ udforskning.</p><span class="font-headline-md text-headline-md text-primary tracking-wide">Tryk. Oplev. Udforsk.</span></div><div class="md:col-span-5 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-tertiary">De 5 Universer</span><div class="grid grid-cols-2 gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors" data-path="data-fremtid" href="#">01. Data &amp; Fremtid</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="visuel-magi" href="#">02. Visuel Magi</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="viden-laering" href="#">03. Viden &amp; Læring</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary-fixed transition-colors" data-path="spil-opdagelser" href="#">04. Spil &amp; Opdagelser</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-path="kreativitet-teknologi" href="#">05. Kreativitet &amp; Teknologi</a></div></div><div class="md:col-span-3 flex flex-col gap-space-sm md:items-end"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Arkitektur &amp; Stack</span><div class="inline-flex items-center px-space-sm py-1.5 rounded-lg bg-surface-container-low font-label-code text-label-code text-on-surface-variant"><span class="text-tertiary mr-1.5">⚡</span> React · TypeScript · Three.js · LocalStorage</div><button class="mt-space-sm inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-code text-label-code hover:bg-error-container hover:text-on-error transition-all" type="button"><span class="material-symbols-outlined text-sm">restart_alt</span> Nulstil Demodata</button></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-code text-label-code text-on-surface-variant/60"><div>© 2025 AI EXPERIENCE HUB · Alle rettigheder forbeholdes</div><div class="flex items-center gap-space-md"><span>København / Aarhus Hub</span><span>Digital Udforskning</span></div></div></div></footer></body></html>
