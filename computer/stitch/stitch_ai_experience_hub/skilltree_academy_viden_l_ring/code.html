@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AI EXPERIENCE HUB</title>
+
+
+
+
+
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link rel="stylesheet" href="/ai-experience-hub/computer/native/stitch.css"><link rel="stylesheet" href="/ai-experience-hub/computer/native/shell.css"><link rel="manifest" href="/ai-experience-hub/computer/manifest.webmanifest"><meta name="theme-color" content="#051426"><link rel="stylesheet" href="/ai-experience-hub/computer/computer.css"><script defer src="/ai-experience-hub/computer/computer.js"></script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_12px_40px_-10px_rgba(1,14,33,0.9)]"><div class="h-28 w-full px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><span style="font-size:30px;color:#ffb787;line-height:1" aria-hidden="true">✦</span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">AI Experience Hub</span><span class="font-label-code text-label-code text-tertiary tracking-widest uppercase">Tryk. Oplev. Udforsk.</span></div></div><div class="flex-1 max-w-xl mx-auto hidden lg:flex items-center"><div class="relative w-full flex items-center bg-surface-container-low/90 rounded-xl px-space-md py-space-xs ring-1 ring-white/10 focus-within:ring-tertiary transition-all"><span class="material-symbols-outlined text-tertiary mr-space-sm shrink-0">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" placeholder="Søg blandt 15 interaktive oplevelser..." type="text"/><span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer shrink-0 ml-space-xs text-lg">tune</span></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,138,60,0.3)]"><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="opdag" href="#">Opdag</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="universer" href="#">Universer</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="udforsk-katalog" href="#">Udforsk (Katalog)</a><a class="relative px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-path="mine-gemte" href="#"><span>Mine Gemte</span><span class="font-label-code text-label-code px-1.5 py-0.2 bg-primary-container text-on-primary-container rounded-full font-bold">3</span></a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="mission-control-live" href="#">Mission Control Live</a></nav><div class="flex items-center gap-space-sm pl-space-md"><div class="flex flex-col items-end hidden sm:flex"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary">Online Demo</span></div><span class="font-label-code text-label-code text-on-surface-variant">Dansk Hub v2.4</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-tertiary/40" src="/ai-experience-hub/computer/native/media/e20dd7285ea677b52d22f60b"/></div></div></div><div class="flex items-center gap-space-sm overflow-x-auto pb-0.5 pt-1"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant/70 shrink-0 mr-space-xs">Fokus:</span><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary ring-1 ring-tertiary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="data-fremtid" href="#">Data &amp; Fremtid</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary ring-1 ring-secondary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="visuel-magi" href="#">Visuel Magi</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary ring-1 ring-primary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="viden-laering" href="#">Viden &amp; Læring</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary-fixed ring-1 ring-tertiary-fixed/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="spil-opdagelser" href="#">Spil &amp; Opdagelser</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary-fixed-dim ring-1 ring-primary-fixed-dim/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="kreativitet-teknologi" href="#">Kreativitet &amp; Teknologi</a></div></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- ATMOSPHERIC AMBIENT GLOWS -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 -left-40 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-60 right-0 w-[32rem] h-[32rem] bg-tertiary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-10 left-1/3 w-[28rem] h-[28rem] bg-secondary-container/15 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="px-margin py-space-lg flex flex-col gap-space-xl relative z-10">
+<!-- 1. TOP BANNER / ACADEMY COMMAND -->
+<section class="flex flex-col gap-space-md">
+<!-- Breadcrumb & Tagline -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-code text-label-code">
+<span class="text-tertiary">UNIVERS 03 // VIDEN &amp; LÆRING</span>
+<span class="text-on-surface-variant">/</span>
+<span class="text-primary font-bold">09 // SKILLTREE ACADEMY</span>
+</div>
+<div class="inline-flex items-center gap-2 px-space-sm py-1 rounded-full bg-surface-container-high shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-caps text-label-caps text-primary tracking-widest">RPG KOMPETENCETRÆ v3.2 // INTERAKTIV LÆRINGSSTI</span>
+</div>
+</div>
+<!-- Main Headline & Narrative -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-end">
+<div class="xl:col-span-8 flex flex-col gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight">
+              09 // SKILLTREE ACADEMY — <span class="text-primary">MESTR FREMTIDENS TEKNOLOGIER</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+              Opbyg din personlige teknologiske profil formet som et klassisk RPG-færdighedstræ. Lås op for noder inden for Prompt Engineering, Maskinlæring, AI Etik og Autonome Agenter gennem taktiske simulationer og mikrolæring.
+            </p>
+</div>
+<!-- Actions Header Deck -->
+<div class="xl:col-span-4 flex flex-wrap xl:justify-end items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container text-on-surface font-label-code text-label-code flex items-center gap-1.5 transition-all shadow-sm" id="btn-reset-tree" type="button">
+<span class="material-symbols-outlined text-base">restart_alt</span>
+              Nulstil Træ
+            </button>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container text-tertiary font-label-code text-label-code flex items-center gap-1.5 transition-all shadow-sm" id="btn-export-cert" type="button">
+<span class="material-symbols-outlined text-base">badge</span>
+              Eksporter PDF
+            </button>
+<button class="px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-label-caps font-bold tracking-wider uppercase flex items-center gap-2 shadow-lg shadow-primary-container/20 hover:scale-[1.02] active:scale-[0.98] transition-all" id="btn-quick-path" type="button">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">bolt</span>
+              Anbefalet Begyndersti
+            </button>
+</div>
+</div>
+</section>
+<!-- 2. KARAKTER- & XP-STATUSBAR (RPG HUD BAR) -->
+<section class="w-full bg-surface-container-low/90 backdrop-blur-xl rounded-xl p-space-md shadow-xl flex flex-col gap-space-md">
+<!-- Cadette Summary & Quick Metrics -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-center">
+<!-- Avatar + Cadette Profile -->
+<div class="lg:col-span-4 flex items-center gap-space-md">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-xl object-cover shadow-md" data-alt="Futuristic cybernetic female avatar Elena Frost wearing high-tech neural interface glasses glowing cold cyan and deep amber highlights in a holographic research chamber" src="/ai-experience-hub/computer/native/media/fd3fb3cc0e862fb52953828b"/>
+<div class="absolute -bottom-1 -right-1 px-1.5 py-0.5 rounded-md bg-primary-container text-on-primary-container font-label-code text-[10px] font-bold">
+                LVL 14
+              </div>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface">Kadett Elena Frost</span>
+<span class="font-label-code text-label-code text-tertiary">Rang: Niveau 14 AI-Arkitekt</span>
+</div>
+</div>
+<!-- XP Gauge + Streak -->
+<div class="lg:col-span-5 flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-code text-label-code">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm">stars</span> Erfaringspoint (XP)
+              </span>
+<span class="text-on-surface font-bold">4.850 / 6.000 XP <span class="text-tertiary">(80.8%)</span></span>
+</div>
+<!-- Progress Track -->
+<div class="w-full h-3 bg-surface-container-highest rounded-full overflow-hidden p-0.5 flex items-center">
+<div class="h-full rounded-full bg-gradient-to-r from-primary-container via-primary to-tertiary transition-all duration-700 w-[80.8%] shadow-[0_0_12px_rgba(242,138,60,0.5)]"></div>
+</div>
+<div class="flex items-center justify-between text-body-sm font-label-code text-[11px] text-on-surface-variant">
+<span>Niveau 14</span>
+<span class="text-primary font-semibold">1.150 XP til Niveau 15: "Synapse Direktør"</span>
+<span>Niveau 15</span>
+</div>
+</div>
+<!-- Skill Points & Streak Pill -->
+<div class="lg:col-span-3 flex items-center lg:justify-end gap-space-sm">
+<div class="px-space-md py-2 rounded-xl bg-surface-container-high flex items-center gap-2 shadow-sm">
+<span class="text-xl">🔥</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs font-bold text-on-surface">12 Dage</span>
+<span class="font-label-code text-[10px] text-on-surface-variant uppercase">Læringsstreak</span>
+</div>
+</div>
+<div class="px-space-md py-2 rounded-xl bg-primary-container/20 text-primary flex items-center gap-2 shadow-sm animate-pulse">
+<span class="material-symbols-outlined text-xl">token</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm font-bold text-primary" id="skill-points-counter">3 Point</span>
+<span class="font-label-code text-[10px] text-on-primary-fixed-variant uppercase font-semibold">Ubrugt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4 Sub-Branches Status Deck -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-xs">
+<!-- Gren A -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1 transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between font-label-caps text-label-caps">
+<span class="text-primary truncate">A // Prompting &amp; Reasoning</span>
+<span class="font-label-code text-on-surface">4/5</span>
+</div>
+<div class="flex gap-1 h-1.5">
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-primary rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+</div>
+<span class="font-label-code text-[10px] text-primary/80 uppercase">Mester</span>
+</div>
+<!-- Gren B -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1 transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between font-label-caps text-label-caps">
+<span class="text-tertiary truncate">B // Neurale Arkitekturer</span>
+<span class="font-label-code text-on-surface">2/5</span>
+</div>
+<div class="flex gap-1 h-1.5">
+<div class="flex-1 bg-tertiary rounded-full"></div>
+<div class="flex-1 bg-tertiary rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+</div>
+<span class="font-label-code text-[10px] text-tertiary/80 uppercase">Øvet</span>
+</div>
+<!-- Gren C -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1 transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between font-label-caps text-label-caps">
+<span class="text-secondary truncate">C // AI Etik &amp; Sikkerhed</span>
+<span class="font-label-code text-on-surface">3/5</span>
+</div>
+<div class="flex gap-1 h-1.5">
+<div class="flex-1 bg-secondary rounded-full"></div>
+<div class="flex-1 bg-secondary rounded-full"></div>
+<div class="flex-1 bg-secondary rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+</div>
+<span class="font-label-code text-[10px] text-secondary/80 uppercase">Ekspert</span>
+</div>
+<!-- Gren D -->
+<div class="p-space-sm rounded-lg bg-surface-container flex flex-col gap-1 transition-transform hover:-translate-y-0.5">
+<div class="flex items-center justify-between font-label-caps text-label-caps">
+<span class="text-tertiary-fixed truncate">D // Autonome Agenter</span>
+<span class="font-label-code text-on-surface">1/5</span>
+</div>
+<div class="flex gap-1 h-1.5">
+<div class="flex-1 bg-tertiary-fixed rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+<div class="flex-1 bg-surface-container-highest rounded-full"></div>
+</div>
+<span class="font-label-code text-[10px] text-tertiary-fixed/80 uppercase">Begynder</span>
+</div>
+</div>
+</section>
+<!-- 3 & 4. INTERAKTIVT SKILLTREE & NODE INSPECTOR (BENTO / SPLIT GRID) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- VENSTRE: DET STORE RPG STIKORT (8 COLUMNS) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Tree Control Bar & Discipline Filters -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex items-center gap-1 overflow-x-auto pb-0.5">
+<button class="filter-btn active px-space-sm py-1 rounded-lg bg-surface-container-high text-primary font-label-code text-label-code shadow-sm" data-filter="all" type="button">Alle Discipliner</button>
+<button class="filter-btn px-space-sm py-1 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-code text-label-code transition-colors" data-filter="unlockable" type="button">Kun Oplåselige (2)</button>
+<button class="filter-btn px-space-sm py-1 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-code text-label-code transition-colors" data-filter="mastered" type="button">Mestrede (8)</button>
+<button class="filter-btn px-space-sm py-1 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-code text-label-code transition-colors" data-filter="exam" type="button">Eksamensnoder (4)</button>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-code text-[11px]">
+<span class="material-symbols-outlined text-sm">hub</span>
+              14/24 Noder Realiseret
+            </div>
+</div>
+<!-- THE MAP CANVAS: 4 TIERS WITH CONNECTORS -->
+<div class="relative bg-surface-container-low/70 backdrop-blur-2xl rounded-2xl p-space-lg shadow-2xl overflow-hidden flex flex-col gap-space-xl">
+<!-- Dynamic SVG Matrix Circuit Connectors -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none stroke-current text-white/10" preserveaspectratio="none">
+<!-- Tier 1 to Tier 2 Connections -->
+<line class="text-tertiary/60" stroke-dasharray="4 4" stroke-width="2" x1="20%" x2="25%" y1="18%" y2="42%"></line>
+<line class="text-primary/70" stroke-width="2" x1="50%" x2="50%" y1="18%" y2="42%"></line>
+<line class="text-secondary/50" stroke-dasharray="4 4" stroke-width="2" x1="80%" x2="75%" y1="18%" y2="42%"></line>
+<!-- Tier 2 to Tier 3 Connections -->
+<line class="text-white/20" stroke-width="2" x1="25%" x2="35%" y1="45%" y2="68%"></line>
+<line class="text-primary-container animate-pulse" stroke-width="3" x1="50%" x2="50%" y1="45%" y2="68%"></line>
+<line class="text-white/20" stroke-width="2" x1="75%" x2="65%" y1="45%" y2="68%"></line>
+<!-- Tier 3 to Tier 4 Apex -->
+<line class="text-white/20" stroke-dasharray="6 6" stroke-width="2" x1="50%" x2="50%" y1="72%" y2="92%"></line>
+</svg>
+<!-- TIER 1: FUNDAMENT (GRUNDLÆGGENDE LÆRING) -->
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  TIER 01 // FUNDAMENTAL SYNTESE
+                </span>
+<span class="font-label-code text-[11px] text-tertiary/80 font-semibold">100% GENNEMFØRT</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Node 01: Mastered -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container-high/90 hover:bg-surface-bright transition-all shadow-md flex items-center justify-between" data-node-id="01" data-status="mastered" data-title="Few-Shot &amp; Chain-of-Thought Prompting">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-tertiary">NODE #01 // MESTRET</span>
+<span class="font-headline-sm text-sm text-on-surface font-semibold">Few-Shot Prompting</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Node 02: Mastered -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container-high/90 hover:bg-surface-bright transition-all shadow-md flex items-center justify-between" data-node-id="02" data-status="mastered" data-title="Vektordatabaser &amp; RAG Systemer">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/20 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">database</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-primary">NODE #02 // MESTRET</span>
+<span class="font-headline-sm text-sm text-on-surface font-semibold">Vektordatabaser &amp; RAG</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Node 03: Mastered -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container-high/90 hover:bg-surface-bright transition-all shadow-md flex items-center justify-between" data-node-id="03" data-status="mastered" data-title="Hallucinationsfiltrering &amp; Sanity Checks">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-secondary">NODE #03 // MESTRET</span>
+<span class="font-headline-sm text-sm text-on-surface font-semibold">Hallucinationsfilter</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- TIER 2: SPECIALISERING (ANVENDT MODEL-INGENIØRKUNST) -->
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary tracking-widest flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                  TIER 02 // SPECIALISERING &amp; MODELTILPASNING
+                </span>
+<span class="font-label-code text-[11px] text-primary/80 font-semibold">1 AKTIV NODE KLAR TIL OPLÅSNING</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Node 07: Mastered -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container-high/90 hover:bg-surface-bright transition-all shadow-md flex items-center justify-between" data-node-id="07" data-status="mastered" data-title="Semantisk Chunking &amp; Embeddings">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">grain</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-tertiary">NODE #07 // MESTRET</span>
+<span class="font-headline-sm text-sm text-on-surface font-semibold">Semantisk Chunking</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Node 08: ACTIVE / UNLOCKABLE (Highlighted Target) -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container-high transition-all shadow-[0_0_30px_rgba(242,138,60,0.35)] flex items-center justify-between relative scale-[1.02]" data-node-id="08" data-status="unlockable" data-title="Fine-Tuning LoRA Adapters" id="node-active-target">
+<div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-code text-[10px] font-bold tracking-wider uppercase animate-bounce">
+                    Koster 2 Skill Points
+                  </div>
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 shadow-lg">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">tune</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-primary font-bold">NODE #08 // KLAR</span>
+<span class="font-headline-sm text-sm text-primary font-bold">LoRA &amp; QLoRA Finjustering</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-xl animate-spin">radio_button_checked</span>
+</div>
+<!-- Node 09: Unlockable Alternative -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container-high/90 hover:bg-surface-bright transition-all shadow-md flex items-center justify-between" data-node-id="09" data-status="unlockable" data-title="Tool Calling &amp; JSON Output Schema">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">data_object</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-tertiary-fixed">NODE #09 // 1 SP</span>
+<span class="font-headline-sm text-sm text-on-surface font-semibold">Structured Outputs</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-base">lock_open</span>
+</div>
+</div>
+</div>
+<!-- TIER 3: AVANCERET MESTRING (SYSTEMARKITEKTUR & SIKKERHED) -->
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-widest flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface-variant"></span>
+                  TIER 03 // AVANCERET MESTRING
+                </span>
+<span class="font-label-code text-[11px] text-on-surface-variant font-semibold">LÅSTE FORUDSÆTNINGER</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Node 05: Locked -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container/60 hover:bg-surface-container text-on-surface-variant/70 transition-all flex items-center justify-between" data-node-id="05" data-prereq="Kræver Node #08 (LoRA) + Node #09" data-status="locked" data-title="Multi-Agent Swarm Orchestration">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-on-surface-variant">NODE #05 // LÅST</span>
+<span class="font-headline-sm text-sm text-on-surface font-semibold">Multi-Agent Swarms</span>
+<span class="font-label-code text-[10px] text-error">Kræver Node #08 LoRA</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">lock</span>
+</div>
+<!-- Node 06: Locked -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container/60 hover:bg-surface-container text-on-surface-variant/70 transition-all flex items-center justify-between" data-node-id="06" data-prereq="Kræver Node #03 (Filter)" data-status="locked" data-title="Konstitutionel AI &amp; Alignment">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-xl">gavel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-code text-[10px] text-on-surface-variant">NODE #06 // LÅST</span>
+<span class="font-headline-sm text-sm text-on-surface font-semibold">Konstitutionel AI</span>
+<span class="font-label-code text-[10px] text-on-surface-variant/60">Kræver Node #03 Filter</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">lock</span>
+</div>
+</div>
+</div>
+<!-- TIER 4: KVANTUM / AGI PIONER (APEX EKSPERIMENTEL) -->
+<div class="relative z-10 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim tracking-widest flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  TIER 04 // KVANTUM &amp; AGI PIONER [APEX MASTER]
+                </span>
+<span class="font-label-code text-[11px] text-secondary font-semibold">EKSTREM DISCIPLIN</span>
+</div>
+<!-- Apex Node -->
+<div class="node-card cursor-pointer p-space-md rounded-xl bg-surface-container-lowest/80 hover:bg-surface-container text-on-surface-variant/60 transition-all flex items-center justify-between" data-node-id="12" data-prereq="Kræver samtlige 3 Tier 03 noder" data-status="locked" data-title="Neural-Simuleret AGI Reasoning Loop">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">neurology</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-[10px] text-secondary">NODE #12 // APEX MESTERSKAB</span>
+<span class="font-label-code text-[10px] px-1.5 rounded bg-surface-container-high text-primary">Niveau 20 Krævet</span>
+</div>
+<span class="font-headline-md text-headline-sm text-on-surface font-bold">Autonom Selvforbedrende Refleksion</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Låser op for forskerprivilegier i Hubbens live-laboratorie.</span>
+</div>
+</div>
+<div class="px-space-md py-1.5 rounded-lg bg-surface-container-high font-label-code text-label-code text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span>
+                  5 SP
+                </div>
+</div>
+</div>
+</div>
+<!-- Quick Tip Banner -->
+<div class="p-space-md rounded-xl bg-surface-container-high/60 flex items-center justify-between text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-xl">lightbulb</span>
+<span>Klik på en hvilken som helst node for at inspicere læringsmål, sværhedsgrad og tage mikro-udfordringen.</span>
+</div>
+<span class="font-label-code text-[11px] text-tertiary">DA-EDU v3</span>
+</div>
+</div>
+<!-- HØJRE: NODE-INSPEKTØR & LÆRINGSMODUL (4 COLUMNS) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-low/95 backdrop-blur-2xl rounded-2xl p-space-lg shadow-2xl flex flex-col gap-space-md relative overflow-hidden">
+<!-- Node Header Badge -->
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">NODE-INSPEKTØR #08</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant/40">star</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant/40">star</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant/40">star</span>
+</div>
+</div>
+<!-- Selected Node Title & Metadata Deck -->
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-md text-headline-sm font-bold text-on-surface leading-tight" id="inspector-title">
+                FINE-TUNING LORA ADAPTERS
+              </h2>
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-tertiary">Sværhed: Øvet</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Tid: ~25 min</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded-full bg-primary-container/20 text-primary font-bold">+450 XP</span>
+</div>
+</div>
+<div class="w-full h-px bg-white/5 my-1"></div>
+<!-- Læringsmål (Didaktiske Nøgler) -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps text-tertiary tracking-wider uppercase">Didaktiske Læringsmål</span>
+<ul class="flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">check_small</span>
+<span>Forstå forskellen på fuld parameter finjustering (FFT) og Low-Rank Adaptation (LoRA).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">check_small</span>
+<span>Konfiguration af rang (<code class="font-label-code text-xs text-primary">r=8, 16</code>) og alpha-skalering til open source sprogmodeller.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">check_small</span>
+<span>Evaluering af tabskurver (Loss curves) for at undgå katastrofal glemsel.</span>
+</li>
+</ul>
+</div>
+<!-- Interaktiv Mikro-Simulering / Quiz-forhåndsvisning -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm shadow-inner">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">quiz</span> MIKRO-UDFORDRING
+                </span>
+<span class="font-label-code text-[10px] text-tertiary font-bold">+100 BONUS XP</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">
+                Vælg den mest hukommelseseffektive parameter-optimeringsmetode til en 7B model på et lokalt 16GB GPU-kort:
+              </p>
+<!-- Svarmuligheder -->
+<div class="flex flex-col gap-2 pt-1 font-label-code text-xs">
+<button class="quiz-option w-full p-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-left text-on-surface-variant transition-colors flex items-center justify-between" data-correct="false" type="button">
+<span>A: Fuld FP32 Fine-Tuning</span>
+<span class="material-symbols-outlined text-sm opacity-0 opt-icon">close</span>
+</button>
+<button class="quiz-option w-full p-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-left text-on-surface-variant transition-colors flex items-center justify-between" data-correct="true" type="button">
+<span>B: QLoRA 4-bit kvantisering</span>
+<span class="material-symbols-outlined text-sm opacity-0 opt-icon">check</span>
+</button>
+<button class="quiz-option w-full p-2.5 rounded-lg bg-surface-container-high hover:bg-surface-bright text-left text-on-surface-variant transition-colors flex items-center justify-between" data-correct="false" type="button">
+<span>C: Zero-Shot Prompting alene</span>
+<span class="material-symbols-outlined text-sm opacity-0 opt-icon">close</span>
+</button>
+</div>
+<!-- Feedback message container -->
+<div class="hidden font-body-sm text-xs p-2 rounded bg-surface-container-low text-tertiary" id="quiz-feedback">
+                Korrekt! QLoRA reducerer VRAM-kravet med op til 65% via 4-bit NormalFloat formatering.
+              </div>
+</div>
+<!-- Interaktive Handlingsknapper -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full py-3 px-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-label-caps font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-primary-container/25 hover:brightness-110 active:scale-[0.99] transition-all" id="btn-unlock-node" type="button">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">lock_open</span>
+                Lås Op med 2 Færdighedspoint
+              </button>
+<button class="w-full py-2.5 px-space-md rounded-xl bg-surface-container-high hover:bg-surface-container text-tertiary font-label-code text-label-code flex items-center justify-center gap-2 transition-all" id="btn-start-module" type="button">
+<span class="material-symbols-outlined text-base">play_circle</span>
+                Start Interaktivt Læringsmodul (25 min)
+              </button>
+</div>
+<!-- Node Lore / Academic Note -->
+<div class="pt-2 text-center">
+<span class="font-label-code text-[10px] text-on-surface-variant/50">
+                Verificeret af Hubbens Didaktiske Råd // ECTS-ækvivalent mikromodul
+              </span>
+</div>
+</div>
+<!-- Secondary Deck: Certifikat Status Preview -->
+<div class="p-space-md rounded-xl bg-surface-container-low/70 flex items-center gap-space-md shadow-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-2xl">workspace_premium</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs font-bold text-on-surface">Kommende Certifikat</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Lås Node #08 op for at modtage dit "LoRA Specialist" badge.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. FÆRDIGHEDS-RADAR, SYNERGIER & DIDAKTISK MATRIX (RPG KARAKTER-MATRIX) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<!-- SPIDER/RADAR GRAPH & STATS (5 COLUMNS) -->
+<div class="lg:col-span-5 bg-surface-container-low/90 backdrop-blur-xl rounded-2xl p-space-lg shadow-xl flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest uppercase">KOMPETENCE-RADAR</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Balancematrix v3</h3>
+</div>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Kadett Frost</span>
+</div>
+<!-- SVG Polygon Radar Visualization -->
+<div class="relative w-full flex items-center justify-center py-space-sm">
+<svg class="w-64 h-64 overflow-visible" viewbox="0 0 200 200">
+<!-- Radial Grid Concentric Polygons -->
+<polygon class="text-white/10" fill="none" points="100,20 180,100 100,180 20,100" stroke="currentColor" stroke-width="1"></polygon>
+<polygon class="text-white/10" fill="none" points="100,45 155,100 100,155 45,100" stroke="currentColor" stroke-width="1"></polygon>
+<polygon class="text-white/10" fill="none" points="100,70 130,100 100,130 70,100" stroke="currentColor" stroke-width="1"></polygon>
+<!-- Cross Axes -->
+<line class="text-white/15" stroke="currentColor" stroke-width="1" x1="100" x2="100" y1="10" y2="190"></line>
+<line class="text-white/15" stroke="currentColor" stroke-width="1" x1="10" x2="190" y1="100" y2="100"></line>
+<!-- Elena's Current Skill Area (Animated Gradient Poly) -->
+<!-- Top: Prompting (85%), Right: Arkitektur (60%), Bottom: Autonome Agenter (40%), Left: AI Etik (75%) -->
+<polygon class="text-primary-container" fill="rgba(242, 138, 60, 0.3)" points="100,32 148,100 100,135 40,100" stroke="currentColor" stroke-width="2.5"></polygon>
+<!-- Points with Glowing Halos -->
+<circle class="fill-primary" cx="100" cy="32" r="4"></circle>
+<circle class="fill-tertiary" cx="148" cy="100" r="4"></circle>
+<circle class="fill-tertiary-fixed" cx="100" cy="135" r="4"></circle>
+<circle class="fill-secondary" cx="40" cy="100" r="4"></circle>
+<!-- Axis Labels -->
+<text class="fill-primary text-[9px] font-mono uppercase tracking-wider" text-anchor="middle" x="100" y="10">Prompting (85%)</text>
+<text class="fill-tertiary text-[9px] font-mono uppercase tracking-wider" text-anchor="start" x="195" y="103">Arkitektur (60%)</text>
+<text class="fill-tertiary-fixed text-[9px] font-mono uppercase tracking-wider" text-anchor="middle" x="100" y="198">Agenter (40%)</text>
+<text class="fill-secondary text-[9px] font-mono uppercase tracking-wider" text-anchor="end" x="5" y="103">Etik (75%)</text>
+</svg>
+</div>
+<div class="grid grid-cols-2 gap-space-xs font-label-code text-[11px] text-on-surface-variant">
+<div class="flex items-center gap-1.5 p-1.5 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Prompting: 85/100</span>
+</div>
+<div class="flex items-center gap-1.5 p-1.5 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Arkitektur: 60/100</span>
+</div>
+<div class="flex items-center gap-1.5 p-1.5 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Etik &amp; Sikkerhed: 75/100</span>
+</div>
+<div class="flex items-center gap-1.5 p-1.5 rounded bg-surface-container">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+<span>Agenter: 40/100</span>
+</div>
+</div>
+</div>
+<!-- AKTIVE KLASSE-SYNERGIER & DIDAKTISKE GARANTIER (7 COLUMNS) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Aktive Synergier -->
+<div class="bg-surface-container-low/90 backdrop-blur-xl rounded-2xl p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-2xl">auto_fix_high</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase">RPG STAT-BOOSTS</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Aktive Klasse-Synergier</h3>
+</div>
+</div>
+<span class="font-label-code text-xs px-2.5 py-1 rounded-full bg-primary-container/20 text-primary font-bold">2 Aktive Effekter</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Synergi 1 -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2 transition-all hover:bg-surface-container-high">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-sm text-on-surface font-bold">Syntetisk Forsker</span>
+<span class="font-label-code text-[10px] text-tertiary bg-surface-container-highest px-2 py-0.5 rounded">RAG + LoRA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  +15% hurtigere eksperiment-cyklusser og reduceret beregningstab ved finjustering med videnudtræk.
+                </p>
+<div class="flex items-center gap-1 font-label-code text-[11px] text-tertiary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>Aktiv i alle simuleringer</span>
+</div>
+</div>
+<!-- Synergi 2 -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col gap-2 transition-all hover:bg-surface-container-high">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-sm text-on-surface font-bold">Etisk Sikkerhedsvagt</span>
+<span class="font-label-code text-[10px] text-secondary bg-surface-container-highest px-2 py-0.5 rounded">Filter + Etik</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Automatisk detektion af model-bias og uønsket informationslækage under multi-agent afprøvninger.
+                </p>
+<div class="flex items-center gap-1 font-label-code text-[11px] text-secondary">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span>Systembeskyttelse slået til</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Didaktisk Information & Læringsfundament -->
+<div class="p-space-lg rounded-2xl bg-surface-container/80 flex flex-col md:flex-row items-center gap-space-lg shadow-lg">
+<img class="w-24 h-24 rounded-xl object-cover shrink-0 shadow-md" data-alt="Futuristic neon holographic AI data matrix certificate with clean Scandinavian typography and glowing geometric nodes" src="/ai-experience-hub/computer/native/media/8d2141ff5c5b2c3bf40fe308"/>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-xs px-2 py-0.5 rounded bg-tertiary/20 text-tertiary font-bold">AKADEMISK FUNDAMENT</span>
+<span class="font-label-code text-xs text-on-surface-variant">Mikrolæring &amp; Didaktik</span>
+</div>
+<h4 class="font-headline-sm text-sm font-bold text-on-surface">Forankret i Anerkendte Maskinlæringsprincipper</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Læringsmaterialet er struktureret efter kognitive taksonomier og praktisk anvendt systemarkitektur. Hver afsluttet node validerer reelle færdigheder mod Hubbens åbne benchmarks.
+              </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- CLIENT-SIDE INTERACTIVITY SCRIPT -->
+<script>
+    (function initSkillTreeAcademy() {
+      // Elements
+      const skillPointsEl = document.getElementById('skill-points-counter');
+      const unlockBtn = document.getElementById('btn-unlock-node');
+      const targetNode = document.getElementById('node-active-target');
+      const quizOptions = document.querySelectorAll('.quiz-option');
+      const quizFeedback = document.getElementById('quiz-feedback');
+      const inspectorTitle = document.getElementById('inspector-title');
+      const nodeCards = document.querySelectorAll('.node-card');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const btnReset = document.getElementById('btn-reset-tree');
+      const btnCert = document.getElementById('btn-export-cert');
+      const btnQuick = document.getElementById('btn-quick-path');
+
+      let currentSkillPoints = 3;
+
+      // Filter handling
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'text-primary', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-high', 'text-primary', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
+
+          const filter = btn.getAttribute('data-filter');
+          nodeCards.forEach(card => {
+            const status = card.getAttribute('data-status');
+            if (filter === 'all') {
+              card.style.display = 'flex';
+            } else if (filter === 'unlockable' && status === 'unlockable') {
+              card.style.display = 'flex';
+            } else if (filter === 'mastered' && status === 'mastered') {
+              card.style.display = 'flex';
+            } else if (filter === 'exam') {
+              card.style.display = (card.getAttribute('data-node-id') === '12') ? 'flex' : 'none';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Node card click inspection
+      nodeCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const title = card.getAttribute('data-title');
+          const status = card.getAttribute('data-status');
+          const id = card.getAttribute('data-node-id');
+
+          inspectorTitle.textContent = title.toUpperCase();
+
+          if (status === 'mastered') {
+            unlockBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check</span> Allerede Mestret';
+            unlockBtn.disabled = true;
+            unlockBtn.className = 'w-full py-3 px-space-md rounded-xl bg-surface-container-high text-tertiary font-headline-sm text-label-caps font-bold tracking-wider uppercase flex items-center justify-center gap-2 opacity-80 cursor-default';
+          } else if (status === 'locked') {
+            const prereq = card.getAttribute('data-prereq') || 'Låst';
+            unlockBtn.innerHTML = '<span class="material-symbols-outlined text-lg">lock</span> ' + prereq;
+            unlockBtn.disabled = true;
+            unlockBtn.className = 'w-full py-3 px-space-md rounded-xl bg-surface-container text-on-surface-variant/60 font-headline-sm text-label-caps font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-not-allowed';
+          } else {
+            unlockBtn.disabled = false;
+            unlockBtn.innerHTML = '<span class="material-symbols-outlined text-lg" style="font-variation-settings: \'FILL\' 1;">lock_open</span> Lås Op med 2 Færdighedspoint';
+            unlockBtn.className = 'w-full py-3 px-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-sm text-label-caps font-bold tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg shadow-primary-container/25 hover:brightness-110 active:scale-[0.99] transition-all';
+          }
+        });
+      });
+
+      // Unlock button interaction
+      if (unlockBtn) {
+        unlockBtn.addEventListener('click', () => {
+          if (currentSkillPoints >= 2) {
+            currentSkillPoints -= 2;
+            skillPointsEl.textContent = currentSkillPoints + ' Point';
+
+            unlockBtn.innerHTML = '<span class="material-symbols-outlined text-lg">check_circle</span> Oplåst & Mestret (+450 XP)';
+            unlockBtn.className = 'w-full py-3 px-space-md rounded-xl bg-tertiary text-on-tertiary font-headline-sm text-label-caps font-bold tracking-wider uppercase flex items-center justify-center gap-2 transition-all';
+            unlockBtn.disabled = true;
+
+            if (targetNode) {
+              targetNode.setAttribute('data-status', 'mastered');
+              targetNode.classList.remove('shadow-[0_0_30px_rgba(242,138,60,0.35)]');
+              targetNode.classList.add('shadow-md');
+            }
+          }
+        });
+      }
+
+      // Quiz micro-simulation
+      quizOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+          const isCorrect = opt.getAttribute('data-correct') === 'true';
+          const icon = opt.querySelector('.opt-icon');
+
+          quizOptions.forEach(o => {
+            o.classList.remove('bg-error-container', 'text-on-error-container', 'bg-tertiary/20', 'text-tertiary');
+            const ic = o.querySelector('.opt-icon');
+            if (ic) ic.classList.add('opacity-0');
+          });
+
+          if (icon) icon.classList.remove('opacity-0');
+
+          if (isCorrect) {
+            opt.classList.add('bg-tertiary/20', 'text-tertiary');
+            quizFeedback.classList.remove('hidden');
+          } else {
+            opt.classList.add('bg-error-container', 'text-on-error-container');
+            quizFeedback.classList.remove('hidden');
+            quizFeedback.textContent = 'Forkert valg. Fuld finjustering kræver +32GB VRAM. Prøv QLoRA!';
+          }
+        });
+      });
+
+      // Header button notifications
+      if (btnReset) {
+        btnReset.addEventListener('click', () => {
+          currentSkillPoints = 3;
+          skillPointsEl.textContent = '3 Point';
+          alert('Færdighedstræ nulstillet til kadettens grundtilstand.');
+        });
+      }
+      if (btnCert) {
+        btnCert.addEventListener('click', () => {
+          alert('Genererer PDF-kompetencecertifikat for Kadett Elena Frost (Niveau 14)...');
+        });
+      }
+      if (btnQuick) {
+        btnQuick.addEventListener('click', () => {
+          targetNode.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          targetNode.classList.add('scale-105');
+          setTimeout(() => targetNode.classList.remove('scale-105'), 600);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-xl"><div class="w-full px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface">AI Experience Hub</span><span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-tertiary">DA-DK</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">En dansk interaktiv opdagelsesplatform for neural intelligens og generative systemer. Skabt til sansning, læring og kreativ udforskning.</p><span class="font-headline-md text-headline-md text-primary tracking-wide">Tryk. Oplev. Udforsk.</span></div><div class="md:col-span-5 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-tertiary">De 5 Universer</span><div class="grid grid-cols-2 gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors" data-path="data-fremtid" href="#">01. Data &amp; Fremtid</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="visuel-magi" href="#">02. Visuel Magi</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="viden-laering" href="#">03. Viden &amp; Læring</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary-fixed transition-colors" data-path="spil-opdagelser" href="#">04. Spil &amp; Opdagelser</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-path="kreativitet-teknologi" href="#">05. Kreativitet &amp; Teknologi</a></div></div><div class="md:col-span-3 flex flex-col gap-space-sm md:items-end"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Arkitektur &amp; Stack</span><div class="inline-flex items-center px-space-sm py-1.5 rounded-lg bg-surface-container-low font-label-code text-label-code text-on-surface-variant"><span class="text-tertiary mr-1.5">⚡</span> React · TypeScript · Three.js · LocalStorage</div><button class="mt-space-sm inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-code text-label-code hover:bg-error-container hover:text-on-error transition-all" type="button"><span class="material-symbols-outlined text-sm">restart_alt</span> Nulstil Demodata</button></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-code text-label-code text-on-surface-variant/60"><div>© 2025 AI EXPERIENCE HUB · Alle rettigheder forbeholdes</div><div class="flex items-center gap-space-md"><span>København / Aarhus Hub</span><span>Digital Udforskning</span></div></div></div></footer><script src="/ai-experience-hub/computer/native/storage.js"></script><script src="/ai-experience-hub/computer/native/shell.js"></script><script src="/ai-experience-hub/computer/native/runtime.js"></script></body></html>

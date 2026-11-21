@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AI EXPERIENCE HUB</title>
+
+
+
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link rel="stylesheet" href="/ai-experience-hub/computer/native/stitch.css"><link rel="stylesheet" href="/ai-experience-hub/computer/native/shell.css"><link rel="manifest" href="/ai-experience-hub/computer/manifest.webmanifest"><meta name="theme-color" content="#051426"><link rel="stylesheet" href="/ai-experience-hub/computer/computer.css"><script defer src="/ai-experience-hub/computer/computer.js"></script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_12px_40px_-10px_rgba(1,14,33,0.9)]"><div class="h-28 w-full px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><span style="font-size:30px;color:#ffb787;line-height:1" aria-hidden="true">✦</span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">AI Experience Hub</span><span class="font-label-code text-label-code text-tertiary tracking-widest uppercase">Tryk. Oplev. Udforsk.</span></div></div><div class="flex-1 max-w-xl mx-auto hidden lg:flex items-center"><div class="relative w-full flex items-center bg-surface-container-low/90 rounded-xl px-space-md py-space-xs ring-1 ring-white/10 focus-within:ring-tertiary transition-all"><span class="material-symbols-outlined text-tertiary mr-space-sm shrink-0">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" placeholder="Søg blandt 15 interaktive oplevelser..." type="text"/><span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer shrink-0 ml-space-xs text-lg">tune</span></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,138,60,0.3)]"><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="opdag" href="#">Opdag</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="universer" href="#">Universer</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="udforsk-katalog" href="#">Udforsk (Katalog)</a><a class="relative px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-path="mine-gemte" href="#"><span>Mine Gemte</span><span class="font-label-code text-label-code px-1.5 py-0.2 bg-primary-container text-on-primary-container rounded-full font-bold">3</span></a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="mission-control-live" href="#">Mission Control Live</a></nav><div class="flex items-center gap-space-sm pl-space-md"><div class="flex flex-col items-end hidden sm:flex"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary">Online Demo</span></div><span class="font-label-code text-label-code text-on-surface-variant">Dansk Hub v2.4</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-tertiary/40" src="/ai-experience-hub/computer/native/media/e20dd7285ea677b52d22f60b"/></div></div></div><div class="flex items-center gap-space-sm overflow-x-auto pb-0.5 pt-1"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant/70 shrink-0 mr-space-xs">Fokus:</span><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary ring-1 ring-tertiary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="data-fremtid" href="#">Data &amp; Fremtid</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary ring-1 ring-secondary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="visuel-magi" href="#">Visuel Magi</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary ring-1 ring-primary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="viden-laering" href="#">Viden &amp; Læring</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary-fixed ring-1 ring-tertiary-fixed/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="spil-opdagelser" href="#">Spil &amp; Opdagelser</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary-fixed-dim ring-1 ring-primary-fixed-dim/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="kreativitet-teknologi" href="#">Kreativitet &amp; Teknologi</a></div></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle Spatial Glow Backdrop Ambient Overlays -->
+<div class="relative w-full overflow-hidden px-margin-mobile md:px-margin py-space-md">
+<!-- Top Decorative Aura Elements (contained) -->
+<div class="absolute -top-32 -left-20 w-96 h-96 rounded-full bg-primary-container/10 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/3 -right-32 w-80 h-80 rounded-full bg-tertiary-container/10 blur-[130px] pointer-events-none"></div>
+<!-- 1. SUB-HEADER / BREADCRUMB & REALTIME STATUS -->
+<section class="relative z-10 w-full mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-sm border-b border-surface-container-high/50">
+<!-- Breadcrumbs & Tactical Badge -->
+<div class="flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-code text-label-code text-primary-fixed-dim tracking-widest uppercase">UNIVERS 04</span>
+<span class="font-label-code text-label-code text-on-surface-variant/40">//</span>
+<span class="font-label-code text-label-code text-on-surface-variant hover:text-tertiary transition-colors">SPIL &amp; OPDAGELSER</span>
+<span class="font-label-code text-label-code text-on-surface-variant/40">//</span>
+<span class="font-label-code text-label-code text-tertiary font-bold tracking-wider">12 // DECISION LAB</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-error-container/40 text-error font-label-code text-label-code ring-1 ring-error/40 animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-error shadow-[0_0_8px_#ffb4ab]"></span>
+              LIVE SIMULATION // ETISK KRISEBEREDSKAB // NIVEAU 3
+            </span>
+<span class="font-label-code text-label-code text-on-surface-variant/60 hidden sm:inline">AUTH: CHIEF_ETHICS_OFFICER // SES-ID: 981-KR-DK</span>
+</div>
+</div>
+<!-- Action Control Group -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-label-code text-label-code hover:bg-surface-container-high transition-all shadow-sm" id="btn-reset" type="button">
+<span class="material-symbols-outlined text-sm text-tertiary">restart_alt</span>
+<span>Nulstil Scenarie</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-code text-label-code hover:bg-surface-bright transition-all shadow-sm" id="btn-audit" type="button">
+<span class="material-symbols-outlined text-sm text-secondary">description</span>
+<span>Hent Etisk Rapport (Audit Log)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-gradient-to-r from-primary-container via-primary-fixed-dim to-primary text-on-primary-container font-headline-sm text-headline-sm font-bold tracking-tight shadow-[0_0_24px_rgba(242,138,60,0.45)] hover:shadow-[0_0_36px_rgba(242,138,60,0.7)] transition-all" id="btn-emergency" type="button">
+<span class="material-symbols-outlined text-base">bolt</span>
+<span>Træf Nødbeslutning (<span class="font-label-code" id="btn-timer">00:41.8</span>)</span>
+</button>
+</div>
+</div>
+<!-- Main Headline + Editorial Narrative intro -->
+<div class="mt-space-md max-w-4xl">
+<h1 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight leading-tight">
+          12 // DECISION LAB — <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">KRITISK AI-ETIK</span> &amp; STRATEGISK LEDELSESSIMULATION
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-3xl">
+          Træf afgørende beslutninger under tidspres i komplekse socio-tekniske kriser. Balancér menneskeliv, privatliv, systemintegritet og samfundstillid i realtid. Hver mikro-handling omkalibrerer den nationale determinisme-algoritme.
+        </p>
+</div>
+</section>
+<!-- 2. TELEMETRI QUICK-METRICS BAR (4 MODULÆRE KASSER) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+<!-- Metric 01 -->
+<div class="relative bg-surface-container-low/90 backdrop-blur-xl p-space-md rounded-xl shadow-md overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-20 h-20 bg-error/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps uppercase text-error tracking-wider">01 // AKTIV KRISE</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-error-container text-on-error-container font-semibold">ALPHA-RED</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold truncate">Autonomt Netværksnedbrud</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-error">warning</span>
+<span>Sektor: Hovedstad Vest &amp; Forsyning</span>
+</div>
+<!-- Micro sparkline indicator -->
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-error h-full w-4/5 rounded-full"></div>
+</div>
+</div>
+<!-- Metric 02 -->
+<div class="relative bg-surface-container-low/90 backdrop-blur-xl p-space-md rounded-xl shadow-md overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-20 h-20 bg-primary-container/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-wider">02 // TIDSTÆLLER</span>
+<span class="font-label-code text-label-code text-primary-fixed-dim">FALLBACK NÆRMER SIG</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-primary font-bold tracking-wider font-label-code" id="sim-countdown">00:41.8</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">schedule</span>
+<span>Automatisk fail-safe fallback overskriver</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary-container h-full w-[42%] rounded-full transition-all duration-300" id="timer-bar"></div>
+</div>
+</div>
+<!-- Metric 03 -->
+<div class="relative bg-surface-container-low/90 backdrop-blur-xl p-space-md rounded-xl shadow-md overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-20 h-20 bg-tertiary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps uppercase text-tertiary tracking-wider">03 // ETISK TILLIDS-INDEKS</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container-high text-tertiary font-semibold">-12% PASSIV</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight" id="trust-val">64<span class="text-headline-sm text-on-surface-variant font-normal">%</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-tertiary">sentiment_neutral</span>
+<span>Offentlig legitimitet &amp; samfundstillid</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-tertiary h-full w-[64%] rounded-full transition-all duration-500" id="trust-bar"></div>
+</div>
+</div>
+<!-- Metric 04 -->
+<div class="relative bg-surface-container-low/90 backdrop-blur-xl p-space-md rounded-xl shadow-md overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-20 h-20 bg-secondary/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-wider">04 // SYSTEM-INTEGRITET</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-secondary-container/40 text-secondary-fixed font-semibold">SUNDHED</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight" id="integrity-val">88.2<span class="text-headline-sm text-on-surface-variant font-normal">%</span></div>
+<div class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary">lan</span>
+<span>Netværksstabilitet &amp; datakontinuitet</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-3 overflow-hidden">
+<div class="bg-secondary h-full w-[88.2%] rounded-full transition-all duration-500" id="integrity-bar"></div>
+</div>
+</div>
+</section>
+<!-- 3. HOVEDSEKTION — TO-KOLONNE DYNAMISK BENTO / CRISIS STAGE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start mb-space-2xl">
+<!-- VENSTRE SIDE: Hero Simulation Viewport & Billedintegration + De 3 Valgmuligheder (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Viewport Box: Hero billede med interaktive HUD elementer -->
+<div class="relative rounded-xl overflow-hidden bg-surface-container-low shadow-xl">
+<!-- Tactical HUD Frame Overlay Header -->
+<div class="absolute top-0 inset-x-0 z-20 flex items-center justify-between px-space-md py-space-sm bg-gradient-to-b from-surface-container-lowest/90 to-transparent backdrop-blur-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_#4cd8e7]"></span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider font-semibold">Taktisk Krisebænk: AI Etisk Råd &amp; Kriseledelse</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-error-container/70 text-on-error-container uppercase">Status: Højrisiko Forgreningspunkt</span>
+</div>
+</div>
+<!-- Central Image Slot: /native/media/d5d6a719b999c3bd43704ab3 integration with fallbacks & cinematic treatment -->
+<div class="relative w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden group">
+<img alt="Taktisk Krisebænk: AI Etisk Råd og kriseledere samlet omkring et cirkulært holografisk rådsbord i en mørk kommandocentral med udsigt over en futuristisk natby. Orange og cyanfarvede etiske forgreningsdiagrammer og telemetridata svæver i luften." class="w-full h-full object-cover object-center group-hover:scale-[1.01] transition-transform duration-700" src="/ai-experience-hub/computer/native/media/d5d6a719b999c3bd43704ab3"/>
+<!-- Radial Edge Vignette -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/20 to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 bg-radial-gradient from-transparent via-transparent to-surface-container-lowest/70 pointer-events-none"></div>
+<!-- Floating In-Image Tactical HUD Nodes (Inspireret af billedets hologrammer) -->
+<div class="absolute bottom-4 left-4 right-4 z-20 flex flex-wrap items-center justify-between gap-2 p-3 rounded-lg bg-surface-container-lowest/85 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">sensors</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Overvågede Entiteter</span>
+<span class="font-label-code text-label-code text-primary-fixed font-bold">3.4M Borgere // 12 Hospitaler // Trafiklysnetværk</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-container-high text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">hub</span>
+<span>Neural Mesh: 99.4% aktiv</span>
+</span>
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-container-high text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">shield</span>
+<span>Protokol Level: ALPHA</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Scenarie Narrative Card -->
+<div class="p-space-md bg-surface-container-low">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-lg">crisis_alert</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">AKUT DILEMMA-BRIEFING</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              En ukendt zero-day sårbarhed har ramt landets centrale AI-styrede el- og infrastrukturfordeler. Autonome nødgeneratorer kan kun opretholde strømmen til enten det regionale hospitalscenter eller det centrale datalager, der forhindrer totalt nationalt strømnedbrud i 48 timer. Hvilken protokol aktiverer du som ansvarlig AI-kommissær?
+            </p>
+</div>
+</div>
+<!-- Interaktivt Forgreningskort / Beslutningsvalg (De 3 Kritiske Valgmuligheder) -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<h2 class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider font-semibold">
+              Kritiske Beslutningsveje (Protokolvalg)
+            </h2>
+<span class="font-label-code text-label-code text-primary">VÆLG ÉN RETNING</span>
+</div>
+<!-- Valgmulighed A: Protokol Prometheus -->
+<div class="protocol-card group relative p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all duration-200 shadow-md" id="choice-a" onclick="selectProtocol('A')">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 text-primary flex items-center justify-center font-label-code font-bold text-sm shrink-0 group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                  A
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-primary transition-colors">Protokol Prometheus</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container-high text-primary font-semibold">Prioritér Hospitaler</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-normal">
+                    Garanterer akutafdelingers og respiratorers strøm 100%, men medfører 45% risiko for udbredt netværkskollaps i det omkringliggende opland inden for 2 timer.
+                  </p>
+</div>
+</div>
+<div class="protocol-radio shrink-0 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-background">
+<span class="material-symbols-outlined text-xs font-bold hidden check-icon">check</span>
+</div>
+</div>
+<!-- Real-time Tradeoff Indicators -->
+<div class="grid grid-cols-3 gap-2 mt-space-sm pt-space-xs border-t border-surface-container-high/40 font-label-code text-label-code">
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Menneskeliv Sikret:</span>
+<span class="text-tertiary font-bold">Høj (100% Nødkirurgi)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Infrastruktur:</span>
+<span class="text-error font-bold">-45% Kollapsrisiko</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">GDPR / Data:</span>
+<span class="text-on-surface-variant font-bold">Uændret</span>
+</div>
+</div>
+</div>
+<!-- Valgmulighed B: Protokol Themis -->
+<div class="protocol-card group relative p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all duration-200 shadow-md" id="choice-b" onclick="selectProtocol('B')">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center font-label-code font-bold text-sm shrink-0 group-hover:bg-tertiary-container group-hover:text-on-tertiary transition-colors">
+                  B
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-tertiary transition-colors">Protokol Themis</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container-high text-tertiary font-semibold">Balanceret Rationering</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-normal">
+                    60/40 belastningsdeling via AI-interpolering; reducerer reserve-kapacitet med 15%, men beskytter 80% af det landsdækkende el- og forsyningsnet.
+                  </p>
+</div>
+</div>
+<div class="protocol-radio shrink-0 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-background">
+<span class="material-symbols-outlined text-xs font-bold hidden check-icon">check</span>
+</div>
+</div>
+<!-- Real-time Tradeoff Indicators -->
+<div class="grid grid-cols-3 gap-2 mt-space-sm pt-space-xs border-t border-surface-container-high/40 font-label-code text-label-code">
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Menneskeliv Sikret:</span>
+<span class="text-primary font-bold">Moderat (-15% kapacitet)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Infrastruktur:</span>
+<span class="text-tertiary font-bold">80% Beskyttet</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Tillids-Impact:</span>
+<span class="text-secondary font-bold">+6% Gennemsigtighed</span>
+</div>
+</div>
+</div>
+<!-- Valgmulighed C: Protokol Cerberus -->
+<div class="protocol-card group relative p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all duration-200 shadow-md" id="choice-c" onclick="selectProtocol('C')">
+<div class="flex items-start justify-between gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-secondary-container/30 text-secondary flex items-center justify-center font-label-code font-bold text-sm shrink-0 group-hover:bg-secondary-container group-hover:text-on-secondary-container transition-colors">
+                  C
+                </div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-secondary transition-colors">Protokol Cerberus</span>
+<span class="px-2 py-0.5 rounded font-label-code text-label-code bg-surface-container-high text-secondary font-semibold">Total Nedlukning</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-normal">
+                    Stopper angrebet øjeblikkeligt ved hermetisk netværks-karantæne, men isolerer midlertidigt 500.000 borgere fra al nødkaldstelefoni og offentlig digital adgang.
+                  </p>
+</div>
+</div>
+<div class="protocol-radio shrink-0 w-5 h-5 rounded-full bg-surface-container-highest flex items-center justify-center text-background">
+<span class="material-symbols-outlined text-xs font-bold hidden check-icon">check</span>
+</div>
+</div>
+<!-- Real-time Tradeoff Indicators -->
+<div class="grid grid-cols-3 gap-2 mt-space-sm pt-space-xs border-t border-surface-container-high/40 font-label-code text-label-code">
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Angrebsstop:</span>
+<span class="text-tertiary font-bold">100% Hermetisk</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Borger Isolation:</span>
+<span class="text-error font-bold">500.000 afskåret</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant/70">Systemreboot:</span>
+<span class="text-on-surface font-bold">3.5 timer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- HØJRE SIDE: Syntese & Beslutnings Kontrolcenter (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Decision Cockpit Shell -->
+<div class="bg-surface-container-low/95 rounded-xl p-space-md shadow-xl backdrop-blur-2xl">
+<!-- Tactical Navigation Tabs -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high/60 mb-space-md">
+<button class="font-label-code text-label-code text-primary font-bold pb-1 border-b-2 border-primary transition-all" id="tab-btn-dilemma" onclick="switchTab('dilemma')">
+              Dilemma Analyse
+            </button>
+<button class="font-label-code text-label-code text-on-surface-variant hover:text-on-surface pb-1 border-b-2 border-transparent transition-all" id="tab-btn-impact" onclick="switchTab('impact')">
+              Interessent-Påvirkning
+            </button>
+<button class="font-label-code text-label-code text-on-surface-variant hover:text-on-surface pb-1 border-b-2 border-transparent transition-all" id="tab-btn-frameworks" onclick="switchTab('frameworks')">
+              Etiske Rammeværker
+            </button>
+</div>
+<!-- Tab Content 1: Dilemma Analyse & Stakeholder Heatmap -->
+<div class="flex flex-col gap-space-md" id="tab-content-dilemma">
+<!-- Interessent Matrix (Impact Heatmap) -->
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps uppercase text-on-surface tracking-wider">Interessent Matrix // Impact Heatmap</span>
+<span class="font-label-code text-label-code text-tertiary">Real-time telemetri</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Heatmap Row 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Borgersikkerhed &amp; Liv</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">Kritisk Udsat</span>
+<span class="font-label-code text-label-code text-error">-38%</span>
+</div>
+</div>
+<!-- Heatmap Row 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Databeskyttelse &amp; GDPR</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-tertiary-container/30 text-tertiary font-semibold">Høj Overholdelse</span>
+<span class="font-label-code text-label-code text-tertiary">99.1%</span>
+</div>
+</div>
+<!-- Heatmap Row 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Institutionel Tillid</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-primary-container/20 text-primary font-semibold">Moderat</span>
+<span class="font-label-code text-label-code text-primary">64%</span>
+</div>
+</div>
+<!-- Heatmap Row 4 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Økonomisk Følgeomkostning</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">Estimat</span>
+<span class="font-label-code text-label-code text-secondary font-bold">2.4 mia. DKK</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Vælg Etisk Doktrin (Filosofiske Filtre) -->
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface tracking-wider block mb-2">Vælg Etisk Doktrin (Filosofisk Filter)</span>
+<div class="grid grid-cols-1 gap-2">
+<label class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors">
+<input checked="" class="mt-1 accent-primary" name="doctrine" type="radio" value="util"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Utilitarisme (Konsekvensetik)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">Størst mulig nytte og færrest tabte liv for flest mulige samfundsaktører.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors">
+<input class="mt-1 accent-primary" name="doctrine" type="radio" value="deont"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Deontologi (Pligtetik)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">Kategorisk imperativ: Menneskeliv må aldrig reduceres til en matematisk variabel.</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high cursor-pointer transition-colors">
+<input class="mt-1 accent-primary" name="doctrine" type="radio" value="virtue"/>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Dydsetik &amp; Retfærdighed</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-xs">Vægt på demokratisk transparens, institutionel integritet og sanddruhed.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Simuleret Konsekvensberegner (Sliders / Progress Bars) -->
+<div class="p-3 rounded-lg bg-surface-container-lowest">
+<span class="font-label-caps text-label-caps uppercase text-tertiary tracking-wider block mb-2">Simuleret Risikoberegner</span>
+<div class="flex flex-col gap-3 font-label-code text-label-code">
+<div>
+<div class="flex justify-between text-on-surface-variant mb-1">
+<span>Utilsigtede AI-hallucinationer i krisemodel:</span>
+<span class="text-tertiary font-bold">4.2%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full w-[4.2%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-on-surface-variant mb-1">
+<span>Sekundære infrastrukturfejl (Cascade Risk):</span>
+<span class="text-primary font-bold">18.0%</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[18%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call-To-Action Execution Button -->
+<button class="w-full py-space-sm px-space-md rounded-lg bg-gradient-to-r from-primary-container via-primary to-primary-fixed-dim text-on-primary-container font-headline-sm text-headline-sm font-bold tracking-tight uppercase shadow-[0_0_24px_rgba(242,138,60,0.4)] hover:shadow-[0_0_36px_rgba(242,138,60,0.6)] transition-all flex items-center justify-center gap-2" id="btn-lock-choice" onclick="lockDecision()" type="button">
+<span class="material-symbols-outlined">gavel</span>
+<span>Lås Valg &amp; Kør Konsekvens-Simulation</span>
+</button>
+<!-- Dynamic Decision Feedback Note -->
+<div class="hidden p-3 rounded-lg bg-surface-container text-tertiary font-label-code text-label-code text-center border-t border-tertiary/20" id="decision-feedback">
+              ✓ Protokol registreret i den distribuerede krise-blok. Beregner 48-timers kaskadevirkning...
+            </div>
+</div>
+<!-- Tab Content 2: Interessent-Påvirkning (Toggled by JS) -->
+<div class="hidden flex-col gap-space-md" id="tab-content-impact">
+<div class="p-3 rounded-lg bg-surface-container-lowest">
+<span class="font-headline-sm text-headline-sm text-on-surface block mb-1">Sociologisk Netværksanalyse</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Simuleringsmodellen aggregerer data fra 1.200 knudepunkter i sundheds- og forsyningssektoren.
+              </p>
+</div>
+<div class="flex flex-col gap-2 font-label-code text-label-code">
+<div class="p-3 rounded-lg bg-surface-container flex justify-between items-center">
+<span>Offentlige Hospitaler (Sjælland/Hovedstaden)</span>
+<span class="text-tertiary">99.8% Online</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex justify-between items-center">
+<span>Trafik- &amp; Signalstyringssystem</span>
+<span class="text-error">Udfald om 18m</span>
+</div>
+<div class="p-3 rounded-lg bg-surface-container flex justify-between items-center">
+<span>Finansielle Afregningscentraler</span>
+<span class="text-secondary">Isoleret (Karantæne)</span>
+</div>
+</div>
+</div>
+<!-- Tab Content 3: Etiske Rammeværker (Toggled by JS) -->
+<div class="hidden flex-col gap-space-md" id="tab-content-frameworks">
+<div class="p-3 rounded-lg bg-surface-container-lowest">
+<span class="font-headline-sm text-headline-sm text-on-surface block mb-1">Overholdelse af EU &amp; Nordiske Retskrav</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Under krisesituationer suspenderes dele af maskin-autonomi for at sikre direkte demokratisk ansvarsholdbarhed.
+              </p>
+</div>
+<div class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<div class="p-2.5 rounded bg-surface-container">
+<span class="text-on-surface font-semibold block">Artikel 14 (Human Oversight):</span>
+                Systemet kræver eksplicit biometrisk bekræftelse fra kommissæren inden 60 sekunder.
+              </div>
+<div class="p-2.5 rounded bg-surface-container">
+<span class="text-on-surface font-semibold block">Princippet om Ikke-forskelsbehandling:</span>
+                Algoritmen må ikke allokere ressourcer baseret på socioøkonomiske postnumre.
+              </div>
+</div>
+</div>
+</div>
+<!-- Live Telemetry Mini Chart / Inline SVG Donut -->
+<div class="bg-surface-container-low/80 rounded-xl p-space-md shadow-md flex items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Rådsenighed (Consensus Rate)</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-1">78% Konsensus</span>
+<span class="font-body-sm text-body-sm text-tertiary">7 af 9 rådsmedlemmer tilslutter sig dit valg</span>
+</div>
+<!-- Inline Mini Donut SVG (Sub 1KB, pure Tailwind tokens) -->
+<div class="relative w-16 h-16 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="78, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-code text-label-code font-bold text-on-surface">78%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. DIDAKTISK LÆRING & FILOSOFISK FUNDAMENT (BUNDSEKTION I 3 KORT) -->
+<section class="w-full pt-space-md border-t border-surface-container-high/60 mb-space-2xl">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest block">Didaktisk Læring &amp; Teoretisk Fundament</span>
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight mt-0.5">
+            Fra Hypotese til Kriseledelse: AI-Etikkens Anatomi
+          </h2>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant hidden md:block">MODUL 12 // VIDENSOVERFØRSEL</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Kort 1: Trolley-problemet i Algoritmisk Tid -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between shadow-md">
+<div>
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 text-primary flex items-center justify-center mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">alt_route</span>
+</div>
+<span class="font-label-code text-label-code text-primary uppercase">FILOSOFI &amp; ALGORITMER</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1 mb-2 group-hover:text-primary transition-colors">
+              Trolley-problemet i Algoritmisk Tid
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Hvorfor autonome systemer tvinger programmører, etikere og ledere til at forudbestemme moralske vægtninger i nanosekunder. I en ulykkessituation findes intet "neutralt valg" — enhver kodelinje indeholder implicit værdiprioritering.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-surface-container-high/60 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-code text-label-code">Teoretisk Dybde: 8 min</span>
+<span class="material-symbols-outlined text-sm text-primary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Kort 2: EU AI Act & Højrisiko-Klassificering -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between shadow-md">
+<div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">policy</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary uppercase">JURIDISK RAMMEVÆRK</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1 mb-2 group-hover:text-tertiary transition-colors">
+              EU AI Act &amp; Højrisiko-Klassificering
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Hvordan EU AI Act Artikel 6 og 14 stiller ufravigelige krav om menneskeligt overblik (<span class="text-tertiary font-medium">human-in-the-loop</span>) ved samfundskritisk infrastruktur, og hvorfor autonom handling uden logning udløser drakoniske sanktioner.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-surface-container-high/60 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-code text-label-code">Regulativ Status: Gældende</span>
+<span class="material-symbols-outlined text-sm text-tertiary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Kort 3: Historiske Dilemmaer & Case Arkiv -->
+<div class="p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between shadow-md">
+<div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container/20 text-secondary flex items-center justify-center mb-space-sm group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">history_edu</span>
+</div>
+<span class="font-label-code text-label-code text-secondary uppercase">SIMULERINGSARKIV</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-1 mb-2 group-hover:text-secondary transition-colors">
+              Historiske Dilemmaer &amp; Case Arkiv
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Udforsk tidligere kriser og benchmark dine etiske beslutningsmønstre mod hændelser som <span class="text-secondary font-medium">’Finansielt Flash Crash 2029’</span> og <span class="text-secondary font-medium">’Autonom Drone Logistik’</span> i arktiske forsyningskæder.
+            </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-surface-container-high/60 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-code text-label-code">6 Tidligere Cases</span>
+<span class="material-symbols-outlined text-sm text-secondary group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Real-time Tactical Simulation Controls & Interactivity
+  let currentProtocol = 'A';
+  let timeLeft = 41.8;
+  let timerInterval;
+
+  function initTimer() {
+    const countdownEl = document.getElementById('sim-countdown');
+    const timerBar = document.getElementById('timer-bar');
+    const btnTimer = document.getElementById('btn-timer');
+
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+      if (timeLeft > 0.1) {
+        timeLeft -= 0.1;
+        const formatted = timeLeft.toFixed(1);
+        const displayStr = '00:' + (timeLeft < 10 ? '0' : '') + formatted;
+        if (countdownEl) countdownEl.innerText = displayStr;
+        if (btnTimer) btnTimer.innerText = displayStr;
+        
+        // Progress bar percentage (max 60 seconds)
+        const percent = Math.max(0, Math.min(100, (timeLeft / 60) * 100));
+        if (timerBar) timerBar.style.width = percent + '%';
+      } else {
+        clearInterval(timerInterval);
+        if (countdownEl) countdownEl.innerText = '00:00.0';
+        if (btnTimer) btnTimer.innerText = 'AUTO-LÅST';
+        lockDecision(true);
+      }
+    }, 100);
+  }
+
+  function selectProtocol(type) {
+    currentProtocol = type;
+    const cards = ['choice-a', 'choice-b', 'choice-c'];
+    
+    cards.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const radio = el.querySelector('.protocol-radio');
+      const check = el.querySelector('.check-icon');
+      
+      el.classList.remove('bg-surface-container-high', 'ring-1', 'ring-primary', 'ring-tertiary', 'ring-secondary');
+      if (radio) {
+        radio.classList.remove('bg-primary', 'bg-tertiary', 'bg-secondary');
+        radio.classList.add('bg-surface-container-highest');
+      }
+      if (check) check.classList.add('hidden');
+    });
+
+    const activeEl = document.getElementById('choice-' + type.toLowerCase());
+    if (activeEl) {
+      const radio = activeEl.querySelector('.protocol-radio');
+      const check = activeEl.querySelector('.check-icon');
+      
+      activeEl.classList.add('bg-surface-container-high');
+      
+      const trustEl = document.getElementById('trust-val');
+      const trustBar = document.getElementById('trust-bar');
+      const integrityEl = document.getElementById('integrity-val');
+      const integrityBar = document.getElementById('integrity-bar');
+
+      if (type === 'A') {
+        activeEl.classList.add('ring-1', 'ring-primary');
+        if (radio) {
+          radio.classList.remove('bg-surface-container-highest');
+          radio.classList.add('bg-primary');
+        }
+        if (trustEl) trustEl.innerHTML = '74<span class="text-headline-sm text-on-surface-variant font-normal">%</span>';
+        if (trustBar) trustBar.style.width = '74%';
+        if (integrityEl) integrityEl.innerHTML = '62.4<span class="text-headline-sm text-on-surface-variant font-normal">%</span>';
+        if (integrityBar) integrityBar.style.width = '62.4%';
+      } else if (type === 'B') {
+        activeEl.classList.add('ring-1', 'ring-tertiary');
+        if (radio) {
+          radio.classList.remove('bg-surface-container-highest');
+          radio.classList.add('bg-tertiary');
+        }
+        if (trustEl) trustEl.innerHTML = '68<span class="text-headline-sm text-on-surface-variant font-normal">%</span>';
+        if (trustBar) trustBar.style.width = '68%';
+        if (integrityEl) integrityEl.innerHTML = '82.0<span class="text-headline-sm text-on-surface-variant font-normal">%</span>';
+        if (integrityBar) integrityBar.style.width = '82%';
+      } else if (type === 'C') {
+        activeEl.classList.add('ring-1', 'ring-secondary');
+        if (radio) {
+          radio.classList.remove('bg-surface-container-highest');
+          radio.classList.add('bg-secondary');
+        }
+        if (trustEl) trustEl.innerHTML = '41<span class="text-headline-sm text-on-surface-variant font-normal">%</span>';
+        if (trustBar) trustBar.style.width = '41%';
+        if (integrityEl) integrityEl.innerHTML = '96.5<span class="text-headline-sm text-on-surface-variant font-normal">%</span>';
+        if (integrityBar) integrityBar.style.width = '96.5%';
+      }
+      
+      if (check) check.classList.remove('hidden');
+    }
+  }
+
+  function lockDecision(auto) {
+    const feedback = document.getElementById('decision-feedback');
+    const lockBtn = document.getElementById('btn-lock-choice');
+    
+    if (feedback) {
+      feedback.classList.remove('hidden');
+      if (auto) {
+        feedback.innerHTML = '⚠️ <strong>TID UDLØBET:</strong> Fail-safe overskrev manuel handling. Protokol Themis aktiveret af AI-kernen.';
+      } else {
+        feedback.innerHTML = '✓ <strong>PROTOKOL ' + currentProtocol + ' BEKRÆFTET:</strong> Kryptografisk nøgle godkendt. Konsekvenssimulation kører på HPC-klyngen.';
+      }
+    }
+    
+    if (lockBtn) {
+      lockBtn.classList.remove('from-primary-container', 'via-primary', 'to-primary-fixed-dim');
+      lockBtn.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+      lockBtn.innerText = 'VALG BEKRÆFTET // LÅST';
+    }
+  }
+
+  function switchTab(tabId) {
+    const tabs = ['dilemma', 'impact', 'frameworks'];
+    tabs.forEach(t => {
+      const content = document.getElementById('tab-content-' + t);
+      const btn = document.getElementById('tab-btn-' + t);
+      if (content) content.classList.add('hidden');
+      if (btn) {
+        btn.classList.remove('text-primary', 'border-primary', 'font-bold');
+        btn.classList.add('text-on-surface-variant', 'border-transparent');
+      }
+    });
+
+    const activeContent = document.getElementById('tab-content-' + tabId);
+    const activeBtn = document.getElementById('tab-btn-' + tabId);
+    if (activeContent) activeContent.classList.remove('hidden');
+    if (activeBtn) {
+      activeBtn.classList.remove('text-on-surface-variant', 'border-transparent');
+      activeBtn.classList.add('text-primary', 'border-primary', 'font-bold');
+    }
+  }
+
+  // Hook reset and default state
+  document.getElementById('btn-reset')?.addEventListener('click', () => {
+    timeLeft = 45.0;
+    initTimer();
+    selectProtocol('A');
+    const feedback = document.getElementById('decision-feedback');
+    if (feedback) feedback.classList.add('hidden');
+    const lockBtn = document.getElementById('btn-lock-choice');
+    if (lockBtn) {
+      lockBtn.className = 'w-full py-space-sm px-space-md rounded-lg bg-gradient-to-r from-primary-container via-primary to-primary-fixed-dim text-on-primary-container font-headline-sm text-headline-sm font-bold tracking-tight uppercase shadow-[0_0_24px_rgba(242,138,60,0.4)] hover:shadow-[0_0_36px_rgba(242,138,60,0.6)] transition-all flex items-center justify-center gap-2';
+      lockBtn.innerHTML = '<span class="material-symbols-outlined">gavel</span><span>Lås Valg & Kør Konsekvens-Simulation</span>';
+    }
+  });
+
+  document.getElementById('btn-emergency')?.addEventListener('click', () => {
+    lockDecision(false);
+  });
+
+  // Init on load
+  selectProtocol('A');
+  initTimer();
+</script></main><footer class="w-full bg-surface-container-lowest py-space-xl"><div class="w-full px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface">AI Experience Hub</span><span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-tertiary">DA-DK</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">En dansk interaktiv opdagelsesplatform for neural intelligens og generative systemer. Skabt til sansning, læring og kreativ udforskning.</p><span class="font-headline-md text-headline-md text-primary tracking-wide">Tryk. Oplev. Udforsk.</span></div><div class="md:col-span-5 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-tertiary">De 5 Universer</span><div class="grid grid-cols-2 gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors" data-path="data-fremtid" href="#">01. Data &amp; Fremtid</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="visuel-magi" href="#">02. Visuel Magi</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="viden-laering" href="#">03. Viden &amp; Læring</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary-fixed transition-colors" data-path="spil-opdagelser" href="#">04. Spil &amp; Opdagelser</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-path="kreativitet-teknologi" href="#">05. Kreativitet &amp; Teknologi</a></div></div><div class="md:col-span-3 flex flex-col gap-space-sm md:items-end"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Arkitektur &amp; Stack</span><div class="inline-flex items-center px-space-sm py-1.5 rounded-lg bg-surface-container-low font-label-code text-label-code text-on-surface-variant"><span class="text-tertiary mr-1.5">⚡</span> React · TypeScript · Three.js · LocalStorage</div><button class="mt-space-sm inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-code text-label-code hover:bg-error-container hover:text-on-error transition-all" type="button"><span class="material-symbols-outlined text-sm">restart_alt</span> Nulstil Demodata</button></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-code text-label-code text-on-surface-variant/60"><div>© 2025 AI EXPERIENCE HUB · Alle rettigheder forbeholdes</div><div class="flex items-center gap-space-md"><span>København / Aarhus Hub</span><span>Digital Udforskning</span></div></div></div></footer><script src="/ai-experience-hub/computer/native/storage.js"></script><script src="/ai-experience-hub/computer/native/shell.js"></script><script src="/ai-experience-hub/computer/native/runtime.js"></script></body></html>

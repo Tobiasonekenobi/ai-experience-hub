@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AI Experience Hub — 10 // Prompt Battle</title>
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link rel="stylesheet" href="/ai-experience-hub/computer/native/stitch.css"><link rel="stylesheet" href="/ai-experience-hub/computer/native/shell.css"><link rel="manifest" href="/ai-experience-hub/computer/manifest.webmanifest"><meta name="theme-color" content="#051426"><link rel="stylesheet" href="/ai-experience-hub/computer/computer.css"><script defer src="/ai-experience-hub/computer/computer.js"></script></head><body class="bg-surface font-body-md text-on-surface min-h-screen selection:bg-primary selection:text-on-primary-fixed"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md min-w-0"><a class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="hub-overview" href="#"><span class="material-symbols-outlined text-[20px]">arrow_back</span><span class="font-label-caps text-label-caps uppercase tracking-wider hidden sm:inline">Forside / Hub</span></a><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-high/60"><span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-code text-label-code text-primary tracking-widest uppercase">Univers 4 // Spil &amp; Opdagelser</span></div><div class="hidden xl:flex items-center gap-space-xs text-on-surface-variant"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-semibold">10 // Prompt Battle</span><span class="text-outline font-label-code text-label-code">—</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Duel &amp; Prompt Engineering</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-md px-space-md py-space-xs rounded-xl bg-surface-container-low"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-primary-container">timer</span><div class="flex flex-col"><span class="font-label-caps text-label-caps text-on-surface-variant leading-none">Match Timer</span><span class="font-label-code text-label-code text-primary font-bold leading-tight">02:45.18</span></div></div><div class="w-px h-6 bg-surface-container-highest"></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-tertiary">how_to_vote</span><div class="flex flex-col"><span class="font-label-caps text-label-caps text-on-surface-variant leading-none">Live Votes</span><span class="font-label-code text-label-code text-tertiary font-bold leading-tight">1,482 Telemetry</span></div></div></div><nav class="hidden lg:flex items-center gap-space-xs bg-surface-container-low px-space-xs py-space-xs rounded-xl" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(242,138,60,0.35)]"><a aria-current="page" class="px-space-md py-space-xs rounded-lg transition-all bg-primary-container text-on-primary-container font-semibold shadow-[0_0_12px_rgba(242,138,60,0.35)]" data-path="live-arena" href="#">Live Duel Arena</a><a class="px-space-md py-space-xs rounded-lg font-headline-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="prompt-ide" href="#">Prompt Matrix IDE</a><a class="px-space-md py-space-xs rounded-lg font-headline-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="audience-telemetry" href="#">Audience Stream</a><a class="px-space-md py-space-xs rounded-lg font-headline-sm text-body-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="leaderboard" href="#">Battle Log &amp; Rankings</a></nav><div class="flex items-center gap-space-sm pl-space-xs"><div class="hidden sm:flex flex-col items-end"><span class="font-headline-sm text-body-sm text-on-surface font-medium leading-none">Operator #04</span><span class="font-label-code text-label-code text-tertiary leading-tight">Rank: Challenger</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full relative">
+<!-- Ambient Space Backing Canvas -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden select-none -z-10">
+<div class="absolute -top-32 left-1/4 w-[600px] h-[600px] bg-tertiary/10 rounded-full blur-[140px]"></div>
+<div class="absolute top-1/3 -right-20 w-[550px] h-[550px] bg-primary-container/15 rounded-full blur-[160px]"></div>
+<div class="absolute bottom-20 left-10 w-[500px] h-[500px] bg-secondary-container/20 rounded-full blur-[150px]"></div>
+</div>
+<!-- Stage Hero & Live Match Telemetry Bar -->
+<section class="w-full px-margin-mobile md:px-margin pt-space-md pb-space-lg">
+<!-- Breadcrumb & Circuit Tag -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-high text-tertiary font-label-code text-label-code">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+          ARENA LIVE // STADIE 04
+        </span>
+<span class="font-label-code text-label-code text-outline">//</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Univers 04 — Cybernetic Grand Prix</span>
+</div>
+<!-- Audience Telemetry Strip -->
+<div class="flex items-center gap-space-md bg-surface-container-low/80 backdrop-blur-md px-space-md py-space-xs rounded-xl shadow-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary">groups</span>
+<span class="font-label-code text-label-code text-on-surface"><strong class="text-tertiary">1.420</strong> tilskuere</span>
+</div>
+<div class="w-px h-4 bg-surface-container-highest"></div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary-container">psychology</span>
+<span class="font-label-code text-label-code text-on-surface"><strong class="text-primary-container">98.4%</strong> konsensus</span>
+</div>
+<div class="w-px h-4 bg-surface-container-highest"></div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-secondary">bolt</span>
+<span class="font-label-code text-label-code text-on-surface">Latency <strong class="text-secondary">42ms</strong></span>
+</div>
+</div>
+</div>
+<!-- Main Challenge Briefing Banner -->
+<div class="w-full relative rounded-2xl bg-surface-container-lowest/90 overflow-hidden shadow-2xl backdrop-blur-xl">
+<!-- Glow Borders & Accents -->
+<div class="absolute inset-0 bg-gradient-to-r from-tertiary/15 via-transparent to-primary-container/15 pointer-events-none"></div>
+<div class="relative p-space-md md:p-space-lg flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-lg">
+<!-- Left: Match Description & Prompt Prompt Goal -->
+<div class="flex-1 space-y-space-xs min-w-0">
+<div class="flex items-center gap-space-xs text-primary-container font-label-code text-label-code tracking-widest uppercase">
+<span class="material-symbols-outlined text-[18px]">swords</span>
+            SÆSON 4 // FINALE RUNDE: CYBERPUNK SYNTHESIS
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Missionsmål: Neo-Kyoto Hydroponics 2088
+          </h2>
+<div class="p-space-sm rounded-xl bg-surface-container-low/90 flex items-start gap-space-sm mt-space-sm">
+<span class="material-symbols-outlined text-tertiary mt-0.5 text-[20px] shrink-0">terminal</span>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface font-semibold">Direktiv:</strong> “Generér et fotorealistisk billede af en svævende hydroponisk neongård i Neo-Kyoto år 2088 med regnrefleksioner, vertikale tågeflader og volumetrisk biosfære-røg.”
+            </p>
+</div>
+</div>
+<!-- Right: Countdown & Realtime VS Meter -->
+<div class="shrink-0 flex flex-col sm:flex-row items-center gap-space-md bg-surface-container-high/80 p-space-md rounded-xl">
+<!-- Countdown Clock -->
+<div class="flex flex-col items-center sm:items-start">
+<span class="font-label-caps text-label-caps uppercase text-error tracking-widest flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+              Resterende Tid
+            </span>
+<div class="font-headline-lg text-headline-lg font-bold text-error tracking-tight font-label-code drop-shadow-[0_0_12px_rgba(255,180,171,0.4)]" id="battle-timer">
+              01:45
+            </div>
+<span class="font-label-code text-label-code text-on-surface-variant text-[11px]">Synkroniseret med Euler-A engine</span>
+</div>
+<div class="w-full sm:w-px h-px sm:h-12 bg-surface-container-highest"></div>
+<!-- Audience Score Barometer Gauge -->
+<div class="w-full sm:w-48 space-y-space-xs">
+<div class="flex items-center justify-between font-label-code text-label-code">
+<span class="text-tertiary font-bold">52% DIG</span>
+<span class="text-primary-container font-bold">48% AI</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container-lowest overflow-hidden flex shadow-inner">
+<div class="h-full bg-tertiary transition-all duration-700" id="vibe-p1" style="width: 52%"></div>
+<div class="h-full bg-primary-container transition-all duration-700" id="vibe-p2" style="width: 48%"></div>
+</div>
+<span class="block text-center font-label-caps text-label-caps text-outline-variant uppercase">Crowd Sentiment Split</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Screen Duel Arena: Left (Player) vs Right (Challenger AI) -->
+<section class="w-full px-margin-mobile md:px-margin pb-space-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT SIDE: Player 1 (Operator #04 / Cyber_Architect) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Player Header & Badge -->
+<div class="p-space-md rounded-2xl bg-surface-container-low/95 shadow-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-xl bg-gradient-to-tr from-tertiary to-surface-container-highest flex items-center justify-center text-on-surface font-bold text-headline-sm shadow-md">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+<span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">CYBER_ARCHITECT</span>
+<span class="px-space-xs py-0.5 rounded bg-tertiary/15 text-tertiary font-label-code text-label-code">DIG</span>
+</div>
+<p class="font-label-code text-label-code text-tertiary-fixed-dim">Ranking #12 // Grandmaster Tier</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-label-caps text-outline uppercase">Live Score</div>
+<div class="font-headline-md text-headline-md font-bold text-tertiary">94.3<span class="text-body-sm font-normal text-on-surface-variant">/100</span></div>
+</div>
+</div>
+<!-- Interactive Prompt Matrix IDE -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-2xl space-y-space-md relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[16px]">edit_note</span>
+              PROMPT-EDITOR // MATRICE V4.2
+            </div>
+<!-- Token Counter -->
+<div class="flex items-center gap-space-xs">
+<span class="font-label-caps text-label-caps text-outline uppercase">Tokens:</span>
+<span class="px-space-xs py-0.5 rounded font-label-code text-label-code bg-surface-container-high text-tertiary font-bold" id="token-count-badge">51 / 75</span>
+</div>
+</div>
+<!-- Token-Highlighted Editor Canvas -->
+<div class="relative rounded-xl bg-surface-container-high/60 p-space-md focus-within:ring-2 focus-within:ring-tertiary transition-all">
+<label class="sr-only" for="prompt-input">Prompt Input</label>
+<textarea class="w-full bg-transparent font-label-code text-body-sm text-on-surface resize-none focus:outline-none leading-relaxed selection:bg-tertiary selection:text-on-tertiary" id="prompt-input" rows="4">floating hydroponic neon garden in Neo-Kyoto year 2088, (bioluminescent flora:1.35), volumetric damp fog, rain puddles reflections, cinematic composition, photorealistic 8k octane render, --no blurred, deformed, oversaturated</textarea>
+<!-- Quick Token Chips Injection -->
+<div class="flex flex-wrap gap-space-xs mt-space-sm pt-space-xs">
+<button class="px-space-xs py-1 rounded bg-surface-container-highest hover:bg-tertiary hover:text-on-tertiary transition-colors font-label-code text-[11px] text-on-surface-variant" onclick="injectToken('(anamorphic lens flare:1.2)')">
+                + lens flare:1.2
+              </button>
+<button class="px-space-xs py-1 rounded bg-surface-container-highest hover:bg-tertiary hover:text-on-tertiary transition-colors font-label-code text-[11px] text-on-surface-variant" onclick="injectToken('cyber-mist')">
+                + cyber-mist
+              </button>
+<button class="px-space-xs py-1 rounded bg-surface-container-highest hover:bg-tertiary hover:text-on-tertiary transition-colors font-label-code text-[11px] text-on-surface-variant" onclick="injectToken('(subsurface scattering:1.3)')">
+                + subsurface
+              </button>
+<button class="px-space-xs py-1 rounded bg-surface-container-highest hover:bg-tertiary hover:text-on-tertiary transition-colors font-label-code text-[11px] text-on-surface-variant" onclick="injectToken('kodak portra 800 tone')">
+                + kodak tone
+              </button>
+</div>
+</div>
+<!-- Model Parameter Sliders -->
+<div class="grid grid-cols-3 gap-space-sm bg-surface-container-low p-space-sm rounded-xl">
+<div class="space-y-1">
+<div class="flex justify-between items-center font-label-code text-[11px]">
+<span class="text-on-surface-variant">Guidance (CFG)</span>
+<span class="text-tertiary font-bold" id="cfg-val">7.5</span>
+</div>
+<input class="w-full accent-tertiary h-1.5 bg-surface-container-highest rounded-lg cursor-pointer" max="15" min="1" oninput="document.getElementById('cfg-val').innerText = this.value" step="0.5" type="range" value="7.5"/>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center font-label-code text-[11px]">
+<span class="text-on-surface-variant">Inference Steps</span>
+<span class="text-tertiary font-bold" id="steps-val">35</span>
+</div>
+<input class="w-full accent-tertiary h-1.5 bg-surface-container-highest rounded-lg cursor-pointer" max="60" min="20" oninput="document.getElementById('steps-val').innerText = this.value" step="1" type="range" value="35"/>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-center font-label-code text-[11px]">
+<span class="text-on-surface-variant">Sampler</span>
+<span class="text-tertiary font-bold">Euler-A</span>
+</div>
+<select class="w-full bg-surface-container-highest font-label-code text-[11px] text-on-surface rounded px-1 py-0.5 focus:outline-none">
+<option>Euler Ancestral</option>
+<option>DPM++ 2M Karras</option>
+<option>DDIM Fast</option>
+</select>
+</div>
+</div>
+<!-- Live Output Canvas Render & Metrics -->
+<div class="space-y-space-xs">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container shadow-2xl group">
+<!-- Rendered Image Placeholder -->
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Breathtaking futuristic floating hydroponic greenhouse in year 2088 Neo-Kyoto. Bioluminescent violet and emerald moss cascades down hovering metallic pods. Wet asphalt streets below reflect intense cyan and orange neon signs. Atmospheric volumetric steam and light rain droplets cutting through vertical holographic advertisements. High fidelity cinematic octane render with hyper-sharp detail and dramatic cinematic depth." src="/ai-experience-hub/computer/native/media/a964ab6d64c95512fa96b98f"/>
+<!-- Live Inference Status Overlay -->
+<div class="absolute top-space-xs left-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code text-[11px] text-on-surface font-semibold">Render #08: Fuldført (1.18s)</span>
+</div>
+<!-- Realtime Multi-factor Score Breakdown Chips -->
+<div class="absolute bottom-space-xs left-space-xs right-space-xs flex items-center justify-between p-space-xs rounded-lg bg-surface-container-lowest/90 backdrop-blur-md">
+<div class="flex items-center gap-space-sm text-[11px] font-label-code">
+<span class="text-on-surface-variant">Fidelitet: <strong class="text-tertiary">96%</strong></span>
+<span class="text-on-surface-variant">Æstetik: <strong class="text-tertiary">92%</strong></span>
+<span class="text-on-surface-variant">Kreativitet: <strong class="text-tertiary">95%</strong></span>
+</div>
+<div class="font-label-code text-[11px] text-tertiary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                  VALIDERET
+                </div>
+</div>
+</div>
+</div>
+<!-- Action Control Dock -->
+<div class="flex flex-col sm:flex-row items-center gap-space-sm pt-space-xs">
+<button class="w-full sm:flex-1 py-space-sm px-space-md rounded-xl bg-gradient-to-r from-tertiary to-tertiary-container text-on-tertiary font-headline-sm text-body-md font-bold tracking-tight shadow-[0_0_20px_rgba(76,216,231,0.35)] hover:shadow-[0_0_28px_rgba(76,216,231,0.6)] transition-all flex items-center justify-center gap-space-xs" id="btn-reprompt" onclick="simulateInference()">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+              Re-prompt &amp; Kør Inferens (1.2s)
+            </button>
+<button class="w-full sm:w-auto py-space-sm px-space-md rounded-xl bg-surface-container-high hover:bg-surface-bright text-on-surface font-label-code text-body-sm transition-all flex items-center justify-center gap-space-xs" onclick="lockSubmission()">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+              Lås Endeligt Svar
+            </button>
+</div>
+</div>
+</div>
+<!-- RIGHT SIDE: AI Challenger (Synth_Nexus) -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Challenger Header & Badge -->
+<div class="p-space-md rounded-2xl bg-surface-container-low/95 shadow-xl flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-12 h-12 rounded-xl bg-gradient-to-tr from-primary-container to-surface-container-highest flex items-center justify-center text-on-surface font-bold text-headline-sm shadow-md">
+<span class="material-symbols-outlined text-[24px]">smart_toy</span>
+<span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 rounded-full bg-primary-container ring-2 ring-surface"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">SYNTH_NEXUS AI</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-container/20 text-primary-container font-label-code text-label-code">CHALLENGER</span>
+</div>
+<p class="font-label-code text-label-code text-primary">Regerende Mester // ELO 2.580</p>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-label-caps text-outline uppercase">AI Score</div>
+<div class="font-headline-md text-headline-md font-bold text-primary-container">92.8<span class="text-body-sm font-normal text-on-surface-variant">/100</span></div>
+</div>
+</div>
+<!-- AI Challenger Live Thought Process Card -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-2xl space-y-space-md relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest/60">
+<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
+<span class="material-symbols-outlined text-primary-container text-[16px]">stream</span>
+              AI TÆNKE-TELEMETRI &amp; HEURISTIKKER
+            </div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-code text-label-code text-primary-container animate-pulse">AUTONOM GENEREATION</span>
+</div>
+</div>
+<!-- Terminal Style AI Thinking Feed -->
+<div class="rounded-xl bg-surface-container-high/60 p-space-md font-label-code text-body-sm space-y-2">
+<div class="flex items-center gap-2 text-tertiary-fixed text-[12px]">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+<span>[01:42] Dekonstruerer prompt: Vægter vertikal hydroponisk struktur &gt; 1.4</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-[12px]">
+<span class="material-symbols-outlined text-[14px]">filter_alt</span>
+<span>[01:38] Indsprøjter negative tokens: blur, flat lighting, digital noise</span>
+</div>
+<div class="p-space-xs rounded bg-surface-container-lowest text-primary font-label-code text-[12px] truncate">
+              &gt; AI Prompt: “neo-kyoto 2088 hovering hydroponics biome, rain sheen, neon amber cyan, volumetric smoke, ultra detailed architecture...”
+            </div>
+</div>
+<!-- Challenger Image Preview Canvas -->
+<div class="space-y-space-xs">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container shadow-2xl group">
+<!-- AI Challenger Image Placeholder -->
+<img class="w-full h-full object-cover" data-alt="Cyberpunk high-angle arena stadium view showing massive floating agricultural biome glowing in warm amber and electric blue neon lights over an endless futuristic Tokyo city grid in 2088. Wet reflective glass bridges, rain streaks illuminated by holographic signs, dense synthetic fog rising from ventilation shafts. Highly detailed concept art, complex intricate mechanical pipelines and glowing botanical tubes." src="/ai-experience-hub/computer/native/media/dc28d120d1f90fcea62314e8"/>
+<div class="absolute top-space-xs right-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-code text-[11px] text-on-surface font-semibold">Iteration #12 // Seed #9482103</span>
+</div>
+<!-- AI Multi-factor Score Breakdown Chips -->
+<div class="absolute bottom-space-xs left-space-xs right-space-xs flex items-center justify-between p-space-xs rounded-lg bg-surface-container-lowest/90 backdrop-blur-md">
+<div class="flex items-center gap-space-sm text-[11px] font-label-code">
+<span class="text-on-surface-variant">Fidelitet: <strong class="text-primary-container">94%</strong></span>
+<span class="text-on-surface-variant">Æstetik: <strong class="text-primary-container">95%</strong></span>
+<span class="text-on-surface-variant">Kreativitet: <strong class="text-primary-container">89%</strong></span>
+</div>
+<div class="font-label-code text-[11px] text-primary-container flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">speed</span>
+                  0.89s
+                </div>
+</div>
+</div>
+</div>
+<!-- AI Model Configuration Specs -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between text-on-surface font-label-code text-label-code">
+<div class="flex items-center gap-space-sm">
+<span class="text-outline">Engine:</span>
+<span class="text-on-surface font-bold">Nexus-Flux 1.4-Pro</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-outline">Batch:</span>
+<span class="text-primary">Tensor Parallel 8xH100</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="text-outline">Seed Lock:</span>
+<span class="text-tertiary">AKTIV</span>
+</div>
+</div>
+<!-- Challenger Live Audio-Spectrogram Data Vis (Inline SVG) -->
+<div class="w-full h-10 bg-surface-container-low rounded-xl px-space-sm flex items-center justify-between overflow-hidden">
+<span class="font-label-caps text-label-caps text-outline uppercase">Neural Frekvens</span>
+<svg class="h-6 w-48 text-primary-container" fill="none" preserveaspectratio="none" viewbox="0 0 200 30">
+<path d="M 0 15 Q 15 2 30 15 T 60 15 T 90 28 T 120 5 T 150 20 T 180 10 T 200 15" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M 0 15 Q 20 25 40 15 T 80 5 T 120 22 T 160 8 T 200 15" fill="none" stroke="currentColor" stroke-opacity="0.4" stroke-width="1"></path>
+</svg>
+<span class="font-label-code text-[11px] text-primary font-bold">384.2 GFLOPs</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Prompt Lab & Taktiske Boosters -->
+<section class="w-full px-margin-mobile md:px-margin pb-space-xl">
+<div class="rounded-2xl bg-surface-container-low p-space-md md:p-space-lg shadow-xl space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs text-secondary font-label-code text-label-code tracking-widest uppercase">
+<span class="material-symbols-outlined text-[18px]">neurology</span>
+            TAKTIK &amp; ASSISTERET MODELLERING
+          </div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">
+            Prompt Lab &amp; Taktiske Boosters
+          </h3>
+</div>
+<div class="flex items-center gap-space-xs font-label-code text-body-sm text-on-surface-variant">
+<span>Tilgængelige Booster Point:</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-bold">3 / 4 AKTIVE</span>
+</div>
+</div>
+<!-- Booster Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Booster 1 -->
+<div class="group p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md relative overflow-hidden cursor-pointer" onclick="toggleBooster(this)">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-tertiary/20 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">compress</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-label-code bg-tertiary text-on-tertiary font-bold tracking-wider uppercase">Aktiv</span>
+</div>
+<h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Token Compaction</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            Kondenserer unødvendige ord med 15% og højner prompt-præcision og skarphed.
+          </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-highest flex items-center justify-between font-label-code text-[11px]">
+<span class="text-tertiary font-semibold">+8% Skarphed</span>
+<span class="text-outline">Latency: -6ms</span>
+</div>
+</div>
+<!-- Booster 2 -->
+<div class="group p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md relative overflow-hidden cursor-pointer" onclick="toggleBooster(this)">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container/20 text-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">do_not_disturb_on</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-label-code bg-primary-container text-on-primary-container font-bold tracking-wider uppercase">Aktiv</span>
+</div>
+<h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Negative Injection</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            Fjerner øjeblikkeligt uønskede artefakter som slør, overeksponering og deformation.
+          </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-highest flex items-center justify-between font-label-code text-[11px]">
+<span class="text-primary-container font-semibold">+12% Klarhed</span>
+<span class="text-outline">Artefakt-rens</span>
+</div>
+</div>
+<!-- Booster 3 -->
+<div class="group p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md relative overflow-hidden cursor-pointer" onclick="toggleBooster(this)">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">filter_vintage</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-label-code bg-secondary text-on-secondary font-bold tracking-wider uppercase">Aktiv</span>
+</div>
+<h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Style Transfer Booster</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            Forstærker neonoire æstetik, atmosfærisk regn og volumetrisk biosfærelys.
+          </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-highest flex items-center justify-between font-label-code text-[11px]">
+<span class="text-secondary font-semibold">+15% Kontrast</span>
+<span class="text-outline">Lys-dynamik</span>
+</div>
+</div>
+<!-- Booster 4 -->
+<div class="group p-space-md rounded-xl bg-surface-container hover:bg-surface-container-high transition-all shadow-md relative overflow-hidden cursor-pointer opacity-80" onclick="toggleBooster(this)">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">casino</span>
+</div>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-label-code bg-surface-container-highest text-outline uppercase font-bold">Klar</span>
+</div>
+<h4 class="font-headline-sm text-body-lg font-bold text-on-surface">Seed Mutation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+            Muterer det matematiske seed med et tilfældigt spring for et nyt lokalt optimum.
+          </p>
+<div class="mt-space-sm pt-space-xs border-t border-surface-container-highest flex items-center justify-between font-label-code text-[11px]">
+<span class="text-on-surface-variant font-semibold">Klik for kørsel</span>
+<span class="text-outline">1x brug</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Kamp-historik, Runder & Global Leaderboard Strip -->
+<section class="w-full px-margin-mobile md:px-margin pb-space-2xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left Column: Match History & Rounds Breakdown -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">history</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Kamp-forløb i Finalen</h3>
+</div>
+<span class="font-label-code text-label-code text-outline">Bedst af 3 runder (BO3)</span>
+</div>
+<!-- Rounds Tabs / Cards -->
+<div class="space-y-space-sm">
+<!-- Round 1 (Completed) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-tertiary flex items-center justify-center font-label-code text-label-code font-bold">R1</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-body-lg font-bold text-on-surface">Kvantemekanisk Fusionsreaktor</span>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-label-code bg-tertiary/15 text-tertiary font-bold">SEJR (3-2)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vurderingsfokus: Subatomar belysning &amp; kompleksitet</p>
+</div>
+</div>
+<div class="font-label-code text-label-code text-tertiary flex items-center gap-1 font-bold">
+<span>96.4 Pts</span>
+<span class="text-outline font-normal">vs 91.2</span>
+</div>
+</div>
+<!-- Round 2 (Completed) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-surface-container-highest text-tertiary flex items-center justify-center font-label-code text-label-code font-bold">R2</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-body-lg font-bold text-on-surface">Biomorfisk Rumskib i Dybrum</span>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-label-code bg-tertiary/15 text-tertiary font-bold">SEJR (4-1)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Vurderingsfokus: Organisk tekstursyntese &amp; klorofyl-skaller</p>
+</div>
+</div>
+<div class="font-label-code text-label-code text-tertiary flex items-center gap-1 font-bold">
+<span>98.1 Pts</span>
+<span class="text-outline font-normal">vs 94.0</span>
+</div>
+</div>
+<!-- Round 3 (In Progress) -->
+<div class="p-space-md rounded-xl bg-surface-container-high ring-1 ring-tertiary/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-code text-label-code font-bold">R3</span>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-body-lg font-bold text-on-surface">Neo-Kyoto Hydroponics 2088</span>
+<span class="px-space-xs py-0.5 rounded text-[10px] font-label-code bg-primary-container/20 text-primary-container font-bold animate-pulse">I GANG // LIVE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Afgørende kamp om Grand Prix trofæet</p>
+</div>
+</div>
+<div class="font-label-code text-label-code text-primary font-bold">
+<span>Duel i Udvikling</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Top 5 Prompt Battlers Arena Leaderboard -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">military_tech</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Grand Prix Leaderboard</h3>
+</div>
+<a class="font-label-code text-label-code text-primary hover:underline" href="#">Se alle →</a>
+</div>
+<div class="rounded-xl bg-surface-container-low divide-y divide-surface-container-highest/40 overflow-hidden shadow-lg">
+<!-- Leaderboard Entry 1 -->
+<div class="p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-headline-sm text-body-md font-bold text-primary w-5 text-center">1</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">smart_toy</span>
+</div>
+<div class="truncate">
+<div class="font-headline-sm text-body-sm font-bold text-on-surface truncate">Synth_Nexus AI</div>
+<div class="font-label-code text-[11px] text-outline">98.9% Winrate</div>
+</div>
+</div>
+<div class="font-label-code text-label-code font-bold text-primary">2.580 XP</div>
+</div>
+<!-- Leaderboard Entry 2 -->
+<div class="p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-headline-sm text-body-md font-bold text-tertiary w-5 text-center">2</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-tertiary">person</span>
+</div>
+<div class="truncate">
+<div class="font-headline-sm text-body-sm font-bold text-on-surface truncate">VoxelQueen_DK</div>
+<div class="font-label-code text-[11px] text-outline">89.4% Winrate</div>
+</div>
+</div>
+<div class="font-label-code text-label-code font-bold text-tertiary">2.450 XP</div>
+</div>
+<!-- Leaderboard Entry 3 -->
+<div class="p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-headline-sm text-body-md font-bold text-secondary w-5 text-center">3</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-secondary">person</span>
+</div>
+<div class="truncate">
+<div class="font-headline-sm text-body-sm font-bold text-on-surface truncate">AetherPioneer</div>
+<div class="font-label-code text-[11px] text-outline">84.2% Winrate</div>
+</div>
+</div>
+<div class="font-label-code text-label-code font-bold text-secondary">2.380 XP</div>
+</div>
+<!-- Leaderboard Entry 4 (Current User Highlighted) -->
+<div class="p-space-sm bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="font-headline-sm text-body-md font-bold text-tertiary w-5 text-center">12</span>
+<div class="w-8 h-8 rounded-lg bg-tertiary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-tertiary">psychology_alt</span>
+</div>
+<div class="truncate">
+<div class="font-headline-sm text-body-sm font-bold text-on-surface truncate flex items-center gap-1">
+                  CYBER_ARCHITECT
+                  <span class="text-[10px] font-label-code bg-tertiary/20 text-tertiary px-1 rounded">DIG</span>
+</div>
+<div class="font-label-code text-[11px] text-tertiary">78.5% Winrate (Stigende)</div>
+</div>
+</div>
+<div class="font-label-code text-label-code font-bold text-tertiary">2.140 XP</div>
+</div>
+</div>
+<!-- Arena Victory Rewards Preview Banner -->
+<div class="p-space-sm rounded-xl bg-gradient-to-r from-surface-container to-surface-container-high flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-code text-[11px]">
+<span class="material-symbols-outlined text-primary text-[18px]">trophy</span>
+<span>Vinder-belønning: <strong class="text-primary">+500 XP &amp; 'Master Prompt Architect' Badge</strong></span>
+</div>
+<span class="font-label-code text-[11px] text-outline">Sæson-slut: 4d</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Arena Client Interactive Logic -->
+<script>
+    // Live Countdown Timer
+    let totalSeconds = 105;
+    const timerElem = document.getElementById('battle-timer');
+    if (timerElem) {
+      const countdownInterval = setInterval(() => {
+        if (totalSeconds <= 0) {
+          clearInterval(countdownInterval);
+          timerElem.innerText = "00:00";
+          timerElem.classList.add('animate-pulse');
+          return;
+        }
+        totalSeconds--;
+        const mins = Math.floor(totalSeconds / 60).toString().padStart(2, '0');
+        const secs = (totalSeconds % 60).toString().padStart(2, '0');
+        timerElem.innerText = `${mins}:${secs}`;
+      }, 1000);
+    }
+
+    // Token Injection Micro-interaction
+    function injectToken(token) {
+      const textarea = document.getElementById('prompt-input');
+      if (textarea) {
+        textarea.value = textarea.value.trim() + ", " + token;
+        updateTokenCount();
+        textarea.focus();
+      }
+    }
+
+    // Token Counter Updater
+    function updateTokenCount() {
+      const textarea = document.getElementById('prompt-input');
+      const badge = document.getElementById('token-count-badge');
+      if (textarea && badge) {
+        const words = textarea.value.trim().split(/\s+/).filter(Boolean).length;
+        badge.innerText = `${words} / 75`;
+        if (words > 75) {
+          badge.classList.remove('text-tertiary');
+          badge.classList.add('text-error');
+        } else {
+          badge.classList.add('text-tertiary');
+          badge.classList.remove('text-error');
+        }
+      }
+    }
+
+    const promptTextarea = document.getElementById('prompt-input');
+    if (promptTextarea) {
+      promptTextarea.addEventListener('input', updateTokenCount);
+    }
+
+    // Simulate Re-prompt Inference with Feedback
+    function simulateInference() {
+      const btn = document.getElementById('btn-reprompt');
+      if (!btn) return;
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = `<span class="material-symbols-outlined text-[20px] animate-spin">refresh</span> Syntetiserer modstander-feed...`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check_circle</span> Ny Inferens Klar!`;
+        
+        // Randomly adjust crowd sentiment for dynamic feel
+        const p1 = Math.floor(Math.random() * 8) + 50; // 50-58%
+        const p2 = 100 - p1;
+        const v1 = document.getElementById('vibe-p1');
+        const v2 = document.getElementById('vibe-p2');
+        if (v1 && v2) {
+          v1.style.width = p1 + '%';
+          v2.style.width = p2 + '%';
+        }
+
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.disabled = false;
+        }, 1800);
+      }, 1200);
+    }
+
+    // Lock Final Submission
+    function lockSubmission() {
+      alert("Endeligt svar er låst og indsendt til dommer-panelet! Karakterer afregnes ved tællerens udløb.");
+    }
+
+    // Booster toggle micro-interaction
+    function toggleBooster(card) {
+      const badge = card.querySelector('span[class*="uppercase"]');
+      if (!badge) return;
+      if (badge.innerText.trim() === 'AKTIV') {
+        badge.innerText = 'KLAR';
+        badge.className = 'px-space-xs py-0.5 rounded text-[10px] font-label-code bg-surface-container-highest text-outline uppercase font-bold';
+        card.classList.add('opacity-80');
+      } else {
+        badge.innerText = 'AKTIV';
+        badge.className = 'px-space-xs py-0.5 rounded text-[10px] font-label-code bg-tertiary text-on-tertiary font-bold tracking-wider uppercase';
+        card.classList.remove('opacity-80');
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest py-space-lg"><div class="w-full px-margin flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><span class="font-headline-sm text-body-sm font-bold tracking-wider uppercase text-on-surface">AI Experience Hub</span><span class="font-label-code text-label-code text-outline">// UNIVERS 04 TELEMETRY LINK ESTABLISHED</span></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary"></span><span class="font-label-code text-label-code text-on-surface-variant">LATENCY 14MS</span></div><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-code text-label-code text-on-surface-variant">LLM-SYNCHED</span></div><span class="font-body-sm text-body-sm text-outline-variant">© 2025 AI Experience Hub. All systems nominal.</span></div></div></footer><script src="/ai-experience-hub/computer/native/storage.js"></script><script src="/ai-experience-hub/computer/native/shell.js"></script><script src="/ai-experience-hub/computer/native/runtime.js"></script></body></html>

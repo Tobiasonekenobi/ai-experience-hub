@@ -1,0 +1,21 @@
+(()=>{
+ const script=document.currentScript;const base=new URL('./',script.src);let installEvent;
+ window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvent=e;const b=document.getElementById('computer-install');if(b)b.hidden=false});
+ window.addEventListener('appinstalled',()=>{const b=document.getElementById('computer-install');if(b)b.hidden=true});
+ document.addEventListener('DOMContentLoaded',()=>{
+  const bar=document.createElement('aside');bar.className='computer-controls';bar.setAttribute('aria-label','Computerudgave');bar.innerHTML='<small id="computer-offline">Computerudgave · forbereder offlineindhold</small><button id="computer-install" hidden>Installér på computeren</button>';document.body.append(bar);
+  const install=bar.querySelector('button');install.hidden=!installEvent;install.onclick=async()=>{if(!installEvent)return;const event=installEvent;installEvent=null;install.hidden=true;await event.prompt();await event.userChoice;};
+  const status=bar.querySelector('small');if(matchMedia('(display-mode: standalone)').matches)install.hidden=true;
+  if('serviceWorker' in navigator)navigator.serviceWorker.register(new URL('sw.js',base),{scope:base.pathname}).then(reg=>{
+   const ready=()=>{if(reg.active)status.textContent='Klar offline · gemmes på denne computer'};
+   ready();if(reg.waiting)status.textContent='Opdatering klar · luk og genåbn programmet';
+   const follow=worker=>{worker.addEventListener('statechange',()=>{if(worker.state==='activated')ready();if(worker.state==='installed')status.textContent=reg.active?'Opdatering klar · luk og genåbn programmet':'Offlineindhold hentet';if(worker.state==='redundant')status.textContent='Offlineindhold kunne ikke hentes · prøv igen senere'})};if(reg.installing)follow(reg.installing);reg.addEventListener('updatefound',()=>{if(reg.installing)follow(reg.installing)});
+  }).catch(()=>status.textContent='Onlineudgave · offlineindhold kunne ikke klargøres');else status.textContent='Computerudgave · online';
+  const add=document.getElementById('import-material'),container=document.getElementById('local-materials'),folder=document.getElementById('open-materials');if(!add||window.desktopStudio)return;
+  if(folder)folder.hidden=true;
+  const db=new Promise((resolve,reject)=>{const request=indexedDB.open('experience-hub-materials',1);request.onupgradeneeded=()=>request.result.createObjectStore('files',{keyPath:'id'});request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)});
+  const query=async(mode,operation)=>{const database=await db;return new Promise((resolve,reject)=>{const tx=database.transaction('files',mode);let result;const r=operation(tx.objectStore('files'));if(r)r.onsuccess=()=>result=r.result;tx.oncomplete=()=>resolve(result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error)})};
+  const render=async()=>{const files=await query('readonly',store=>store.getAll());container.replaceChildren();if(!files.length)container.textContent='Dit bibliotek er tomt. Tilføj billeder, noter eller dokumenter.';for(const file of files){const row=document.createElement('div');row.className='computer-file';const label=document.createElement('span');label.textContent=file.name+' · '+(file.blob.size/1048576).toLocaleString('da-DK',{maximumFractionDigits:1})+' MB';const save=document.createElement('button');save.textContent='Gem en kopi';save.onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};row.append(label,save);container.append(row)}};
+  add.onclick=()=>{const input=document.createElement('input');input.type='file';input.multiple=true;input.onchange=async()=>{try{add.disabled=true;const files=[...input.files];await query('readwrite',store=>{for(const file of files)store.put({id:crypto.randomUUID(),name:file.name,blob:file})});await render();navigator.storage?.persist?.().catch(()=>{});}catch{container.textContent='Filerne kunne ikke gemmes. Der kan mangle plads på denne computer.'}finally{add.disabled=false}};input.click()};render().catch(()=>container.textContent='Det lokale bibliotek er ikke tilgængeligt i dette vindue.');
+ });
+})();

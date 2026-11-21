@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>AI Experience Hub — Opdag Forside</title>
+
+
+
+
+
+
+
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #051426;
+        color: #d5e3fd;
+      }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .cosmic-nebula {
+      background: radial-gradient(circle at 55% 42%, rgba(245, 158, 11, 0.28) 0%, rgba(147, 51, 234, 0.22) 28%, rgba(14, 116, 144, 0.15) 50%, rgba(5, 20, 38, 0) 80%);
+    }
+    .card-glass {
+      background: linear-gradient(145deg, rgba(20, 35, 56, 0.72) 0%, rgba(9, 21, 38, 0.88) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+    }
+    .card-glass:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.15);
+    }
+    .favorite-active {
+      color: #f43f5e !important;
+      font-variation-settings: 'FILL' 1 !important;
+    }
+  </style>
+<link rel="stylesheet" href="/ai-experience-hub/computer/native/stitch.css"><link rel="stylesheet" href="/ai-experience-hub/computer/native/shell.css"><link rel="manifest" href="/ai-experience-hub/computer/manifest.webmanifest"><meta name="theme-color" content="#051426"><link rel="stylesheet" href="/ai-experience-hub/computer/computer.css"><script defer src="/ai-experience-hub/computer/computer.js"></script></head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white relative overflow-x-hidden">
+<!-- TOP NAVIGATION HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#051426]/85 backdrop-blur-2xl border-b border-white/5">
+<div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 shrink-0" href="#">
+<div class="px-3.5 py-1.5 rounded-full border border-cyan-400/40 bg-surface-container/80 shadow-[0_0_15px_rgba(56,189,248,0.25)] flex items-center gap-2">
+<span class="text-amber-400 font-black text-sm">✦</span>
+<span class="font-headline-sm text-sm uppercase tracking-wider text-white font-bold">Experience Hub</span>
+</div>
+</a>
+<!-- Center Nav Links -->
+<nav class="hidden md:flex items-center gap-2 bg-[#0a182c]/80 border border-white/10 rounded-full px-2 py-1 shadow-inner">
+<a class="px-5 py-1.5 rounded-full bg-[#1e2f47] text-white font-medium text-sm shadow-[0_0_12px_rgba(56,189,248,0.2)]" href="#opdag">Opdag</a>
+<a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm" href="#universer">Universer</a>
+<a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm" href="#katalog">Udforsk</a>
+<a class="px-3.5 py-1.5 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 hover:text-white hover:bg-cyan-500/25 transition-all text-xs font-semibold flex items-center gap-1.5 shadow-[0_0_12px_rgba(56,189,248,0.25)]" href="#" onclick="triggerExperienceModal('02. Future Simulator'); return false;"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span><span>02 // Future Simulator</span></a><a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm flex items-center gap-1.5" href="#gemte" onclick="toggleOnlyFavorites()">
+<span>Gemte</span>
+<span class="font-label-code text-xs px-2 py-0.2 bg-orange-500/20 text-orange-400 rounded-full font-bold border border-orange-500/30" id="nav-fav-badge">2</span>
+</a>
+</nav>
+<!-- Right Search Pill -->
+<div class="flex items-center gap-3">
+<div class="relative flex items-center bg-[#0d1d33] border border-white/10 rounded-full px-4 py-1.5 text-sm w-44 sm:w-60 focus-within:border-cyan-400 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-lg mr-2">search</span>
+<input class="w-full bg-transparent text-slate-100 placeholder:text-slate-400 text-xs focus:outline-none" id="top-search" oninput="handleSearch(this.value)" placeholder="Søg oplevelser..." type="text"/>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN WRAPPER -->
+<main class="w-full pt-20"><div class="flex flex-col w-full">
+<!-- AMBIENT GLOW BACKDROP -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-b from-primary-container/20 via-tertiary-fixed-dim/15 to-transparent blur-[140px] pointer-events-none -z-10"></div>
+<div class="absolute top-96 -left-36 w-[480px] h-[480px] bg-secondary-container/20 blur-[120px] pointer-events-none -z-10"></div>
+<div class="absolute top-[800px] -right-36 w-[520px] h-[520px] bg-tertiary-fixed-dim/15 blur-[130px] pointer-events-none -z-10"></div>
+<!-- 1. HERO MASTER SECTION -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 pt-10 pb-16 w-full">
+<div class="flex flex-col items-start gap-6">
+<!-- Live Status Pill & System Tag -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-container-high shadow-lg">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary"></span>
+</span>
+<span class="font-label-code text-label-code uppercase tracking-widest text-tertiary">SYSTEM OVERBLIK // VERSION 3.0 GOLD MASTER</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-code text-label-code">
+<span class="material-symbols-outlined text-sm text-primary">verified</span>
+<span>PRODUCTION VERIFIED • 15/15 SUITES</span>
+</div>
+</div>
+<!-- Hero Headline & Dynamic Contrast -->
+<div class="space-y-4 max-w-5xl">
+<h1 class="font-display-hero text-display-hero tracking-tight text-on-surface">
+            AI Experience Hub <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">—</span> Komplet Master Portefølje &amp; Eksport-Guide
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+            Alle 15 interaktive oplevelser fordelt på 5 visionære universer. Fuld arkitektur, tech-stack, design tokens og produktionsklare eksport-specifikationer til øjeblikkelig implementering.
+          </p>
+</div>
+<!-- Action Callouts & Primary Interactions -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<button class="group px-6 py-3.5 rounded-lg bg-gradient-to-r from-primary-container to-primary text-on-primary font-headline-sm text-headline-sm font-semibold tracking-wide shadow-xl hover:shadow-[0_0_30px_rgba(242,138,60,0.45)] transition-all flex items-center gap-3 active:scale-95" onclick="triggerExportModal('Fuld Designpakke (ZIP)')">
+<span class="material-symbols-outlined text-xl transition-transform group-hover:-translate-y-0.5">folder_zip</span>
+<span>Eksportér Fuld Designpakke (ZIP / Figma)</span>
+</button>
+<button class="px-6 py-3.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-headline-sm text-headline-sm font-medium shadow-md transition-all flex items-center gap-2.5 active:scale-95" onclick="triggerWhitepaperDownload()">
+<span class="material-symbols-outlined text-xl text-tertiary">article</span>
+<span>Hent Arkitektur-Whitepaper (PDF)</span>
+</button>
+<button class="px-5 py-3.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-code text-label-code flex items-center gap-2 transition-all" onclick="toggleShowreelMode()">
+<span class="material-symbols-outlined text-lg text-primary">smart_display</span>
+<span>Kør Live Showreel Mode (F11)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. NØGLETAL & PLATFORM METRICS -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-8 w-full">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1 -->
+<div class="p-6 rounded-xl bg-surface-container shadow-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Oplevelses Suite</span>
+<span class="material-symbols-outlined text-primary text-2xl">layers</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-baseline gap-2">
+<span>15 / 15</span>
+<span class="font-label-code text-label-code text-primary font-normal">100% Gennemført</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Interaktive prototyper godkendt til Gold Master rollout.</p>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-6 rounded-xl bg-surface-container shadow-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-tertiary/10 rounded-full blur-2xl group-hover:bg-tertiary/20 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Tematiske Verdener</span>
+<span class="material-symbols-outlined text-tertiary text-2xl">public</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-baseline gap-2">
+<span>5</span>
+<span class="font-label-code text-label-code text-tertiary font-normal">Særlige Sci-Fi Sektorer</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Data, Visuel Magi, Viden, Spil &amp; Kreativ Teknologi.</p>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-6 rounded-xl bg-surface-container shadow-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-secondary/10 rounded-full blur-2xl group-hover:bg-secondary/20 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Viewports</span>
+<span class="material-symbols-outlined text-secondary text-2xl">devices</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-baseline gap-2">
+<span>2</span>
+<span class="font-label-code text-label-code text-secondary font-normal">Native Adaptioner</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Desktop 1440px Cinematic &amp; Mobil 390px Native Hub Shell.</p>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-6 rounded-xl bg-surface-container shadow-xl flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 bg-tertiary-fixed-dim/10 rounded-full blur-2xl group-hover:bg-tertiary-fixed-dim/20 transition-all"></div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code uppercase tracking-wider text-on-surface-variant">Inferens Hastighed</span>
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-2xl">bolt</span>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-on-surface flex items-baseline gap-2">
+<span>0.8ms</span>
+<span class="font-label-code text-label-code text-tertiary-fixed-dim font-normal">Latency</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Euler-A sampling og lokal neuronet-telemetri.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. INTERAKTIV UNIVERS MATRIX -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-12 w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<div class="font-label-code text-label-code text-primary uppercase tracking-widest mb-1">// DE 5 NØGLE-UNIVERSER</div>
+<h2 class="font-headline-lg text-headline-lg font-semibold text-on-surface">Interaktiv Oplevelses Matrix</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Gennemse samtlige 15 certificerede AI-oplevelser og deres underliggende teknologiarkitektur.</p>
+</div>
+<!-- Universe Filter Tabs -->
+<div class="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-surface-container-high" id="universe-matrix-tabs">
+<button class="px-4 py-2 rounded-lg text-label-code font-label-code font-bold bg-primary text-on-primary shadow-sm transition-all" id="btn-uni-all" onclick="switchUniverseTab('all')">Alle (15)</button>
+<button class="px-3.5 py-2 rounded-lg text-label-code font-label-code text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-uni-u1" onclick="switchUniverseTab('u1')">01 Data &amp; Fremtid</button>
+<button class="px-3.5 py-2 rounded-lg text-label-code font-label-code text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-uni-u2" onclick="switchUniverseTab('u2')">02 Visuel Magi</button>
+<button class="px-3.5 py-2 rounded-lg text-label-code font-label-code text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-uni-u3" onclick="switchUniverseTab('u3')">03 Viden &amp; Læring</button>
+<button class="px-3.5 py-2 rounded-lg text-label-code font-label-code text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-uni-u4" onclick="switchUniverseTab('u4')">04 Spil &amp; Opdagelser</button>
+<button class="px-3.5 py-2 rounded-lg text-label-code font-label-code text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" id="btn-uni-u5" onclick="switchUniverseTab('u5')">05 Kreativitet</button>
+</div>
+</div>
+<!-- EXPERIENCE GRID (15 BESPOKE CARDS) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="matrix-cards-container">
+<!-- CARD 01: Mission Control -->
+<div class="uni-card uni-u1 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Data &amp; Fremtid">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="High-tech space command center with neon holographic telemetry charts, amber radar screens, deep navy cosmic interface and futuristic control dashboard" style="background-image: url('/ai-experience-hub/computer/native/media/7753ae62f71a65695e262f34')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary">01 // DATA &amp; FREMTID</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Mission Control</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Realtids telemetri-dashboard for globale LLM cluster-noder, latency-varmekort og token stream analyse.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">WebGL Canvas</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">WebSockets</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('01 // Mission Control')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 02: Future Simulator -->
+<div class="uni-card uni-u1 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Data &amp; Fremtid">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Futuristic holographic cityscape projection with neon cyan timeline trajectories, branching prediction lines, and planetary climate metrics" style="background-image: url('/ai-experience-hub/computer/native/media/23af06d34fbfd8627ffa63b6')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary">02 // DATA &amp; FREMTID</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Future Simulator</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Interaktiv fremskrivning af sociologiske og teknologiske scenarier mod år 2050 med Monte Carlo sandsynlighedsmotor.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Monte Carlo</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">SVG Shaders</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('02 // Future Simulator')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 03: World Data Explorer -->
+<div class="uni-card uni-u1 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Data &amp; Fremtid">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Glowing digital planetary globe with luminous data nodes, interconnected neural pathways, and deep ocean blue atmospheric ring" style="background-image: url('/ai-experience-hub/computer/native/media/dd2edf980d0041a723700f71')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary">03 // DATA &amp; FREMTID</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">World Data Explorer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">3D geospatiel visualisering af planetens energiforbrug, datakabler og satellitforbindelser i realtid.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">ThreeJS</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">GeoJSON</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('03 // World Data Explorer')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 04: Comic World -->
+<div class="uni-card uni-u2 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Visuel Magi">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Cinematic graphic novel illustration pane, sci-fi cyber hero with neon visor overlooking sprawling rain-soaked metropolis with bold graphic shading" style="background-image: url('/ai-experience-hub/computer/native/media/d81bfc2dd708b9c161b804a6')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-secondary">04 // VISUEL MAGI</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Comic World Generator</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Sekventiel historiefortælling genereret af multi-panel prompt synthesis med automatisk stilkonsistens.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">SDXL LoRA</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">CSS Grid-Flow</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('04 // Comic World')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 05: Visual Notes Studio -->
+<div class="uni-card uni-u2 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Visuel Magi">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Infinite digital canvas with luminous neon sticky notes, visual concept mind-maps, and vector diagrams floating in space" style="background-image: url('/ai-experience-hub/computer/native/media/59b0030a3417c00f4bf851bb')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-secondary">05 // VISUEL MAGI</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Visual Notes Studio</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Transformér rå tekst og lydfiler til automatiske visuelle skitser, diagrammer og interaktive infografikker.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Infinite Canvas</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Whisper AI</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('05 // Visual Notes Studio')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 06: 3D Exploded Lab -->
+<div class="uni-card uni-u2 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Visuel Magi">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Exploded technical view of a quantum processor core with floating micro-chips, glowing optical buses, and amber callout labels" style="background-image: url('/ai-experience-hub/computer/native/media/1bdf768042a99a65c31292fa')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-secondary">06 // VISUEL MAGI</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">3D Exploded Lab</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Interaktiv dekonstruktion af komplekse maskiner og biologiske celler med synkroniseret lydforklaring.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">ThreeJS Spline</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">GLTF Shaders</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('06 // 3D Exploded Lab')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 07: Knowledge Galaxy -->
+<div class="uni-card uni-u3 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Viden &amp; Læring">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Expansive spiral galaxy composed of billions of interconnected glowing text nodes and star-like knowledge clusters in deep violet void" style="background-image: url('/ai-experience-hub/computer/native/media/029d0b5e0a817d65fdee9605')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary-fixed">07 // VIDEN &amp; LÆRING</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Knowledge Galaxy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Menneskehedens viden repræsenteret som en navigérbar stjernehob med vektorbaserede semantiske relationer.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Vector Embeddings</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Force Graph</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('07 // Knowledge Galaxy')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 08: Time Machine -->
+<div class="uni-card uni-u3 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Viden &amp; Læring">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Chrono vortex time corridor showing Renaissance Florence blending seamlessly into ancient Alexandria and cybernetic Mars outpost" style="background-image: url('/ai-experience-hub/computer/native/media/be8f8e240ddb7b3f3fcdd63d')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary-fixed">08 // VIDEN &amp; LÆRING</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Historical Time Machine</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Gennemlev historiske vendepunkter og før interaktive samtaler med historiske personligheder via RAG-arkiver.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">RAG Pipeline</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Temporal Audio</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('08 // Historical Time Machine')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 09: Skilltree Academy -->
+<div class="uni-card uni-u3 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Viden &amp; Læring">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Luminescent RPG skill tree interface with glowing branching mastery nodes, golden achievements, and progress paths" style="background-image: url('/ai-experience-hub/computer/native/media/b906bd377e64f128ae2c4af0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary-fixed">09 // VIDEN &amp; LÆRING</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Skilltree Academy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Gamificeret læringssti for kunstig intelligens med adaptive quizzer, XP-tokens og live kode-sandkasser.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Adaptive Engine</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">State Sync</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('09 // Skilltree Academy')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 10: Prompt Battle -->
+<div class="uni-card uni-u4 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Spil &amp; Opdagelser">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Esports tournament battle arena with glowing split screen holographic terminals, versus logo, and vibrant crowd effects" style="background-image: url('/ai-experience-hub/computer/native/media/262255120ad6ef46447c7e94')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-primary-fixed-dim">10 // SPIL &amp; OPDAGELSER</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Prompt Battle Arena</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Hurtig 1-mod-1 duel om at skabe den mest præcise AI-generering under tidspres bedømt af dommer-algoritmer.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Multiplayer WebRTC</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">CLIP Scorer</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('10 // Prompt Battle Arena')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 11: Escape AI -->
+<div class="uni-card uni-u4 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Spil &amp; Opdagelser">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Futuristic cybernetic escape room chamber with locked biometric blast doors, glowing keypad terminal, and eerie red alarm lighting" style="background-image: url('/ai-experience-hub/computer/native/media/3cbc9145860624fd6452af3b')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-primary-fixed-dim">11 // SPIL &amp; OPDAGELSER</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Escape AI Terminal</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Find de logiske svagheder i en overivrig AI-overvågningsprotokol og løs gåderne for at genstarte serversystemet.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Dynamic Prompting</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Audio FX</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('11 // Escape AI Terminal')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 12: Decision Lab -->
+<div class="uni-card uni-u4 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Spil &amp; Opdagelser">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Futuristic moral decision simulator room with twin glowing neon pathways diverging into foggy cosmic horizons" style="background-image: url('/ai-experience-hub/computer/native/media/5bfd1e0c823422fc4c9a7bc3')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-primary-fixed-dim">12 // SPIL &amp; OPDAGELSER</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Decision Lab</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Etiske dilemmaer og selvkørende bilsimulationer der udfordrer dine og maskinens værdiprioriteringer.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Bayesian Net</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Telemetry Log</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('12 // Decision Lab')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 13: Detective Mode -->
+<div class="uni-card uni-u4 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Spil &amp; Opdagelser">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Cyber forensic investigation board with digital fingerprints, red laser pins connecting evidence nodes, and magnifying digital reticle" style="background-image: url('/ai-experience-hub/computer/native/media/ee877b46e42a85e1ecfa62a0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-primary-fixed-dim">13 // SPIL &amp; OPDAGELSER</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">AI Detective Mode</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Spot deepfakes, syntetiske lydspor og hallucinationer i et højspændt retsmedicinsk efterforskningsrum.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Audio Spectrogram</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">EXIF Parser</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('13 // AI Detective Mode')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 14: AI Brain Explorer -->
+<div class="uni-card uni-u5 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Kreativitet &amp; Teknologi">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Glowing biological and silicon hybrid human brain pulsing with synaptic electric currents, deep violet and amber axons in 3D" style="background-image: url('/ai-experience-hub/computer/native/media/acb3b6adc174531b5da792e7')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary">14 // KREATIVITET</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">AI Brain Explorer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Gå på opdagelse i dybe neurale vægtlag, transformers og attention heads i et rummeligt 3D mikroskop.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Transformer Viz</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">3D Heatmap</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('14 // AI Brain Explorer')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- CARD 15: Storyboard Cinema -->
+<div class="uni-card uni-u5 p-5 rounded-2xl bg-surface-container shadow-xl flex flex-col justify-between hover:bg-surface-container-high transition-all group" data-universe="Kreativitet &amp; Teknologi">
+<div>
+<div class="relative w-full h-44 rounded-xl overflow-hidden mb-4 bg-surface-lowest">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Cinematic widescreen film studio with director chair, holographic camera timeline, glowing film reels, and anamorphic lens flare" style="background-image: url('/ai-experience-hub/computer/native/media/5b84dd407ed6f3c549c15cd4')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+<span class="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 font-label-code text-label-code text-tertiary">15 // KREATIVITET</span>
+<span class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold">PRODUKTIONSKLAR</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Storyboard Cinema</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">Fuld filmisk drejebogsproduktion fra prompt til skudliste med stemningsbelysning, kameraspor og dynamisk lyddesign.</p>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Anamorphic Audio</span>
+<span class="px-2 py-0.5 rounded bg-surface-lowest text-on-surface-variant font-label-code text-label-code">Shot Sequencer</span>
+</div>
+<button class="p-2 rounded-lg bg-surface-lowest hover:bg-primary-container hover:text-on-primary text-primary transition-all" onclick="triggerExperienceModal('15 // Storyboard Cinema')">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. EKSPORT & DEPLOYMENT CENTER -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-12 w-full">
+<div class="p-8 md:p-10 rounded-3xl bg-surface-container-low shadow-2xl relative overflow-hidden">
+<div class="flex flex-col lg:flex-row gap-10 items-start justify-between">
+<!-- Left: CLI & Architecture -->
+<div class="w-full lg:w-7/12 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-surface-lowest text-tertiary font-label-code text-label-code">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>DEV INTEGRATION &amp; CLI STACK</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface">Eksport &amp; Deployment Pipeline</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Kør standardiserede eksportrutiner med komplet token-mapping for Tailwind v3/v4, Figma REST Tokens og headless containers.
+            </p>
+<!-- Code Terminal Preview -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-inner font-label-code text-label-code text-on-surface space-y-3">
+<div class="flex items-center justify-between text-on-surface-variant pb-2 border-b border-surface-container">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="text-xs ml-2">bash — export-production.sh</span>
+</span>
+<button class="hover:text-primary transition-colors flex items-center gap-1 text-xs" id="copy-btn" onclick="copySnippetText()">
+<span class="material-symbols-outlined text-sm">content_copy</span> Kopier
+                </button>
+</div>
+<p class="text-on-surface-variant"># 1. Hent design tokens og matrix-definitioner</p>
+<p class="text-tertiary font-semibold">$ npm run export:ai-hub -- --env=production --all-universes</p>
+<p class="text-on-surface-variant"># 2. Generer standalone Docker produktionsimage</p>
+<p class="text-primary font-semibold">$ docker compose up -d --build ai-experience-master</p>
+<p class="text-on-surface-variant"># 3. Status: 15 moduler kompileret • 0 advarsler</p>
+<p class="text-tertiary-fixed">✓ Ready at: https://hub.experience-master.local [Latency: 0.8ms]</p>
+</div>
+</div>
+<!-- Right: Asset Bundle & Deployment Status -->
+<div class="w-full lg:w-5/12 flex flex-col justify-between gap-6">
+<div class="space-y-4">
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Pakke-indhold for Eksport</h4>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">token</span>
+<div>
+<div class="font-label-code text-label-code font-bold text-on-surface">Figma Tokens (.json)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Farver, Space Grotesk typografi, elevation</div>
+</div>
+</div>
+<span class="font-label-code text-label-code text-tertiary font-semibold">142 KB</span>
+</div>
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl">deployed_code</span>
+<div>
+<div class="font-label-code text-label-code font-bold text-on-surface">Standalone UI Components</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">15 Oplevelses-templates i ren Tailwind/HTML</div>
+</div>
+</div>
+<span class="font-label-code text-label-code text-tertiary font-semibold">3.4 MB</span>
+</div>
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-xl">cloud_sync</span>
+<div>
+<div class="font-label-code text-label-code font-bold text-on-surface">Hosting Targets</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Vercel Edge, Cloudflare Pages &amp; AWS</div>
+</div>
+</div>
+<span class="font-label-code text-label-code text-primary font-semibold">Verified</span>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline-sm text-headline-sm font-bold shadow-xl hover:shadow-[0_0_25px_rgba(242,138,60,0.4)] transition-all flex items-center justify-center gap-2" onclick="triggerExportModal('Komplet Bundle')">
+<span class="material-symbols-outlined">download</span>
+<span>Download Gold Master Bundle (.zip)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. INTERAKTIV LIVE SANDBOX & SHOWREEL LAUNCHER -->
+<section class="max-w-7xl mx-auto px-4 md:px-8 py-12 mb-16 w-full">
+<div class="p-8 md:p-12 rounded-3xl bg-surface-container shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="space-y-4 max-w-2xl">
+<div class="flex items-center gap-2 text-primary font-label-code text-label-code uppercase tracking-wider">
+<span class="material-symbols-outlined text-base">movie</span>
+<span>AUTONOM SHOWREEL SANDBOX</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface">Oplev Hele Universet i Fuldskærm</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Start den automatiske skærm-til-skærm guidet visning af alle 15 oplevelser. Perfekt til storskærmspræsentationer, investormøder og design audits.
+          </p>
+<div class="flex items-center gap-4 pt-2">
+<div class="flex items-center gap-2 text-on-surface font-label-code text-label-code">
+<span class="material-symbols-outlined text-tertiary">check_circle</span>
+<span>15 Sekunder pr. Slide</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-label-code text-label-code">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Auto-Kamera Panorering</span>
+</div>
+</div>
+</div>
+<div class="shrink-0">
+<button class="px-8 py-5 rounded-2xl bg-surface-container-highest hover:bg-surface-bright text-on-surface font-headline-sm text-headline-sm font-bold flex items-center gap-4 shadow-xl transition-all group active:scale-95" onclick="toggleShowreelMode()">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">play_arrow</span>
+</div>
+<div class="text-left">
+<div class="text-on-surface group-hover:text-primary transition-colors">Start Showreel</div>
+<div class="font-label-code text-label-code text-on-surface-variant font-normal">Tast F11 for fuldskærm</div>
+</div>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- POPUP / OVERLAY MODAL FOR DETAIL VISNING -->
+<div class="fixed inset-0 z-50 bg-surface-lowest/80 backdrop-blur-md hidden items-center justify-center p-4" id="master-export-modal">
+<div class="w-full max-w-lg rounded-2xl bg-surface-container-high p-6 shadow-2xl space-y-6">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container">
+<div class="flex items-center gap-2 text-on-surface font-headline-sm text-headline-sm font-bold">
+<span class="material-symbols-outlined text-primary">package_2</span>
+<span id="export-modal-title">Eksport-Handling</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1" onclick="closeExportModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<p>Pakken forberedes med live-tokens og produktionsassets. Download starter om få sekunder...</p>
+<div class="w-full h-2 rounded-full bg-surface-lowest overflow-hidden">
+<div class="h-full bg-primary animate-pulse w-3/4"></div>
+</div>
+<div class="flex justify-between font-label-code text-label-code text-on-surface">
+<span>Kompilerer Tailwind &amp; SVG tokens...</span>
+<span>78%</span>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-bright" onclick="closeExportModal()">Luk</button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary-container" onclick="closeExportModal()">Start Download Nu</button>
+</div>
+</div>
+</div>
+<!-- LIVE SHOWREEL OVERLAY (FULLSCREEN HUD) -->
+<div class="fixed inset-0 z-50 bg-surface-lowest hidden flex-col justify-between p-8" id="showreel-overlay">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="px-3 py-1 rounded-full bg-primary/20 text-primary font-label-code text-label-code font-bold animate-pulse">● LIVE SHOWREEL RUNNING</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold" id="showreel-slide-title">01 // Mission Control Telemetry</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label-code text-label-code hover:bg-surface-bright flex items-center gap-2" onclick="toggleShowreelMode()">
+<span class="material-symbols-outlined text-base">fullscreen_exit</span>
+<span>Afslut Showreel (ESC)</span>
+</button>
+</div>
+<!-- Center Stage Projection -->
+<div class="relative w-full max-w-5xl mx-auto h-[60vh] rounded-3xl overflow-hidden bg-surface-container shadow-2xl flex items-center justify-center">
+<div class="w-full h-full bg-cover bg-center transition-all duration-700" data-alt="Dynamic holographic AI experience demonstration running in a dark cinematic exhibition hall" id="showreel-slide-bg" style="background-image: url('/ai-experience-hub/computer/native/media/6026a637bd9afd906e571371')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-lowest/90 via-transparent to-transparent flex items-end p-8">
+<div>
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest" id="showreel-slide-universe">UNIVERS 1: DATA &amp; FREMTID</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold mt-1" id="showreel-slide-heading">Autonomt Telemetri Dashboard</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1" id="showreel-slide-desc">Overvåger samtlige multi-agent clustre med Euler-A inferensanalyse under 1ms latency.</p>
+</div>
+</div>
+</div>
+<!-- Bottom Controls & Timeline -->
+<div class="flex items-center justify-between max-w-5xl mx-auto w-full pt-4">
+<button class="p-3 rounded-full bg-surface-container hover:bg-surface-bright text-on-surface" onclick="prevShowreelSlide()">
+<span class="material-symbols-outlined">navigate_before</span>
+</button>
+<div class="font-label-code text-label-code text-on-surface-variant" id="showreel-counter">Slide 1 af 15</div>
+<button class="p-3 rounded-full bg-surface-container hover:bg-surface-bright text-on-surface" onclick="nextShowreelSlide()">
+<span class="material-symbols-outlined">navigate_next</span>
+</button>
+</div>
+</div>
+<!-- JAVASCRIPT LOGIC FOR MASTER CONTROLS -->
+<script>
+    function switchUniverseTab(category) {
+      const tabs = ['all', 'u1', 'u2', 'u3', 'u4', 'u5'];
+      tabs.forEach(tab => {
+        const btn = document.getElementById('btn-uni-' + tab);
+        if (btn) {
+          if (tab === category) {
+            btn.className = "px-4 py-2 rounded-lg text-label-code font-label-code font-bold bg-primary text-on-primary shadow-sm transition-all";
+          } else {
+            btn.className = "px-3.5 py-2 rounded-lg text-label-code font-label-code text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all";
+          }
+        }
+      });
+
+      const cards = document.querySelectorAll('.uni-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains('uni-' + category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function triggerExportModal(title) {
+      const modal = document.getElementById('master-export-modal');
+      const titleElem = document.getElementById('export-modal-title');
+      if (modal && titleElem) {
+        titleElem.textContent = title;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeExportModal() {
+      const modal = document.getElementById('master-export-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function triggerWhitepaperDownload() {
+      alert("Henter 'AI_Experience_Hub_Architecture_Whitepaper_v3.pdf' (32 sider med systemdiagrammer).");
+    }
+
+    function copySnippetText() {
+      const btn = document.getElementById('copy-btn');
+      if (btn) {
+        btn.innerHTML = `<span class="material-symbols-outlined text-sm text-tertiary">done</span> Kopieret!`;
+        setTimeout(() => {
+          btn.innerHTML = `<span class="material-symbols-outlined text-sm">content_copy</span> Kopier`;
+        }, 2000);
+      }
+    }
+
+    // Showreel Carousel Engine
+    const showreelData = [
+      { id: "01", title: "Mission Control", universe: "UNIVERS 1: DATA & FREMTID", desc: "Overvåger samtlige multi-agent clustre med Euler-A inferensanalyse under 1ms latency." },
+      { id: "02", title: "Future Simulator", universe: "UNIVERS 1: DATA & FREMTID", desc: "Monte Carlo sandsynlighedsmotor for globale fremtidsfremskrivninger mod 2050." },
+      { id: "03", title: "World Data Explorer", universe: "UNIVERS 1: DATA & FREMTID", desc: "3D geospatiel visualisering af planetens energiforbrug og datainfrastruktur." },
+      { id: "04", title: "Comic World Generator", universe: "UNIVERS 2: VISUEL MAGI", desc: "Multi-panel prompt synthesis for konsistent sekventiel tegneserieskabelse." },
+      { id: "05", title: "Visual Notes Studio", universe: "UNIVERS 2: VISUEL MAGI", desc: "Realtids oversættelse fra lydbølger og notater til interaktive vector mindmaps." },
+      { id: "06", title: "3D Exploded Lab", universe: "UNIVERS 2: VISUEL MAGI", desc: "WebGL-dekonstruktion af kvantekomponenter med annoterede informationspunkter." },
+      { id: "07", title: "Knowledge Galaxy", universe: "UNIVERS 3: VIDEN & LÆRING", desc: "Rummelig vektorvisualisering af relationer mellem videnskabelige opdagelser." },
+      { id: "08", title: "Historical Time Machine", universe: "UNIVERS 3: VIDEN & LÆRING", desc: "Dybdegående RAG-arkiver gør det muligt at samtale med fortidens tænkere." },
+      { id: "09", title: "Skilltree Academy", universe: "UNIVERS 3: VIDEN & LÆRING", desc: "Gamificeret adaptive læringssti med dynamic coding sandbox og XP." },
+      { id: "10", title: "Prompt Battle Arena", universe: "UNIVERS 4: SPIL & OPDAGELSER", desc: "Realtids prompt-genereringsduel vurderet objektivt af AI-dommere." },
+      { id: "11", title: "Escape AI Terminal", universe: "UNIVERS 4: SPIL & OPDAGELSER", desc: "Løs logiske gåder for at overliste den digitale vagt-algoritme." },
+      { id: "12", title: "Decision Lab", universe: "UNIVERS 4: SPIL & OPDAGELSER", desc: "Simuler etiske dilemmaer og studer maskinens beslutningsvægter." },
+      { id: "13", title: "AI Detective Mode", universe: "UNIVERS 4: SPIL & OPDAGELSER", desc: "Afslør syntetiske stemmer og fotomanipulation med retsmedicinske værktøjer." },
+      { id: "14", title: "AI Brain Explorer", universe: "UNIVERS 5: KREATIVITET & TEKNOLOGI", desc: "Se dybt ind i neurale vægtlag, transformere og attention heads i 3D." },
+      { id: "15", title: "Storyboard Cinema", universe: "UNIVERS 5: KREATIVITET & TEKNOLOGI", desc: "Generer professionelle film-scener, kamerabevægelser og lyddesign fra tekst." }
+    ];
+
+    let currentSlide = 0;
+    let showreelTimer = null;
+
+    function updateShowreelUI() {
+      const item = showreelData[currentSlide];
+      document.getElementById('showreel-slide-title').textContent = `${item.id} // ${item.title}`;
+      document.getElementById('showreel-slide-universe').textContent = item.universe;
+      document.getElementById('showreel-slide-heading').textContent = item.title;
+      document.getElementById('showreel-slide-desc').textContent = item.desc;
+      document.getElementById('showreel-counter').textContent = `Slide ${currentSlide + 1} af ${showreelData.length}`;
+    }
+
+    function nextShowreelSlide() {
+      currentSlide = (currentSlide + 1) % showreelData.length;
+      updateShowreelUI();
+    }
+
+    function prevShowreelSlide() {
+      currentSlide = (currentSlide - 1 + showreelData.length) % showreelData.length;
+      updateShowreelUI();
+    }
+
+    function toggleShowreelMode() {
+      const overlay = document.getElementById('showreel-overlay');
+      if (overlay) {
+        if (overlay.classList.contains('hidden')) {
+          overlay.classList.remove('hidden');
+          overlay.classList.add('flex');
+          currentSlide = 0;
+          updateShowreelUI();
+          if (showreelTimer) clearInterval(showreelTimer);
+          showreelTimer = setInterval(nextShowreelSlide, 10000);
+        } else {
+          overlay.classList.add('hidden');
+          overlay.classList.remove('flex');
+          if (showreelTimer) clearInterval(showreelTimer);
+        }
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeExportModal();
+        const overlay = document.getElementById('showreel-overlay');
+        if (overlay && !overlay.classList.contains('hidden')) {
+          toggleShowreelMode();
+        }
+      }
+      if (e.key === 'F11') {
+        e.preventDefault();
+        toggleShowreelMode();
+      }
+    });
+  </script>
+</div></main>
+<!-- FOOTER -->
+<footer class="w-full bg-[#030d1a] border-t border-white/5 py-12">
+<div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<span class="text-amber-400 font-black text-sm">✦</span>
+<span class="font-headline-sm text-sm uppercase tracking-wider text-white font-bold">AI Experience Hub</span>
+<span class="text-slate-500 text-xs">| Tryk. Oplev. Udforsk.</span>
+</div>
+<div class="text-xs text-slate-500 font-label-code">
+        © 2025 AI EXPERIENCE HUB · 15 Interaktive Oplevelser
+      </div>
+</div>
+</footer>
+<!-- SCRIPT FOR DYNAMIC FILTERING, FAVORITES & SEARCH -->
+<script>
+    let currentFilter = 'alle';
+    let searchQuery = '';
+    let showOnlyFavorites = false;
+
+    function getFavorites() {
+      try {
+        const saved = localStorage.getItem('ai_hub_favs');
+        return saved ? JSON.parse(saved) : ['01', '07'];
+      } catch(e) {
+        return ['01', '07'];
+      }
+    }
+
+    function saveFavorites(favs) {
+      try {
+        localStorage.setItem('ai_hub_favs', JSON.stringify(favs));
+      } catch(e) {}
+      updateFavoritesUI();
+    }
+
+    function toggleFavorite(id) {
+      let favs = getFavorites();
+      if (favs.includes(id)) {
+        favs = favs.filter(item => item !== id);
+      } else {
+        favs.push(id);
+      }
+      saveFavorites(favs);
+      renderCards();
+    }
+
+    function updateFavoritesUI() {
+      const favs = getFavorites();
+      const badge = document.getElementById('nav-fav-badge');
+      if (badge) badge.textContent = favs.length;
+
+      document.querySelectorAll('.fav-icon-01, .fav-icon-02, .fav-icon-03, .fav-icon-04, .fav-icon-05, .fav-icon-06, .fav-icon-07, .fav-icon-08, .fav-icon-09, .fav-icon-10, .fav-icon-11, .fav-icon-12, .fav-icon-13, .fav-icon-14, .fav-icon-15').forEach(icon => {
+        const match = icon.className.match(/fav-icon-(\d+)/);
+        if (match && match[1]) {
+          const id = match[1];
+          if (favs.includes(id)) {
+            icon.classList.add('favorite-active');
+          } else {
+            icon.classList.remove('favorite-active');
+          }
+        }
+      });
+    }
+
+    function filterCatalog(category) {
+      currentFilter = category;
+      showOnlyFavorites = false;
+
+      document.querySelectorAll('#filter-tabs .filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = "filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-slate-950 shadow-md";
+        } else {
+          btn.className = "filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white";
+        }
+      });
+
+      renderCards();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.toLowerCase().trim();
+      renderCards();
+    }
+
+    function toggleOnlyFavorites() {
+      showOnlyFavorites = !showOnlyFavorites;
+      renderCards();
+    }
+
+    function resetFilters() {
+      currentFilter = 'alle';
+      searchQuery = '';
+      showOnlyFavorites = false;
+      const searchInput = document.getElementById('top-search');
+      if (searchInput) searchInput.value = '';
+      filterCatalog('alle');
+    }
+
+    function renderCards() {
+      const cards = document.querySelectorAll('.experience-card');
+      const favs = getFavorites();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const universe = card.getAttribute('data-universe') || '';
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const id = card.getAttribute('data-id') || '';
+
+        const matchCat = (currentFilter === 'alle' || universe === currentFilter);
+        const matchSearch = (searchQuery === '' || title.includes(searchQuery) || universe.toLowerCase().includes(searchQuery));
+        const matchFav = (!showOnlyFavorites || favs.includes(id));
+
+        if (matchCat && matchSearch && matchFav) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noRes = document.getElementById('no-results-msg');
+      if (noRes) {
+        if (visible === 0) {
+          noRes.classList.remove('hidden');
+          noRes.classList.add('flex');
+        } else {
+          noRes.classList.add('hidden');
+          noRes.classList.remove('flex');
+        }
+      }
+    }
+
+    function triggerExperienceModal(title) {
+      const modal = document.getElementById('experience-modal');
+      const modalTitle = document.getElementById('modal-title');
+      if (modal && modalTitle) {
+        modalTitle.textContent = title;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeExperienceModal() {
+      const modal = document.getElementById('experience-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeExperienceModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateFavoritesUI();
+      renderCards();
+    });
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      updateFavoritesUI();
+      renderCards();
+    }
+  </script>
+<script>
+function switchHeroTab(tabKey) {
+  const tabs = ['future', 'galaxy', 'comic'];
+  tabs.forEach(t => {
+    const content = document.getElementById('hero-tab-content-' + t);
+    const btn = document.getElementById('tab-btn-' + t);
+    if (t === tabKey) {
+      if (content) content.classList.remove('hidden');
+      if (btn) {
+        btn.className = 'hero-tab-btn px-4 py-1.5 rounded-full text-xs font-label-code font-bold bg-cyan-500 text-slate-950 shadow-[0_0_15px_rgba(56,189,248,0.5)] transition-all';
+      }
+    } else {
+      if (content) content.classList.add('hidden');
+      if (btn) {
+        btn.className = 'hero-tab-btn px-4 py-1.5 rounded-full text-xs font-label-code font-semibold bg-[#122238] hover:bg-white/10 text-slate-300 hover:text-white transition-all';
+      }
+    }
+  });
+}
+</script>
+<script src="/ai-experience-hub/computer/native/storage.js"></script><script src="/ai-experience-hub/computer/native/shell.js"></script><script src="/ai-experience-hub/computer/native/runtime.js"></script></body></html>

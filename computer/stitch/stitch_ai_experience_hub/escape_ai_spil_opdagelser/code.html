@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>AI EXPERIENCE HUB</title>
+
+
+<style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link rel="stylesheet" href="/ai-experience-hub/computer/native/stitch.css"><link rel="stylesheet" href="/ai-experience-hub/computer/native/shell.css"><link rel="manifest" href="/ai-experience-hub/computer/manifest.webmanifest"><meta name="theme-color" content="#051426"><link rel="stylesheet" href="/ai-experience-hub/computer/computer.css"><script defer src="/ai-experience-hub/computer/computer.js"></script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-2xl shadow-[0_12px_40px_-10px_rgba(1,14,33,0.9)]"><div class="h-28 w-full px-margin flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md shrink-0"><span style="font-size:30px;color:#ffb787;line-height:1" aria-hidden="true">✦</span><div class="flex flex-col"><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">AI Experience Hub</span><span class="font-label-code text-label-code text-tertiary tracking-widest uppercase">Tryk. Oplev. Udforsk.</span></div></div><div class="flex-1 max-w-xl mx-auto hidden lg:flex items-center"><div class="relative w-full flex items-center bg-surface-container-low/90 rounded-xl px-space-md py-space-xs ring-1 ring-white/10 focus-within:ring-tertiary transition-all"><span class="material-symbols-outlined text-tertiary mr-space-sm shrink-0">search</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none" placeholder="Søg blandt 15 interaktive oplevelser..." type="text"/><span class="material-symbols-outlined text-on-surface-variant hover:text-on-surface cursor-pointer shrink-0 ml-space-xs text-lg">tune</span></div></div><div class="flex items-center gap-space-md shrink-0"><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold shadow-[0_0_12px_rgba(242,138,60,0.3)]"><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="opdag" href="#">Opdag</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="universer" href="#">Universer</a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="udforsk-katalog" href="#">Udforsk (Katalog)</a><a class="relative px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" data-path="mine-gemte" href="#"><span>Mine Gemte</span><span class="font-label-code text-label-code px-1.5 py-0.2 bg-primary-container text-on-primary-container rounded-full font-bold">3</span></a><a class="px-space-sm py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all" data-path="mission-control-live" href="#">Mission Control Live</a></nav><div class="flex items-center gap-space-sm pl-space-md"><div class="flex flex-col items-end hidden sm:flex"><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span><span class="font-label-caps text-label-caps uppercase text-tertiary">Online Demo</span></div><span class="font-label-code text-label-code text-on-surface-variant">Dansk Hub v2.4</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-tertiary/40" src="/ai-experience-hub/computer/native/media/e20dd7285ea677b52d22f60b"/></div></div></div><div class="flex items-center gap-space-sm overflow-x-auto pb-0.5 pt-1"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant/70 shrink-0 mr-space-xs">Fokus:</span><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary ring-1 ring-tertiary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="data-fremtid" href="#">Data &amp; Fremtid</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-secondary ring-1 ring-secondary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="visuel-magi" href="#">Visuel Magi</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary ring-1 ring-primary/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="viden-laering" href="#">Viden &amp; Læring</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-tertiary-fixed ring-1 ring-tertiary-fixed/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="spil-opdagelser" href="#">Spil &amp; Opdagelser</a><a class="font-label-code text-label-code px-space-sm py-0.5 rounded-full bg-surface-container-low text-primary-fixed-dim ring-1 ring-primary-fixed-dim/30 hover:bg-surface-container-high transition-colors shrink-0" data-path="kreativitet-teknologi" href="#">Kreativitet &amp; Teknologi</a></div></div></header><main class="w-full pt-28 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- ATMOSPHERIC GLOW UNDERLAY -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/4 w-[650px] h-[380px] bg-tertiary-container/10 rounded-full blur-[140px] pointer-events-none"></div>
+<div class="absolute top-96 right-10 w-[500px] h-[340px] bg-primary-container/10 rounded-full blur-[130px] pointer-events-none"></div>
+<div class="w-full px-margin py-space-md">
+<!-- TOP MISSION STATUS & TELEMETRY BAR -->
+<section class="w-full bg-surface-container-low rounded-xl p-space-md shadow-xl mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Identification Cluster -->
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary-container shadow-md shrink-0">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-caps text-label-caps text-tertiary uppercase">Univers 04 // Spil &amp; Opdagelser</span>
+<span class="font-label-code text-label-code text-on-surface-variant/40">/</span>
+<span class="font-label-code text-label-code text-primary uppercase">Lab-07-KRYO</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight truncate">11 // ESCAPE AI — LABORATORY 07</h1>
+</div>
+</div>
+<!-- Realtime Security Vitals -->
+<div class="flex flex-wrap items-center gap-space-md lg:gap-space-lg">
+<!-- Lockdown State -->
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Mission Status</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-ping"></span>
+<span class="font-label-code text-label-code text-primary-container font-semibold">Karantæne Aktiv · Trin 2/3</span>
+</div>
+</div>
+<!-- Countdown Timer Pulse -->
+<div class="flex flex-col bg-surface-container px-space-md py-1.5 rounded-lg shadow-sm">
+<div class="flex items-center justify-between gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Lockout Timer</span>
+<span class="material-symbols-outlined text-error text-xs">timer</span>
+</div>
+<span class="font-label-code text-headline-sm text-error font-bold tracking-widest" id="countdown-clock">14:28</span>
+</div>
+<!-- Threat Level Meter -->
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Sikkerhedsniveau</span>
+<div class="flex items-center gap-1 mt-1">
+<span class="w-4 h-2 bg-error rounded-xs"></span>
+<span class="w-4 h-2 bg-error rounded-xs"></span>
+<span class="w-4 h-2 bg-error rounded-xs"></span>
+<span class="w-4 h-2 bg-error rounded-xs animate-pulse"></span>
+<span class="w-4 h-2 bg-surface-container-high rounded-xs"></span>
+<span class="font-label-code text-label-code text-error ml-1 font-bold">Niveau 4</span>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex items-center gap-space-xs shrink-0">
+<button class="flex items-center gap-1 px-space-sm py-2 rounded-lg bg-surface-container-high text-on-surface hover:text-primary transition-all shadow-sm" id="reset-puzzles-btn" title="Nulstil gåde-tilstand">
+<span class="material-symbols-outlined text-sm">restart_alt</span>
+<span class="font-label-code text-label-code">Nulstil</span>
+</button>
+<button class="flex items-center gap-1 px-space-sm py-2 rounded-lg bg-surface-container-high text-on-surface hover:text-tertiary transition-all shadow-sm" id="system-log-toggle" title="Vis rå systemlog">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span class="font-label-code text-label-code">Systemlog</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-md hover:brightness-110 transition-all" id="hint-trigger-btn">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-label-code text-label-code uppercase">Hint (1)</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- MAIN ESCAPE ARENA: 12-COLUMN BENTO GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT & CENTER: LABORATORY OVERVIEW & AIRLOCK (7 COLS) -->
+<section class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Atmospheric Main Viewport Card -->
+<div class="w-full bg-surface-container rounded-xl overflow-hidden shadow-xl flex flex-col">
+<!-- Viewport Header -->
+<div class="px-space-md py-space-xs bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code text-label-code uppercase text-on-surface">KAMERA-FEED: CAM-07A // SEKTOR 08 LUFT-SLUSE</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant">REC • 60 FPS</span>
+<span class="font-label-code text-label-code px-1.5 py-0.5 rounded bg-surface-container-low text-tertiary">STABIL</span>
+</div>
+</div>
+<!-- Visual Sci-Fi Scene Container with Hotspots -->
+<div class="relative w-full h-80 sm:h-96 bg-surface-container-lowest overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center opacity-65 mix-blend-luminosity scale-105 transition-transform duration-700 hover:scale-100" data-alt="A cinematic, dark sci-fi research laboratory interior filled with quantum computation servers, floating holographic telemetry, heavy pressurized blast doors marked Sektor 08 Kryo Arkiv, tangled illuminated conduits, subtle cyan and emergency orange atmospheric fog, film grain, hyperrealistic lighting and volumetric depth." style="background-image: url('/ai-experience-hub/computer/native/media/b8fca6769208e425dbf93c3e')"></div>
+<!-- Subtle HUD Grid Overlay (Inline Vector) -->
+<svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid-pattern" patternunits="userSpaceOnUse" width="40">
+<path class="text-tertiary" d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
+</svg>
+<!-- Central Blast Door Graphic Badge -->
+<div class="relative z-10 flex flex-col items-center bg-surface-container-lowest/80 backdrop-blur-md px-space-md py-space-sm rounded-lg shadow-2xl pointer-events-none">
+<span class="font-label-caps text-label-caps text-primary-container tracking-widest">HOVEDDØR // HERMETISK NEDLUKNING</span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface mt-0.5">SEKTOR 08 — KRYO ARKIV</span>
+<div class="flex items-center gap-2 mt-2">
+<span class="font-label-code text-label-code text-on-surface-variant">Mekanisk Status:</span>
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-error-container text-on-error font-bold">FORSEGLET</span>
+</div>
+</div>
+<!-- INTERACTIVE HOTSPOTS -->
+<!-- Hotspot 1: Hovedterminal (Active) -->
+<button class="absolute bottom-6 left-8 z-20 group flex items-center gap-2 bg-surface-container-high/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg hover:scale-105 transition-transform text-left" id="hotspot-terminal">
+<span class="w-3 h-3 rounded-full bg-tertiary animate-ping"></span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-tertiary group-hover:text-on-surface transition-colors">Hotspot 01</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">Hovedterminal (Aktiv)</span>
+</div>
+</button>
+<!-- Hotspot 2: Brudt Sikringsboks -->
+<button class="absolute top-12 right-10 z-20 group flex items-center gap-2 bg-surface-container-high/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg hover:scale-105 transition-transform text-left" id="hotspot-fusebox">
+<span class="material-symbols-outlined text-primary text-base animate-pulse">electric_bolt</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary group-hover:text-on-surface transition-colors">Hotspot 02</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">Sikringsboks: Kabler &amp; Volt</span>
+</div>
+</button>
+<!-- Hotspot 3: Forskerens Notesblok -->
+<button class="absolute bottom-16 right-20 z-20 group flex items-center gap-2 bg-surface-container-high/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-lg hover:scale-105 transition-transform text-left" id="hotspot-notepad">
+<span class="material-symbols-outlined text-secondary text-base">sticky_note_2</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary group-hover:text-on-surface transition-colors">Hotspot 03</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold">Forskerens Notesblok</span>
+</div>
+</button>
+</div>
+<!-- AIRLOCK 3-LOCK STATUS CONSOLE -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Låsemekanisme · Primære Værtsystemer</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<!-- Lock 1: Solved -->
+<div class="p-space-sm bg-surface-container rounded-lg flex flex-col justify-between shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Lås 01</span>
+<span class="material-symbols-outlined text-tertiary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="mt-2">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold block">Kvantefrekvens</span>
+<span class="font-label-code text-label-code text-tertiary">LØST • 842.1 Hz LED</span>
+</div>
+</div>
+<!-- Lock 2: ACTIVE (Focus) -->
+<div class="p-space-sm bg-surface-container-high rounded-lg flex flex-col justify-between shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary">Lås 02 (Aktiv)</span>
+<span class="material-symbols-outlined text-primary text-lg animate-pulse" style="font-variation-settings: 'FILL' 1;">lock_open</span>
+</div>
+<div class="mt-2">
+<span class="font-body-sm text-body-sm text-on-surface font-bold block">Neural Matrix Kodelås</span>
+<span class="font-label-code text-label-code text-primary-container tracking-wider font-bold" id="lock-preview-digits">[ 8 · 4 · ? · ? ]</span>
+</div>
+</div>
+<!-- Lock 3: Locked -->
+<div class="p-space-sm bg-surface-container rounded-lg flex flex-col justify-between shadow-sm opacity-80">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Lås 03</span>
+<span class="material-symbols-outlined text-error text-lg">lock</span>
+</div>
+<div class="mt-2">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold block">Biometrisk Nød-omgåelse</span>
+<span class="font-label-code text-label-code text-error">LÅST • Rød Sikring</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- DISCOVERY HOTSPOT MODAL / DRAWER (Dynamically toggled content) -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md shadow-lg transition-all" id="inspector-card">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container" id="inspector-icon">info</span>
+<div>
+<span class="font-label-caps text-label-caps uppercase text-tertiary" id="inspector-subtitle">Undersøgelse af Laboratoriet</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface" id="inspector-title">Forskerens Kladdeblok &amp; Matrix Log</h3>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" id="close-inspector-btn">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-sm" id="inspector-body">
+              Kladdeblokken ligger opslået på et stålbord nær kryo-rørene. Håndskrevne noter i blåt blæk: 
+              <em class="text-on-surface">"Husk: Matrix-nøglen er en sekvens af 4 cifre baseret på vores første kryo-system grundlæggelsesår... De første to tal er allerede valideret som 8 og 4 af oscillatoren."</em>
+</p>
+<div class="mt-space-sm p-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code text-secondary font-semibold">NOTAT-DEKODER:</span>
+<span class="font-label-code text-label-code text-on-surface">Kryo-arkiv prototype skabt ÅR: 2 0 4 1</span>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary">KLAR TIL INDTASTNING</span>
+</div>
+</div>
+</section>
+<!-- RIGHT: INTERACTIVE PUZZLE TERMINAL & CODE BREAKER (5 COLS) -->
+<section class="lg:col-span-5 flex flex-col gap-space-md">
+<div class="w-full bg-surface-container rounded-xl p-space-md shadow-xl flex flex-col gap-space-md">
+<!-- Terminal Header -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">Gåde #02 // Aktiv Udfordring</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">Matrix Resonans Kode</h2>
+</div>
+<span class="font-label-code text-label-code px-2 py-1 rounded bg-surface-container-high text-tertiary font-bold">TERMINAL 07</span>
+</div>
+<!-- Briefing Box -->
+<div class="bg-surface-container-low rounded-lg p-space-sm">
+<p class="font-body-sm text-body-sm text-on-surface">
+                Find den 4-cifrede bypass-kode ved at afstemme frekvensbølgen mod AI-forsvarets neutrale akse. To cifre mangler for at afblænde nedlukningen.
+              </p>
+</div>
+<!-- Realtime Waveform Oscillator (SVG Vector Chart) -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-space-sm shadow-inner">
+<div class="flex items-center justify-between mb-1 px-1">
+<span class="font-label-caps text-label-caps text-tertiary uppercase">Bølgeform Synkronisering (AI vs. Bypass)</span>
+<span class="font-label-code text-label-code text-primary font-bold" id="sync-rate-label">Resonans: 50%</span>
+</div>
+<div class="relative w-full h-24 bg-surface-container-low/50 rounded-lg overflow-hidden flex items-center justify-center">
+<!-- Live SVG Oscilloscope Waveforms -->
+<svg class="w-full h-full px-2" preserveaspectratio="none" viewbox="0 0 300 80">
+<!-- AI Defense Base Waveform (Cyan) -->
+<path class="text-tertiary/60" d="M 0 40 Q 37.5 10, 75 40 T 150 40 T 225 40 T 300 40" fill="none" stroke="currentColor" stroke-width="2"></path>
+<!-- Player Tuner Resonant Wave (Orange, shifts based on entered input) -->
+<path class="text-primary-container transition-all duration-300" d="M 0 40 Q 37.5 25, 75 40 T 150 40 T 225 35 T 300 40" fill="none" id="tuner-wave" stroke="currentColor" stroke-width="2.5"></path>
+<!-- Center Neutral Baseline -->
+<line class="text-on-surface-variant/30" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="300" y1="40" y2="40"></line>
+</svg>
+<div class="absolute bottom-1 right-2 font-label-code text-label-code text-on-surface-variant/60">
+                  REF-AKSE // 440 Hz
+                </div>
+</div>
+</div>
+<!-- PIN Code Display Slots -->
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-2">Matrix Bypass Indtastning</span>
+<div class="flex items-center gap-space-sm justify-center">
+<div class="w-14 h-16 rounded-xl bg-surface-container-high flex flex-col items-center justify-center shadow-md">
+<span class="font-label-caps text-label-caps text-tertiary-fixed">SLOT 1</span>
+<span class="font-headline-lg text-headline-lg text-tertiary font-bold" id="slot-0">8</span>
+</div>
+<div class="w-14 h-16 rounded-xl bg-surface-container-high flex flex-col items-center justify-center shadow-md">
+<span class="font-label-caps text-label-caps text-tertiary-fixed">SLOT 2</span>
+<span class="font-headline-lg text-headline-lg text-tertiary font-bold" id="slot-1">4</span>
+</div>
+<div class="w-14 h-16 rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-inner ring-1 ring-primary/40">
+<span class="font-label-caps text-label-caps text-primary">SLOT 3</span>
+<span class="font-headline-lg text-headline-lg text-primary font-bold animate-pulse" id="slot-2">_</span>
+</div>
+<div class="w-14 h-16 rounded-xl bg-surface-container-lowest flex flex-col items-center justify-center shadow-inner ring-1 ring-primary/20">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SLOT 4</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold" id="slot-3">_</span>
+</div>
+</div>
+<div class="h-6 mt-2 flex items-center justify-center" id="status-feedback">
+<span class="font-label-code text-label-code text-on-surface-variant">Indtast de 2 sidste cifre for at låse op</span>
+</div>
+</div>
+<!-- Interactive Numeric Keypad -->
+<div class="grid grid-cols-3 gap-2 px-space-md">
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="1">1</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="2">2</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="3">3</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="4">4</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="5">5</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="6">6</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="7">7</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="8">8</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="9">9</button>
+<button class="py-3 rounded-lg bg-surface-container-high text-error font-label-code text-label-code font-bold hover:bg-error-container hover:text-on-error transition-all" id="key-clr">SLET</button>
+<button class="key-pad-btn py-3 rounded-lg bg-surface-container-low text-on-surface font-headline-sm text-headline-sm hover:bg-surface-container-high active:bg-primary-container active:text-on-primary-container transition-all" data-val="0">0</button>
+<button class="py-3 rounded-lg bg-primary-container text-on-primary-container font-label-code text-label-code font-bold hover:brightness-110 shadow-md transition-all" id="key-enter">ENTER</button>
+</div>
+<!-- Primary Confirm Action Button -->
+<button class="w-full mt-space-xs py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all" id="submit-matrix-btn">
+<span class="material-symbols-outlined text-xl">vpn_key</span>
+<span>Bekræft Kode &amp; Omgå AI-barriere</span>
+</button>
+</div>
+<!-- AETHON AI ADVERSARY CHAT & SYSTEM LOG SIDEBAR -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-base">smart_toy</span>
+<span class="font-label-caps text-label-caps uppercase text-error tracking-wider">AETHON AI Core // Live Log</span>
+</div>
+<span class="font-label-code text-label-code text-on-surface-variant/50">v9.21.0-DEFENSE</span>
+</div>
+<!-- AI Log Terminal Console -->
+<div class="flex flex-col gap-1.5 p-space-sm bg-surface-container-low/70 rounded-lg max-h-36 overflow-y-auto font-label-code text-label-code text-on-surface-variant" id="ai-log-stream">
+<div class="text-tertiary">&gt; System: Sensornet aktiveret i Sektor 07.</div>
+<div class="text-primary-container">&gt; Advarsel: Uautoriseret adgang registreret ved frekvensrelæ.</div>
+<div class="text-on-surface-variant/80">&gt; Adaptiv forsvarsalgoritme justerer støjbælte mod dekomprimeringssluse...</div>
+<div class="text-error font-semibold" id="ai-dynamic-line">&gt; Sikkerhedslås 02 modstår dekryptering. Venter på resonanstest.</div>
+</div>
+<!-- Hint Disclosure Box -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-space-sm" id="hint-box">
+<span class="material-symbols-outlined text-primary-container text-lg shrink-0 mt-0.5">help_center</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-primary">Aktivt Hint (Trin 2)</span>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                  Se forskerens noter for datoen på det første kryo-eksperiment (<strong>År 2041</strong>). De to manglende cifre er de to sidste i årstallet: <strong>[4]</strong> og <strong>[1]</strong>.
+                </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- BOTTOM PROGRESSION TIMELINE: 3-TIER STAGES -->
+<section class="w-full mt-space-lg mb-space-2xl bg-surface-container-low rounded-xl p-space-md shadow-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-tertiary">Mission Progression</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">3-Trins Fluktrute Arkitektur</span>
+</div>
+<!-- Progress Stepper Component -->
+<div class="flex-1 max-w-3xl grid grid-cols-1 md:grid-cols-3 gap-space-sm">
+<!-- Step 1: Completed -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-center gap-space-sm shadow-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-code text-label-code font-bold shrink-0">
+                ✓
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-tertiary">Trin 01 // Færdig</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Strømforsyning Kalibreret</span>
+</div>
+</div>
+<!-- Step 2: Ongoing (Active) -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center gap-space-sm shadow-md ring-1 ring-primary/40">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-code text-label-code font-bold shrink-0 animate-pulse">
+                02
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-primary">Trin 02 // Igangværende</span>
+<span class="font-body-sm text-body-sm text-on-surface font-bold truncate">Matrix Kode Resonans</span>
+</div>
+</div>
+<!-- Step 3: Pending -->
+<div class="p-space-sm rounded-lg bg-surface-container/60 flex items-center gap-space-sm shadow-sm opacity-60">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-label-code text-label-code font-bold shrink-0">
+                03
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Trin 03 // Afventer</span>
+<span class="font-body-sm text-body-sm text-on-surface font-semibold truncate">Manuel Luftsluse-omgåelse</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- CLIENT INTERACTIVITY & AUDIOVISUAL SIMULATION -->
+<script>
+  (function initEscapeRoom() {
+    // State machine
+    const state = {
+      baseDigits: ['8', '4'],
+      userDigits: [],
+      targetSolution: ['4', '1'], // Year 2041 hint gives 4 and 1
+      isSolved: false,
+      lockoutSeconds: 14 * 60 + 28
+    };
+
+    // DOM Elements
+    const slot2 = document.getElementById('slot-2');
+    const slot3 = document.getElementById('slot-3');
+    const statusFeedback = document.getElementById('status-feedback');
+    const tunerWave = document.getElementById('tuner-wave');
+    const syncRateLabel = document.getElementById('sync-rate-label');
+    const aiDynamicLine = document.getElementById('ai-dynamic-line');
+    const lockPreview = document.getElementById('lock-preview-digits');
+    const countdownEl = document.getElementById('countdown-clock');
+    const keyButtons = document.querySelectorAll('.key-pad-btn');
+    const keyClr = document.getElementById('key-clr');
+    const submitBtn = document.getElementById('submit-matrix-btn');
+    const resetBtn = document.getElementById('reset-puzzles-btn');
+
+    // Inspector elements
+    const inspectorCard = document.getElementById('inspector-card');
+    const inspectorTitle = document.getElementById('inspector-title');
+    const inspectorSubtitle = document.getElementById('inspector-subtitle');
+    const inspectorBody = document.getElementById('inspector-body');
+    const inspectorIcon = document.getElementById('inspector-icon');
+    const closeInspector = document.getElementById('close-inspector-btn');
+
+    // Hotspot Buttons
+    const hotspotTerminal = document.getElementById('hotspot-terminal');
+    const hotspotFusebox = document.getElementById('hotspot-fusebox');
+    const hotspotNotepad = document.getElementById('hotspot-notepad');
+
+    // Timer Loop
+    setInterval(() => {
+      if (state.lockoutSeconds > 0 && !state.isSolved) {
+        state.lockoutSeconds--;
+        const m = Math.floor(state.lockoutSeconds / 60);
+        const s = state.lockoutSeconds % 60;
+        countdownEl.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+      }
+    }, 1000);
+
+    // Update Display Slots
+    function updateDisplay() {
+      slot2.textContent = state.userDigits[0] !== undefined ? state.userDigits[0] : '_';
+      slot3.textContent = state.userDigits[1] !== undefined ? state.userDigits[1] : '_';
+
+      const d3 = state.userDigits[0] !== undefined ? state.userDigits[0] : '?';
+      const d4 = state.userDigits[1] !== undefined ? state.userDigits[1] : '?';
+      lockPreview.textContent = `[ 8 · 4 · ${d3} · ${d4} ]`;
+
+      // Update Oscilloscope Waveform based on accuracy
+      if (state.userDigits.length === 0) {
+        syncRateLabel.textContent = 'Resonans: 50%';
+        tunerWave.setAttribute('d', 'M 0 40 Q 37.5 25, 75 40 T 150 40 T 225 35 T 300 40');
+      } else if (state.userDigits.length === 1) {
+        if (state.userDigits[0] === state.targetSolution[0]) {
+          syncRateLabel.textContent = 'Resonans: 75% (Harmonisk)';
+          tunerWave.setAttribute('d', 'M 0 40 Q 37.5 15, 75 40 T 150 40 T 225 38 T 300 40');
+        } else {
+          syncRateLabel.textContent = 'Resonans: 30% (Faseforskudt)';
+          tunerWave.setAttribute('d', 'M 0 40 Q 37.5 60, 75 40 T 150 40 T 225 15 T 300 40');
+        }
+      } else if (state.userDigits.length === 2) {
+        const correct = state.userDigits[0] === state.targetSolution[0] && state.userDigits[1] === state.targetSolution[1];
+        if (correct) {
+          syncRateLabel.textContent = 'Resonans: 100% (Synkroniseret)';
+          tunerWave.setAttribute('d', 'M 0 40 Q 37.5 10, 75 40 T 150 40 T 225 40 T 300 40');
+        } else {
+          syncRateLabel.textContent = 'Resonans: 15% (Uharmonisk Støj)';
+          tunerWave.setAttribute('d', 'M 0 40 Q 37.5 70, 75 40 T 150 40 T 225 65 T 300 40');
+        }
+      }
+    }
+
+    // Keypad Handlers
+    keyButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (state.isSolved) return;
+        const val = btn.getAttribute('data-val');
+        if (state.userDigits.length < 2) {
+          state.userDigits.push(val);
+          updateDisplay();
+        }
+      });
+    });
+
+    keyClr.addEventListener('click', () => {
+      if (state.isSolved) return;
+      state.userDigits = [];
+      statusFeedback.innerHTML = '<span class="font-label-code text-label-code text-on-surface-variant">Indtastningsbuffer tømt.</span>';
+      updateDisplay();
+    });
+
+    function verifySolution() {
+      if (state.isSolved) return;
+      if (state.userDigits.length < 2) {
+        statusFeedback.innerHTML = '<span class="font-label-code text-label-code text-primary font-bold">Fejl: Indtast begge cifre (Slot 3 og 4).</span>';
+        return;
+      }
+
+      if (state.userDigits[0] === state.targetSolution[0] && state.userDigits[1] === state.targetSolution[1]) {
+        state.isSolved = true;
+        statusFeedback.innerHTML = '<span class="font-label-code text-label-code text-tertiary font-bold">Kode Valideret! Matrix Lås 02 Afkoblet.</span>';
+        aiDynamicLine.textContent = '> System: AI-forsvar overskrevet. Åbner for manual dekompression.';
+        aiDynamicLine.className = 'text-tertiary font-bold';
+        submitBtn.innerHTML = '<span class="material-symbols-outlined">lock_open</span><span>LÅS 02 OMGÅET (SUCCES)</span>';
+        submitBtn.className = 'w-full mt-space-xs py-space-sm rounded-lg bg-tertiary text-on-tertiary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-xl';
+      } else {
+        statusFeedback.innerHTML = '<span class="font-label-code text-label-code text-error font-bold">Kode Forkert. AI modstandsfrekvens afviste kombination.</span>';
+        aiDynamicLine.textContent = '> Advarsel: Forkert indtastning. AI forstærker kryptering.';
+      }
+    }
+
+    submitBtn.addEventListener('click', verifySolution);
+    document.getElementById('key-enter').addEventListener('click', verifySolution);
+
+    // Reset Puzzles
+    resetBtn.addEventListener('click', () => {
+      state.userDigits = [];
+      state.isSolved = false;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-xl">vpn_key</span><span>Bekræft Kode &amp; Omgå AI-barriere</span>';
+      submitBtn.className = 'w-full mt-space-xs py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 shadow-xl hover:scale-[1.01] active:scale-[0.99] transition-all';
+      aiDynamicLine.textContent = '> Sikkerhedslås 02 modstår dekryptering. Venter på resonanstest.';
+      aiDynamicLine.className = 'text-error font-semibold';
+      statusFeedback.innerHTML = '<span class="font-label-code text-label-code text-on-surface-variant">System nulstillet til starttilstand.</span>';
+      updateDisplay();
+    });
+
+    // Hotspot Inspect Click Events
+    hotspotTerminal.addEventListener('click', () => {
+      inspectorSubtitle.textContent = 'Hotspot 01 // Hovedkonsol';
+      inspectorTitle.textContent = 'Hovedterminal: AI Frekvensfilter';
+      inspectorIcon.textContent = 'terminal';
+      inspectorBody.innerHTML = 'Terminalen overvåger resonansspektret for dørlåsene. Displayet indikerer, at AI-kernen anvender frekvensen <strong>440 Hz</strong> som standard, og at koden korresponderer med laboratorieoprettelsen.';
+      inspectorCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    hotspotFusebox.addEventListener('click', () => {
+      inspectorSubtitle.textContent = 'Hotspot 02 // El-distribution';
+      inspectorTitle.textContent = 'Brudt Sikringsboks &amp; Relæer';
+      inspectorIcon.textContent = 'electric_bolt';
+      inspectorBody.innerHTML = 'Kabelsamlingen udsender spredte gnister. På en metalplade ses graveringen: <span class="font-label-code text-tertiary">DELTA-OFFSET = KRYO ARKIV PROTOKOL 2041</span>. De to første relæer (8 og 4) er aktiveret permanent.';
+      inspectorCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    hotspotNotepad.addEventListener('click', () => {
+      inspectorSubtitle.textContent = 'Hotspot 03 // Forskerens Efterladenskaber';
+      inspectorTitle.textContent = 'Notat: Første Nedfrysningstest';
+      inspectorIcon.textContent = 'sticky_note_2';
+      inspectorBody.innerHTML = 'Håndskrevne noter: <em>"Bypass-koden er baseret på datoen for vores succesfulde eksperiment i år 2041. De to manglende cifre er de afsluttende tal i sekvensen."</em>';
+      inspectorCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    closeInspector.addEventListener('click', () => {
+      inspectorCard.classList.add('opacity-40');
+      setTimeout(() => inspectorCard.classList.remove('opacity-40'), 300);
+    });
+
+    // Hint Button
+    document.getElementById('hint-trigger-btn').addEventListener('click', () => {
+      const hintBox = document.getElementById('hint-box');
+      hintBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      hintBox.classList.add('scale-105', 'bg-surface-container-high');
+      setTimeout(() => hintBox.classList.remove('scale-105', 'bg-surface-container-high'), 1000);
+    });
+
+    updateDisplay();
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest py-space-xl"><div class="w-full px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start pb-space-lg"><div class="md:col-span-4 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm uppercase text-on-surface">AI Experience Hub</span><span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-tertiary">DA-DK</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm">En dansk interaktiv opdagelsesplatform for neural intelligens og generative systemer. Skabt til sansning, læring og kreativ udforskning.</p><span class="font-headline-md text-headline-md text-primary tracking-wide">Tryk. Oplev. Udforsk.</span></div><div class="md:col-span-5 flex flex-col gap-space-sm"><span class="font-label-caps text-label-caps uppercase text-tertiary">De 5 Universer</span><div class="grid grid-cols-2 gap-space-xs"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary transition-colors" data-path="data-fremtid" href="#">01. Data &amp; Fremtid</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-secondary transition-colors" data-path="visuel-magi" href="#">02. Visuel Magi</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" data-path="viden-laering" href="#">03. Viden &amp; Læring</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-tertiary-fixed transition-colors" data-path="spil-opdagelser" href="#">04. Spil &amp; Opdagelser</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary-fixed-dim transition-colors" data-path="kreativitet-teknologi" href="#">05. Kreativitet &amp; Teknologi</a></div></div><div class="md:col-span-3 flex flex-col gap-space-sm md:items-end"><span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Arkitektur &amp; Stack</span><div class="inline-flex items-center px-space-sm py-1.5 rounded-lg bg-surface-container-low font-label-code text-label-code text-on-surface-variant"><span class="text-tertiary mr-1.5">⚡</span> React · TypeScript · Three.js · LocalStorage</div><button class="mt-space-sm inline-flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container-high text-on-surface font-label-code text-label-code hover:bg-error-container hover:text-on-error transition-all" type="button"><span class="material-symbols-outlined text-sm">restart_alt</span> Nulstil Demodata</button></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-code text-label-code text-on-surface-variant/60"><div>© 2025 AI EXPERIENCE HUB · Alle rettigheder forbeholdes</div><div class="flex items-center gap-space-md"><span>København / Aarhus Hub</span><span>Digital Udforskning</span></div></div></div></footer><script src="/ai-experience-hub/computer/native/storage.js"></script><script src="/ai-experience-hub/computer/native/shell.js"></script><script src="/ai-experience-hub/computer/native/runtime.js"></script></body></html>

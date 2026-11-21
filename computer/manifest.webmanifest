@@ -1,0 +1,40 @@
+{
+  "id": "/ai-experience-hub/computer/",
+  "name": "Experience Hub",
+  "short_name": "Experience Hub",
+  "lang": "da",
+  "description": "Dit visuelle AI-studie på computeren",
+  "start_url": "/ai-experience-hub/computer/stitch/stitch_ai_experience_hub/ai_experience_hub_opdag_forside_filmisk_udgave/code.html",
+  "scope": "/ai-experience-hub/computer/",
+  "display": "standalone",
+  "background_color": "#051426",
+  "theme_color": "#051426",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Skab",
+      "url": "/ai-experience-hub/computer/stitch/promptswipe/#workspace"
+    },
+    {
+      "name": "Lær",
+      "url": "/ai-experience-hub/computer/stitch/promptswipe/#learn"
+    },
+    {
+      "name": "Værktøjskasse",
+      "url": "/ai-experience-hub/computer/native/toolbox.html"
+    }
+  ]
+}

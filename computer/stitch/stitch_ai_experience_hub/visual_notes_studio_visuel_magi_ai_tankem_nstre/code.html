@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="da"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>AI Experience Hub — Opdag Forside</title>
+
+
+
+
+
+
+
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #051426;
+        color: #d5e3fd;
+      }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .cosmic-nebula {
+      background: radial-gradient(circle at 55% 42%, rgba(245, 158, 11, 0.28) 0%, rgba(147, 51, 234, 0.22) 28%, rgba(14, 116, 144, 0.15) 50%, rgba(5, 20, 38, 0) 80%);
+    }
+    .card-glass {
+      background: linear-gradient(145deg, rgba(20, 35, 56, 0.72) 0%, rgba(9, 21, 38, 0.88) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+    }
+    .card-glass:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 36px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(56, 189, 248, 0.15);
+    }
+    .favorite-active {
+      color: #f43f5e !important;
+      font-variation-settings: 'FILL' 1 !important;
+    }
+  </style>
+<link rel="stylesheet" href="/ai-experience-hub/computer/native/stitch.css"><link rel="stylesheet" href="/ai-experience-hub/computer/native/shell.css"><link rel="manifest" href="/ai-experience-hub/computer/manifest.webmanifest"><meta name="theme-color" content="#051426"><link rel="stylesheet" href="/ai-experience-hub/computer/computer.css"><script defer src="/ai-experience-hub/computer/computer.js"></script></head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-white relative overflow-x-hidden">
+<!-- TOP NAVIGATION HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#051426]/85 backdrop-blur-2xl border-b border-white/5">
+<div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 shrink-0" href="#">
+<div class="px-3.5 py-1.5 rounded-full border border-cyan-400/40 bg-surface-container/80 shadow-[0_0_15px_rgba(56,189,248,0.25)] flex items-center gap-2">
+<span class="text-amber-400 font-black text-sm">✦</span>
+<span class="font-headline-sm text-sm uppercase tracking-wider text-white font-bold">Experience Hub</span>
+</div>
+</a>
+<!-- Center Nav Links -->
+<nav class="hidden md:flex items-center gap-2 bg-[#0a182c]/80 border border-white/10 rounded-full px-2 py-1 shadow-inner">
+<a class="px-5 py-1.5 rounded-full bg-[#1e2f47] text-white font-medium text-sm shadow-[0_0_12px_rgba(56,189,248,0.2)]" href="#opdag">Opdag</a>
+<a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm" href="#universer">Universer</a>
+<a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm" href="#katalog">Udforsk</a>
+<a class="px-5 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition-all text-sm flex items-center gap-1.5" href="#gemte" onclick="toggleOnlyFavorites()">
+<span>Gemte</span>
+<span class="font-label-code text-xs px-2 py-0.2 bg-orange-500/20 text-orange-400 rounded-full font-bold border border-orange-500/30" id="nav-fav-badge">1</span>
+</a>
+</nav>
+<!-- Right Search Pill -->
+<div class="flex items-center gap-3">
+<div class="relative flex items-center bg-[#0d1d33] border border-white/10 rounded-full px-4 py-1.5 text-sm w-44 sm:w-60 focus-within:border-cyan-400 transition-all">
+<span class="material-symbols-outlined text-slate-400 text-lg mr-2">search</span>
+<input class="w-full bg-transparent text-slate-100 placeholder:text-slate-400 text-xs focus:outline-none" id="top-search" oninput="handleSearch(this.value)" placeholder="Søg oplevelser..." type="text"/>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN WRAPPER -->
+<main class="w-full pt-20"><div class="flex flex-col w-full">
+<!-- AMBIENT GLOW BACKDROPS -->
+<div class="relative w-full overflow-hidden">
+<div class="pointer-events-none absolute -top-40 right-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-primary-container/15 via-secondary/10 to-transparent blur-3xl -z-10 animate-float-slow"></div>
+<div class="pointer-events-none absolute top-96 -left-32 w-[520px] h-[520px] rounded-full bg-gradient-to-tr from-tertiary/10 via-secondary-container/20 to-transparent blur-3xl -z-10"></div>
+<!-- MAIN CONTAINER -->
+<div class="max-w-7xl mx-auto px-4 md:px-8 py-8 flex flex-col gap-10">
+<!-- TOP METADATA BREADCRUMB & STATUS ROW -->
+<header class="flex flex-col gap-5 border-b border-white/5 pb-8">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-2 font-label-code text-label-code text-on-surface-variant">
+<span class="text-tertiary font-semibold tracking-wider">UNIVERS 02</span>
+<span class="text-slate-600">/</span>
+<span class="text-secondary font-medium tracking-wide">VISUEL MAGI</span>
+<span class="text-slate-600">/</span>
+<span class="text-primary font-semibold">05 // VISUAL NOTES STUDIO</span>
+</div>
+<div class="flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-high/80 border border-white/10 shadow-inner">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-code text-xs uppercase tracking-widest text-on-surface">SKETCHNOTE ENGINE V2.8 // INTERAKTIV TÆNKEBÆNK</span>
+</div>
+</div>
+<!-- HERO HEADLINE & ACTIONS BAR -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+<div class="lg:col-span-8 flex flex-col gap-3">
+<h1 class="font-display-hero text-headline-lg lg:text-display-hero text-on-surface font-bold tracking-tight">
+              05 // VISUAL NOTES STUDIO
+              <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">
+                FRA KOMPLEKSITET TIL VISUELLE TANKEMØNSTRE
+              </span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+              Omdan tunge AI-koncepter, mentale modeller og komplekse artikler til levende sketchnotes, visuelle mindmaps og håndtegnede synteser ved hjælp af multimodal AI.
+            </p>
+</div>
+<!-- ACTIONS TOOLBAR -->
+<div class="lg:col-span-4 flex flex-wrap lg:flex-nowrap items-center justify-start lg:justify-end gap-3">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm font-semibold transition-all flex items-center gap-2 border border-white/5 hover:border-white/15" onclick="resetCanvasState()" type="button">
+<span class="material-symbols-outlined text-base text-slate-400">restart_alt</span>
+<span>Nulstil Lærred</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-body-sm font-semibold transition-all flex items-center gap-2 border border-white/5 hover:border-white/15" onclick="triggerExportNotice()" type="button">
+<span class="material-symbols-outlined text-base text-tertiary">download</span>
+<span>Eksportér SVG / PDF</span>
+</button>
+<button class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-gradient-to-r from-primary-container via-primary to-amber-300 text-on-primary-container font-headline-sm font-bold text-body-sm shadow-[0_0_24px_rgba(242,138,60,0.45)] hover:shadow-[0_0_32px_rgba(242,138,60,0.7)] transition-all flex items-center justify-center gap-2 group" onclick="synthesizeSketchnote()" type="button">
+<span class="text-base group-hover:rotate-12 transition-transform">⚡</span>
+<span>Generér Ny Sketchnote</span>
+</button>
+</div>
+</div>
+</header>
+<!-- SECTION 1: TOP QUICK METRICS BAR -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1 -->
+<div class="p-4 rounded-xl bg-surface-container/70 border border-white/5 backdrop-blur-md flex flex-col gap-1.5 hover:border-tertiary/30 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-slate-400">01 // AKTIV MODEL</span>
+<span class="material-symbols-outlined text-sm text-tertiary">psychology</span>
+</div>
+<div class="font-headline-sm text-body-lg text-white font-semibold">Dual-Brain Neural Synthesizer</div>
+<div class="font-body-sm text-body-sm text-tertiary-fixed-dim">Tekst + Visuel vektorisering</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-4 rounded-xl bg-surface-container/70 border border-white/5 backdrop-blur-md flex flex-col gap-1.5 hover:border-secondary/30 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-slate-400">02 // STILART</span>
+<span class="material-symbols-outlined text-sm text-secondary">draw</span>
+</div>
+<div class="font-headline-sm text-body-lg text-white font-semibold">Hybrid Moleskine &amp; Neon</div>
+<div class="font-body-sm text-body-sm text-secondary">Håndtegnet + Neonglød i blæk</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-4 rounded-xl bg-surface-container/70 border border-white/5 backdrop-blur-md flex flex-col gap-1.5 hover:border-primary/30 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-slate-400">03 // DENSITET</span>
+<span class="material-symbols-outlined text-sm text-primary">compress</span>
+</div>
+<div class="font-headline-sm text-body-lg text-white font-semibold">Høj Komprimering</div>
+<div class="font-body-sm text-body-sm text-primary-fixed-dim">68% estimeret kognitiv aflastning</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-4 rounded-xl bg-surface-container/70 border border-white/5 backdrop-blur-md flex flex-col gap-1.5 hover:border-white/20 transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-slate-400">04 // GEMTE SKETCHER</span>
+<span class="material-symbols-outlined text-sm text-amber-300">bookmarks</span>
+</div>
+<div class="font-headline-sm text-body-lg text-white font-semibold">24 Noter i Arkiv</div>
+<div class="font-body-sm text-body-sm text-slate-400">Senest synkroniseret 4 min siden</div>
+</div>
+</section>
+<!-- SECTION 2: MAIN WORKSPACE (SPLIT LAYOUT) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT PANEL: DEN STORE VISUELLE SKETCHNOTE TAVLE (65% / 8 COLS) -->
+<div class="lg:col-span-8 flex flex-col gap-4">
+<!-- Canvas Top Control Bar -->
+<div class="p-3.5 rounded-xl bg-surface-container border border-white/10 flex flex-wrap items-center justify-between gap-3 shadow-md">
+<!-- Tool selection -->
+<div class="flex items-center gap-1 bg-surface-container-high rounded-lg p-1 border border-white/5">
+<button class="p-2 rounded hover:bg-white/10 text-primary transition-all active:scale-95 flex items-center justify-center" title="Penneværktøj">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-2 rounded hover:bg-white/10 text-amber-300 transition-all active:scale-95 flex items-center justify-center" title="Highlighter">
+<span class="material-symbols-outlined text-lg">ink_highlighter</span>
+</button>
+<button class="p-2 rounded hover:bg-white/10 text-secondary transition-all active:scale-95 flex items-center justify-center" title="Klæbenote">
+<span class="material-symbols-outlined text-lg">note_add</span>
+</button>
+<button class="p-2 rounded hover:bg-white/10 text-slate-300 transition-all active:scale-95 flex items-center justify-center" title="AI Viskelæder">
+<span class="material-symbols-outlined text-lg">ink_eraser</span>
+</button>
+<button class="p-2 rounded bg-tertiary-container/30 text-tertiary font-semibold hover:bg-tertiary-container/50 transition-all active:scale-95 flex items-center justify-center" title="Auto-Connect Forbindelser">
+<span class="material-symbols-outlined text-lg">polyline</span>
+</button>
+</div>
+<!-- Layer toggles -->
+<div class="hidden xl:flex items-center gap-3 text-xs font-label-code">
+<label class="flex items-center gap-1.5 cursor-pointer text-slate-300 hover:text-white">
+<input checked="" class="rounded border-slate-700 bg-surface-container-highest text-primary-container focus:ring-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Skitsebånd</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer text-slate-300 hover:text-white">
+<input checked="" class="rounded border-slate-700 bg-surface-container-highest text-tertiary focus:ring-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Synapser</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer text-slate-300 hover:text-white">
+<input checked="" class="rounded border-slate-700 bg-surface-container-highest text-secondary focus:ring-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Ikoner</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer text-slate-400 hover:text-white">
+<input class="rounded border-slate-700 bg-surface-container-highest text-primary focus:ring-0 w-3.5 h-3.5" type="checkbox"/>
+<span>Rå Noter</span>
+</label>
+</div>
+<!-- Zoom & View controls -->
+<div class="flex items-center gap-1 bg-surface-container-high rounded-lg p-1 border border-white/5">
+<button class="px-2 py-1 text-slate-300 hover:text-white font-label-code text-xs" onclick="adjustZoom(-10)">－</button>
+<span class="font-label-code text-xs px-2 text-on-surface" id="canvas-zoom-level">100%</span>
+<button class="px-2 py-1 text-slate-300 hover:text-white font-label-code text-xs" onclick="adjustZoom(10)">＋</button>
+<div class="w-px h-4 bg-white/10 mx-1"></div>
+<button class="px-2.5 py-1 text-xs text-slate-300 hover:text-white rounded hover:bg-white/5" onclick="resetZoom()">Tilpas</button>
+</div>
+</div>
+<!-- THE CANVAS STAGE FRAME -->
+<div class="relative w-full rounded-2xl bg-surface-container-lowest border border-white/10 overflow-hidden shadow-2xl p-2 sm:p-4 group">
+<!-- Top Sketch Badge Overlay -->
+<div class="absolute top-6 left-6 z-20 flex items-center gap-3 bg-surface-dim/80 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full shadow-lg">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+<span class="font-headline-sm text-xs md:text-sm font-semibold text-white tracking-wide">
+                Titel: Hjerne vs. Kunstig Intelligens — Det Kreative Kompromis
+              </span>
+<span class="text-xs font-label-code px-2 py-0.5 rounded-full bg-primary-container/20 text-primary border border-primary/30">VEKTORISERET</span>
+</div>
+<!-- Main Interactive Image Area -->
+<div class="relative w-full rounded-xl overflow-hidden bg-surface-dim transition-transform duration-300" id="sketch-canvas-wrapper">
+<img class="w-full h-auto object-cover rounded-xl shadow-inner select-none transition-transform duration-500" data-alt="An open artist sketchbook sitting on a rustic wooden desk with digital tablets and pens, displaying a detailed hand-drawn mindmap of a human brain split in half, one side showing organic human creative thought in pencil sketch, the other side showing digital artificial intelligence circuitry with glowing blue and orange lines, annotated with conceptual sketchnote diagrams and handwriting" id="main-sketchnote-image" src="/ai-experience-hub/computer/native/media/00c196ee0528eeb8883df19b"/>
+<!-- HOTSPOT A: Venstre hjernehalvdel (Analog / Logic) -->
+<div class="absolute top-[35%] left-[28%] -translate-x-1/2 -translate-y-1/2 z-20 group/spot cursor-pointer">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-amber-400 opacity-60"></span>
+<div class="w-7 h-7 rounded-full bg-primary-container text-surface-dim font-headline-sm font-bold flex items-center justify-center border-2 border-white shadow-[0_0_15px_rgba(242,138,60,0.8)] text-xs">
+                    A
+                  </div>
+</div>
+<!-- Hotspot tooltip -->
+<div class="hidden group-hover/spot:flex flex-col gap-1 absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 p-3 rounded-xl bg-surface-dim/95 backdrop-blur-xl border border-primary/40 shadow-2xl z-30 pointer-events-none">
+<div class="font-label-code text-xs text-primary font-semibold">VENSTRE SEKTION // BIOLOGISK TÆNKNING</div>
+<p class="text-xs text-on-surface leading-tight">Organisk intuition, spontan association, analoge tushstreger og begrebsmæssig empati.</p>
+</div>
+</div>
+<!-- HOTSPOT B: Højre hjernehalvdel (Neural / AI) -->
+<div class="absolute top-[38%] left-[64%] -translate-x-1/2 -translate-y-1/2 z-20 group/spot cursor-pointer">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-cyan-400 opacity-60"></span>
+<div class="w-7 h-7 rounded-full bg-tertiary text-surface-dim font-headline-sm font-bold flex items-center justify-center border-2 border-white shadow-[0_0_15px_rgba(76,216,231,0.8)] text-xs">
+                    B
+                  </div>
+</div>
+<!-- Hotspot tooltip -->
+<div class="hidden group-hover/spot:flex flex-col gap-1 absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 p-3 rounded-xl bg-surface-dim/95 backdrop-blur-xl border border-tertiary/40 shadow-2xl z-30 pointer-events-none">
+<div class="font-label-code text-xs text-tertiary font-semibold">HØJRE SEKTION // KUNSTIG INTELLIGENS</div>
+<p class="text-xs text-on-surface leading-tight">Transformer-arkitekturer, multidimensionel attention, logiske neurale ruter og højfrekvente matricer.</p>
+</div>
+</div>
+<!-- HOTSPOT C: Broen / Latent Space -->
+<div class="absolute top-[68%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-20 group/spot cursor-pointer">
+<div class="relative flex items-center justify-center">
+<span class="animate-ping absolute inline-flex h-8 w-8 rounded-full bg-purple-400 opacity-60"></span>
+<div class="w-7 h-7 rounded-full bg-secondary text-surface-dim font-headline-sm font-bold flex items-center justify-center border-2 border-white shadow-[0_0_15px_rgba(205,189,255,0.8)] text-xs">
+                    C
+                  </div>
+</div>
+<!-- Hotspot tooltip -->
+<div class="hidden group-hover/spot:flex flex-col gap-1 absolute bottom-full mb-3 left-1/2 -translate-x-1/2 w-64 p-3 rounded-xl bg-surface-dim/95 backdrop-blur-xl border border-secondary/40 shadow-2xl z-30 pointer-events-none">
+<div class="font-label-code text-xs text-secondary font-semibold">SYNAPSE-BROEN // LATENT SPACE</div>
+<p class="text-xs text-on-surface leading-tight">Overgangszone hvor ustruktureret menneskelig fantasi konvergerer med statistiske sandsynlighedsrum.</p>
+</div>
+</div>
+</div>
+<!-- Canvas Bottom Annotation Ledger -->
+<div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 pt-3 border-t border-white/5 font-body-sm text-xs text-on-surface-variant">
+<div class="flex items-start gap-2 bg-surface-container/50 p-2.5 rounded-lg border border-white/5">
+<span class="font-label-code text-primary font-bold text-sm">A</span>
+<span><strong>Menneskelig Konceptualisering:</strong> Idémodning via associationskæder og visuelle metaforer.</span>
+</div>
+<div class="flex items-start gap-2 bg-surface-container/50 p-2.5 rounded-lg border border-white/5">
+<span class="font-label-code text-tertiary font-bold text-sm">B</span>
+<span><strong>AI-Pipeline:</strong> Vektorisering af nøglebegreber og relationel strukturering i nanosekunder.</span>
+</div>
+<div class="flex items-start gap-2 bg-surface-container/50 p-2.5 rounded-lg border border-white/5">
+<span class="font-label-code text-secondary font-bold text-sm">C</span>
+<span><strong>Syntese-Noder:</strong> Farvekodet syntaks der fremhæver kernepointer for lynhurtig genkaldelse.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: STUDIE KONTROLCENTER & SYNTESE-VÆRKTØJ (35% / 4 COLS) -->
+<div class="lg:col-span-4 flex flex-col gap-5">
+<div class="p-6 rounded-2xl bg-surface-container border border-white/10 shadow-xl flex flex-col gap-6 backdrop-blur-md">
+<!-- Panel Header & Tabs -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="font-headline-sm text-headline-sm text-white font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">auto_fix_high</span>
+                  Syntese Kontrolcenter
+                </div>
+<span class="font-label-code text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">KLAR</span>
+</div>
+<!-- Navigation Tabs -->
+<div class="grid grid-cols-3 gap-1 bg-surface-container-lowest p-1 rounded-xl border border-white/5 text-xs font-semibold">
+<button class="py-2 rounded-lg bg-surface-container-high text-white shadow-sm border border-white/10">Input</button>
+<button class="py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">Stilart</button>
+<button class="py-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5 transition-all">Kilder</button>
+</div>
+</div>
+<!-- Input Form Box -->
+<div class="flex flex-col gap-2">
+<label class="font-label-code text-xs uppercase text-slate-300 flex items-center justify-between">
+<span>Tekstgrundlag / Artikel / AI-Prompt</span>
+<span class="text-slate-500 lowercase">482 ord</span>
+</label>
+<textarea class="w-full rounded-xl bg-surface-container-lowest border border-white/10 text-on-surface font-body-sm p-3 focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary/40 resize-none transition-all placeholder:text-slate-600" placeholder="Indsæt artikeltekst, forskningsnoter eller emnebeskrivelse..." rows="4">Hvordan transformer-modeller efterligner menneskets associativitet, og hvorfor visuelle metaforer forbedrer fastholdelse med 400% i tekniske læringsmiljøer gennem multimodale repræsentationer...</textarea>
+</div>
+<!-- Style Selector Grid -->
+<div class="flex flex-col gap-2.5">
+<label class="font-label-code text-xs uppercase text-slate-300">Vælg Visuel Æstetik &amp; Sketchnote Stil</label>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Option 1: Selected -->
+<div class="p-3 rounded-xl bg-primary-container/15 border-2 border-primary cursor-pointer transition-all flex flex-col gap-1 relative overflow-hidden group">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-white">Analog Skitsebog</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<span class="font-body-sm text-[11px] text-slate-400 leading-tight">Blyant, blæktush &amp; akvarel accenter</span>
+</div>
+<!-- Option 2 -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-white/10 hover:border-tertiary/50 cursor-pointer transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-slate-300">Cyberpunk Blue</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary/50"></span>
+</div>
+<span class="font-body-sm text-[11px] text-slate-500 leading-tight">Cyan gitter &amp; tekniske ruter</span>
+</div>
+<!-- Option 3 -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-white/10 hover:border-secondary/50 cursor-pointer transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-slate-300">Organisk Mindmap</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary/50"></span>
+</div>
+<span class="font-body-sm text-[11px] text-slate-500 leading-tight">Flydende grene &amp; naturformer</span>
+</div>
+<!-- Option 4 -->
+<div class="p-3 rounded-xl bg-surface-container-lowest border border-white/10 hover:border-amber-300/50 cursor-pointer transition-all flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-xs font-bold text-slate-300">Sprint Whiteboard</span>
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400/50"></span>
+</div>
+<span class="font-body-sm text-[11px] text-slate-500 leading-tight">Markers, gule post-its &amp; fed tekst</span>
+</div>
+</div>
+</div>
+<!-- Synthesis Depth Slider -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-code text-xs">
+<span class="text-slate-300 uppercase">Syntese-Dybde</span>
+<span class="text-primary font-bold">Niveau 4 (Dybdegående)</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-surface-container-highest rounded-lg cursor-pointer" max="5" min="1" type="range" value="4"/>
+<div class="flex justify-between text-[10px] font-label-code text-slate-500">
+<span>Elevator Pitch</span>
+<span>Balancered</span>
+<span>Master Mindmap</span>
+</div>
+</div>
+<!-- Generated Concept Tags -->
+<div class="flex flex-col gap-2">
+<span class="font-label-code text-xs uppercase text-slate-300">Identificerede Kernebegreber</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-surface-container-highest text-tertiary text-xs font-label-code border border-tertiary/20">#Neuroplasticitet</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-highest text-primary text-xs font-label-code border border-primary/20">#AttentionMechanism</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-highest text-secondary text-xs font-label-code border border-secondary/20">#Hukommelseslagring</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container-highest text-amber-300 text-xs font-label-code border border-amber-300/20">#Multimodalitet</span>
+</div>
+</div>
+<!-- Render Button Action -->
+<div class="pt-2">
+<button class="w-full py-3.5 rounded-xl bg-gradient-to-r from-primary-container via-amber-500 to-tertiary text-slate-950 font-headline-sm font-bold text-sm tracking-wide shadow-lg hover:shadow-cyan-500/20 transition-all flex items-center justify-center gap-2" onclick="synthesizeSketchnote()" type="button">
+<span class="material-symbols-outlined text-lg">cyclone</span>
+<span>Kør Real-Time Rendering</span>
+</button>
+</div>
+</div>
+<!-- Quick Tip Card -->
+<div class="p-4 rounded-xl bg-surface-container/40 border border-white/5 flex items-start gap-3 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-amber-400 shrink-0 text-lg">tips_and_updates</span>
+<p><strong>Genvejstip:</strong> Dobbeltklik hvor som helst på tavlen for at tilføje en håndskreven note eller fastgøre en AI-genereret undergren direkte til konceptet.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 3: BUNDSEKTION - DIDAKTISK & KOGNITIV VÆRKTØJSKASSE (3 KOLONNER) -->
+<section class="flex flex-col gap-6 pt-6 border-t border-white/5">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+<div>
+<span class="font-label-code text-xs text-tertiary uppercase tracking-widest">KOGNITIV ARKITEKTUR</span>
+<h2 class="font-headline-md text-headline-md text-white font-bold">Videnskaben Bag Sketchnote Syntese</h2>
+</div>
+<span class="text-xs font-label-code text-slate-400">EVENSEN &amp; PAIVIO MODELLER</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- KORT 1 -->
+<div class="p-6 rounded-2xl bg-surface-container/60 border border-white/5 hover:border-tertiary/30 transition-all flex flex-col gap-4">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 border border-tertiary/20 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-sm text-body-lg text-white font-bold">Hvorfor Sketchnotes Virker (Dual Coding)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Ifølge Allan Paivios Dual Coding Theory behandler den menneskelige hjerne visuel og tekstuel information i adskilte, men samtidige kanaler. Når idéer forbindes med ikoner, mindskes kognitiv overbelastning radikalt.
+              </p>
+</div>
+<div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-xs font-label-code text-tertiary">
+<span>+400% fastholdelse</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- KORT 2 -->
+<div class="p-6 rounded-2xl bg-surface-container/60 border border-white/5 hover:border-primary/30 transition-all flex flex-col gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">filter_drama</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-sm text-body-lg text-white font-bold">AI som Visuel Tolk &amp; Metafor-Motor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Traditionelle sprogmodeller producerer tekstmure. Visual Notes Studio identificerer semantiske poler, udtrækker kernehierarkier og oversætter tør teori til intuitive metaforer som neurale rødder, broer og strømme.
+              </p>
+</div>
+<div class="mt-auto pt-3 border-t border-white/5 flex items-center justify-between text-xs font-label-code text-primary">
+<span>0% informationsstøj</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- KORT 3 -->
+<div class="p-6 rounded-2xl bg-surface-container/60 border border-white/5 hover:border-secondary/30 transition-all flex flex-col gap-4">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-sm text-body-lg text-white font-bold">Skabeloner &amp; Udforskede Emner</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Hurtig start med færdige kognitive modeller for AI-forskning, systemdesign og etik:
+              </p>
+<div class="flex flex-col gap-1.5 pt-1">
+<a class="p-2 rounded-lg bg-surface-container-highest/60 hover:bg-surface-container-highest text-xs text-on-surface flex items-center justify-between transition-colors" href="#katalog">
+<span>• Attention Is All You Need (Transformer)</span>
+<span class="text-secondary font-label-code text-[11px]">8.2k visninger</span>
+</a>
+<a class="p-2 rounded-lg bg-surface-container-highest/60 hover:bg-surface-container-highest text-xs text-on-surface flex items-center justify-between transition-colors" href="#katalog">
+<span>• Etiske Dilemmaer i Autonome Agenter</span>
+<span class="text-secondary font-label-code text-[11px]">4.5k visninger</span>
+</a>
+<a class="p-2 rounded-lg bg-surface-container-highest/60 hover:bg-surface-container-highest text-xs text-on-surface flex items-center justify-between transition-colors" href="#katalog">
+<span>• Fra Perceptron til GPT-5 Roadmap</span>
+<span class="text-secondary font-label-code text-[11px]">11.4k visninger</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FLOATING NOTIFICATION TOAST (HIDDEN BY DEFAULT) -->
+<div class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="sketchnote-toast">
+<div class="px-5 py-3.5 rounded-xl bg-surface-container-highest/95 border border-primary/40 shadow-2xl backdrop-blur-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs font-bold text-white" id="toast-title">Sketchnote Rendering Aktiv</span>
+<span class="font-body-sm text-[11px] text-slate-300" id="toast-body">Omsætter tekstforbindelser til visuelle vektorer...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentZoom = 100;
+
+  function adjustZoom(delta) {
+    currentZoom = Math.min(Math.max(currentZoom + delta, 60), 160);
+    const label = document.getElementById('canvas-zoom-level');
+    const imgWrapper = document.getElementById('sketch-canvas-wrapper');
+    if (label) label.textContent = currentZoom + '%';
+    if (imgWrapper) {
+      imgWrapper.style.transform = `scale(${currentZoom / 100})`;
+      imgWrapper.style.transformOrigin = 'center top';
+    }
+  }
+
+  function resetZoom() {
+    currentZoom = 100;
+    const label = document.getElementById('canvas-zoom-level');
+    const imgWrapper = document.getElementById('sketch-canvas-wrapper');
+    if (label) label.textContent = '100%';
+    if (imgWrapper) {
+      imgWrapper.style.transform = 'scale(1)';
+    }
+  }
+
+  function resetCanvasState() {
+    resetZoom();
+    showToast('Lærred Nulstillet', 'Visningen er centreret og alle midlertidige markeringer er ryddet.');
+  }
+
+  function triggerExportNotice() {
+    showToast('Eksport Klargjort', 'Højopløselig SVG og PDF pakkes til download...');
+  }
+
+  function synthesizeSketchnote() {
+    showToast('AI Syntese Indledt', 'Ekstraherer semantik og genererer nye visuelle metaforer...');
+    const img = document.getElementById('main-sketchnote-image');
+    if (img) {
+      img.classList.add('opacity-60', 'blur-[2px]');
+      setTimeout(() => {
+        img.classList.remove('opacity-60', 'blur-[2px]');
+        showToast('Rendering Gennemført', 'Ny sketchnote overførsel er nu synlig på lærredet!');
+      }, 1200);
+    }
+  }
+
+  function showToast(title, body) {
+    const toast = document.getElementById('sketchnote-toast');
+    const toastTitle = document.getElementById('toast-title');
+    const toastBody = document.getElementById('toast-body');
+    if (toast && toastTitle && toastBody) {
+      toastTitle.textContent = title;
+      toastBody.textContent = body;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3500);
+    }
+  }
+</script></main>
+<!-- FOOTER -->
+<footer class="w-full bg-[#030d1a] border-t border-white/5 py-12">
+<div class="max-w-7xl mx-auto px-4 md:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<span class="text-amber-400 font-black text-sm">✦</span>
+<span class="font-headline-sm text-sm uppercase tracking-wider text-white font-bold">AI Experience Hub</span>
+<span class="text-slate-500 text-xs">| Tryk. Oplev. Udforsk.</span>
+</div>
+<div class="text-xs text-slate-500 font-label-code">
+        © 2025 AI EXPERIENCE HUB · 15 Interaktive Oplevelser
+      </div>
+</div>
+</footer>
+<!-- SCRIPT FOR DYNAMIC FILTERING, FAVORITES & SEARCH -->
+<script>
+    let currentFilter = 'alle';
+    let searchQuery = '';
+    let showOnlyFavorites = false;
+
+    function getFavorites() {
+      try {
+        const saved = localStorage.getItem('ai_hub_favs');
+        return saved ? JSON.parse(saved) : ['01', '07'];
+      } catch(e) {
+        return ['01', '07'];
+      }
+    }
+
+    function saveFavorites(favs) {
+      try {
+        localStorage.setItem('ai_hub_favs', JSON.stringify(favs));
+      } catch(e) {}
+      updateFavoritesUI();
+    }
+
+    function toggleFavorite(id) {
+      let favs = getFavorites();
+      if (favs.includes(id)) {
+        favs = favs.filter(item => item !== id);
+      } else {
+        favs.push(id);
+      }
+      saveFavorites(favs);
+      renderCards();
+    }
+
+    function updateFavoritesUI() {
+      const favs = getFavorites();
+      const badge = document.getElementById('nav-fav-badge');
+      if (badge) badge.textContent = favs.length;
+
+      document.querySelectorAll('.fav-icon-01, .fav-icon-02, .fav-icon-03, .fav-icon-04, .fav-icon-05, .fav-icon-06, .fav-icon-07, .fav-icon-08, .fav-icon-09, .fav-icon-10, .fav-icon-11, .fav-icon-12, .fav-icon-13, .fav-icon-14, .fav-icon-15').forEach(icon => {
+        const match = icon.className.match(/fav-icon-(\d+)/);
+        if (match && match[1]) {
+          const id = match[1];
+          if (favs.includes(id)) {
+            icon.classList.add('favorite-active');
+          } else {
+            icon.classList.remove('favorite-active');
+          }
+        }
+      });
+    }
+
+    function filterCatalog(category) {
+      currentFilter = category;
+      showOnlyFavorites = false;
+
+      document.querySelectorAll('#filter-tabs .filter-btn').forEach(btn => {
+        if (btn.getAttribute('data-category') === category) {
+          btn.className = "filter-btn px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-slate-950 shadow-md";
+        } else {
+          btn.className = "filter-btn px-4 py-1.5 rounded-full text-xs font-medium bg-[#132238] text-slate-300 hover:text-white";
+        }
+      });
+
+      renderCards();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.toLowerCase().trim();
+      renderCards();
+    }
+
+    function toggleOnlyFavorites() {
+      showOnlyFavorites = !showOnlyFavorites;
+      renderCards();
+    }
+
+    function resetFilters() {
+      currentFilter = 'alle';
+      searchQuery = '';
+      showOnlyFavorites = false;
+      const searchInput = document.getElementById('top-search');
+      if (searchInput) searchInput.value = '';
+      filterCatalog('alle');
+    }
+
+    function renderCards() {
+      const cards = document.querySelectorAll('.experience-card');
+      const favs = getFavorites();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const universe = card.getAttribute('data-universe') || '';
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const id = card.getAttribute('data-id') || '';
+
+        const matchCat = (currentFilter === 'alle' || universe === currentFilter);
+        const matchSearch = (searchQuery === '' || title.includes(searchQuery) || universe.toLowerCase().includes(searchQuery));
+        const matchFav = (!showOnlyFavorites || favs.includes(id));
+
+        if (matchCat && matchSearch && matchFav) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const noRes = document.getElementById('no-results-msg');
+      if (noRes) {
+        if (visible === 0) {
+          noRes.classList.remove('hidden');
+          noRes.classList.add('flex');
+        } else {
+          noRes.classList.add('hidden');
+          noRes.classList.remove('flex');
+        }
+      }
+    }
+
+    function triggerExperienceModal(title) {
+      const modal = document.getElementById('experience-modal');
+      const modalTitle = document.getElementById('modal-title');
+      if (modal && modalTitle) {
+        modalTitle.textContent = title;
+        modal.classList.remove('hidden');
+      }
+    }
+
+    function closeExperienceModal() {
+      const modal = document.getElementById('experience-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeExperienceModal();
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateFavoritesUI();
+      renderCards();
+    });
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      updateFavoritesUI();
+      renderCards();
+    }
+  </script>
+<script src="/ai-experience-hub/computer/native/storage.js"></script><script src="/ai-experience-hub/computer/native/shell.js"></script><script src="/ai-experience-hub/computer/native/runtime.js"></script></body></html>
