@@ -1,4 +1,16 @@
-# AI Studio — første fungerende version
+# AI Studio — samlet prototype med PromptSwipe og AI Scout
+
+## Tilføjet fra AI Scout
+
+Indholdet er læst fra ejerens AI Scout-projekt på Floot uden at ændre eller publicere det projekt. `scout.js` indeholder 86 originale prompts, 13 læringsspor med 44 moduler og 15 værktøjsbeskrivelser. Alle læringssporenes henvisninger til prompts er kontrolleret mod det importerede bibliotek. Eksempel-/udkaststatus er bevaret; materialet er ikke fagligt genverificeret.
+
+Studiet har ét bibliotek med de 50 PromptSwipe-kort og 86 AI Scout-prompts. Kildesamlingen kan filtreres. Nogle prompts handler om samme opgave med forskellige instruktioner; de er bevaret som alternative originaltekster, ikke automatisk slået sammen. En senere redaktionel oprydning kan udvælge de bedste varianter.
+
+Under Lær kan brugeren åbne alle 13 spor, vælge et modul, læse trinene, afprøve øvelsen og åbne de tilknyttede prompts direkte i studiet. Afkrydsning gemmes lokalt i browseren. Værktøjsoversigten viser de eksisterende beskrivelser og status. Videosamlingen åbnes via link til AI Scout; der er ikke downloadet eller flyttet videoer.
+
+AI Scouts online projektbygger, database, brugerkonti og betalte AI-kald er ikke flyttet. Der er endnu ikke bygget en Windows-installer. Desktopappen er den ønskede produktretning; dette er et gennemprøvet første forslag til dens indhold og samspil.
+
+Ekstra browserkontrol: modulvalg, markering og fjernelse af gennemførelse, forbindelse fra øvelse til korrekt prompt, filtre for 86 AI Scout-prompts og 50 PromptSwipe-kort. Ingen konsolfejl registreret under kontrollen.
 
 AI Studio bruger de 50 originale kort og lokale billeder fra PromptSwipe i et selvstændigt studie med Experience Hubs farver, skrifter og filmiske billedmateriale. Det indlæser ikke PromptSwipe i en iframe.
 

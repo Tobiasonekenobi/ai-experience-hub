@@ -1,4 +1,6 @@
-import {cards} from './cards.js';
+import {cards as originalCards} from './cards.js';
+import {scoutCards} from './scout.js';
+const cards=[...originalCards.map(c=>({...c,source:'PromptSwipe'})),...scoutCards];
 const $=id=>document.getElementById(id);
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
 const initial=read('aeh_studio_favorites',[]);
@@ -15,7 +17,7 @@ let category='Alle',query='',view='studio',values=blank(),drafts={},toastTimer;
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,5000)}
 function persist(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch{toast('Browseren kunne ikke gemme. Hent projektet som tekst i stedet.');return false}}
-function filtered(){return cards.filter(c=>(category==='Alle'||category==='Gemte'&&favorites.has(c.id)||c.group===category)&&(!query||[c.title,c.desc,c.name,c.group].join(' ').toLocaleLowerCase('da').includes(query)))}
+function filtered(){return cards.filter(c=>(!$('source-filter')?.value||c.source===$('source-filter').value)&&(category==='Alle'||category==='Gemte'&&favorites.has(c.id)||c.group===category)&&(!query||[c.title,c.desc,c.name,c.group].join(' ').toLocaleLowerCase('da').includes(query)))}
 function buildPrompt(){
  const references={emne:'det beskrevne emne',projekt:'det beskrevne projekt',produkt:'det beskrevne produkt',brand:'det beskrevne brand',mål:'det beskrevne mål',appidé:'appidéen i projektbeskrivelsen',beskriv:'se min projektbeskrivelse nedenfor'};
  let base=active.prompt.replace(/\[([^\]]+)\]/g,(whole,key)=>values.slots[key]?.trim()|| (values.subject.trim()?(references[key.toLowerCase()]||'oplysningerne i min projektbeskrivelse nedenfor'):whole));
@@ -45,9 +47,10 @@ function renderForm(){
  renderOptions();updatePrompt();
 }
 function renderActive(){
- $('card-group').textContent=active.group+' / '+active.category;
+ $('card-group').textContent=active.group+' / '+active.source+(active.status==='eksempel'?' · Eksempel':'');
  $('card-name').textContent=active.name;$('card-title').textContent=active.title;$('card-desc').textContent=active.desc;
- $('preview').src=active.image;$('preview').alt='Originalt eksempel: '+active.title;
+ $('preview').src=active.image;$('preview').alt=active.source==='AI Scout'?'Temaillustration til '+active.title:'Originalt eksempel: '+active.title;
+ document.querySelector('.preview-label').textContent=active.imageCaption||'INSPIRATION · ORIGINALT KORTEKSEMPEL';
  $('favorite').textContent=favorites.has(active.id)?'♥':'♡';$('favorite').setAttribute('aria-pressed',String(favorites.has(active.id)));$('favorite').setAttribute('aria-label',favorites.has(active.id)?'Fjern kort fra favoritter':'Gem kort som favorit');
  const list=filtered(),index=list.findIndex(c=>c.id===active.id);$('position').textContent=String(index+1).padStart(2,'0')+' / '+String(list.length).padStart(2,'0')+' · SWIPE ELLER BRUG PILENE';
  $('prev').disabled=list.length<2;$('next').disabled=list.length<2;
@@ -80,9 +83,10 @@ document.addEventListener('click',e=>{
 });
 for(const field of ['subject','audience','output','constraints'])$(field).addEventListener('input',()=>{values[field]=$(field).value;updatePrompt()});
 $('search').addEventListener('input',()=>{query=$('search').value.toLocaleLowerCase('da').trim();render()});
+$('source-filter').onchange=()=>render();
 $('favorite').onclick=()=>{favorites.has(active.id)?favorites.delete(active.id):favorites.add(active.id);persist('aeh_studio_favorites',[...favorites]);render()};
 $('saved-top').onclick=()=>{category='Gemte';query='';$('search').value='';view='catalog';render();$('workspace').scrollIntoView({behavior:'smooth'})};
-$('reset-filter').onclick=()=>{category='Alle';query='';$('search').value='';render()};
+$('reset-filter').onclick=()=>{category='Alle';query='';$('search').value='';$('source-filter').value='';render()};
 $('prev').onclick=()=>navigate(-1);$('next').onclick=()=>navigate(1);
 $('studio-view').onclick=()=>setView('studio');$('catalog-view').onclick=()=>setView('catalog');
 $('tab-settings').onclick=()=>setTab(false);$('tab-prompt').onclick=()=>setTab(true);
@@ -94,4 +98,5 @@ $('download').onclick=()=>{const url=URL.createObjectURL(new Blob([active.title+
 $('expand').onclick=()=>{$('large-preview').src=active.image;$('large-preview').alt='Originalt eksempel: '+active.title;$('lightbox').showModal()};$('close-lightbox').onclick=()=>$('lightbox').close();
 let start=null;$('swipe-surface').addEventListener('touchstart',e=>{start={x:e.touches[0].clientX,y:e.touches[0].clientY}},{passive:true});$('swipe-surface').addEventListener('touchend',e=>{if(!start)return;const dx=e.changedTouches[0].clientX-start.x,dy=e.changedTouches[0].clientY-start.y;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.3){if(dx>0){favorites.add(active.id);persist('aeh_studio_favorites',[...favorites]);toast('Kort gemt som favorit')}navigate(1)}start=null},{passive:true});
 document.addEventListener('keydown',e=>{if(e.defaultPrevented||$('lightbox').open||['INPUT','TEXTAREA','SELECT','BUTTON','A','SUMMARY'].includes(e.target.tagName)||view!=='studio')return;if(e.key==='ArrowLeft'){e.preventDefault();navigate(-1)}if(e.key==='ArrowRight'){e.preventDefault();navigate(1)}});
+document.addEventListener('scout-prompt',e=>{const id='scout-'+e.detail;if(!cards.some(c=>c.id===id)){toast('Denne prompt er ikke i den importerede samling.');return}category='Alle';query='';$('search').value='';$('source-filter').value='';view='studio';setActive(id);document.dispatchEvent(new CustomEvent('studio-mode'));$('workspace').scrollIntoView({behavior:'smooth'})});
 render();renderProjects();
