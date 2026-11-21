@@ -1,0 +1,30 @@
+const {app,BrowserWindow,protocol,net,ipcMain,dialog,shell,session,Menu}=require('electron');
+const fs=require('node:fs/promises');const path=require('node:path');const {pathToFileURL}=require('node:url');const {randomUUID}=require('node:crypto');
+protocol.registerSchemesAsPrivileged([{scheme:'studio',privileges:{standard:true,secure:true,supportFetchAPI:true}}]);
+const testData=process.argv.find(a=>a.startsWith('--studio-test-data='));if(testData)app.setPath('userData',path.resolve(testData.slice('--studio-test-data='.length)));
+const root=path.join(__dirname,'assets');const origin='studio://app';let win,library;
+let state={};let writing=Promise.resolve();
+const keys=new Set(['aeh_studio_favorites','aeh_studio_projects','aeh_studio_learning']);
+function check(event){if(!event.senderFrame)throw Error('Ukendt afsender');const url=new URL(event.senderFrame.url);if(url.protocol!=='studio:'||url.host!=='app')throw Error('Ukendt afsender');}
+async function saveState(){const serialized=JSON.stringify(state);const file=path.join(app.getPath('userData'),'studio-library.json');writing=writing.catch(()=>{}).then(async()=>{await fs.mkdir(path.dirname(file),{recursive:true});await fs.writeFile(file+'.tmp',serialized,'utf8');await fs.rename(file+'.tmp',file)});return writing;}
+async function files(){await fs.mkdir(library,{recursive:true});const entries=await fs.readdir(library,{withFileTypes:true});const result=[];for(const entry of entries){if(entry.isFile()){const stat=await fs.stat(path.join(library,entry.name));result.push({name:entry.name.replace(/^[0-9a-f-]{36}--/,''),size:stat.size})}}return result.sort((a,b)=>a.name.localeCompare(b.name,'da'));}
+app.whenReady().then(async()=>{
+ library=path.join(app.getPath('userData'),'Materialer');await fs.mkdir(app.getPath('userData'),{recursive:true});
+ try{const value=JSON.parse(await fs.readFile(path.join(app.getPath('userData'),'studio-library.json'),'utf8'));if(value&&typeof value==='object'&&!Array.isArray(value))state=value}catch{}
+ protocol.handle('studio',async req=>{try{const url=new URL(req.url);if(url.host!=='app')return new Response('Not found',{status:404});let file=path.resolve(root,'.'+decodeURIComponent(url.pathname));if(!file.startsWith(root+path.sep)&&file!==root)return new Response('Forbidden',{status:403});if((await fs.stat(file)).isDirectory())file=path.join(file,'index.html');const response=await net.fetch(pathToFileURL(file).href);const headers=new Headers(response.headers);headers.set('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'");return new Response(response.body,{status:response.status,headers})}catch{return new Response('Not found',{status:404})}});
+ ipcMain.handle('studio:load',e=>{check(e);return state});
+ ipcMain.handle('studio:save',async(e,{key,value})=>{check(e);if(!keys.has(key)||JSON.stringify(value).length>15000000)throw Error('Ugyldige projektdata');state[key]=value;await saveState();return true});
+ ipcMain.handle('studio:export',async(e,{title,text})=>{check(e);if(typeof text!=='string'||text.length>1000000)throw Error('Ugyldig tekst');const name=String(title).replace(/[^a-zæøå0-9 _-]/gi,'').slice(0,80)||'AI-Studio';const result=await dialog.showSaveDialog(win,{title:'Gem din prompt',defaultPath:path.join(app.getPath('documents'),name+'.txt'),filters:[{name:'Tekstfil',extensions:['txt']}]});if(result.canceled)return false;await fs.writeFile(result.filePath,text,'utf8');return true});
+ ipcMain.handle('studio:list-files',async e=>{check(e);return files()});
+ ipcMain.handle('studio:import-files',async e=>{check(e);const result=await dialog.showOpenDialog(win,{title:'Tilføj materiale til dit lokale bibliotek',properties:['openFile','multiSelections'],filters:[{name:'Billeder og dokumenter',extensions:['png','jpg','jpeg','webp','pdf','txt','md','docx','pptx','xlsx','csv']}]});if(result.canceled)return files();await fs.mkdir(library,{recursive:true});for(const file of result.filePaths){const target=path.join(library,randomUUID()+'--'+path.basename(file));await fs.copyFile(file,target)}return files()});
+ ipcMain.handle('studio:open-library',async e=>{check(e);await fs.mkdir(library,{recursive:true});await shell.openPath(library);return true});
+ session.defaultSession.setPermissionRequestHandler((_webContents,_permission,callback)=>callback(false));
+ win=new BrowserWindow({width:1480,height:980,minWidth:1000,minHeight:700,backgroundColor:'#051426',title:'AI Studio',show:true,webPreferences:{preload:path.join(__dirname,'preload.cjs'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
+ win.webContents.on('did-fail-load',(_event,code,description)=>fs.appendFile(path.join(app.getPath('userData'),'startup.log'),String(code)+' '+description+'\n').catch(()=>{}));
+ function external(raw){try{const url=new URL(raw);if(url.protocol==='https:')shell.openExternal(url.href)}catch{}}
+ win.webContents.setWindowOpenHandler(({url})=>{external(url);return {action:'deny'}});
+ win.webContents.on('will-navigate',(e,url)=>{if(!url.startsWith(origin+'/')){e.preventDefault();external(url)}});
+ Menu.setApplicationMenu(Menu.buildFromTemplate([{label:'AI Studio',submenu:[{role:'reload',label:'Genindlæs'},{type:'separator'},{role:'quit',label:'Afslut'}]},{label:'Rediger',submenu:[{role:'undo',label:'Fortryd'},{role:'redo',label:'Gentag'},{type:'separator'},{role:'cut',label:'Klip'},{role:'copy',label:'Kopiér'},{role:'paste',label:'Indsæt'},{role:'selectAll',label:'Markér alt'}]},{label:'Vis',submenu:[{role:'resetZoom',label:'Normal størrelse'},{role:'zoomIn',label:'Større tekst'},{role:'zoomOut',label:'Mindre tekst'},{role:'togglefullscreen',label:'Fuld skærm'}]}]));
+ await win.loadURL(origin+'/stitch/promptswipe/');
+}).catch(async error=>{await fs.appendFile(path.join(app.getPath('userData'),'startup.log'),String(error.stack||error)+'\n').catch(()=>{});dialog.showErrorBox('AI Studio kunne ikke starte',String(error.message||error));app.quit()});
+app.on('window-all-closed',()=>app.quit());

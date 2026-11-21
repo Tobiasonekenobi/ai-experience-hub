@@ -8,7 +8,9 @@ Studiet har ét bibliotek med de 50 PromptSwipe-kort og 86 AI Scout-prompts. Kil
 
 Under Lær kan brugeren åbne alle 13 spor, vælge et modul, læse trinene, afprøve øvelsen og åbne de tilknyttede prompts direkte i studiet. Afkrydsning gemmes lokalt i browseren. Værktøjsoversigten viser de eksisterende beskrivelser og status. Videosamlingen åbnes via link til AI Scout; der er ikke downloadet eller flyttet videoer.
 
-AI Scouts online projektbygger, database, brugerkonti og betalte AI-kald er ikke flyttet. Der er endnu ikke bygget en Windows-installer. Desktopappen er den ønskede produktretning; dette er et gennemprøvet første forslag til dens indhold og samspil.
+AI Scouts online projektbygger, database, brugerkonti og betalte AI-kald er ikke flyttet. Desktopappen er den ønskede produktretning; browserudgaven er et gennemprøvet første forslag til dens indhold og samspil.
+
+Windows-kildekoden ligger i `desktop/`. En pakket programmappe kunne bygges, men Windows' programkontrol blokerede start af den nye eksekverbare fil. Installationsbygget fejlede også, da det skulle starte en genereret hjælpefil. Der leveres derfor ikke en færdig eller runtime-verificeret Windows-installation. Ingen sikkerhedsindstillinger er ændret. Det lokale materialebibliotek, lagring på harddisk og native eksport findes i kildekoden, men er ikke funktionstestet i Windows-appen.
 
 Ekstra browserkontrol: modulvalg, markering og fjernelse af gennemførelse, forbindelse fra øvelse til korrekt prompt, filtre for 86 AI Scout-prompts og 50 PromptSwipe-kort. Ingen konsolfejl registreret under kontrollen.
 

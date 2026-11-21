@@ -1,4 +1,5 @@
 import {tracks,tools} from './scout.js';
+if(window.desktopStudio&&!window.studioDesktopReady)await new Promise(resolve=>window.addEventListener('studio-desktop-ready',resolve,{once:true}));
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let completed;try{completed=JSON.parse(localStorage.getItem('aeh_studio_learning'))||[]}catch{completed=[]}if(!Array.isArray(completed))completed=[];

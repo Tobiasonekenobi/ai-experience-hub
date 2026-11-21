@@ -1,0 +1,47 @@
+{
+  "name": "scout-studio-desktop",
+  "version": "0.1.0",
+  "description": "AI Studio — Experience Hub, PromptSwipe og AI Scout samlet på computeren",
+  "author": "Tobias Bargmann",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "prepare-assets": "node prepare.mjs",
+    "start": "electron .",
+    "dist": "node prepare.mjs && electron-builder --win nsis --x64 --publish never"
+  },
+  "build": {
+    "appId": "dk.aiscout.studio",
+    "productName": "AI Studio",
+    "directories": {
+      "output": "../../../outputs/windows"
+    },
+    "files": [
+      "main.cjs",
+      "preload.cjs",
+      "assets/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false,
+      "artifactName": "AI-Studio-Setup-${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "runAfterFinish": false,
+      "deleteAppDataOnUninstall": false
+    }
+  },
+  "devDependencies": {
+    "@fontsource/manrope": "^5.3.0",
+    "@fontsource/space-grotesk": "^5.3.0",
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0"
+  }
+}

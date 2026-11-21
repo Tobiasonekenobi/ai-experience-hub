@@ -1,6 +1,7 @@
 import {cards as originalCards} from './cards.js';
 import {scoutCards} from './scout.js';
 const cards=[...originalCards.map(c=>({...c,source:'PromptSwipe'})),...scoutCards];
+if(window.desktopStudio&&!window.studioDesktopReady)await new Promise(resolve=>window.addEventListener('studio-desktop-ready',resolve,{once:true}));
 const $=id=>document.getElementById(id);
 const read=(key,fallback)=>{try{return JSON.parse(localStorage.getItem(key))??fallback}catch{return fallback}};
 const initial=read('aeh_studio_favorites',[]);
