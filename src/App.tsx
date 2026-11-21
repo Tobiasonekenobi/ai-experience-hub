@@ -77,7 +77,7 @@ function Grid({ items, fav }: { items: typeof EXPERIENCES; fav: Fav }) {
 }
 
 function Home({ fav }: { fav: Fav }) {
-  const week = expById('mission-control')!;
+  const week = expById('knowledge-galaxy')!;
   const popular = EXPERIENCES.filter((e) => e.status === 'demo');
   return (
     <>
@@ -94,16 +94,20 @@ function Home({ fav }: { fav: Fav }) {
       </section>
 
       <section className="section">
-        <h2 className="h-sec">Ugens oplevelse</h2>
         <a href={`#/x/${week.id}`} className="feature">
-          <Cover id={week.id} universe={week.universe} />
+          <div className="feature-art"><Cover id={week.id} universe={week.universe} /></div>
           <div className="feature-copy">
-            <span className="uni" style={{ color: universeById(week.universe).color }}>{universeById(week.universe).name}</span>
-            <h3>{week.title}</h3>
-            <p>{week.short} {week.wow}</p>
-            <span className="btn">Oplev nu</span>
+            <span className="eyebrow">✦ Ugens oplevelse</span>
+            <h2>Et helt univers venter.</h2>
+            <p>Besøg fem planeter, lær noget nyt og saml XP i {week.title}.</p>
+            <span className="btn white">▶ Start {week.title}</span>
           </div>
         </a>
+        <div className="stats">
+          <div><b>{EXPERIENCES.length}</b><span>Oplevelser</span></div>
+          <div><b>{UNIVERSES.length}</b><span>Universer</span></div>
+          <div><b>{EXPERIENCES.filter((e) => e.status === "demo").length}</b><span>Interaktive demoer</span></div>
+        </div>
       </section>
 
       <section className="section">
@@ -125,12 +129,7 @@ function Home({ fav }: { fav: Fav }) {
 
       <section className="section">
         <h2 className="h-sec">Alle 15 oplevelser</h2>
-        {UNIVERSES.map((u) => (
-          <div key={u.id} className="uni-block">
-            <h3 className="uni-h" style={{ color: u.color }}>{u.name}</h3>
-            <Grid items={EXPERIENCES.filter((e) => e.universe === u.id)} fav={fav} />
-          </div>
-        ))}
+        <Grid items={EXPERIENCES} fav={fav} />
       </section>
       <footer className="foot">AI Experience Hub · V0.2 prototype · 3 af 15 oplevelser er interaktive, resten er previews.</footer>
     </>

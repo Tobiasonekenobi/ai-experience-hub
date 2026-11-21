@@ -17,9 +17,9 @@ export function Card({ exp, fav, onFav, compact = false }: {
   const u = universeById(exp.universe);
   return (
     <article className={`card ${compact ? 'compact' : ''}`}>
-      <a href={`#/x/${exp.id}`} className="card-cover" aria-label={`Åbn ${exp.title}`}>
+      <a href={`#/x/${exp.id}`} className="card-cover" aria-label={`Åbn ${exp.title}`} tabIndex={-1}>
         <Cover id={exp.id} universe={exp.universe} />
-        <span className="card-nr">{String(exp.nr).padStart(2, '0')}</span>
+        <span className={`card-tag ${exp.status}`}>{exp.status === 'demo' ? '● Demo' : 'Preview'}</span>
       </a>
       <button
         className={`fav ${fav ? 'on' : ''}`}
@@ -32,11 +32,8 @@ export function Card({ exp, fav, onFav, compact = false }: {
       <div className="card-body">
         <span className="uni" style={{ color: u.color }}>{u.name}</span>
         <h3>{exp.title}</h3>
-        {!compact && <p>{exp.short}</p>}
-        <div className="card-foot">
-          <StatusBadge status={exp.status} />
-          <a className="btn sm" href={`#/x/${exp.id}`}>Oplev nu</a>
-        </div>
+        <p>{exp.short}</p>
+        <a className="card-cta" href={`#/x/${exp.id}`}>Oplev nu <span aria-hidden="true">→</span></a>
       </div>
     </article>
   );

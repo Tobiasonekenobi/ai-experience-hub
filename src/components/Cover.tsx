@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useId, type ReactNode } from 'react';
 
 /** Deterministisk pseudo-tilfældighed, så hvert cover altid ser ens ud. */
 function rng(seed: number) {
@@ -66,7 +66,7 @@ const art: Record<string, (id: string) => ReactNode> = {
     const nodes: [number, number, string][] = [[70, 50, C.o], [250, 45, C.c], [60, 150, C.v], [255, 150, C.g], [160, 30, C.gr]];
     return (
       <>
-        <rect x="0" y="0" width="320" height="200" fill="#1A2238" />
+        <rect x="0" y="0" width="320" height="200" fill="#1A2238" opacity={0.5} />
         {nodes.map(([x, y, c], i) => <path key={i} d={`M160 100 Q${(160 + x) / 2 + 15} ${(100 + y) / 2 - 10} ${x} ${y}`} fill="none" stroke={c} strokeWidth="3" strokeLinecap="round" />)}
         <ellipse cx="160" cy="100" rx="42" ry="24" fill={C.t} /><text x="160" y="105" textAnchor="middle" fontSize="14" fontWeight="700" fill={C.bg}>IDÉ</text>
         {nodes.map(([x, y, c], i) => <rect key={i} x={x - 22} y={y - 11} width="44" height="22" rx="11" fill="none" stroke={c} strokeWidth="2.5" />)}
@@ -117,7 +117,7 @@ const art: Record<string, (id: string) => ReactNode> = {
   },
   detective: () => (
     <>
-      <rect x="0" y="0" width="320" height="200" fill="#2A1E16" />
+      <rect x="0" y="0" width="320" height="200" fill="#2A1E16" opacity={0.55} />
       {[[30, 25, -4], [190, 20, 5], [110, 110, 3], [230, 115, -6]].map(([x, y, r], i) => (
         <g key={i} transform={`rotate(${r} ${x + 40} ${y + 30})`}><rect x={x} y={y} width="80" height="60" fill={i % 2 ? '#E9E2D0' : '#CFC6B0'} /><rect x={x + 6} y={y + 6} width="68" height="34" fill={i % 2 ? '#56607A' : '#3E4A63'} /></g>
       ))}
@@ -173,21 +173,43 @@ const art: Record<string, (id: string) => ReactNode> = {
   ),
 };
 
-const bgs: Record<string, [string, string]> = {
-  data: ['#0E1A33', '#0B1020'], visuel: ['#1C1433', '#0B1020'], viden: ['#1F1A10', '#0B1020'],
-  spil: ['#2A1610', '#0B1020'], kreativ: ['#0F2622', '#0B1020'],
+/** Farvetema pr. univers: baggrund (to toner) + to nebula-farver. */
+const THEME: Record<string, { bg: [string, string]; neb: [string, string] }> = {
+  data: { bg: ["#10234A", "#060A16"], neb: ["#4DD9E8", "#F28A3C"] },
+  visuel: { bg: ["#2A1650", "#07061A"], neb: ["#9B7CFF", "#FF5FA2"] },
+  viden: { bg: ["#2B2140", "#080816"], neb: ["#F0C36A", "#9B7CFF"] },
+  spil: { bg: ["#3A1A14", "#0A0710"], neb: ["#F28A3C", "#E5484D"] },
+  kreativ: { bg: ["#0E2E2C", "#050D12"], neb: ["#7BE0A6", "#4DD9E8"] },
 };
 
-export function Cover({ id, universe, className = '' }: { id: string; universe: string; className?: string }) {
-  const [a, b] = bgs[universe] ?? bgs.data;
-  const gid = `g-${id}`;
+export function Cover({ id, universe, className = "" }: { id: string; universe: string; className?: string }) {
+  const t = THEME[universe] ?? THEME.data;
+  const uid = useId().replace(/:/g, "");
+  const r = rng(id.split("").reduce((n, ch) => n + ch.charCodeAt(0), 0));
+  const blobs = [0, 1, 2].map((i) => ({ x: 40 + r() * 240, y: 20 + r() * 150, rx: 70 + r() * 70, ry: 40 + r() * 40, c: t.neb[i % 2], o: 0.35 + r() * 0.25 }));
   return (
     <svg className={`cover ${className}`} viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true">
       <defs>
-        <radialGradient id={gid} cx="70%" cy="20%" r="90%"><stop offset="0" stopColor={a} /><stop offset="1" stopColor={b} /></radialGradient>
+        <radialGradient id={`bg${uid}`} cx="65%" cy="25%" r="95%"><stop offset="0" stopColor={t.bg[0]} /><stop offset="1" stopColor={t.bg[1]} /></radialGradient>
+        <filter id={`neb${uid}`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22" /></filter>
+        <filter id={`glow${uid}`} x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3.2" result="b" />
+          <feColorMatrix in="b" type="saturate" values="1.6" result="b2" />
+          <feMerge><feMergeNode in="b2" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <radialGradient id={`vig${uid}`} cx="50%" cy="45%" r="75%"><stop offset=".55" stopColor="#000" stopOpacity="0" /><stop offset="1" stopColor="#000" stopOpacity=".65" /></radialGradient>
+        <linearGradient id={`sheen${uid}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#fff" stopOpacity=".14" /><stop offset=".35" stopColor="#fff" stopOpacity="0" /></linearGradient>
+        <pattern id={`grid${uid}`} width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#fff" strokeOpacity=".045" /></pattern>
       </defs>
-      <rect width="320" height="200" fill={`url(#${gid})`} />
-      {art[id]?.(id)}
+      <rect width="320" height="200" fill={`url(#bg${uid})`} />
+      <g filter={`url(#neb${uid})`}>
+        {blobs.map((b, i) => <ellipse key={i} cx={b.x} cy={b.y} rx={b.rx} ry={b.ry} fill={b.c} opacity={b.o} />)}
+      </g>
+      <rect width="320" height="200" fill={`url(#grid${uid})`} />
+      {stars(id.length * 31 + 7, 26)}
+      <g filter={`url(#glow${uid})`}>{art[id]?.(id)}</g>
+      <rect width="320" height="200" fill={`url(#sheen${uid})`} />
+      <rect width="320" height="200" fill={`url(#vig${uid})`} />
     </svg>
   );
 }

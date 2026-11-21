@@ -111,41 +111,53 @@ main { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
 
 /* Kort */
 .cover { display: block; width: 100%; height: 100%; }
-.grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-@media (min-width: 560px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 760px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; } }
+@media (min-width: 1100px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .card {
   position: relative; display: flex; flex-direction: column; border-radius: var(--r); overflow: hidden;
   background: linear-gradient(180deg, var(--card), var(--bg2)); border: 1px solid var(--line);
   transition: transform .2s, border-color .2s, box-shadow .2s;
 }
 .card:hover { transform: translateY(-3px); border-color: rgba(242, 138, 60, .45); box-shadow: 0 14px 40px -14px rgba(242, 138, 60, .35); }
-.card-cover { position: relative; display: block; aspect-ratio: 16 / 10; overflow: hidden; }
+.card-cover { position: relative; display: block; aspect-ratio: 1 / 1; overflow: hidden; }
+@media (min-width: 760px) { .card-cover { aspect-ratio: 4 / 3; } }
 .card-cover .cover { transition: transform .5s; }
 .card:hover .card-cover .cover { transform: scale(1.05); }
-.card-nr { position: absolute; left: 12px; top: 10px; font-size: .75rem; font-weight: 800; color: var(--t); background: rgba(11, 16, 32, .6); padding: 2px 8px; border-radius: 8px; }
+.card-tag { position: absolute; left: 8px; bottom: 8px; font-size: .68rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; background: rgba(11, 16, 32, .7); backdrop-filter: blur(6px); color: var(--m); }
+.card-tag.demo { color: var(--good); }
 .fav {
-  position: absolute; right: 10px; top: 10px; z-index: 2; width: 42px; height: 42px; border-radius: 50%;
+  position: absolute; right: 8px; top: 8px; z-index: 2; width: 42px; height: 42px; border-radius: 50%;
   border: 1px solid var(--line); background: rgba(11, 16, 32, .65); backdrop-filter: blur(6px); font-size: 1.2rem; line-height: 1;
 }
 .fav.on { color: var(--orange); border-color: rgba(242, 138, 60, .6); }
-.card-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
-.card-body h3 { font-size: 1.1rem; }
-.card-body p { color: var(--m); font-size: .92rem; margin: 2px 0 8px; }
-.card-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 6px; }
-.card.compact .card-body h3 { margin-bottom: 6px; }
+.card-body { padding: 10px 10px 12px; display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.card-body .uni { font-size: .64rem; }
+.card-body h3 { font-size: .98rem; }
+.card-body p { color: var(--m); font-size: .8rem; line-height: 1.35; margin: 2px 0 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card-cta { margin-top: auto; display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); font-size: .86rem; font-weight: 600; transition: background .2s, border-color .2s; }
+.card-cta:hover, .card:hover .card-cta { border-color: rgba(242, 138, 60, .6); background: rgba(242, 138, 60, .1); }
+@media (min-width: 760px) { .card-body { padding: 14px 16px 16px; } .card-body h3 { font-size: 1.1rem; } .card-body p { font-size: .88rem; } .card-body .uni { font-size: .72rem; } }
 
-.rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 72%); gap: 12px; overflow-x: auto; margin-inline: -16px; padding: 0 16px 6px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(170px, 46%); gap: 12px; overflow-x: auto; margin-inline: -16px; padding: 0 16px 6px; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .rail::-webkit-scrollbar { display: none; }
 .rail > * { scroll-snap-align: start; }
 @media (min-width: 860px) { .rail { grid-auto-columns: minmax(260px, 1fr); grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); overflow: visible; } }
 
-.feature { display: grid; border-radius: 22px; overflow: hidden; border: 1px solid rgba(240, 195, 106, .35); background: var(--card); box-shadow: 0 20px 60px -30px rgba(240, 195, 106, .5); }
-.feature .cover { aspect-ratio: 16 / 9; height: auto; }
-.feature-copy { padding: 18px; }
-.feature-copy h3 { font-size: 1.5rem; margin: 4px 0; }
-.feature-copy p { color: var(--m); margin-bottom: 14px; }
-@media (min-width: 760px) { .feature { grid-template-columns: 1.3fr 1fr; align-items: center; } .feature .cover { height: 100%; aspect-ratio: auto; min-height: 280px; } }
+.feature { display: block; border-radius: 24px; overflow: hidden; background: linear-gradient(180deg, #1B1733, var(--bg2)); border: 1px solid rgba(155, 124, 255, .3); box-shadow: 0 24px 70px -30px rgba(155, 124, 255, .55); }
+.feature-art { aspect-ratio: 16 / 11; overflow: hidden; }
+.feature-art .cover { transition: transform 1.2s ease; }
+.feature:hover .feature-art .cover { transform: scale(1.04); }
+.feature-copy { padding: 16px 16px 18px; }
+.feature-copy .eyebrow { color: var(--orange); margin-bottom: 6px; }
+.feature-copy h2 { font-size: 1.6rem; }
+.feature-copy p { color: var(--m); margin: 6px 0 14px; }
+.btn.white { width: 100%; background: #fff; color: #10131F; box-shadow: 0 8px 30px -8px rgba(255, 255, 255, .35); }
+@media (min-width: 760px) { .feature { display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; } .feature-art { aspect-ratio: auto; height: 100%; min-height: 320px; } .feature-copy { padding: 28px; } .feature-copy h2 { font-size: 2rem; } .btn.white { width: auto; } }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+.stats div { padding: 12px; border-radius: 14px; background: var(--bg2); border: 1px solid var(--line); }
+.stats b { display: block; font-size: 1.6rem; line-height: 1.1; }
+.stats span { font-size: .74rem; color: var(--m); }
 
 .unis { display: grid; grid-template-columns: 1fr; gap: 10px; }
 @media (min-width: 600px) { .unis { grid-template-columns: repeat(2, 1fr); } }
