@@ -1,0 +1,230 @@
+import { lazy, Suspense, useEffect, useMemo, useState } from 'react';
+import { EXPERIENCES, UNIVERSES, expById, universeById, type UniverseId } from './data/experiences';
+import { Card, StatusBadge } from './components/Card';
+import { Cover } from './components/Cover';
+import { load, pushRecent, useFavorites } from './lib/store';
+import Preview from './experiences/Preview';
+
+const DEMOS: Partial<Record<string, ReturnType<typeof lazy>>> = {
+  'mission-control': lazy(() => import('./experiences/MissionControl')),
+  'future-simulator': lazy(() => import('./experiences/FutureSimulator')),
+  'knowledge-galaxy': lazy(() => import('./experiences/KnowledgeGalaxy')),
+};
+
+type Route = { page: 'opdag' } | { page: 'udforsk'; uni?: UniverseId } | { page: 'gemte' } | { page: 'x'; id: string };
+
+function parse(hash: string): Route {
+  const [, a, b] = hash.replace(/^#/, '').split('/');
+  if (a === 'udforsk') return { page: 'udforsk', uni: (UNIVERSES.some((u) => u.id === b) ? b : undefined) as UniverseId | undefined };
+  if (a === 'gemte') return { page: 'gemte' };
+  if (a === 'x' && b && expById(b)) return { page: 'x', id: b };
+  return { page: 'opdag' };
+}
+
+function useRoute() {
+  const [route, setRoute] = useState(() => parse(location.hash));
+  useEffect(() => {
+    const on = () => { setRoute(parse(location.hash)); window.scrollTo(0, 0); };
+    window.addEventListener('hashchange', on);
+    return () => window.removeEventListener('hashchange', on);
+  }, []);
+  return route;
+}
+
+const NAV = [
+  { page: 'opdag', href: '#/', label: 'Opdag', icon: '✦' },
+  { page: 'udforsk', href: '#/udforsk', label: 'Udforsk', icon: '◎' },
+  { page: 'gemte', href: '#/gemte', label: 'Gemte', icon: '♥' },
+] as const;
+
+export default function App() {
+  const route = useRoute();
+  const fav = useFavorites();
+  const active = route.page === 'x' ? '' : route.page;
+
+  return (
+    <div className="app">
+      <header className="top">
+        <a href="#/" className="logo" aria-label="AI Experience Hub – forside"><span className="logo-mark">◆</span> Experience Hub</a>
+        <nav className="top-nav" aria-label="Hovedmenu">
+          {NAV.map((n) => <a key={n.page} href={n.href} className={active === n.page ? 'on' : ''} aria-current={active === n.page ? 'page' : undefined}>{n.label}</a>)}
+        </nav>
+        <a href="#/udforsk" className="top-search" aria-label="Søg i oplevelser">⌕ <span>Søg</span></a>
+      </header>
+
+      <main id="main">
+        {route.page === 'opdag' && <Home fav={fav} />}
+        {route.page === 'udforsk' && <Explore fav={fav} uni={route.uni} />}
+        {route.page === 'gemte' && <Saved fav={fav} />}
+        {route.page === 'x' && <ExperiencePage id={route.id} fav={fav} />}
+      </main>
+
+      <nav className="bottom-nav" aria-label="Mobilmenu">
+        {NAV.map((n) => (
+          <a key={n.page} href={n.href} className={active === n.page ? 'on' : ''} aria-current={active === n.page ? 'page' : undefined}>
+            <span aria-hidden="true">{n.icon}</span>{n.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
+type Fav = ReturnType<typeof useFavorites>;
+
+function Grid({ items, fav }: { items: typeof EXPERIENCES; fav: Fav }) {
+  return <div className="grid">{items.map((e) => <Card key={e.id} exp={e} fav={fav.isFav(e.id)} onFav={fav.toggle} />)}</div>;
+}
+
+function Home({ fav }: { fav: Fav }) {
+  const week = expById('mission-control')!;
+  const popular = EXPERIENCES.filter((e) => e.status === 'demo');
+  return (
+    <>
+      <section className="hero">
+        <div className="hero-bg" aria-hidden="true">
+          {EXPERIENCES.slice(0, 6).map((e, i) => <div key={e.id} className={`hero-tile t${i}`}><Cover id={e.id} universe={e.universe} /></div>)}
+        </div>
+        <div className="hero-copy">
+          <span className="eyebrow">Tryk. Oplev. Udforsk.</span>
+          <h1>En verden af oplevelser venter</h1>
+          <p>15 oplevelser i fem universer – fra kontrolcentre og fremtidsscenarier til galakser af viden.</p>
+          <a href="#/udforsk" className="btn lg">Udforsk oplevelser</a>
+        </div>
+      </section>
+
+      <section className="section">
+        <h2 className="h-sec">Ugens oplevelse</h2>
+        <a href={`#/x/${week.id}`} className="feature">
+          <Cover id={week.id} universe={week.universe} />
+          <div className="feature-copy">
+            <span className="uni" style={{ color: universeById(week.universe).color }}>{universeById(week.universe).name}</span>
+            <h3>{week.title}</h3>
+            <p>{week.short} {week.wow}</p>
+            <span className="btn">Oplev nu</span>
+          </div>
+        </a>
+      </section>
+
+      <section className="section">
+        <h2 className="h-sec">Populære lige nu</h2>
+        <div className="rail">{popular.map((e) => <Card key={e.id} exp={e} fav={fav.isFav(e.id)} onFav={fav.toggle} compact />)}</div>
+      </section>
+
+      <section className="section">
+        <h2 className="h-sec">Fem universer</h2>
+        <div className="unis">
+          {UNIVERSES.map((u) => (
+            <a key={u.id} href={`#/udforsk/${u.id}`} className="uni-card" style={{ ['--c' as string]: u.color }}>
+              <strong>{u.name}</strong><small>{u.tagline}</small>
+              <span className="uni-count">{EXPERIENCES.filter((e) => e.universe === u.id).length} oplevelser →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <h2 className="h-sec">Alle 15 oplevelser</h2>
+        {UNIVERSES.map((u) => (
+          <div key={u.id} className="uni-block">
+            <h3 className="uni-h" style={{ color: u.color }}>{u.name}</h3>
+            <Grid items={EXPERIENCES.filter((e) => e.universe === u.id)} fav={fav} />
+          </div>
+        ))}
+      </section>
+      <footer className="foot">AI Experience Hub · V0.2 prototype · 3 af 15 oplevelser er interaktive, resten er previews.</footer>
+    </>
+  );
+}
+
+function Explore({ fav, uni }: { fav: Fav; uni?: UniverseId }) {
+  const [q, setQ] = useState('');
+  const [status, setStatus] = useState<'alle' | 'demo' | 'preview'>('alle');
+  const items = useMemo(() => {
+    const s = q.trim().toLowerCase();
+    return EXPERIENCES.filter((e) =>
+      (!uni || e.universe === uni) &&
+      (status === 'alle' || e.status === status) &&
+      (!s || [e.title, e.short, e.concept, universeById(e.universe).name, ...e.features].join(' ').toLowerCase().includes(s)));
+  }, [q, uni, status]);
+
+  return (
+    <section className="section">
+      <h1 className="h-page">Udforsk</h1>
+      <label className="search">
+        <span aria-hidden="true">⌕</span>
+        <input type="search" placeholder="Søg efter oplevelse, emne eller funktion" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Søg" />
+      </label>
+      <div className="chips scroll" role="group" aria-label="Filtrér univers">
+        <a href="#/udforsk" className={`chip ${!uni ? 'on' : ''}`}>Alle</a>
+        {UNIVERSES.map((u) => <a key={u.id} href={`#/udforsk/${u.id}`} className={`chip ${uni === u.id ? 'on' : ''}`}>{u.name}</a>)}
+      </div>
+      <div className="chips" role="group" aria-label="Filtrér status">
+        {(['alle', 'demo', 'preview'] as const).map((s) => (
+          <button key={s} className={`chip ${status === s ? 'on' : ''}`} onClick={() => setStatus(s)}>{s === 'alle' ? 'Alle typer' : s === 'demo' ? 'Interaktive demoer' : 'Previews'}</button>
+        ))}
+      </div>
+      <p className="muted" aria-live="polite">{items.length} {items.length === 1 ? 'oplevelse' : 'oplevelser'}</p>
+      {items.length ? <Grid items={items} fav={fav} /> : (
+        <div className="empty-box">Ingen oplevelser matcher «{q}». <button className="link" onClick={() => { setQ(''); setStatus('alle'); }}>Ryd søgning</button></div>
+      )}
+    </section>
+  );
+}
+
+function Saved({ fav }: { fav: Fav }) {
+  const recent = load<string[]>('recent', []).map(expById).filter(Boolean) as typeof EXPERIENCES;
+  const favs = fav.favs.map(expById).filter(Boolean) as typeof EXPERIENCES;
+  return (
+    <section className="section">
+      <h1 className="h-page">Gemte</h1>
+      <h2 className="h-sec">Favoritter</h2>
+      {favs.length ? <Grid items={favs} fav={fav} /> : <div className="empty-box">Tryk på ♡ på en oplevelse for at gemme den her.</div>}
+      <h2 className="h-sec">Senest besøgte</h2>
+      {recent.length ? <div className="rail">{recent.map((e) => <Card key={e.id} exp={e} fav={fav.isFav(e.id)} onFav={fav.toggle} compact />)}</div>
+        : <div className="empty-box">Du har ikke åbnet nogen oplevelser endnu. <a className="link" href="#/udforsk">Udforsk</a></div>}
+    </section>
+  );
+}
+
+function ExperiencePage({ id, fav }: { id: string; fav: Fav }) {
+  const exp = expById(id)!;
+  const u = universeById(exp.universe);
+  const Demo = DEMOS[id];
+  const [full, setFull] = useState(false);
+  useEffect(() => pushRecent(id), [id]);
+
+  const toggleFull = async () => {
+    try {
+      if (!document.fullscreenElement) { await document.documentElement.requestFullscreen(); setFull(true); }
+      else { await document.exitFullscreen(); setFull(false); }
+    } catch { /* fuldskærm understøttes ikke her */ }
+  };
+  useEffect(() => {
+    const on = () => setFull(!!document.fullscreenElement);
+    document.addEventListener('fullscreenchange', on);
+    return () => document.removeEventListener('fullscreenchange', on);
+  }, []);
+
+  return (
+    <section className="section xp">
+      <div className="xp-bar">
+        <button className="btn ghost sm" onClick={() => (history.length > 1 ? history.back() : (location.hash = '#/'))}>← Tilbage</button>
+        <div className="xp-actions">
+          {Demo && document.fullscreenEnabled && <button className="btn ghost sm" onClick={toggleFull}>{full ? 'Luk fuldskærm' : 'Fuldskærm'}</button>}
+          <button className={`btn ghost sm ${fav.isFav(id) ? 'fav-on' : ''}`} onClick={() => fav.toggle(id)} aria-pressed={fav.isFav(id)}>{fav.isFav(id) ? '♥ Gemt' : '♡ Gem'}</button>
+        </div>
+      </div>
+      <div className="xp-head">
+        <Cover id={exp.id} universe={exp.universe} className="xp-cover" />
+        <div className="xp-title">
+          <span className="uni" style={{ color: u.color }}>{u.name} · {String(exp.nr).padStart(2, '0')}</span>
+          <h1>{exp.title}</h1>
+          <p>{exp.short}</p>
+          <StatusBadge status={exp.status} />
+        </div>
+      </div>
+      {Demo ? <Suspense fallback={<div className="loading">Indlæser oplevelse…</div>}><Demo /></Suspense> : <Preview exp={exp} />}
+    </section>
+  );
+}
