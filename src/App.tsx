@@ -7,6 +7,7 @@ import Preview from './experiences/Preview';
 import { Boundary } from './components/Boundary';
 import { BuildPage } from './components/Build';
 import { LearnHub, LearnLinks } from './components/LearnHub';
+import { DashboardBuilder } from './components/Dashboard';
 
 const GalaxyScene = lazy(() => import('./components/GalaxyScene').then((m) => ({ default: m.GalaxyScene })));
 
@@ -28,7 +29,7 @@ const DEMOS: Partial<Record<string, ReturnType<typeof lazy>>> = {
   storyboard: lazy(() => import('./experiences/Storyboard')),
 };
 
-type Route = { page: 'laer'; track?: UniverseId; module?: string } | { page: 'byg' } | { page: 'opdag' } | { page: 'udforsk'; uni?: UniverseId } | { page: 'gemte' } | { page: 'x'; id: string };
+type Route = { page: 'dash' } | { page: 'laer'; track?: UniverseId; module?: string } | { page: 'byg' } | { page: 'opdag' } | { page: 'udforsk'; uni?: UniverseId } | { page: 'gemte' } | { page: 'x'; id: string };
 
 function parse(hash: string): Route {
   const [, a, b, c] = hash.replace(/^#/, '').split('/');
@@ -36,6 +37,7 @@ function parse(hash: string): Route {
   if (a === 'udforsk') return { page: 'udforsk', uni: (UNIVERSES.some((u) => u.id === b) ? b : undefined) as UniverseId | undefined };
   if (a === 'gemte') return { page: 'gemte' };
   if (a === 'byg') return { page: 'byg' };
+  if (a === 'dashboard') return { page: 'dash' };
   if (a === 'x' && b && expById(b)) return { page: 'x', id: b };
   return { page: 'opdag' };
 }
@@ -55,6 +57,7 @@ const NAV = [
   { page: 'udforsk', href: '#/udforsk', label: 'Udforsk', icon: '◎' },
   { page: 'gemte', href: '#/gemte', label: 'Gemte', icon: '♥' },
   { page: 'laer', href: '#/laer', label: 'Lær AI', icon: '✚' },
+  { page: 'dash', href: '#/dashboard', label: 'Dashboard', icon: '▦' },
 ] as const;
 
 export default function App() {
@@ -77,6 +80,7 @@ export default function App() {
         {route.page === 'udforsk' && <Explore fav={fav} uni={route.uni} />}
         {route.page === 'gemte' && <Saved fav={fav} />}
         {route.page === 'byg' && <BuildPage />}
+        {route.page === 'dash' && <DashboardBuilder />}
         {route.page === 'laer' && <LearnHub track={route.track} module={route.module} />}
         {route.page === 'x' && <ExperiencePage id={route.id} fav={fav} />}
       </main>
