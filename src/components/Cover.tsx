@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from 'react';
+import { useId, useState, type ReactNode } from 'react';
 
 /** Deterministisk pseudo-tilfældighed, så hvert cover altid ser ens ud. */
 function rng(seed: number) {
@@ -182,7 +182,7 @@ const THEME: Record<string, { bg: [string, string]; neb: [string, string] }> = {
   kreativ: { bg: ["#0E2E2C", "#050D12"], neb: ["#7BE0A6", "#4DD9E8"] },
 };
 
-export function Cover({ id, universe, className = "" }: { id: string; universe: string; className?: string }) {
+function ArtCover({ id, universe, className = "" }: { id: string; universe: string; className?: string }) {
   const t = THEME[universe] ?? THEME.data;
   const uid = useId().replace(/:/g, "");
   const r = rng(id.split("").reduce((n, ch) => n + ch.charCodeAt(0), 0));
@@ -211,5 +211,23 @@ export function Cover({ id, universe, className = "" }: { id: string; universe: 
       <rect width="320" height="200" fill={`url(#sheen${uid})`} />
       <rect width="320" height="200" fill={`url(#vig${uid})`} />
     </svg>
+  );
+}
+
+// AI-genererede cover-billeder (public/img/<id>.webp). Falder tilbage til det tegnede SVG-cover,
+// hvis billedet ikke kan hentes.
+export function Cover({ id, universe, className = "", eager = false }: { id: string; universe: string; className?: string; eager?: boolean }) {
+  const [failed, setFailed] = useState(false);
+  if (failed) return <ArtCover id={id} universe={universe} className={className} />;
+  return (
+    <img
+      className={`cover photo ${className}`}
+      src={`${import.meta.env.BASE_URL}img/${id}.webp`}
+      alt=""
+      aria-hidden="true"
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+      onError={() => setFailed(true)}
+    />
   );
 }

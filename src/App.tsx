@@ -5,6 +5,8 @@ import { Cover } from './components/Cover';
 import { load, pushRecent, useFavorites } from './lib/store';
 import Preview from './experiences/Preview';
 
+const GalaxyScene = lazy(() => import('./components/GalaxyScene').then((m) => ({ default: m.GalaxyScene })));
+
 const DEMOS: Partial<Record<string, ReturnType<typeof lazy>>> = {
   'mission-control': lazy(() => import('./experiences/MissionControl')),
   'future-simulator': lazy(() => import('./experiences/FutureSimulator')),
@@ -83,7 +85,8 @@ function Home({ fav }: { fav: Fav }) {
     <>
       <section className="hero">
         <div className="hero-bg" aria-hidden="true">
-          {EXPERIENCES.slice(0, 6).map((e, i) => <div key={e.id} className={`hero-tile t${i}`}><Cover id={e.id} universe={e.universe} /></div>)}
+          <img className="hero-img" src={`${import.meta.env.BASE_URL}img/hero.webp`} alt="" />
+          <Suspense fallback={null}><GalaxyScene /></Suspense>
         </div>
         <div className="hero-copy">
           <span className="eyebrow">Tryk. Oplev. Udforsk.</span>
@@ -95,7 +98,7 @@ function Home({ fav }: { fav: Fav }) {
 
       <section className="section">
         <a href={`#/x/${week.id}`} className="feature">
-          <div className="feature-art"><Cover id={week.id} universe={week.universe} /></div>
+          <div className="feature-art"><Cover id={week.id} universe={week.universe} eager /></div>
           <div className="feature-copy">
             <span className="eyebrow">✦ Ugens oplevelse</span>
             <h2>Et helt univers venter.</h2>
