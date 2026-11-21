@@ -14,6 +14,11 @@ export interface Module {
   task: string; // praktisk opgave i brugerens egne AI-værktøjer
   prompt: string; // færdig prompt der kan kopieres
   quiz: Question[];
+  // Udvidet indhold (nyt niveau)
+  sections?: { h: string; p: string[] }[];
+  example?: { title: string; bad: string; good: string; why: string };
+  mistakes?: string[];
+  widget?: 'nextword' | 'promptbuilder' | 'tokens' | 'factcheck';
 }
 
 export interface Track { universe: UniverseId; title: string; intro: string; modules: Module[] }
@@ -23,51 +28,158 @@ export const TRACKS: Track[] = [
     universe: 'viden', title: 'Forstå AI', intro: 'Hvad der foregår inde i en sprogmodel – og hvordan du taler med den. Start her.',
     modules: [
       {
-        id: 'sprogmodel', title: 'Hvad er en sprogmodel?', minutes: 8,
-        lesson: 'Claude, ChatGPT og Gemini er sprogmodeller. De er trænet på enorme mængder tekst og har lært mønstre i sproget. Når du skriver noget, beregner modellen, hvilket stykke tekst der sandsynligvis skal komme næst – igen og igen, til svaret er færdigt. Den slår ikke svar op i en database; den genererer dem.',
-        points: ['Modellen forudsiger tekst ud fra mønstre, den har lært.', 'Den har ingen indbygget fakta-database – den kan tage fejl.', 'Der er tilfældighed med i ordvalget, så to svar på samme spørgsmål kan variere.'],
-        demo: 'ai-brain', demoWhy: 'Se et lille neuralt netværk lære et mønster fra eksempler. Sprogmodeller lærer på samme grundprincip – bare i en helt anden størrelse.',
-        task: 'Stil det samme spørgsmål til to forskellige AI’er (fx Claude og ChatGPT) og sammenlign svarene. Stil derefter spørgsmålet igen i en ny chat og se, om svaret ændrer sig.',
-        prompt: 'Forklar mig som om jeg var 12 år, hvordan du som sprogmodel finder på dit svar. Fortæl også ærligt, hvad du er dårlig til.',
+        id: 'sprogmodel', title: 'Hvad er en sprogmodel?', minutes: 12, widget: 'nextword',
+        lesson: 'Claude, ChatGPT og Gemini er sprogmodeller. De føles som en samtalepartner, men under motorhjelmen sker der noget overraskende simpelt: de forudsiger tekst – ét lille stykke ad gangen. Når du forstår det, forstår du også, hvorfor AI kan være genial i det ene øjeblik og forkert i det næste.',
+        sections: [
+          { h: 'Autofuldførelse – bare meget, meget bedre', p: [
+            'Når du skriver en sms, foreslår telefonen det næste ord. En sprogmodel gør i bund og grund det samme. Forskellen er, at den har lært af enorme mængder tekst – bøger, artikler, hjemmesider og kode – og derfor har fanget mønstre i både sprog, viden og måder at ræsonnere på.',
+            'Når du stiller et spørgsmål, regner modellen ud, hvilket stykke tekst der mest sandsynligt skal komme næst. Den tilføjer det, kigger på det hele igen, og vælger det næste stykke. Sådan fortsætter den, indtil svaret er færdigt. Et langt svar er altså hundredvis af små forudsigelser i træk.',
+          ] },
+          { h: 'Træning: milliarder af små justeringer', p: [
+            'Under træningen får modellen tekst, hvor den skal gætte det næste stykke. Hver gang den gætter forkert, justeres dens indre tal – kaldet vægte – en lille smule. Store modeller har milliarder af vægte, og efter rigtig mange runder er mønstrene i sproget bygget ind i dem.',
+            'Bagefter bliver modellen finjusteret med eksempler og menneskelig feedback, så den svarer hjælpsomt i en samtale i stedet for bare at fortsætte en tilfældig tekst. Det er derfor, den føles som en assistent.',
+          ] },
+          { h: 'Ingen database – men mønstre', p: [
+            'En sprogmodel slår ikke svaret op i et leksikon. Dens viden ligger spredt ud som mønstre i vægtene. Det gør den fleksibel – den kan formulere sig om næsten alt – men det betyder også, at den kan sige noget forkert med stor selvsikkerhed.',
+            'Modellen har desuden en skæringsdato: den kender kun til det, der var med i træningsdataene. Nyere ting ved den kun noget om, hvis den har adgang til websøgning, eller hvis du selv giver den teksten.',
+          ] },
+          { h: 'Hvorfor svaret ændrer sig', p: [
+            'Ved hvert skridt har modellen en liste af mulige næste ord med hver sin sandsynlighed. Den vælger ikke altid den mest sandsynlige. En indstilling, der ofte kaldes temperatur, styrer, hvor meget tilfældighed der er med. Derfor kan du stille det samme spørgsmål to gange og få to forskellige formuleringer.',
+            'Det er en fordel, når du vil have idéer og variation, og en ulempe, når du har brug for præcis det samme hver gang.',
+          ] },
+          { h: 'Claude, ChatGPT og Gemini', p: [
+            'De tre er forskellige sprogmodeller fra hver sit firma – Anthropic, OpenAI og Google. De er trænet på forskellige data og har forskellige styrker, men grundprincippet er det samme. Derfor kan det betale sig at prøve den samme opgave i flere af dem.',
+          ] },
+        ],
+        points: ['En sprogmodel forudsiger tekst – ét stykke ad gangen.', 'Viden ligger som mønstre, ikke som en database – derfor kan den tage fejl.', 'Den har en skæringsdato for sin viden.', 'Tilfældighed (temperatur) gør, at svarene varierer.'],
+        mistakes: ['At tro, at AI’en «slår op» i en database og derfor altid har ret.', 'At tro, at den kender til nyheder fra i går uden at have websøgning.', 'At forvente præcis det samme svar, hver gang du spørger.'],
+        demo: 'ai-brain', demoWhy: 'Se et lille neuralt netværk lære et mønster fra eksempler ved at justere sine vægte. Sprogmodeller lærer på samme grundprincip – bare i en helt anden størrelse.',
+        task: 'Stil det samme spørgsmål til to forskellige AI’er (fx Claude og ChatGPT) og sammenlign svarene. Stil derefter spørgsmålet igen i en ny chat og se, om formuleringen ændrer sig.',
+        prompt: 'Forklar mig som om jeg var 12 år, hvordan du som sprogmodel finder på dit svar. Fortæl også ærligt, hvad du er dårlig til, og hvornår jeg bør dobbelttjekke dig.',
         quiz: [
           { q: 'Hvad gør en sprogmodel grundlæggende, når den svarer?', opts: ['Slår svaret op i en database', 'Forudsiger sandsynlig tekst ud fra lærte mønstre', 'Søger altid på internettet'], a: 1, why: 'Den genererer tekst bid for bid ud fra mønstre fra træningen.' },
-          { q: 'Hvorfor kan du få to forskellige svar på samme spørgsmål?', opts: ['Fordi der er tilfældighed i ordvalget', 'Fordi modellen er gået i stykker', 'Det kan man ikke'], a: 0, why: 'Modellen vælger blandt sandsynlige ord, og der er bevidst lidt variation.' },
+          { q: 'Hvorfor kan du få to forskellige svar på samme spørgsmål?', opts: ['Fordi der er tilfældighed i ordvalget', 'Fordi modellen er gået i stykker', 'Det kan man ikke'], a: 0, why: 'Modellen vælger blandt sandsynlige ord, og temperaturen styrer variationen.' },
+          { q: 'Hvad betyder det, at modellen har en skæringsdato?', opts: ['At den slukker på en bestemt dato', 'At den ikke kender til ting efter træningen, medmindre den får nye kilder', 'At den kun virker i hverdagene'], a: 1, why: 'Nyere viden kræver websøgning eller tekst, du selv giver den.' },
         ],
       },
       {
-        id: 'prompt', title: 'Den gode prompt', minutes: 10,
-        lesson: 'En prompt er din besked til AI’en. Jo tydeligere du er, jo bedre bliver svaret. En god prompt fortæller AI’en hvem den skal være, hvad målet er, hvilken baggrund den skal kende, og hvordan svaret skal se ud. Eksempler på det du vil have er ofte det allerstærkeste værktøj.',
-        points: ['Rolle: «Du er en erfaren …»', 'Mål og kontekst: hvad skal løses, og hvad skal AI’en vide?', 'Format: liste, tabel, længde, tone.', 'Eksempler: vis det, du vil have, i stedet for kun at beskrive det.'],
-        demo: 'design-playground', demoWhy: 'Ligesom hvert valg her ændrer designet med det samme, ændrer hver del af din prompt svaret.',
-        task: 'Tag en prompt, du har brugt for nylig. Omskriv den med rolle, mål, kontekst og format, og sammenlign de to svar.',
-        prompt: 'Du er en erfaren [rolle]. Mit mål er [mål]. Baggrund: [det AI’en skal vide]. Giv mig svaret som [format, fx 5 punkter]. Stil mig gerne spørgsmål først, hvis noget er uklart.',
+        id: 'prompt', title: 'Den gode prompt', minutes: 14, widget: 'promptbuilder',
+        lesson: 'Den største forskel på et middelmådigt og et fremragende AI-svar er sjældent modellen – det er prompten. En prompt er bare din besked til AI’en, men nogle få byggesten gør en enorm forskel. Her lærer du dem, og hvordan du forbedrer et svar i stedet for at starte forfra.',
+        sections: [
+          { h: 'Tal til den som til en dygtig, ny kollega', p: [
+            'Forestil dig en meget klog kollega på sin første arbejdsdag. Personen kan næsten alt, men kender intet til dig, dit projekt eller hvad du mener med «gør det lidt pænere». Alt det, du ikke siger, må kollegaen gætte på.',
+            'Sådan er det også med AI. Et vagt spørgsmål giver et gennemsnitligt svar, fordi modellen udfylder hullerne med det mest almindelige. Jo mere af din situation du deler, jo mere passer svaret til dig.',
+          ] },
+          { h: 'De seks byggesten', p: [
+            'Rolle: hvem skal AI’en være? «Du er en erfaren økonomirådgiver.» Det sætter niveau og stemme.',
+            'Mål: hvad skal resultatet bruges til? «Jeg skal overbevise min chef om …»',
+            'Kontekst: det AI’en skal vide – målgruppe, baggrund, begrænsninger, tal.',
+            'Format: hvordan svaret skal se ud – punktliste, tabel, antal ord, overskrifter.',
+            'Tone: formel, venlig, kort og kontant, humoristisk.',
+            'Eksempler: vis det, du kan lide. Det er ofte det allerstærkeste værktøj.',
+          ] },
+          { h: 'Vis – lad være med kun at fortælle', p: [
+            'Det er svært at beskrive en stil med ord. Det er let at vise den. Indsæt et eksempel på en tekst, du kan lide, og skriv «skriv i samme stil». Eller giv to-tre eksempler på input og ønsket output, så modellen kan se mønstret.',
+          ] },
+          { h: 'Lad AI’en stille spørgsmål', p: [
+            'Ved større opgaver: slut prompten med «Stil mig de vigtigste spørgsmål, før du går i gang». Så finder AI’en selv hullerne i din beskrivelse, og du slipper for at gætte, hvad den mangler.',
+          ] },
+          { h: 'Forbedr svaret – start ikke forfra', p: [
+            'Det første svar er et udkast. Giv konkret feedback: «Kortere», «mere uformel», «fjern punkt 3», «gør afslutningen stærkere». Små, præcise rettelser giver bedre resultater end en helt ny prompt, fordi AI’en bygger videre på det, der allerede virker.',
+          ] },
+        ],
+        example: {
+          title: 'Samme opgave – to prompts',
+          bad: 'Skriv et opslag om min butik.',
+          good: 'Du er tekstforfatter for små butikker. Skriv et Facebook-opslag til min cykelbutik om 20 % rabat på børnecykler i påskeugen. Målgruppe: børnefamilier. Max 80 ord, venlig og jordnær tone, højst 2 emojis. Afslut med en opfordring til at kigge forbi.',
+          why: 'Den gode prompt fortæller rolle, mål, målgruppe, længde og tone. AI’en skal ikke gætte – og du skal ikke rette så meget bagefter.',
+        },
+        points: ['Alt, du ikke siger, gætter AI’en på.', 'Byggesten: rolle, mål, kontekst, format, tone, eksempler.', 'Eksempler slår lange beskrivelser.', 'Ret med konkret feedback i stedet for at starte forfra.'],
+        mistakes: ['At skrive én linje og blive skuffet over et generisk svar.', 'At proppe fem forskellige opgaver ind i én prompt.', 'At acceptere det første svar i stedet for at forbedre det.'],
+        demo: 'design-playground', demoWhy: 'Ligesom hvert valg her ændrer designet med det samme, ændrer hver byggesten i din prompt svaret.',
+        task: 'Tag en prompt, du har brugt for nylig. Omskriv den med mindst fire af de seks byggesten, og sammenlign de to svar side om side.',
+        prompt: 'Du er en erfaren [rolle]. Mit mål er [mål]. Baggrund: [det AI’en skal vide]. Målgruppe: [hvem]. Giv mig svaret som [format, fx 5 punkter], i en [tone] tone. Stil mig de vigtigste spørgsmål først, hvis noget er uklart.',
         quiz: [
           { q: 'Hvilken prompt giver typisk det bedste svar?', opts: ['«Skriv en mail»', '«Skriv en kort, venlig mail til min chef om fri fredag. Max 5 linjer.»', '«Mail. Fri.»'], a: 1, why: 'Den har mål, modtager, tone og længde.' },
           { q: 'Hvad er ofte den stærkeste måde at få det format, du vil have?', opts: ['At skrive i store bogstaver', 'At vise et eksempel', 'At skrive «vær god»'], a: 1, why: 'Eksempler viser præcist, hvad du mener.' },
+          { q: 'Svaret er for langt og for formelt. Hvad gør du?', opts: ['Skriver hele prompten forfra', 'Skriver «Gør det halvt så langt og mere uformelt»', 'Prøver en anden AI'], a: 1, why: 'Konkret feedback bygger videre på det, der virker.' },
         ],
       },
       {
-        id: 'kontekst', title: 'Tokens og hukommelse', minutes: 7,
-        lesson: 'AI’en læser tekst som «tokens» – små stykker af ord. Den kan kun tage højde for en begrænset mængde tekst ad gangen: kontekstvinduet. I meget lange samtaler kan tidlige detaljer blive overset. Derfor er det ofte bedre at starte en ny samtale med en god opsummering end at fortsætte i det uendelige.',
-        points: ['Tokens = ordstykker; både din tekst og svaret tæller.', 'Kontekstvinduet er AI’ens «arbejdshukommelse».', 'Lange chats: opsummér og start forfra.'],
+        id: 'kontekst', title: 'Tokens og hukommelse', minutes: 11, widget: 'tokens',
+        lesson: 'Har du oplevet, at en AI pludselig «glemmer» noget, I aftalte tidligere i samtalen? Det skyldes, at AI’en har en begrænset arbejdshukommelse. Når du forstår tokens og kontekstvinduet, ved du, hvornår du skal starte forfra – og hvordan du gør det uden at miste noget.',
+        sections: [
+          { h: 'AI’en læser i tokens', p: [
+            'En sprogmodel ser ikke bogstaver eller hele ord, men tokens: små stykker tekst. Korte, almindelige ord er ofte ét token. Lange eller sjældne ord deles i flere. Som tommelfingerregel svarer et token på engelsk til omkring fire tegn – på dansk med lange, sammensatte ord bliver det ofte flere tokens for den samme tekst.',
+          ] },
+          { h: 'Kontekstvinduet er arbejdshukommelsen', p: [
+            'Alt, hvad AI’en kan tage højde for i et svar, skal være inde i kontekstvinduet: dine beskeder, dens svar, vedhæftede filer og de instruktioner, tjenesten selv lægger ind. Moderne modeller har store vinduer – ofte flere hundrede tusinde tokens – men de er ikke uendelige.',
+          ] },
+          { h: 'Når vinduet bliver fyldt', p: [
+            'Bliver samtalen længere end vinduet, må tjenesten skære de ældste dele fra eller opsummere dem automatisk – afhængigt af hvilken tjeneste du bruger. Og selv før grænsen kan detaljer gemt midt i en meget lang tekst blive overset. Resultatet føles som glemsomhed.',
+          ] },
+          { h: 'Hukommelse mellem samtaler', p: [
+            'Som udgangspunkt starter en ny chat helt blank. Nogle tjenester har funktioner som «hukommelse» eller «projekter», der gemmer noter om dig eller dine filer. Det, der sker bag kulisserne, er, at teksten lægges ind i konteksten for dig – det er altså stadig kontekstvinduet, der arbejder.',
+          ] },
+          { h: 'Tokens koster tid og penge', p: [
+            'Bruger man AI via et API, betaler man typisk pr. token – både ind og ud. Lange samtaler og store dokumenter er derfor dyrere og langsommere. Det er endnu en grund til at holde konteksten skarp: kun det, der er relevant for opgaven.',
+          ] },
+        ],
+        example: {
+          title: 'Den lange samtale',
+          bad: 'Fortsætte den samme chat i flere uger, så alt fra første dag stadig skal huskes.',
+          good: '«Opsummér vores samtale: mål, beslutninger og hvad der mangler.» → Start en ny chat med opsummeringen som første besked.',
+          why: 'Opsummeringen giver AI’en det vigtige i komprimeret form, og den nye samtale har frisk plads i vinduet.',
+        },
+        points: ['Tekst læses som tokens – små stykker af ord.', 'Kontekstvinduet er AI’ens arbejdshukommelse.', 'Lange samtaler: opsummér og start forfra.', 'Del kun det, der er relevant for opgaven.'],
+        mistakes: ['At køre samme chat i ugevis og undre sig over, at den glemmer.', 'At indsætte et helt dokument, når ét afsnit var nok.', 'At forvente, at en ny chat husker den gamle.'],
         demo: 'skilltree', demoWhy: 'Ligesom færdighedstræet bygger viden ovenpå viden, skal AI’en have den vigtige kontekst med for at bygge videre.',
-        task: 'Find en lang samtale med en AI. Bed den om en opsummering og start en ny chat med opsummeringen som første besked.',
-        prompt: 'Opsummér vores samtale indtil nu i maks. 10 punkter: mål, beslutninger vi har truffet, og hvad der mangler. Skriv det, så jeg kan sætte det ind i en ny chat.',
+        task: 'Find en lang samtale med en AI. Bed om en opsummering med prompten herunder, og start en ny chat med opsummeringen som første besked. Mærk forskellen.',
+        prompt: 'Opsummér vores samtale indtil nu i maks. 10 punkter: målet, de beslutninger vi har truffet, vigtige detaljer og hvad der mangler. Skriv det, så jeg kan sætte det ind i en ny chat og fortsætte derfra.',
         quiz: [
           { q: 'Hvad er et kontekstvindue?', opts: ['Den tekstmængde AI’en kan tage højde for på én gang', 'Et vindue i browseren', 'AI’ens adgangskode'], a: 0, why: 'Det er grænsen for, hvor meget modellen kan «se» ad gangen.' },
           { q: 'Samtalen er blevet meget lang, og AI’en glemmer ting. Hvad gør du?', opts: ['Skriver det hele igen med store bogstaver', 'Laver en opsummering og starter en ny samtale', 'Giver op'], a: 1, why: 'En frisk samtale med det vigtigste giver AI’en overblik igen.' },
+          { q: 'Hvorfor bliver en dansk tekst ofte til flere tokens end en engelsk?', opts: ['Danske ord er lange og sammensatte', 'AI’en kan ikke lide dansk', 'Det gør den ikke'], a: 0, why: 'Lange og sjældnere ord deles i flere stykker.' },
         ],
       },
       {
-        id: 'hallucination', title: 'Når AI finder på', minutes: 8,
-        lesson: 'Fordi AI’en genererer sandsynlig tekst, kan den finde på ting, der lyder rigtige, men er forkerte: tal, citater, kilder eller links. Det kaldes ofte hallucinationer. Det sker oftest ved nicheviden, præcise tal og nyere begivenheder. Løsningen er ikke at stoppe med AI, men at tjekke det vigtige.',
-        points: ['AI kan være selvsikker og forkert på samme tid.', 'Risikoen er størst ved tal, kilder, navne og nyheder.', 'Bed om kilder – og tjek dem selv. Brug websøgning ved aktuelle emner.'],
+        id: 'hallucination', title: 'Når AI finder på', minutes: 12, widget: 'factcheck',
+        lesson: 'AI kan skrive et overbevisende svar med tal, kilder og citater – som slet ikke findes. Det kaldes ofte hallucinationer. Det er ikke en grund til at lade være med at bruge AI, men det er en grund til at vide, hvornår du skal tjekke, og hvordan.',
+        sections: [
+          { h: 'Hvorfor finder AI på?', p: [
+            'En sprogmodel er trænet til at skrive sandsynlig tekst – ikke til at sige «det ved jeg ikke». Mangler den viden om noget, kan den udfylde hullet med noget, der lyder rigtigt. Den lyver ikke bevidst; den gør bare det, den er bygget til: at fortsætte teksten troværdigt.',
+          ] },
+          { h: 'Hvor sker det oftest?', p: [
+            'Præcise tal, datoer og statistik. Ordrette citater og sidetal. Kildehenvisninger og links. Navne på små firmaer, lokale steder og personer, der ikke er kendte. Nyheder efter modellens skæringsdato. Og detaljer inden for jura, medicin og økonomi, hvor små fejl kan få store konsekvenser.',
+          ] },
+          { h: 'Sådan tjekker du', p: [
+            'Bed om kilder – og åbn dem. Findes siden, og står der faktisk det, AI’en påstår?',
+            'Brug en AI med websøgning (fx Perplexity, eller Gemini og ChatGPT med søgning slået til) ved aktuelle emner.',
+            'Bed AI’en markere, hvad den er sikker og usikker på.',
+            'Ved vigtige beslutninger: find den officielle kilde – myndighed, producent eller fagperson.',
+          ] },
+          { h: 'Giv den selv kilden', p: [
+            'Den sikreste måde at undgå opdigtede fakta er at give AI’en teksten selv. Indsæt artiklen, kontrakten eller manualen, og skriv: «Svar kun ud fra teksten herunder. Hvis svaret ikke står der, så sig det.» Så arbejder AI’en med dine fakta i stedet for sin hukommelse.',
+          ] },
+          { h: 'Sund skepsis – ikke frygt', p: [
+            'Til idéer, formuleringer, forklaringer af kendte emner og omskrivning af dine egne tekster er AI fremragende. Til fakta, der skal være 100 % rigtige, er AI et godt udgangspunkt – men ikke det sidste ord.',
+          ] },
+        ],
+        example: {
+          title: 'Et spørgsmål om regler',
+          bad: '«Hvad siger reglerne om opsigelse i min kontrakt?» – uden at vise kontrakten.',
+          good: '«Her er min kontrakt [indsat]. Svar kun ud fra teksten: hvad står der om opsigelse? Citér afsnittet, og sig hvis det ikke fremgår.»',
+          why: 'I det første tilfælde gætter AI’en ud fra generelle mønstre. I det andet arbejder den med din faktiske tekst og viser, hvor svaret kommer fra.',
+        },
+        points: ['AI kan være selvsikker og forkert på samme tid.', 'Størst risiko: tal, citater, kilder, lokale og nye oplysninger.', 'Bed om kilder – og tjek dem.', 'Giv AI’en teksten selv, og bed den kun svare ud fra den.'],
+        mistakes: ['At kopiere tal og kilder direkte ind i noget vigtigt uden at tjekke dem.', 'At spørge AI’en «er du sikker?» og tage et «ja» som bevis.', 'At bruge AI uden søgning til nyheder og åbningstider.'],
         demo: 'detective', demoWhy: 'En god detektiv stoler ikke på én forklaring, men forbinder beviser. Brug samme metode på AI-svar.',
-        task: 'Spørg en AI om noget, du selv ved meget om. Find mindst én detalje, der er upræcis eller forkert.',
-        prompt: 'Svar på mit spørgsmål, og markér bagefter hver påstand med [sikker], [usikker] eller [tjek selv]. Mit spørgsmål: …',
+        task: 'Spørg en AI om noget, du selv ved meget om – din by, dit fag eller din hobby. Find mindst én detalje, der er upræcis eller forkert.',
+        prompt: 'Svar på mit spørgsmål, og markér bagefter hver påstand med [sikker], [usikker] eller [tjek selv]. Giv kilder, hvor du kan. Mit spørgsmål: …',
         quiz: [
           { q: 'Hvornår er risikoen for opfundne svar typisk størst?', opts: ['Ved simple hverdagsord', 'Ved præcise tal, kilder og nyere begivenheder', 'Aldrig'], a: 1, why: 'Det er detaljer, modellen let kan gætte forkert på.' },
           { q: 'AI’en giver dig et link som kilde. Hvad gør du?', opts: ['Bruger det uden at klikke', 'Åbner det og tjekker, at det findes og siger det samme', 'Sletter det'], a: 1, why: 'Kilder kan være opfundne – tjek dem.' },
+          { q: 'Hvad mindsker risikoen mest, når du spørger om en kontrakt?', opts: ['At skrive «vær nu sikker»', 'At indsætte kontrakten og bede AI’en kun svare ud fra den', 'At spørge to gange'], a: 1, why: 'Så arbejder AI’en med de faktiske oplysninger.' },
         ],
       },
     ],
